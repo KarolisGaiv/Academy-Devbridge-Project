@@ -1,8 +1,8 @@
 import React from "react";
-import "../../Layout.css";
+import "./Navbar.scss";
 
 function Navbar() {
-  return <aside className="navbar__body">Navbar</aside>;
+  return <aside className="navbar">Navbar</aside>;
 }
 
 export default Navbar;

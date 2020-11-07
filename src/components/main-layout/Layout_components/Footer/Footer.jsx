@@ -1,8 +1,8 @@
 import React from "react";
-import "../../Layout.css";
+import "./Footer.scss";
 
 function Footer() {
-  return <footer className="footer__body"> Footer</footer>;
+  return <footer className="footer"> Footer</footer>;
 }
 
 export default Footer;

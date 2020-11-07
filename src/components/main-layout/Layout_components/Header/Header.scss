@@ -1,0 +1,21 @@
+.header {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+
+    .header__profileWidget {
+        margin: 0 40px 0 0;
+    }
+
+    .header__profileWidget--placeholder {
+        background: #ff6e75;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+    }
+
+    .header__notification {
+        margin: 0 30px 0 0;
+    }
+}

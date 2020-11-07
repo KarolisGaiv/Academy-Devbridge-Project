@@ -1,8 +1,8 @@
 import React from "react";
-import "../../Layout.css";
+import "./Content.scss";
 
 function Content() {
-  return <content className="content__body"> Content </content>;
+  return <content className="content"> Content </content>;
 }
 
 export default Content;

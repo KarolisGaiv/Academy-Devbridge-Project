@@ -1,42 +1,92 @@
-import React, { useEffect, useState } from "react";
-import { ReactComponent as SourceryLogo } from "assets/logo.svg";
-import { GetStartedList } from "features/getStarted/components/GetStartedList";
+import React, { Component } from "react";
 
-function App() {
-  const [instructions, setInstructions] = useState([]);
+import InputField from "components/InputField/input-field.jsx";
+import { Validators } from "components/InputField/validator.js";
 
-  useEffect(() => {
-    fetch("http://localhost:3008/instructions")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setInstructions(result);
-        },
-        (error) => {
-          // handle error here
-        }
-      );
-  }, []);
+export default class App extends Component {
+  state = {
+    text: "",
+    password: "",
+    number: "",
+    email: "",
+    country: "",
+    message: "",
+    acceptance: false,
+  };
 
-  return (
-    <div className="app">
-      <header className="App-header">
-        <SourceryLogo />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <GetStartedList key={instructions.length} instructions={instructions} />
-    </div>
-  );
+  handleChange = (key) => (value) => {
+    this.setState({ [key]: value });
+  };
+
+  handleClick = (event) => {
+    event.preventDefault();
+    alert("Button Clicked");
+  };
+
+  handleDropdown = (country) => {
+    this.setState({ country });
+  };
+
+  handleCheckbox = (acceptance) => {
+    this.setState({ acceptance });
+  };
+
+  render() {
+    const { fname, lname, pass, rpass, email } = this.state;
+
+    return (
+      <div className="container">
+        <InputField
+          label="FIRST NAME"
+          value={fname}
+          type="text"
+          placeholder="Placeholder"
+          validators={[
+            { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
+          ]}
+          onChange={this.handleChange("fname")}
+        />
+        <InputField
+          label="LAST NAME"
+          value={lname}
+          type="text"
+          placeholder="Placeholder"
+          validators={[
+            { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
+          ]}
+          onChange={this.handleChange("lname")}
+        />
+        <InputField
+          label="PASSWORD"
+          value={pass}
+          type="password"
+          placeholder="Placeholder"
+          validators={[
+            { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
+          ]}
+          onChange={this.handleChange("pass")}
+        />
+        <InputField
+          label="REPEAT PASSWORD"
+          value={rpass}
+          type="password"
+          placeholder="Placeholder"
+          validators={[
+            { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
+          ]}
+          onChange={this.handleChange("rpass")}
+        />
+        <InputField
+          label="EMAIL"
+          value={email}
+          type="text"
+          placeholder="Placeholder"
+          validators={[
+            { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
+          ]}
+          onChange={this.handleChange("email")}
+        />
+      </div>
+    );
+  }
 }
-
-export default App;

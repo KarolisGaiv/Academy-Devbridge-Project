@@ -1,0 +1,35 @@
+$btn-default: #6e44ff;
+$btn-hover: #5836cc;
+$btn-active: #462ca3;
+$btn-disabled: #edeff1;
+$btntxt-disabled: #9ea7b3;
+$text-def: #fff;
+$roboto-medium: 'Roboto', sans-serif;
+$font16: 16px;
+
+.button {
+    background-color: $btn-default;
+    border: 0;
+    border-radius: 65px;
+    color: $text-def;
+    cursor: pointer;
+    font-family: $roboto-medium;
+    font-size: $font16;
+    height: 40px;
+    outline: none;
+    padding: 8px 24px;
+
+    &:hover,
+    &:focus {
+        background-color: $btn-hover;
+    }
+
+    &:active {
+        background-color: $btn-active;
+    }
+
+    &:disabled {
+        background-color: $btn-disabled;
+        color: $btntxt-disabled;
+    }
+}

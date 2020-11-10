@@ -1,5 +1,5 @@
 import React from "react";
-import "./Content.scss";
+import "./content.scss";
 
 const Content = () => {
   return <content className="content"> Content </content>;

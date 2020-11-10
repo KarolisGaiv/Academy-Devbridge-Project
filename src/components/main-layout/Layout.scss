@@ -1,10 +1,7 @@
-$z-index-base: 1;
-$z-index-timeline: 100;
+@import '../../styles/base/base';
 
 .layout__wrapper {
     display: grid;
-    // grid-template-rows: 96px auto 72px;
-    // grid-template-columns: 96px auto;
     grid-template-areas:
         'n h'
         'n c'

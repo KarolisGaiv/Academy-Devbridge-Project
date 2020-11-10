@@ -1,10 +1,10 @@
 import React from "react";
-import "./ProfileWidget.scss";
+import "./profileWidget.scss";
 
 const ProfileWidget = () => {
   return (
-    <div className="profileWidget">
-      <div className="profileWidget__placeholder"></div>
+    <div className="profile-widget">
+      <div className="profile-widget__placeholder"></div>
     </div>
   );
 };

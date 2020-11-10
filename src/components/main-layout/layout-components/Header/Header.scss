@@ -4,11 +4,11 @@
     flex-direction: row-reverse;
     height: 100%;
 
-    .header__profileWidget {
+    &__profile-widget {
         margin: 0 40px 0 0;
     }
 
-    .header__notification {
+    &__notification {
         margin: 0 30px 0 0;
     }
 }

@@ -3,6 +3,12 @@ const path = require("path");
 const resolve = (dir) => path.resolve(__dirname, dir);
 
 module.exports = {
+  addons: [
+    '@storybook/addon-viewport',
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/preset-create-react-app',
+  ],
   stories: ["../src/**/*.stories.jsx"],
 
   webpackFinal: async (config) => {

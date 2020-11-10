@@ -1,0 +1,100 @@
+.mainDiv {
+    height: 40px;
+    position: relative;
+    width: 40px;
+}
+
+.profileBtn {
+    border: 0px;
+    max-height: 100%;
+    max-width: 100%;
+    background-color: transparent;
+    padding: 0px;
+}
+
+.dropMenu {
+    position: relative;
+    height: 105px;
+    width: 199px;
+}
+
+.menuWrapper {
+    left: 1px;
+    position: absolute;
+    right: 1px;
+    bottom: 2px;
+    top: 2px;
+    background: #FFFFFF;
+    border: 1px solid #CACFD5;
+    border-radius: 5px;
+    //Not in style sheet
+    margin: 0px;
+    padding: 0px;
+}
+
+.bottomWrapper {
+    list-style-type: none;
+    position: absolute;
+    height: 48px;
+    width: 197px;
+    left: 1px;
+    top: 55px;
+}
+
+.bottomItem {
+height: 48px;
+left: 1px;
+right: 1px;
+background: #EDEFF1;
+top: 55px;
+border-radius: 0px 0px 5px 5px;
+//Not in design sheet
+align-items: center;
+display: flex;
+}
+
+.topWrapper {
+    list-style-type: none;
+
+    & a {
+        position: absolute;
+        height: 22px;
+        width: 52px;
+        left: 43px;
+        font-family: Roboto;
+        text-decoration: none;
+        top: 21px;
+        font-style: normal;
+        font-size: 14px;
+        font-weight: normal;
+        color: #3E5067;
+        line-height: 22px;
+    }
+
+    & svg {
+        position: absolute;
+        height: 18px;
+        width: 18px;
+        left: 17px;
+        top: 23px;  
+    }
+}
+
+.btmItemContainer {
+    align-items: center;
+    display: flex;
+}
+
+.btmItemContainer a {
+    text-decoration: none;
+    height: 22px;
+    width: 73.69px;
+    left: 43px;
+    font-family: Roboto;
+    top: 68px;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: normal;
+    color: #3E5067;
+    line-height: 22px;
+}

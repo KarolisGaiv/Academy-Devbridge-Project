@@ -1,11 +1,11 @@
 import React from "react";
 import "./Layout.scss";
-import Header from "./Layout_components/Header/Header";
-import Navbar from "./Layout_components/Navbar/Navbar";
-import Content from "./Layout_components/Content/Content";
-import Footer from "./Layout_components/Footer/Footer";
+import Header from "./layout-components/Header/Header";
+import Navbar from "./layout-components/Navbar/Navbar";
+import Content from "./layout-components/Content/Content";
+import Footer from "./layout-components/Footer/Footer";
 
-function Layout() {
+const Layout = () => {
   return (
     <div className="layout__wrapper">
       <header className="header__wrapper">
@@ -22,6 +22,6 @@ function Layout() {
       </footer>
     </div>
   );
-}
+};
 
 export default Layout;

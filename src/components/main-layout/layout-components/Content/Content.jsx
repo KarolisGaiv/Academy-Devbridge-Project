@@ -1,8 +1,8 @@
 import React from "react";
 import "./Content.scss";
 
-function Content() {
+const Content = () => {
   return <content className="content"> Content </content>;
-}
+};
 
 export default Content;

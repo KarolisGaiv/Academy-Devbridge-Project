@@ -1,0 +1,131 @@
+@import '../../../../styles/base/base';
+
+/** TEMPORARY UNTIL GLOBAL CSS VARIABLES SET **/
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F6F7F8;
+}
+
+/** TEMPORARY UNTIL OTHER COMPONENTS JOINED **/
+h1 {
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.navigation__wrapper {
+    height: 100%;
+    position: absolute;
+    background-color: #6E44FF;
+    transition: width 0.1s linear;
+
+    &--short {
+        width: 95px;
+    }
+
+    &--long {
+        width: 205px;
+    }
+}
+.navigation {
+    overflow: hidden;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin-top: 70px;
+    padding-inline-start: 20px;
+}
+
+.navigation__chevron {
+    stroke: #F6F7F8;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform .2s;
+
+    &--background {
+        height: 26px;
+        width: 26px;
+        margin-top: 24px;
+        background-color: #3E5067;
+        border-radius: 50%;
+        border: 2px solid #F6F7F8;
+        position: absolute;
+        right: -12px;
+        outline: none;
+        cursor: pointer;
+    }
+
+    &--left {
+        transform: rotateY(-180deg) translate(50%, -50%);
+        transition: transform .2s;
+    }
+}
+
+.navigation__logo {
+    margin: 24px;
+}
+
+.navigation__item {
+    position: relative;
+    height: 70px;
+    padding-bottom: 5px;
+}
+
+.navigation__context {
+    position: absolute;
+    padding-left: 16px;
+    top: 60%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    
+}
+
+.navigation__icon {
+    width: 24px;
+    height: 24px;
+    stroke: #F6F7F8;
+    vertical-align: middle;
+}
+
+.selected .navigation__icon {
+    stroke: #3E5067;
+}
+
+.navigation__text {
+    
+    color: #F6F7F8;
+    vertical-align: middle;
+    font-weight: 500;
+    padding-left: 20px;
+}
+
+.selected .navigation__text {
+    color: #3E5067;
+}
+
+.navigation__item-background {
+    fill: transparent;
+}
+
+.selected .navigation__item-background {
+    fill: #F6F7F8;
+}
+
+.navigation__item:hover .navigation__icon--inactive {
+    stroke: #3E5067;
+}
+
+.navigation__item:hover .navigation__text--inactive {
+    color: #3E5067;
+}
+
+.navigation__item:hover .navigation__item-background--inactive {
+    fill: #F6F7F8;
+}
+

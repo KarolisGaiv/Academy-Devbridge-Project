@@ -1,1 +1,1 @@
-export * from "./GetStartedList/index";
+export * from "./MainNavigation/index";

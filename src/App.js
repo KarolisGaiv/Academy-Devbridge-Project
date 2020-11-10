@@ -7,28 +7,12 @@ export default class App extends Component {
   state = {
     text: "",
     password: "",
-    number: "",
     email: "",
-    country: "",
     message: "",
-    acceptance: false,
   };
 
   handleChange = (key) => (value) => {
     this.setState({ [key]: value });
-  };
-
-  handleClick = (event) => {
-    event.preventDefault();
-    alert("Button Clicked");
-  };
-
-  handleDropdown = (country) => {
-    this.setState({ country });
-  };
-
-  handleCheckbox = (acceptance) => {
-    this.setState({ acceptance });
   };
 
   render() {
@@ -40,7 +24,7 @@ export default class App extends Component {
           label="FIRST NAME"
           value={fname}
           type="text"
-          placeholder="Placeholder"
+          placeholder="e.g. John"
           validators={[
             { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
           ]}
@@ -50,7 +34,7 @@ export default class App extends Component {
           label="LAST NAME"
           value={lname}
           type="text"
-          placeholder="Placeholder"
+          placeholder="e.g. Smith"
           validators={[
             { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
           ]}
@@ -60,9 +44,9 @@ export default class App extends Component {
           label="PASSWORD"
           value={pass}
           type="password"
-          placeholder="Placeholder"
+          placeholder="At least 8 characters, one letter, one number"
           validators={[
-            { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
+            { check: Validators.password, message: "PASSWORD IS NOT VALID" },
           ]}
           onChange={this.handleChange("pass")}
         />
@@ -70,19 +54,19 @@ export default class App extends Component {
           label="REPEAT PASSWORD"
           value={rpass}
           type="password"
-          placeholder="Placeholder"
+          placeholder="At least 8 characters, one letter, one number"
           validators={[
-            { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
+            { check: Validators.password, message: "PASSWORD IS NOT VALID" },
           ]}
           onChange={this.handleChange("rpass")}
         />
         <InputField
           label="EMAIL"
           value={email}
-          type="text"
-          placeholder="Placeholder"
+          type="email"
+          placeholder="Valid email address"
           validators={[
-            { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
+            { check: Validators.email, message: "EMAIL IS NOT VALID" },
           ]}
           onChange={this.handleChange("email")}
         />

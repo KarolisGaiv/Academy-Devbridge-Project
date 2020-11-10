@@ -23,24 +23,13 @@ const InputField = ({
   return (
     <div className="input-wrap">
       {label && <label htmlFor="input-field">{label}</label>}
-
-      {type === "textarea" ? (
-        <textarea
-          className="input-wrap__field"
-          placeholder={placeholder}
-          value={value}
-          //defaultValue={value}
-          onChange={handleChange}
-        />
-      ) : (
-        <input
-          type={type}
-          value={value}
-          className="input-wrap__field"
-          placeholder={placeholder}
-          onChange={handleChange}
-        />
-      )}
+      <input
+        type={type}
+        value={value}
+        className="input-wrap__field"
+        placeholder={placeholder}
+        onChange={handleChange}
+      />
       {error && <span className="text-danger">{error.message}</span>}
     </div>
   );

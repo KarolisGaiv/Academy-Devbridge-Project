@@ -1,13 +1,16 @@
 import React from "react";
 import Layout from "components/main-layout/Layout";
+import { BrowserRouter as Router } from "react-router-dom";
 import "app.scss";
 
-function App() {
+const App = () => {
   return (
     <div className="app">
-      <Layout />
+      <Router>
+        <Layout />
+      </Router>
     </div>
   );
-}
+};
 
 export default App;

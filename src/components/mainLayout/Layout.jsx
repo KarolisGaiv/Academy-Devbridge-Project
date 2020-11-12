@@ -1,9 +1,9 @@
 import React from "react";
 import "./layout.scss";
-import Header from "./layout-components/Header/Header";
-import Navbar from "./layout-components/Navbar/Navbar";
-import Content from "./layout-components/Content/Content";
-import Footer from "./layout-components/Footer/Footer";
+import Header from "./layoutComponents/Header/Header";
+import Navbar from "./layoutComponents/Navbar/Navbar";
+import Content from "./layoutComponents/Content/Content";
+import Footer from "./layoutComponents/Footer/Footer";
 
 const Layout = () => {
   return (

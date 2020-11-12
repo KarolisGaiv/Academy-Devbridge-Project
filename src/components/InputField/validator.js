@@ -10,14 +10,14 @@ export class Validators {
     if (value) {
       const result = regex.email.test(value);
       if (!result) return { error: true, message };
-    }
+    } else return { error: true, message };
   }
 
   static password(value, message) {
     if (value) {
       const result = regex.password.test(value);
       if (!result) return { error: true, message };
-    }
+    } else return { error: true, message };
   }
 
   static required(value, message) {

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./user_profile.scss";
-import { ReactComponent as UserProfile } from "assets/user_Profile.svg";
-import { ReactComponent as SettingsIcon } from "assets/settings.svg";
-import { ReactComponent as LogoutIcon } from "assets/logout.svg";
+import { ReactComponent as UserProfile } from "assets/profileIcon.svg";
+import { ReactComponent as SettingsIcon } from "assets/settingsIcon.svg";
+import { ReactComponent as LogoutIcon } from "assets/logoutIcon.svg";
 
 class User_Profile extends Component {
   constructor() {
@@ -41,27 +41,32 @@ class User_Profile extends Component {
           this.node = node;
         }}
       >
-        <button onClick={this.showMenu} className="profileBtn">
-          <UserProfile />
-        </button>
-        {this.state.showMenu && (
-          <nav className="dropMenu">
-            <ul className="menuWrapper">
-              <li className="topWrapper">
-                <LogoutIcon />
-                <a href="https://www.google.com/">Settings</a>
-              </li>
-              <li className="bottomWrapper">
-                <div className="bottomItem">
-                  <div className="btmItemContainer">
+        <div className="wrapper">
+          <button onClick={this.showMenu} className="profileBtn">
+            <div className="placeholder">
+              <UserProfile />
+            </div>
+          </button>
+          {this.state.showMenu && (
+            <nav className="drop-menu">
+              <div className="arrow-up"></div>
+              <ul className="drop-menu__body">
+                <li className="drop-menu__item">
+                  <div className="drop-menu__item-body">
                     <SettingsIcon />
-                    <a href="https://www.delfi.lt/">Log out</a>
+                    <span className="drop-menu__item-body--text">Settings</span>
                   </div>
-                </div>
-              </li>
-            </ul>
-          </nav>
-        )}
+                </li>
+                <li className="drop-menu__item">
+                  <div className="drop-menu__item-body">
+                    <LogoutIcon />
+                    <span className="drop-menu__item-body--text">Log out</span>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          )}
+        </div>
       </div>
     );
   }

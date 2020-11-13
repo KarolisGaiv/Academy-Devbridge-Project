@@ -1,100 +1,87 @@
+@import '../../styles/base/typography';
+@import '../../styles/base/colors';
+@import '../../styles/base/config';
+
+body {
+    color: $color-font-blue;
+    font-family: $roboto-medium;
+    font-size: $font-size-small;
+    line-height: 22px;
+}
+
 .mainDiv {
-    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    height: 76px;
     position: relative;
     width: 40px;
 }
 
+.placeholder {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
 .profileBtn {
-    border: 0px;
-    max-height: 100%;
-    max-width: 100%;
-    background-color: transparent;
-    padding: 0px;
+    border: 0;
+    border-radius: 50%;
+    height: 40px;
+    outline: 0;
+    width: 40px;
 }
 
-.dropMenu {
-    position: relative;
-    height: 105px;
-    width: 199px;
-}
-
-.menuWrapper {
-    left: 1px;
+.drop-menu {
+    display: inline-block;
+    min-width: 200px;
     position: absolute;
-    right: 1px;
-    bottom: 2px;
-    top: 2px;
-    background: #FFFFFF;
-    border: 1px solid #CACFD5;
+    right: 0;
+    top: 50px;
+}
+
+.drop-menu__body {
+    background-color: $color-white;
+    border: 1px solid $color-border;
     border-radius: 5px;
-    //Not in style sheet
-    margin: 0px;
-    padding: 0px;
-}
-
-.bottomWrapper {
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
-    position: absolute;
-    height: 48px;
-    width: 197px;
-    left: 1px;
-    top: 55px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
 }
 
-.bottomItem {
-height: 48px;
-left: 1px;
-right: 1px;
-background: #EDEFF1;
-top: 55px;
-border-radius: 0px 0px 5px 5px;
-//Not in design sheet
-align-items: center;
-display: flex;
+.drop-menu__item {
+    cursor: pointer;
 }
 
-.topWrapper {
-    list-style-type: none;
-
-    & a {
-        position: absolute;
-        height: 22px;
-        width: 52px;
-        left: 43px;
-        font-family: Roboto;
-        text-decoration: none;
-        top: 21px;
-        font-style: normal;
-        font-size: 14px;
-        font-weight: normal;
-        color: #3E5067;
-        line-height: 22px;
-    }
-
-    & svg {
-        position: absolute;
-        height: 18px;
-        width: 18px;
-        left: 17px;
-        top: 23px;  
-    }
+.drop-menu__item:hover {
+    background: $color-hover-grey;
 }
 
-.btmItemContainer {
+.drop-menu__item-body {
     align-items: center;
     display: flex;
+    margin: 15px;
 }
 
-.btmItemContainer a {
-    text-decoration: none;
-    height: 22px;
-    width: 73.69px;
-    left: 43px;
-    font-family: Roboto;
-    top: 68px;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: normal;
-    color: #3E5067;
-    line-height: 22px;
+.drop-menu__item-body--text {
+    margin: 0 0 0 8px;
+}
+
+.arrow-up {
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-bottom: transparent;
+    border-right: transparent;
+    height: 5px;
+    position: absolute;
+    right: 15px;
+    top: -3px;
+    transform: rotate(45deg);
+    width: 5px;
 }

@@ -1,13 +1,11 @@
 import React from "react";
-import MainNavigation from "./MainNavigation";
-
-import "./MainNavigation.scss";
+import MainNavigation from "../components/MainNavigation/MainNavigation";
 
 const Dashboard = () => {
   return (
     <main>
       <MainNavigation />
-      <h1>Dashboard</h1>
+      <h1 style={{ margin: "auto", textAlign: "center" }}>Dashboard</h1>
     </main>
   );
 };

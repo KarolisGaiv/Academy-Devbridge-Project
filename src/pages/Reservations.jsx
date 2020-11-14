@@ -1,13 +1,11 @@
 import React from "react";
-import MainNavigation from "./MainNavigation";
-
-import "./MainNavigation.scss";
+import MainNavigation from "../components/MainNavigation/MainNavigation";
 
 const Reservations = () => {
   return (
     <main>
       <MainNavigation />
-      <h1>Reservations</h1>
+      <h1 style={{ margin: "auto", textAlign: "center" }}>Reservations</h1>
     </main>
   );
 };

@@ -3,11 +3,9 @@ import React, { Component } from "react";
 import InputField from "components/InputField/input-field.jsx";
 import { Validators } from "components/InputField/validator.js";
 
-export default class App extends Component {
+export default class InputName extends Component {
   state = {
     text: "",
-    password: "",
-    email: "",
     message: "",
   };
 
@@ -16,7 +14,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { fname, lname, pass, rpass, email } = this.state;
+    const { fname, lname } = this.state;
 
     return (
       <div className="container">
@@ -39,36 +37,6 @@ export default class App extends Component {
             { check: Validators.required, message: "THIS FIELD IS REQUIRED" },
           ]}
           onChange={this.handleChange("lname")}
-        />
-        <InputField
-          label="PASSWORD"
-          value={pass}
-          type="password"
-          placeholder="At least 8 characters, one letter, one number"
-          validators={[
-            { check: Validators.password, message: "PASSWORD IS NOT VALID" },
-          ]}
-          onChange={this.handleChange("pass")}
-        />
-        <InputField
-          label="REPEAT PASSWORD"
-          value={rpass}
-          type="password"
-          placeholder="At least 8 characters, one letter, one number"
-          validators={[
-            { check: Validators.password, message: "PASSWORD IS NOT VALID" },
-          ]}
-          onChange={this.handleChange("rpass")}
-        />
-        <InputField
-          label="EMAIL"
-          value={email}
-          type="email"
-          placeholder="Valid email address"
-          validators={[
-            { check: Validators.email, message: "EMAIL IS NOT VALID" },
-          ]}
-          onChange={this.handleChange("email")}
         />
       </div>
     );

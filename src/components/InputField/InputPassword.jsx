@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import InputField from "components/InputField/input-field.jsx";
-import { Validators } from "components/InputField/validator.js";
+import InputField from "components/InputField/InputField";
+import { Validators } from "components/InputField/inputValidators";
 
-export default class InputPass extends Component {
+export default class InputPassword extends Component {
   state = {
     text: "",
     password: "",

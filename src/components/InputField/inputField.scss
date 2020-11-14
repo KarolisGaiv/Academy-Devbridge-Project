@@ -1,6 +1,7 @@
 $grey: #8492a6;
+$darkblue: #3e5067;
 $validerror: #ff6e75;
-$lightgrey: #dcdfe3;
+$lightgrey: #cacfd5;
 $size-14: 14px;
 $size-10: 10px;
 
@@ -30,6 +31,7 @@ label {
     box-sizing: border-box;
     height: 48px;
     margin-top: 8px;
+    outline-color: $darkblue;
     padding: 12px 16px;
     width: 100%;
 

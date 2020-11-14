@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { validateInput } from "components/InputField/validator.js";
-import { ReactComponent as CheckIcon } from "assets/check-icon.svg";
-import "./input-field.scss";
+import { validateInput } from "components/InputField/inputValidators";
+import { ReactComponent as CheckIcon } from "assets/redCrossIcon.svg";
+import "./inputField.scss";
 
 const InputField = ({
   value,

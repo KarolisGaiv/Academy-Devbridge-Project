@@ -1,23 +1,20 @@
-$btn-default: #6e44ff;
 $btn-hover: #5836cc;
 $btn-active: #462ca3;
-$btn-disabled: #edeff1;
 $btntxt-disabled: #9ea7b3;
-$size-16: 16px;
 
-@import '../../styles/base/typography';
-@import '../../styles/base/colors';
+@import '../../styles/base/base';
 
 .button {
-    background-color: $btn-default;
+    background-color: $color-purple-dark;
     border: 0;
     border-radius: 65px;
     color: $color-white;
     cursor: pointer;
-    font-family: $roboto-medium;
+    font-family: $font-roboto;
     font-size: $size-16;
     height: 40px;
     padding: 8px 24px;
+    text-transform: uppercase;
 
     &:hover,
     &:focus {
@@ -29,7 +26,7 @@ $size-16: 16px;
     }
 
     &:disabled {
-        background-color: $btn-disabled;
+        background-color: $color-grey-2;
         color: $btntxt-disabled;
     }
 }

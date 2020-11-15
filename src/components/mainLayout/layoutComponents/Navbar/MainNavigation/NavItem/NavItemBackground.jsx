@@ -1,24 +1,18 @@
-import React, { useState } from "react";
-
+import React from "react";
 import propTypes from "prop-types";
+import SVGAnimation from "../SVGAnimation";
 
 const NavItemBackground = (props) => {
-  const [navItemBackgroundState, navItemBackgroundExpandState] = useState({
+  const navItemBackgroundState = {
     paths: [
       {
-        currentPath:
+        shortPath:
           "M0 44.1062C0 28.8817 12.3419 16.5398 27.5664 16.5398H59.4602C68.5949 16.5398 76 9.13469 76 0V89C76 79.4303 68.2422 71.6726 58.6726 71.6726H27.5664C12.3419 71.6726 0 59.3307 0 44.1062Z",
-        expandFrom:
-          "M0 44.1062C0 28.8817 12.3419 16.5398 27.5664 16.5398H59.4602C68.5949 16.5398 76 9.13469 76 0V89C76 79.4303 68.2422 71.6726 58.6726 71.6726H27.5664C12.3419 71.6726 0 59.3307 0 44.1062Z",
-        expandTo:
+        longPath:
           "M0 44.1062C0 28.8817 12.3419 16.5398 27.5664 16.5398H169.46C178.595 16.5398 186 9.13469 186 0V89C186 79.4303 178.242 71.6726 168.673 71.6726H27.5664C12.3419 71.6726 0 59.3307 0 44.1062Z",
-        subtractFrom:
-          "M0 44.1062C0 28.8817 12.3419 16.5398 27.5664 16.5398H169.46C178.595 16.5398 186 9.13469 186 0V89C186 79.4303 178.242 71.6726 168.673 71.6726H27.5664C12.3419 71.6726 0 59.3307 0 44.1062Z",
-        subtractTo:
-          "M0 44.1062C0 28.8817 12.3419 16.5398 27.5664 16.5398H59.4602C68.5949 16.5398 76 9.13469 76 0V89C76 79.4303 68.2422 71.6726 58.6726 71.6726H27.5664C12.3419 71.6726 0 59.3307 0 44.1062Z",
       },
     ],
-  });
+  };
 
   return (
     <svg
@@ -61,27 +55,27 @@ const NavItemBackground = (props) => {
         <feBlend mode="normal" in2="shape" result="effect1_innerShadow" />
       </filter>
       <path
-        d={navItemBackgroundState.paths[0].currentPath}
+        d={navItemBackgroundState.paths[0].shortPath}
         filter="url(#inset-shadow)"
       >
-        <animate
-          dur="0.1s"
-          attributeType="XML"
-          begin="startAnimation.click"
-          attributeName="d"
+        <SVGAnimation
+          duration="0.1s"
+          attType="XML"
+          beginAnimation="startAnimation.click"
+          attName="d"
           fill="freeze"
-          from={navItemBackgroundState.paths[0].expandFrom}
-          to={navItemBackgroundState.paths[0].expandTo}
+          from={navItemBackgroundState.paths[0].shortPath}
+          to={navItemBackgroundState.paths[0].longPath}
           id={`expand-${props.id}`}
         />
-        <animate
-          dur="0.1s"
-          attributeType="XML"
-          begin="startAnimation.click"
-          attributeName="d"
+        <SVGAnimation
+          duration="0.1s"
+          attType="XML"
+          beginAnimation="startAnimation.click"
+          attName="d"
           fill="freeze"
-          from={navItemBackgroundState.paths[0].subtractFrom}
-          to={navItemBackgroundState.paths[0].subtractTo}
+          from={navItemBackgroundState.paths[0].longPath}
+          to={navItemBackgroundState.paths[0].shortPath}
           id={`subtract-${props.id}`}
         />
       </path>
@@ -93,6 +87,6 @@ export default NavItemBackground;
 
 NavItemBackground.propTypes = {
   id: propTypes.string,
+  children: propTypes.node,
   className: propTypes.string,
-  expanded: propTypes.bool,
 };

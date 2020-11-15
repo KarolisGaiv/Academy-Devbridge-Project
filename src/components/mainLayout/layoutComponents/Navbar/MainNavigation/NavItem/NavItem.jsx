@@ -1,8 +1,8 @@
 import React from "react";
 import propTypes from "prop-types";
-import SVGIcon from "./SVGIcon";
+import SVGIcon from "../SVGIcon";
 
-import "./mainNavigation.scss";
+import "../mainNavigation.scss";
 
 const NavItem = (props) => {
   return (

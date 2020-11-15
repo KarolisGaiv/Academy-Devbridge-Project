@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import propTypes from "prop-types";
 import SVGIcon from "./SVGIcon";
-import NavItemBackground from "./NavItemBackground";
-import NavItem from "./NavItem";
+import NavItemBackground from "./NavItem/NavItemBackground";
+import NavItem from "./NavItem/NavItem";
 
 import "./mainNavigation.scss";
 
@@ -121,9 +121,8 @@ const MainNavigation = (props) => {
               <NavItem
                 background={
                   <NavItemBackground
+                    className={"navigation__item-background"}
                     id={item.id}
-                    className={`navigation__item-background`}
-                    expanded={expanded}
                   />
                 }
                 iconName={item.iconName}

@@ -1,3 +1,4 @@
+@import '../../../../../styles/base/base';
 @import '../../../../../styles/base/colors';
 
 $color-dark-grey: #3e5067;
@@ -101,21 +102,16 @@ $transparent: transparent;
 .selected .navigation__item-background {
     fill: $color-light-white;
 }
+@media (hover: hover) and (pointer: fine) {
+    .navigation__item:hover .navigation__icon {
+        stroke: $color-light-white;
+    }
 
-.navigation__item:hover .navigation__icon--inactive,
-.navigation__item:active .navigation__icon--inactive {
-    stroke: $color-light-white;
-}
+    .navigation__item:hover .navigation__text {
+        color: $color-light-white;
+    }
 
-.navigation__item:hover .navigation__text--inactive,
-.navigation__item:active .navigation__icotext--inactive {
-    color: $color-light-white;
-}
-
-.navigation__item:hover .navigation__item-background--inactive {
-    fill: $color-hover-purple;
-}
-
-.navigation__item:active .navigation__item-background--inactive {
-    fill: $color-active-purple;
+    .navigation__item:hover .navigation__item-background {
+        fill: $color-hover-purple;
+    }
 }

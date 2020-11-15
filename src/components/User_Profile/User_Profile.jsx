@@ -36,31 +36,31 @@ class User_Profile extends Component {
   render() {
     return (
       <div
-        className="mainDiv"
+        className="container"
         ref={(node) => {
           this.node = node;
         }}
       >
-        <div className="wrapper">
-          <button onClick={this.showMenu} className="profileBtn">
-            <div className="placeholder">
+        <div className="profile">
+          <button onClick={this.showMenu} className="profile__btn">
+            <div className="profile__icon-placeholder">
               <UserProfile />
             </div>
           </button>
           {this.state.showMenu && (
             <nav className="drop-menu">
-              <div className="arrow-up"></div>
-              <ul className="drop-menu__body">
+              <div className="drop-menu__arrow-up"></div>
+              <ul className="drop-menu__wrapper">
                 <li className="drop-menu__item">
                   <div className="drop-menu__item-body">
                     <SettingsIcon />
-                    <span className="drop-menu__item-body--text">Settings</span>
+                    <span className="drop-menu__text">Settings</span>
                   </div>
                 </li>
                 <li className="drop-menu__item">
                   <div className="drop-menu__item-body">
                     <LogoutIcon />
-                    <span className="drop-menu__item-body--text">Log out</span>
+                    <span className="drop-menu__text">Log out</span>
                   </div>
                 </li>
               </ul>

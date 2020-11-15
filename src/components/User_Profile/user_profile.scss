@@ -9,30 +9,30 @@ body {
     line-height: 22px;
 }
 
-.mainDiv {
+.container {
     align-items: center;
     display: flex;
     justify-content: center;
 }
 
-.wrapper {
+.profile {
     height: 76px;
     position: relative;
     width: 40px;
-}
 
-.placeholder {
-    left: 0;
-    position: absolute;
-    top: 0;
-}
+    &__btn {
+        border: 0;
+        border-radius: 50%;
+        height: 40px;
+        outline: 0;
+        width: 40px;
+    }
 
-.profileBtn {
-    border: 0;
-    border-radius: 50%;
-    height: 40px;
-    outline: 0;
-    width: 40px;
+    &__icon-placeholder {
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
 }
 
 .drop-menu {
@@ -41,47 +41,47 @@ body {
     position: absolute;
     right: 0;
     top: 50px;
-}
 
-.drop-menu__body {
-    background-color: $color-white;
-    border: 1px solid $color-border;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
+    &__arrow-up {
+        background-color: $color-white;
+        border: 1px solid $color-border;
+        border-bottom: transparent;
+        border-right: transparent;
+        height: 5px;
+        position: absolute;
+        right: 15px;
+        top: -3px;
+        transform: rotate(45deg);
+        width: 5px;
+    }
+
+    &__wrapper {
+        background-color: $color-white;
+        border: 1px solid $color-border;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    &__text {
+        margin: 0 0 0 8px;
+    }
 }
 
 .drop-menu__item {
     cursor: pointer;
-}
 
-.drop-menu__item:hover {
-    background: $color-hover-grey;
-}
+    &:hover {
+        background: $color-hover-grey;
+    }
 
-.drop-menu__item-body {
-    align-items: center;
-    display: flex;
-    margin: 15px;
-}
-
-.drop-menu__item-body--text {
-    margin: 0 0 0 8px;
-}
-
-.arrow-up {
-    background-color: $color-white;
-    border: 1px solid $color-border;
-    border-bottom: transparent;
-    border-right: transparent;
-    height: 5px;
-    position: absolute;
-    right: 15px;
-    top: -3px;
-    transform: rotate(45deg);
-    width: 5px;
+    &-body {
+        align-items: center;
+        display: flex;
+        margin: 15px;
+    }
 }

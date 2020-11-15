@@ -1,11 +1,10 @@
 @import '../../styles/base/typography';
 @import '../../styles/base/colors';
-@import '../../styles/base/config';
 
 body {
     color: $color-font-blue;
-    font-family: $roboto-medium;
-    font-size: $font-size-small;
+    font-family: $font-roboto;
+    font-size: $size-14;
     line-height: 22px;
 }
 
@@ -67,21 +66,21 @@ body {
         padding: 0;
     }
 
-    &__text {
-        margin: 0 0 0 8px;
-    }
-}
+    &__item {
+        cursor: pointer;
 
-.drop-menu__item {
-    cursor: pointer;
-
-    &:hover {
-        background: $color-hover-grey;
+        &:hover {
+            background: $color-grey-2;
+        }
     }
 
-    &-body {
+    &__item-body {
         align-items: center;
         display: flex;
         margin: 15px;
+    }
+
+    &__text {
+        margin: 0 0 0 8px;
     }
 }

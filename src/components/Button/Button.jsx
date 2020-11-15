@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./button.scss";
 
-export const Button = ({ children }) => (
-  <button className="button" type="submit">
+export const Button = ({ children, className }) => (
+  <button className={className} type="submit">
     {children}
   </button>
 );
@@ -11,4 +11,5 @@ export const Button = ({ children }) => (
 Button.propTypes = {
   children: PropTypes.string,
   type: PropTypes.string,
+  className: PropTypes.string,
 };

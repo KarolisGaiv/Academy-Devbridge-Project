@@ -9,23 +9,26 @@ $btntxt-disabled: #9ea7b3;
     border: 0;
     border-radius: 65px;
     color: $color-white;
-    cursor: pointer;
     font-family: $font-roboto;
     font-size: $size-16;
     height: 40px;
     padding: 8px 24px;
     text-transform: uppercase;
 
-    &:hover,
-    &:focus {
-        background-color: $btn-hover;
+    &--enabled {
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background-color: $btn-hover;
+        }
+
+        &:active {
+            background-color: $btn-active;
+        }
     }
 
-    &:active {
-        background-color: $btn-active;
-    }
-
-    &:disabled {
+    &--disabled {
         background-color: $color-grey-2;
         color: $btntxt-disabled;
     }

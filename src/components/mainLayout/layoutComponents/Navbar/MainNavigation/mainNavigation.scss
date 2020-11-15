@@ -30,14 +30,14 @@ $transparent: transparent;
     &__chevron {
         left: 50%;
         position: absolute;
-        stroke: $color-light-white;
+        stroke: $color-grey-1;
         top: 50%;
         transform: translate(-50%, -50%);
         transition: transform 0.2s;
 
         &--background {
             background-color: $color-dark-grey;
-            border: 2px solid $color-light-white;
+            border: 2px solid $color-grey-1;
             border-radius: 50%;
             cursor: pointer;
             height: 26px;
@@ -74,7 +74,7 @@ $transparent: transparent;
 
     &__icon {
         height: 24px;
-        stroke: $color-light-white;
+        stroke: $color-grey-1;
         vertical-align: middle;
         width: 24px;
     }
@@ -84,7 +84,7 @@ $transparent: transparent;
     }
 
     &__text {
-        color: $color-light-white;
+        color: $color-grey-1;
         font-weight: 500;
         padding-left: 20px;
         vertical-align: middle;
@@ -99,15 +99,15 @@ $transparent: transparent;
     }
 
     .selected &__item-background {
-        fill: $color-light-white;
+        fill: $color-grey-1;
     }
     @media (hover: hover) and (pointer: fine) {
         &__item:hover &__icon {
-            stroke: $color-light-white;
+            stroke: $color-grey-1;
         }
 
         &__item:hover &__text {
-            color: $color-light-white;
+            color: $color-grey-1;
         }
 
         &__item:hover &__item-background {

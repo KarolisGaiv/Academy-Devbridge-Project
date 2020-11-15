@@ -19,7 +19,7 @@ export default class InputName extends Component {
     return (
       <div className="container">
         <InputField
-          label="FIRST NAME"
+          label="first name"
           value={fname}
           type="text"
           placeholder="e.g. John"
@@ -29,7 +29,7 @@ export default class InputName extends Component {
           onChange={this.handleChange("fname")}
         />
         <InputField
-          label="LAST NAME"
+          label="last name"
           value={lname}
           type="text"
           placeholder="e.g. Smith"

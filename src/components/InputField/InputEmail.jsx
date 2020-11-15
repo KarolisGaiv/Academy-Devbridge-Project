@@ -20,7 +20,7 @@ export default class InputEmail extends Component {
     return (
       <div className="container">
         <InputField
-          label="EMAIL"
+          label="email"
           value={email}
           type="email"
           placeholder="Valid email address"

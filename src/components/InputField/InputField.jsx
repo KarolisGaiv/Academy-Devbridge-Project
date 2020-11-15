@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { validateInput } from "components/InputField/inputValidators";
 import { ReactComponent as CheckIcon } from "assets/redCrossIcon.svg";
-import "./inputField.scss";
+import "./input-field.scss";
 
 const InputField = ({
   value,
@@ -27,7 +27,11 @@ const InputField = ({
       <input
         type={type}
         value={value}
-        className={error ? "input-wrap__field--error" : "input-wrap__field"}
+        className={
+          error
+            ? "input-wrap__field input-wrap__field--error"
+            : "input-wrap__field"
+        }
         placeholder={placeholder}
         onChange={handleChange}
       />

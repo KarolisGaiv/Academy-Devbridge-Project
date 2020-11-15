@@ -20,7 +20,7 @@ export default class InputPassword extends Component {
     return (
       <div className="container">
         <InputField
-          label="PASSWORD"
+          label="password"
           value={pass}
           type="password"
           placeholder="At least 8 characters, one letter, one number"
@@ -30,7 +30,7 @@ export default class InputPassword extends Component {
           onChange={this.handleChange("pass")}
         />
         <InputField
-          label="REPEAT PASSWORD"
+          label="repeat password"
           value={rpass}
           type="password"
           placeholder="At least 8 characters, one letter, one number"

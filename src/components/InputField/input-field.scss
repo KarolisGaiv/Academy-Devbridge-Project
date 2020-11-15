@@ -1,0 +1,37 @@
+@import '../../styles/base/base';
+
+.text-danger {
+    color: $color-red;
+    font-family: $font-roboto;
+    font-size: $size-10;
+}
+
+::placeholder {
+    color: $color-grey-4;
+    font-family: $font-roboto;
+}
+
+.input-wrap__field {
+    border: 1px solid $color-grey-4;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 48px;
+    margin-top: 8px;
+    outline-color: $color-blue-dark;
+    padding: 12px 16px;
+    width: 100%;
+
+    &--error {
+        border: 1px solid $color-red;
+    }
+}
+
+.input-wrap {
+    margin: 20px;
+}
+
+svg {
+    left: 90%;
+    position: fixed;
+    transform: translateY(-280%);
+}

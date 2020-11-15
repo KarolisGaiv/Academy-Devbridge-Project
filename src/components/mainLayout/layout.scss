@@ -1,0 +1,44 @@
+@import '../../styles/base/base';
+@import '../../styles/base/colors';
+
+.layout__wrapper {
+    display: grid;
+    grid-template-areas:
+        'n h'
+        'n c'
+        'n f';
+    grid-template-columns: 0.3fr 11.7fr;
+    grid-template-rows: 1fr 10.25fr 0.75fr;
+
+    height: 100%;
+
+    .header__wrapper {
+        grid-area: h;
+    }
+
+    .content__wrapper {
+        background: $color-grey-1;
+        grid-area: c;
+    }
+
+    .footer__wrapper {
+        grid-area: f;
+    }
+
+    .navbar__wrapper {
+        background: $color-purple-dark;
+        grid-area: n;
+        z-index: $z-index-timeline;
+    }
+
+    .header__wrapper,
+    .footer__wrapper {
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+        z-index: $z-index-base;
+    }
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 0.75fr 11.25fr;
+        grid-template-rows: 1fr 10.25fr 0.75fr;
+    }
+}

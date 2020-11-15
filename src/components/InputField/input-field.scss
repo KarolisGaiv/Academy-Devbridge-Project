@@ -1,41 +1,28 @@
-$grey: #8492a6;
-$validerror: #ff6e75;
-$lightgrey: #dcdfe3;
-$size-14: 14px;
-$size-10: 10px;
-
-@import '../../styles/base/typography';
-
-label {
-    color: $grey;
-    font-family: $roboto-medium;
-    font-size: $size-14;
-}
+@import '../../styles/base/base';
 
 .text-danger {
-    color: $validerror;
-    font-family: $roboto-medium;
+    color: $color-red;
+    font-family: $font-roboto;
     font-size: $size-10;
 }
 
 ::placeholder {
-    color: $lightgrey;
-    font-family: $roboto-medium;
+    color: $color-grey-4;
+    font-family: $font-roboto;
 }
 
-.input-wrap__field,
-%input-field {
-    border: 1px solid $lightgrey;
+.input-wrap__field {
+    border: 1px solid $color-grey-4;
     border-radius: 5px;
     box-sizing: border-box;
     height: 48px;
     margin-top: 8px;
+    outline-color: $color-blue-dark;
     padding: 12px 16px;
     width: 100%;
 
     &--error {
-        @extend %input-field;
-        border: 1px solid $validerror;
+        border: 1px solid $color-red;
     }
 }
 

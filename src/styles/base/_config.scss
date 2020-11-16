@@ -1,7 +1,11 @@
-label {
+.input-label {
     color: $color-grey-label;
     font-family: $main-font;
     font-size: $size-14;
     font-weight: 700;
     text-transform: uppercase;
+
+    &--disabled {
+        color: $color-grey-3;
+    }
 }

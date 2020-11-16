@@ -18,14 +18,14 @@ export default class InputEmail extends Component {
     const { email } = this.state;
 
     return (
-      <div className="container">
+      <div className="input-email">
         <InputField
           label="email"
           value={email}
           type="email"
           placeholder="Valid email address"
           validators={[
-            { check: Validators.email, message: "EMAIL IS NOT VALID" },
+            { check: Validators.email, message: "email is not valid" },
           ]}
           onChange={this.handleChange("email")}
         />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import { validateInput } from "components/InputField/inputValidators";
-import { ReactComponent as CheckIcon } from "assets/redCrossIcon.svg";
+import { ReactComponent as CrossIcon } from "assets/redCrossIcon.svg";
 import "./input-field.scss";
 
 const InputField = ({
@@ -11,6 +11,7 @@ const InputField = ({
   placeholder,
   validators,
   type,
+  required,
   onChange,
 }) => {
   const [error, setError] = useState(false);
@@ -23,7 +24,11 @@ const InputField = ({
 
   return (
     <div className="input-wrap">
-      {label && <label htmlFor="input-field">{label}</label>}
+      {label && (
+        <label htmlFor="input-field" className="input-label">
+          {label}
+        </label>
+      )}
       <input
         type={type}
         value={value}
@@ -33,13 +38,14 @@ const InputField = ({
             : "input-wrap__field"
         }
         placeholder={placeholder}
+        required={required}
         onChange={handleChange}
       />
       {error && (
-        <span className="text-danger">
-          {error.message}
-          <CheckIcon />
-        </span>
+        <div className="input-error-cross">
+          <span className="text-danger"> {error.message} </span>
+          <CrossIcon />
+        </div>
       )}
     </div>
   );
@@ -51,6 +57,7 @@ InputField.propTypes = {
   placeholder: PropTypes.string,
   validators: PropTypes.array,
   type: PropTypes.string,
+  required: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };
 
@@ -60,6 +67,7 @@ InputField.defaultProps = {
   placeholder: "",
   type: "text",
   validators: [],
+  required: false,
 };
 
 export default InputField;

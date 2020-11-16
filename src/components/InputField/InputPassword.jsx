@@ -15,29 +15,19 @@ export default class InputPassword extends Component {
   };
 
   render() {
-    const { pass, rpass } = this.state;
+    const { pass } = this.state;
 
     return (
-      <div className="container">
+      <div className="input-password">
         <InputField
           label="password"
           value={pass}
           type="password"
-          placeholder="At least 8 characters, one letter, one number"
+          placeholder="At least 8 characters with one letter or digit"
           validators={[
-            { check: Validators.password, message: "PASSWORD IS NOT VALID" },
+            { check: Validators.password, message: "password is not valid" },
           ]}
           onChange={this.handleChange("pass")}
-        />
-        <InputField
-          label="repeat password"
-          value={rpass}
-          type="password"
-          placeholder="At least 8 characters, one letter, one number"
-          validators={[
-            { check: Validators.password, message: "PASSWORD IS NOT VALID" },
-          ]}
-          onChange={this.handleChange("rpass")}
         />
       </div>
     );

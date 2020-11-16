@@ -1,0 +1,86 @@
+@import '../../styles/base/typography';
+@import '../../styles/base/colors';
+
+body {
+    color: $color-grey-7;
+    font-family: $font-roboto;
+    font-size: $size-14;
+    line-height: 22px;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    height: 76px;
+    position: relative;
+    width: 40px;
+
+    &__btn {
+        border: 0;
+        border-radius: 50%;
+        height: 40px;
+        outline: 0;
+        width: 40px;
+    }
+
+    &__icon-placeholder {
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+}
+
+.drop-menu {
+    display: inline-block;
+    min-width: 200px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+
+    &__arrow-up {
+        background-color: $color-white;
+        border: 1px solid $color-grey-4;
+        border-bottom: transparent;
+        border-right: transparent;
+        height: 5px;
+        position: absolute;
+        right: 15px;
+        top: -3px;
+        transform: rotate(45deg);
+        width: 5px;
+    }
+
+    &__wrapper {
+        background-color: $color-white;
+        border: 1px solid $color-grey-4;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    &__item {
+        cursor: pointer;
+
+        &:hover {
+            background: $color-grey-2;
+        }
+    }
+
+    &__item-body {
+        align-items: center;
+        display: flex;
+        margin: 15px;
+    }
+
+    &__text {
+        margin: 0 0 0 8px;
+    }
+}

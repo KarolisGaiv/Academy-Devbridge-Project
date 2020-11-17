@@ -36,3 +36,10 @@
         padding-left: 3px;
     }
 }
+
+@media (max-height: 48.125em) {
+    .form-container {
+        margin-top: 30px;
+        padding: 22px 32px;
+    }
+}

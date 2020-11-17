@@ -2,18 +2,12 @@
 
 .text-danger {
     color: $color-red;
-    font-family: $font-roboto;
     font-size: $size-10;
     text-transform: uppercase;
 }
 
 ::placeholder {
     color: $color-grey-4;
-    font-family: $font-roboto;
-}
-
-:invalid {
-    text-transform: uppercase;
 }
 
 .input-wrap__field {
@@ -33,6 +27,12 @@
 
 .input-wrap {
     margin-top: 33px;
+}
+
+@media (max-height: 48.125em) {
+    .input-wrap {
+        margin-top: 20px;
+    }
 }
 
 .input-passwords,

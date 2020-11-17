@@ -1,10 +1,10 @@
 import React from "react";
 import "./registration-form.scss";
-import "./form.scss";
+import "../form.scss";
 import { Redirect } from "react-router-dom";
-import { Button } from "../Button/Button";
-import InputField from "../InputField/InputField";
-import { Validators } from "../InputField/inputValidators";
+import { Button } from "../../Button/Button";
+import InputField from "../../InputField/InputField";
+import { Validators } from "../../InputField/inputValidators";
 
 export class RegistrationForm extends React.Component {
   constructor(props) {

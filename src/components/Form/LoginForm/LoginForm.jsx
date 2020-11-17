@@ -1,10 +1,10 @@
 import React from "react";
 import "./login-form.scss";
-import "./form.scss";
-import { Button } from "../Button/Button";
+import "../form.scss";
+import { Button } from "../../Button/Button";
 import { Redirect } from "react-router-dom";
-import InputField from "../InputField/InputField";
-import { Validators } from "../InputField/inputValidators";
+import InputField from "../../InputField/InputField";
+import { Validators } from "../../InputField/inputValidators";
 
 export class LoginForm extends React.Component {
   constructor(props) {

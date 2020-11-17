@@ -31,6 +31,12 @@
     margin-top: 33px;
 }
 
+@media (max-height: 48.125em) {
+    .input-wrap {
+        margin-top: 20px;
+    }
+}
+
 .input-passwords,
 .input-names {
     column-gap: 20px;

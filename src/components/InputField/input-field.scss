@@ -2,14 +2,14 @@
 
 .text-danger {
     color: $color-red;
-    font-family: $font-roboto;
+    font-family: $main-font;
     font-size: $size-10;
     text-transform: uppercase;
 }
 
 ::placeholder {
     color: $color-grey-4;
-    font-family: $font-roboto;
+    font-family: $main-font;
 }
 
 :invalid {

@@ -1,13 +1,13 @@
 import React from "react";
 import "./header.scss";
 import { ReactComponent as NotificationBell } from "../../../../assets/notification.svg";
-import ProfileWidget from "./ProfileWidget/ProfileWidget";
+import UserProfile from "../../../UserProfile/UserProfile";
 
 const Header = () => {
   return (
     <header className="header">
       <div className="header__profile-widget">
-        <ProfileWidget />
+        <UserProfile />
       </div>
       <div className="header__notification">
         <NotificationBell />

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./user_profile.scss";
+import "./user-profile.scss";
 import { ReactComponent as UserProfile } from "assets/profileIcon.svg";
 import { ReactComponent as SettingsIcon } from "assets/settingsIcon.svg";
 import { ReactComponent as LogoutIcon } from "assets/logoutIcon.svg";
@@ -36,7 +36,7 @@ class User_Profile extends Component {
   render() {
     return (
       <div
-        className="container"
+        className="widget-container"
         ref={(node) => {
           this.node = node;
         }}

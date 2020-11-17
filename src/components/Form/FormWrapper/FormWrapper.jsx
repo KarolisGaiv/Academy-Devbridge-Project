@@ -6,10 +6,12 @@ import "./form-wrapper.scss";
 export function FormWrapper({ children }) {
   return (
     <div className="form-wrapper">
-      <figure className="form-wrapper__logo">
-        <FormLogo />
-        {children}
-      </figure>
+      <div className="form-wrapper__field">
+        <figure className="form-wrapper__logo">
+          <FormLogo />
+          {children}
+        </figure>
+      </div>
     </div>
   );
 }

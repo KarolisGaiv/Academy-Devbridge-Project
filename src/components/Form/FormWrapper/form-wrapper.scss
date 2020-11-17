@@ -4,15 +4,23 @@
     height: 100vh;
     width: 100vw;
     background-color: $color-grey-form;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     &__logo {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+}
+@media (max-height: 48.125em) {
+    .form-wrapper {
+        overflow: scroll;
     }
 }

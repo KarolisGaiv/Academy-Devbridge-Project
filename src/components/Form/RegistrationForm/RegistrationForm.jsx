@@ -58,7 +58,7 @@ export class RegistrationForm extends React.Component {
         <p className="form-container__sublegend">
           Let&rsquo;s get you on board
         </p>
-        <form className="form-container__form-grid">
+        <div className="form-container__form-grid">
           <InputField
             label="first name"
             value={this.state.fname}
@@ -117,7 +117,7 @@ export class RegistrationForm extends React.Component {
             required={true}
             onChange={this.handleChange("rpass")}
           />
-        </form>
+        </div>
         <footer className="form-container__footer">
           <Button className="button button--enabled">Register</Button>
           <small className="form-container__footer-text">

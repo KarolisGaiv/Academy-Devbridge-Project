@@ -36,7 +36,7 @@ class User_Profile extends Component {
   render() {
     return (
       <div
-        className="container"
+        className="widget-container"
         ref={(node) => {
           this.node = node;
         }}

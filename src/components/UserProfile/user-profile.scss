@@ -36,10 +36,10 @@ body {
 
 .drop-menu {
     display: inline-block;
-    min-width: 200px;
     position: absolute;
     right: 0;
     top: 50px;
+    width: 200px;
 
     &__arrow-up {
         background-color: $color-white;
@@ -80,7 +80,14 @@ body {
         margin: 15px;
     }
 
+    svg {
+        flex-shrink: 0;
+    }
+
     &__text {
-        margin: 0 0 0 8px;
+        margin-left: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }

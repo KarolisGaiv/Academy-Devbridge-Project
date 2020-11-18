@@ -1,10 +1,9 @@
 import React from "react";
-import "./login-form.scss";
-import "../form.scss";
-import { Button } from "../../Button/Button";
 import { Redirect } from "react-router-dom";
+import FormContainer from "../FormContainer/FormContainer";
 import InputField from "../../InputField/InputField";
 import { Validators } from "../../InputField/inputValidators";
+import "./login-form.scss";
 
 export class LoginForm extends React.Component {
   constructor(props) {
@@ -17,15 +16,14 @@ export class LoginForm extends React.Component {
       redirect: false,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.submit = this.submit.bind(this);
   }
+
   handleChange = (key) => (value) => {
     this.setState({ [key]: value });
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-
+  submit = () => {
     if (
       !Validators.email(this.state.email) &&
       !Validators.password(this.state.pass)
@@ -41,43 +39,44 @@ export class LoginForm extends React.Component {
       return <Redirect to="/register" />;
     }
     return (
-      <form className="form-container" onSubmit={this.handleSubmit}>
-        <h2 className="form-container__legend">Login</h2>
-        <p className="form-container__sublegend">Welcome back! Login, please</p>
-        <div className="form-container__form-grid">
-          <InputField
-            label="email"
-            value={this.state.email}
-            type="email"
-            placeholder="Valid email address"
-            validators={[
-              { check: Validators.email, message: "email is not valid" },
-            ]}
-            required={true}
-            onChange={this.handleChange("email")}
-          />
-          <InputField
-            label="password"
-            value={this.state.pass}
-            type="password"
-            placeholder="At least 8 characters"
-            validators={[
-              { check: Validators.password, message: "password is not valid" },
-            ]}
-            required={true}
-            onChange={this.handleChange("pass")}
-          />
-        </div>
-        <footer className="form-container__footer">
-          <Button className="button button--enabled">Login</Button>
-          <small className="form-container__footer-text">
-            Don&rsquo;t have an account?
-            <a className="form-container__sign-link" href="/register">
-              Sign up
-            </a>
-          </small>
-        </footer>
-      </form>
+      <FormContainer
+        legend="Login"
+        sublegend="Welcome back! Login, please"
+        buttonText="login"
+        smallText="Don&rsquo;t have an account?"
+        path="/register"
+        link="Sign up"
+        submit={this.submit}
+        elements={
+          <React.Fragment>
+            <InputField
+              label="email"
+              value={this.state.email}
+              type="email"
+              placeholder="Valid email address"
+              validators={[
+                { check: Validators.email, message: "email is not valid" },
+              ]}
+              required={true}
+              onChange={this.handleChange("email")}
+            />
+            <InputField
+              label="password"
+              value={this.state.pass}
+              type="password"
+              placeholder="At least 8 characters"
+              validators={[
+                {
+                  check: Validators.password,
+                  message: "password is not valid",
+                },
+              ]}
+              required={true}
+              onChange={this.handleChange("pass")}
+            />
+          </React.Fragment>
+        }
+      />
     );
   }
 }

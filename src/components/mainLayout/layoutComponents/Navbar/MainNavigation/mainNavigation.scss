@@ -147,39 +147,36 @@ $transparent: transparent;
     .selected &__item-background {
         fill: $color-grey-1;
     }
+
     @media (hover: hover) and (pointer: fine) {
-         a:not(.selected) &__item {
-
-            &--short:hover {
-                background:
-                radial-gradient(100% 31% at top left, transparent 94%, $color-hover-purple 100%) top 0px right 0/18px 45px, 
-                linear-gradient(0deg, $color-hover-purple 70%, transparent 70%) top 1px right 18px/29px 44px, 
-                radial-gradient(100% 70% at bottom right, $color-hover-purple 97%, transparent 100%) top 0px right 46px/29px 45px, 
-                radial-gradient(100% 30% at bottom left, transparent 97%, $color-hover-purple 100%) top 45px right 0px/18px 45px,
-                linear-gradient(0deg, transparent 30%, $color-hover-purple 30%) top 44px right 18px/29px 47px, 
-                radial-gradient(100% 70% at top right,$color-hover-purple 97%, transparent 100%) top 45px right 46px/29px 46px;
-                background-repeat:no-repeat;
-            }
-
-            &--long:hover {
-                background:
-                radial-gradient(100% 31% at top left, transparent 94%, $color-hover-purple 100%) top 0px right 0/18px 45px, 
-                linear-gradient(0deg, $color-hover-purple 70%, transparent 70%) top 1px right 18px/139px 44px, 
-                radial-gradient(100% 70% at bottom right, $color-hover-purple 97%, transparent 100%) top 0px right 156px/29px 45px, 
-                radial-gradient(100% 30% at bottom left, transparent 97%, $color-hover-purple 100%) top 45px right 0px/18px 45px,
-                linear-gradient(0deg, transparent 30%, $color-hover-purple 30%) top 44px right 18px/139px 47px, 
-                radial-gradient(100% 70% at top right,$color-hover-purple 97%, transparent 100%) top 45px right 156px/29px 46px;
-                background-repeat:no-repeat;
-                
-            }
-
-            &--long:hover &__icon{
-                stroke: $color-grey-1;
-            }
-
-            &--long:hover &__text{
-                color: $color-grey-1;
-            }
+        a:not(.selected) &__item--short:hover {
+            background:
+            radial-gradient(100% 31% at top left, transparent 94%, $color-hover-purple 100%) top 0px right 0/18px 45px, 
+            linear-gradient(0deg, $color-hover-purple 70%, transparent 70%) top 1px right 18px/29px 44px, 
+            radial-gradient(100% 70% at bottom right, $color-hover-purple 97%, transparent 100%) top 0px right 46px/29px 45px, 
+            radial-gradient(100% 30% at bottom left, transparent 97%, $color-hover-purple 100%) top 45px right 0px/18px 45px,
+            linear-gradient(0deg, transparent 30%, $color-hover-purple 30%) top 44px right 18px/29px 47px, 
+            radial-gradient(100% 70% at top right,$color-hover-purple 97%, transparent 100%) top 45px right 46px/29px 46px;
+            background-repeat:no-repeat;
+        }
+    
+        a:not(.selected) &__item--long:hover {
+            background:
+            radial-gradient(100% 31% at top left, transparent 94%, $color-hover-purple 100%) top 0px right 0/18px 45px, 
+            linear-gradient(0deg, $color-hover-purple 70%, transparent 70%) top 1px right 18px/139px 44px, 
+            radial-gradient(100% 70% at bottom right, $color-hover-purple 97%, transparent 100%) top 0px right 156px/29px 45px, 
+            radial-gradient(100% 30% at bottom left, transparent 97%, $color-hover-purple 100%) top 45px right 0px/18px 45px,
+            linear-gradient(0deg, transparent 30%, $color-hover-purple 30%) top 44px right 18px/139px 47px, 
+            radial-gradient(100% 70% at top right,$color-hover-purple 97%, transparent 100%) top 45px right 156px/29px 46px;
+            background-repeat:no-repeat;
+        }
+    
+        a:not(.selected) &__item--long:hover &__icon{
+            stroke: $color-grey-1;
+        }
+    
+        a:not(.selected) &__item--long:hover &__text{
+            color: $color-grey-1;
         }
     }
 }

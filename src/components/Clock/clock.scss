@@ -1,0 +1,8 @@
+@import '../../styles/base/base';
+
+.clock-wrapper {
+    color: $color-clock;
+    font-family: $main-font;
+    font-size: $size-100;
+    font-weight: bold;
+}

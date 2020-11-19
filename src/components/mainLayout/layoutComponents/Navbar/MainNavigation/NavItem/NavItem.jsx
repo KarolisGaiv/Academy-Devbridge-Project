@@ -19,7 +19,7 @@ const NavItem = (props) => {
 export default NavItem;
 
 NavItem.propTypes = {
-  background: propTypes.string,
+  background: propTypes.object,
   iconName: propTypes.string,
   itemText: propTypes.string,
 };

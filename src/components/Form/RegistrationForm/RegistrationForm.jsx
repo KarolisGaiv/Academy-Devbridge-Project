@@ -51,72 +51,69 @@ export class RegistrationForm extends React.Component {
         path="/login"
         link="Sign in"
         submit={this.submit}
-        elements={
-          <React.Fragment>
-            <InputField
-              label="first name"
-              value={this.state.fname}
-              type="text"
-              placeholder="e.g. Mike, Mike-Wilhelm"
-              validators={[
-                { check: Validators.name, message: "this field is required" },
-              ]}
-              required={true}
-              onChange={this.handleChange("fname")}
-            />
-            <InputField
-              label="last name"
-              value={this.state.lname}
-              type="text"
-              placeholder="e.g. Caprio, DiCaprio"
-              validators={[
-                { check: Validators.name, message: "this field is required" },
-              ]}
-              required={true}
-              onChange={this.handleChange("lname")}
-            />
-            <InputField
-              label="email"
-              value={this.state.email}
-              type="email"
-              placeholder="Valid email address"
-              validators={[
-                { check: Validators.email, message: "email is not valid" },
-              ]}
-              required={true}
-              onChange={this.handleChange("email")}
-            />
-            <InputField
-              label="password"
-              value={this.state.pass}
-              type="password"
-              placeholder="At least 8 characters"
-              validators={[
-                {
-                  check: Validators.password,
-                  message: "password is not valid",
-                },
-              ]}
-              required={true}
-              onChange={this.handleChange("pass")}
-            />
-            <InputField
-              label="repeat password"
-              value={this.state.rpass}
-              type="password"
-              placeholder="At least 8 characters"
-              validators={[
-                {
-                  check: Validators.passwordmatch,
-                  message: "passwords do not match",
-                },
-              ]}
-              required={true}
-              onChange={this.handleChange("rpass")}
-            />
-          </React.Fragment>
-        }
-      />
+      >
+        <InputField
+          label="first name"
+          value={this.state.fname}
+          type="text"
+          placeholder="e.g. Mike, Mike-Wilhelm"
+          validators={[
+            { check: Validators.name, message: "this field is required" },
+          ]}
+          required={true}
+          onChange={this.handleChange("fname")}
+        />
+        <InputField
+          label="last name"
+          value={this.state.lname}
+          type="text"
+          placeholder="e.g. Caprio, DiCaprio"
+          validators={[
+            { check: Validators.name, message: "this field is required" },
+          ]}
+          required={true}
+          onChange={this.handleChange("lname")}
+        />
+        <InputField
+          label="email"
+          value={this.state.email}
+          type="email"
+          placeholder="Valid email address"
+          validators={[
+            { check: Validators.email, message: "email is not valid" },
+          ]}
+          required={true}
+          onChange={this.handleChange("email")}
+        />
+        <InputField
+          label="password"
+          value={this.state.pass}
+          type="password"
+          placeholder="At least 8 characters"
+          validators={[
+            {
+              check: Validators.password,
+              message: "password is not valid",
+            },
+          ]}
+          required={true}
+          onChange={this.handleChange("pass")}
+        />
+        <InputField
+          label="repeat password"
+          value={this.state.rpass}
+          type="password"
+          placeholder="At least 8 characters"
+          validators={[
+            {
+              check: Validators.passwordmatch,
+              message: "passwords do not match",
+            },
+          ]}
+          required={true}
+          onChange={this.handleChange("rpass")}
+        />
+      </FormContainer>
     );
   }
 }

@@ -47,36 +47,33 @@ export class LoginForm extends React.Component {
         path="/register"
         link="Sign up"
         submit={this.submit}
-        elements={
-          <React.Fragment>
-            <InputField
-              label="email"
-              value={this.state.email}
-              type="email"
-              placeholder="Valid email address"
-              validators={[
-                { check: Validators.email, message: "email is not valid" },
-              ]}
-              required={true}
-              onChange={this.handleChange("email")}
-            />
-            <InputField
-              label="password"
-              value={this.state.pass}
-              type="password"
-              placeholder="At least 8 characters"
-              validators={[
-                {
-                  check: Validators.password,
-                  message: "password is not valid",
-                },
-              ]}
-              required={true}
-              onChange={this.handleChange("pass")}
-            />
-          </React.Fragment>
-        }
-      />
+      >
+        <InputField
+          label="email"
+          value={this.state.email}
+          type="email"
+          placeholder="Valid email address"
+          validators={[
+            { check: Validators.email, message: "email is not valid" },
+          ]}
+          required={true}
+          onChange={this.handleChange("email")}
+        />
+        <InputField
+          label="password"
+          value={this.state.pass}
+          type="password"
+          placeholder="At least 8 characters"
+          validators={[
+            {
+              check: Validators.password,
+              message: "password is not valid",
+            },
+          ]}
+          required={true}
+          onChange={this.handleChange("pass")}
+        />
+      </FormContainer>
     );
   }
 }

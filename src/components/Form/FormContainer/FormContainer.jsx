@@ -11,8 +11,8 @@ const FormContainer = (props) => {
     smallText,
     path,
     link,
-    elements,
     submit,
+    children,
   } = props;
 
   function handleSubmit(event) {
@@ -25,7 +25,7 @@ const FormContainer = (props) => {
       <form className="form-container" onSubmit={handleSubmit}>
         <h2 className="form-container__legend">{legend}</h2>
         <p className="form-container__sublegend">{sublegend}</p>
-        <div className="form-container__form-grid">{elements}</div>
+        <div className="form-container__form-grid">{children}</div>
         <footer className="form-container__footer">
           <Button className="button button--enabled">{buttonText}</Button>
           <small className="form-container__footer-text">
@@ -49,6 +49,6 @@ FormContainer.propTypes = {
   smallText: PropTypes.string,
   path: PropTypes.string,
   link: PropTypes.string,
-  elements: PropTypes.object,
+  children: PropTypes.object,
   submit: PropTypes.func,
 };

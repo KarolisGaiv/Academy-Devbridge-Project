@@ -10,7 +10,7 @@ const FormContainer = (props) => {
     buttonText,
     smallText,
     path,
-    link,
+    linkText,
     submit,
     children,
   } = props;
@@ -31,7 +31,7 @@ const FormContainer = (props) => {
           <small className="form-container__footer-text">
             {smallText}
             <a className="form-container__sign-link" href={path}>
-              {link}
+              {linkText}
             </a>
           </small>
         </footer>
@@ -48,7 +48,7 @@ FormContainer.propTypes = {
   buttonText: PropTypes.string,
   smallText: PropTypes.string,
   path: PropTypes.string,
-  link: PropTypes.string,
+  linkText: PropTypes.string,
   children: PropTypes.object,
   submit: PropTypes.func,
 };

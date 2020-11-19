@@ -45,7 +45,7 @@ export class LoginForm extends React.Component {
         buttonText="login"
         smallText="Don&rsquo;t have an account?"
         path="/register"
-        link="Sign up"
+        linkText="Sign up"
         submit={this.submit}
       >
         <InputField

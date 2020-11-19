@@ -49,7 +49,7 @@ export class RegistrationForm extends React.Component {
         buttonText="register"
         smallText="Already have an account?"
         path="/login"
-        link="Sign in"
+        linkText="Sign in"
         submit={this.submit}
       >
         <InputField

@@ -22,8 +22,6 @@ export class EatOutIntroCard extends React.Component {
   render() {
     if (this.state.redirect) {
       return <Redirect to="/login" />;
-    } else {
-      alert("not working");
     }
     return (
       <EatOutCardContainer>
@@ -31,7 +29,10 @@ export class EatOutIntroCard extends React.Component {
           <h2 className="intro-card__heading">
             View all your favorite lunch spots and more
           </h2>
-          <Button className="button button--enabled" onClick={this.setRedirect}>
+          <Button
+            className="button button--enabled"
+            handleClick={this.setRedirect}
+          >
             browse list
           </Button>
         </div>

@@ -1,12 +1,11 @@
 @import '../../../styles/base/base';
+@import '../../../styles/mixins/mixins';
 
 .form-wrapper {
     height: 100vh;
     width: 100vw;
-    background-color: $color-grey-90;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: $color-mercury;
+    @include flex-center;
 
     &__field {
         display: flex;
@@ -14,10 +13,8 @@
     }
 
     &__logo {
-        display: flex;
+        @include flex-center;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 }
 @media (max-height: 48.125em) {

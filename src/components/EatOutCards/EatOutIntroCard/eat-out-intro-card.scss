@@ -1,0 +1,15 @@
+@import '../../../styles/mixins/mixins';
+
+.intro-card {
+    @include flex-center;
+    width: auto;
+    padding: 53px 40px;
+    flex-direction: column;
+
+    &__heading {
+        font-weight: 900;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 24px;
+    }
+}

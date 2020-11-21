@@ -1,0 +1,54 @@
+@import '../../styles/base/base';
+@import '../../styles/mixins/mixins';
+
+.box {
+    display: flex;
+    font-size: $size-14;
+    justify-content: flex-end;
+    overflow: hidden;
+    width: 145px;
+}
+
+.users {
+    @include ratingbox($color-blue-bluewood, $color-yellow, 53px);
+}
+
+.expand {
+    box-sizing: border-box;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+
+    > span {
+        content: url('../../assets/starFilled.svg');
+        margin-right: 8px;
+        padding-bottom: 5px;
+        padding-top: 9px;
+        position: relative;
+
+        &:hover::before,
+        &:hover ~ span::before {
+            content: url('../../assets/starFilled.svg');
+            padding-top: 8px;
+            position: absolute;
+        }
+    }
+
+    svg {
+        padding-bottom: 5px;
+        padding-top: 9px;
+    }
+}
+
+.rating {
+    @include ratingbox($color-yellow, $color-blue-bluewood, 65px);
+
+    &:hover {
+        width: 145px;
+
+        .expand > span {
+            content: '';
+            margin-right: 0;
+            padding: 3px;
+        }
+    }
+}

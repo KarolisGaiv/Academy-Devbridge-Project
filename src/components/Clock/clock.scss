@@ -1,7 +1,8 @@
 @import '../../styles/base/base';
+$_color-clock: $color-pickled-bluewood;
 
 .clock-wrapper {
-    color: $color-clock;
+    color: $_color-clock;
     font-family: $main-font;
     font-size: $size-100;
     font-weight: bold;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import { EatOutCardContainer } from "../EatOutCardContainer/EatOutCardContainer";
+import { InfoCardContainer } from "../InfoCardContainer/InfoCardContainer";
 import { Button } from "../../Button/Button";
 import "./eat-out-intro-card.scss";
 
@@ -24,9 +24,9 @@ export class EatOutIntroCard extends React.Component {
       return <Redirect to="/login" />;
     }
     return (
-      <EatOutCardContainer>
-        <div className="intro-card">
-          <h2 className="intro-card__heading">
+      <InfoCardContainer>
+        <div className="eat-out-intro-card">
+          <h2 className="eat-out-intro-card__heading">
             View all your favorite lunch spots and more
           </h2>
           <Button
@@ -36,7 +36,7 @@ export class EatOutIntroCard extends React.Component {
             browse list
           </Button>
         </div>
-      </EatOutCardContainer>
+      </InfoCardContainer>
     );
   }
 }

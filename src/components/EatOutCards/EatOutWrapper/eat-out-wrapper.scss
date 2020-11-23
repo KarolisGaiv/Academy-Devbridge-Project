@@ -1,0 +1,16 @@
+@import '../../../styles/base//base';
+
+.eat-out-wrapper {
+    background-color: $color-porcelain;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 40px;
+
+    @media (max-width: 1000px) {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto;
+        grid-row-gap: 40px;
+        justify-content: center;
+    }
+}

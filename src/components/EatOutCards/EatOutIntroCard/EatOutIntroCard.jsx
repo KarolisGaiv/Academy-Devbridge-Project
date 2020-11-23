@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import { InfoCardContainer } from "../InfoCardContainer/InfoCardContainer";
+import { InfoCardContainer } from "../../InfoCardContainer/InfoCardContainer";
 import { Button } from "../../Button/Button";
 import "./eat-out-intro-card.scss";
 

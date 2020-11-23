@@ -1,5 +1,5 @@
 import React from "react";
-import { EatOutCardContainer } from "../InfoCardContainer/InfoCardContainer";
+import { EatOutCardContainer } from "../../InfoCardContainer/InfoCardContainer";
 
 export class EatOutCard extends React.Component {
   render() {

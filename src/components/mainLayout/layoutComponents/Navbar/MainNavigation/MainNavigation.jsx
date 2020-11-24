@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import propTypes from "prop-types";
-import SVGIcon from "./SVGIcon";
+import SVGIcon from "../../../../SVGIcon/SVGIcon";
 import NavItem from "./NavItem/NavItem";
 
 import "./mainNavigation.scss";

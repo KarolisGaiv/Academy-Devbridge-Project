@@ -1,6 +1,6 @@
 import React from "react";
 import propTypes from "prop-types";
-import SVGIcon from "../SVGIcon";
+import SVGIcon from "../../../../../SVGIcon/SVGIcon";
 
 import "../mainNavigation.scss";
 

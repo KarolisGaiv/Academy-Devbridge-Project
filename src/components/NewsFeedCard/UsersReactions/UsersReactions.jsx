@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import SVGIcon from "../../SVGIcon/SVGIcon";
 
-import "./usersReactions.scss";
+import "./users-reactions.scss";
 
 const UsersReactions = (props) => {
   const reactionIconSelect = (data) => {

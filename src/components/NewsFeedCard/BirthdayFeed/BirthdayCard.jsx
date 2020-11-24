@@ -4,9 +4,12 @@ import UserAvatar from "../../UserAvatar/UserAvatar";
 import SVGIcon from "../../SVGIcon/SVGIcon";
 import FormatDate from "../FormatDate";
 
-import "./birthdayCard.scss";
+import "./birthday-card.scss";
 
 const BirthdayCard = (props) => {
+
+  const svgConfettiPlacement = ["left-1", "left-2", "right-1", "right-2"];
+
   return (
     <div className="birthday">
       <div className="birthday__profile">
@@ -25,15 +28,15 @@ const BirthdayCard = (props) => {
         name="openPresent"
         className="birthday__svg birthday__open-present"
       />
-      {[...Array(4)].map((value, index) => (
+      {svgConfettiPlacement.map((value) => (
         <>
           <SVGIcon
             name="confettiCircle"
-            className={`birthday__svg birthday__confetti-circle--${index + 1}`}
+            className={`birthday__svg birthday__confetti-circle svg-circle--${value}`}
           />
           <SVGIcon
             name="confettiStar"
-            className={`birthday__svg birthday__confetti-star--${index + 1}`}
+            className={`birthday__svg birthday__confetti-star svg-star--${value}`}
           />
         </>
       ))}

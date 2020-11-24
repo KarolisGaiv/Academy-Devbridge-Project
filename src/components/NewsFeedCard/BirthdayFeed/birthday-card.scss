@@ -43,52 +43,6 @@
     width: 65px;
   }
 
-  &__confetti-circle {
-
-    &--1 {
-      top: 15%;
-      left: 7%;
-    }
-
-    &--2 {
-      top: 10%;
-      left: 25%;
-    }
-
-    &--3 {
-      top: 20%;
-      right: 35%;
-    }
-
-    &--4 {
-      top: 17%;
-      right: 15%;
-    }
-  }
-
-  &__confetti-star {
-
-    &--1 {
-      top: 25%;
-      left: 17%;
-    }
-
-    &--2 {
-      top: 30%;
-      left: 30%;
-    }
-
-    &--3 {
-      top: 12%;
-      right: 30%;
-    }
-
-    &--4 {
-      top: 35%;
-      right: 25%;
-    }
-  }
-
   .date {
     font-weight: 500;
   }
@@ -96,5 +50,51 @@
   p {
     margin: 0;
     line-height: 18px;
+  }
+}
+
+.svg-circle {
+
+  &--left-1 {
+    top: 15%;
+    left: 7%;
+  }
+
+  &--left-2 {
+    top: 10%;
+    left: 25%;
+  }
+
+  &--right-1 {
+    top: 20%;
+    right: 35%;
+  }
+
+  &--right-2 {
+    top: 17%;
+    right: 15%;
+  }
+}
+
+.svg-star {
+
+  &--left-1 {
+    top: 25%;
+    left: 17%;
+  }
+
+  &--left-2 {
+    top: 30%;
+    left: 30%;
+  }
+
+  &--right-1 {
+    top: 12%;
+    right: 30%;
+  }
+
+  &--right-2 {
+    top: 35%;
+    right: 25%;
   }
 }

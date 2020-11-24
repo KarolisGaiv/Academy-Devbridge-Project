@@ -8,8 +8,6 @@ import "./birthday-card.scss";
 
 const BirthdayCard = (props) => {
 
-  const svgConfettiPlacement = ["left-1", "left-2", "right-1", "right-2"];
-
   return (
     <div className="birthday">
       <div className="birthday__profile">
@@ -28,15 +26,15 @@ const BirthdayCard = (props) => {
         name="openPresent"
         className="birthday__svg birthday__open-present"
       />
-      {svgConfettiPlacement.map((value) => (
+      {[...Array(4)].map((value, index) => (
         <>
           <SVGIcon
             name="confettiCircle"
-            className={`birthday__svg birthday__confetti-circle svg-circle--${value}`}
+            className={`birthday__svg birthday__confetti-circle svg-circle--position-${index + 1}`}
           />
           <SVGIcon
             name="confettiStar"
-            className={`birthday__svg birthday__confetti-star svg-star--${value}`}
+            className={`birthday__svg birthday__confetti-star svg-star--position-${index + 1}`}
           />
         </>
       ))}

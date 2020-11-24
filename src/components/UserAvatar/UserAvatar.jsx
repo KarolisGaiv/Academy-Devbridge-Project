@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./userAvatar.scss";
+import "./user-avatar.scss";
 
 const UserAvatar = (props) => {
   const styles = {

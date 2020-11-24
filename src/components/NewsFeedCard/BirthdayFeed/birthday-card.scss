@@ -16,6 +16,11 @@
     transform: translate(-50%, -50%);
   }
 
+  &__text {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
   &__user {
     text-transform: uppercase;
     font-weight: 500;

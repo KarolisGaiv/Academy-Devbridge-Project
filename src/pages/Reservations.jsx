@@ -1,5 +1,4 @@
 import React from "react";
-import MainNavigation from "../components/mainLayout/layoutComponents/Navbar/MainNavigation/MainNavigation";
 
 const Reservations = () => {
   return (

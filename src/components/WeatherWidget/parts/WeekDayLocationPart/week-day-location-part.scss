@@ -1,0 +1,14 @@
+@import '../../../../styles/base/typography';
+
+$transperent-black-5: rgba(0, 0, 0, 0.5);
+
+.place {
+    color: $transperent-black-5;
+    display: flex;
+    font-size: $size-12;
+    letter-spacing: 0.5px;
+
+    &__divider {
+        margin: 0 5px;
+    }
+}

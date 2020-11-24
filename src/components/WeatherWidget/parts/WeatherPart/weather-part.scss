@@ -1,0 +1,47 @@
+@import '../../../../styles/base/typography';
+
+$transperent-black-5: rgba(0, 0, 0, 0.5);
+$transperent-black-3: rgba(0, 0, 0, 0.3);
+
+.weather {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &__temperature {
+        align-items: baseline;
+        display: flex;
+    }
+
+    &__degrees {
+        font-size: $size-60;
+        font-weight: 300;
+    }
+
+    &__type {
+        color: $transperent-black-5;
+        font-size: $size-20;
+        font-weight: 300;
+    }
+
+    &__information {
+        border-top: 1px solid $transperent-black-3;
+        color: $transperent-black-5;
+        display: flex;
+        font-size: $size-12;
+        font-weight: 300;
+        width: 81%;
+
+        .item {
+            align-items: center;
+            display: flex;
+            flex-grow: 1;
+            margin: 8px 0 0;
+
+            &__text {
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+}

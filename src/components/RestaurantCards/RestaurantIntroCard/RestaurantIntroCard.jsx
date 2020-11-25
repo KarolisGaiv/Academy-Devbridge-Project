@@ -1,10 +1,10 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import { InfoCardContainer } from "../../InfoCardContainer/InfoCardContainer";
+import { CardContainer } from "../../CardContainer/CardContainer";
 import { Button } from "../../Button/Button";
-import "./eat-out-intro-card.scss";
+import "./restaurant-intro-card.scss";
 
-export class EatOutIntroCard extends React.Component {
+export class RestaurantIntroCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,9 +24,9 @@ export class EatOutIntroCard extends React.Component {
       return <Redirect to="/eat-out" />;
     }
     return (
-      <InfoCardContainer>
-        <div className="eat-out-intro-card">
-          <h2 className="eat-out-intro-card__heading">
+      <CardContainer>
+        <div className="restaurant-intro-card">
+          <h2 className="restaurant-intro-card__heading">
             View all your favorite lunch spots and more
           </h2>
           <Button
@@ -36,7 +36,7 @@ export class EatOutIntroCard extends React.Component {
             browse list
           </Button>
         </div>
-      </InfoCardContainer>
+      </CardContainer>
     );
   }
 }

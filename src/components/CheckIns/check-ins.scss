@@ -1,0 +1,6 @@
+@import '../../styles/base/base';
+@import '../../styles/mixins/mixins';
+
+.users {
+    @include ratingbox($color-blue-bluewood, $color-yellow, 53px);
+}

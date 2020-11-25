@@ -3,52 +3,44 @@
 
 .box {
     display: flex;
-    font-size: $size-14;
     justify-content: flex-end;
     overflow: hidden;
     width: 145px;
 }
 
-.users {
-    @include ratingbox($color-blue-bluewood, $color-yellow, 53px);
-}
-
-.expand {
-    box-sizing: border-box;
-    direction: rtl;
-    unicode-bidi: bidi-override;
-
-    > span {
-        content: url('../../assets/starFilled.svg');
-        margin-right: 8px;
-        padding-bottom: 5px;
-        padding-top: 9px;
-        position: relative;
-
-        &:hover::before,
-        &:hover ~ span::before {
-            content: url('../../assets/starFilled.svg');
-            padding-top: 8px;
-            position: absolute;
-        }
-    }
-
-    svg {
-        padding-bottom: 5px;
-        padding-top: 9px;
-    }
-}
-
 .rating {
     @include ratingbox($color-yellow, $color-blue-bluewood, 65px);
+
+    &__expand {
+        direction: rtl;
+        margin-left: -3.5px;
+        unicode-bidi: bidi-override;
+
+        > span {
+            content: url('../../assets/starFilled.svg');
+            padding: 9px 8px 5px 0.1px;
+            position: relative;
+
+            &:hover::before,
+            &:hover ~ span::before {
+                content: url('../../assets/starFilled.svg');
+                padding-top: 7.7px;
+                position: absolute;
+            }
+        }
+
+        svg {
+            padding-bottom: 5px;
+            padding-top: 9px;
+        }
+    }
 
     &:hover {
         width: 145px;
 
-        .expand > span {
+        .rating__expand > span {
             content: '';
-            margin-right: 0;
-            padding: 3px;
+            padding: 3.5px;
         }
     }
 }

@@ -1,6 +1,5 @@
 @import '../../../../styles/base/typography';
-
-$transperent-black-5: rgba(0, 0, 0, 0.5);
+@import '../../../../styles/base/colors';
 
 .place {
     color: $transperent-black-5;

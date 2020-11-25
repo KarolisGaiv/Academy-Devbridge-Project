@@ -3,7 +3,7 @@ import "./weather-widget.scss";
 import WeekDayLocationSection from "./parts/WeekDayLocationPart/WeekDayLocationPart";
 import WeatherPart from "./parts/WeatherPart/WeatherPart";
 import IconPart from "./parts/IconPart/IconPart";
-import dashboard from "./db";
+import dashboard from "../../db";
 
 const WeatherWidget = () => {
   const weather = dashboard.weather;

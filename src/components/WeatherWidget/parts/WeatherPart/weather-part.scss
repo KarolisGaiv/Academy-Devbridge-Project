@@ -1,7 +1,8 @@
 @import '../../../../styles/base/typography';
+@import '../../../../styles/base/colors';
 
-$transperent-black-5: rgba(0, 0, 0, 0.5);
-$transperent-black-3: rgba(0, 0, 0, 0.3);
+$_transperent-black-3: rgba(0, 0, 0, 0.3);
+$_size-60: 60px;
 
 .weather {
     display: flex;
@@ -15,7 +16,7 @@ $transperent-black-3: rgba(0, 0, 0, 0.3);
     }
 
     &__degrees {
-        font-size: $size-60;
+        font-size: $_size-60;
         font-weight: 300;
     }
 
@@ -26,7 +27,7 @@ $transperent-black-3: rgba(0, 0, 0, 0.3);
     }
 
     &__information {
-        border-top: 1px solid $transperent-black-3;
+        border-top: 1px solid $_transperent-black-3;
         color: $transperent-black-5;
         display: flex;
         font-size: $size-12;
@@ -37,10 +38,10 @@ $transperent-black-3: rgba(0, 0, 0, 0.3);
             align-items: center;
             display: flex;
             flex-grow: 1;
-            margin: 8px 0 0;
+            margin-top: 8px;
 
             &__text {
-                margin: 0 0 0 5px;
+                margin-left: 5px;
             }
         }
     }

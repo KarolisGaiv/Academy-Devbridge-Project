@@ -1,12 +1,12 @@
 import React from "react";
 import "./icon-part.scss";
 import PropTypes from "prop-types";
-import SVGIcon from "./SVGIcon";
+import SVGIcon from "../../../SVGIcon/SVGIcon";
 
 const IconPart = ({ type }) => {
   return (
     <div className="icon">
-      <SVGIcon type={type} />
+      <SVGIcon name={type} />
     </div>
   );
 };

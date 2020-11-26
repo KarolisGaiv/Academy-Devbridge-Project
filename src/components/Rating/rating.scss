@@ -49,7 +49,7 @@
     }
 
     &__collapse {
-        @include ratingbox($color-yellow, $color-blue-bluewood, 65px);
+        @include ratingbox($color-yellow, $color-pickled-bluewood, 65px);
 
         overflow: hidden;
 

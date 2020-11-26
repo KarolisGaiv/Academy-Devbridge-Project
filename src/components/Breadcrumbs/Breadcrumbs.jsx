@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SVGIcon from "../SVGIcon/SVGIcon";
 import { NavLink, Switch } from "react-router-dom";
 
@@ -7,8 +7,6 @@ import "./breadcrumbs.scss";
 const Breadcrumbs = () => {
   //get the current pathname
   const pathname = window.location.pathname;
-
-  const [breadcrumbs, getBreadcrumbsState] = useState("");
 
   const GetBreadcrumbs = (path) => {
     //create an array that contains main value
@@ -50,10 +48,7 @@ const Breadcrumbs = () => {
             exact
             key={index}
             className="breadcrumb__link"
-            onClick={(e) => {
-              LastItemPreventClick(e, index);
-              getBreadcrumbsState(GetBreadcrumbs(pathname));
-            }}
+            onClick={(e) => LastItemPreventClick(e, index)}
           >
             <li className="breadcrumb__list-item">
               <SVGIcon name="chevron-right" className="svg__arrow-icon" />

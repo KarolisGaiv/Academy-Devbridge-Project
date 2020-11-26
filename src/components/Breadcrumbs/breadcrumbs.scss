@@ -1,0 +1,49 @@
+@import '../../styles/base/base';
+
+
+.breadcrumb {
+  font-family: $main-font;
+  font-size: $size-12;
+  font-weight: 500;
+  max-width: 100%;
+  height: 100px;
+  
+  &__list {
+    padding: 0;
+    margin-top: 35px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-grey-chateau;
+
+    &:last-child {
+      color: $color-grey-7;
+      cursor: default;
+    }
+
+    &:first-child .svg__arrow-icon {
+      display: none;
+    }
+
+    &:not(:last-child):hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__list-item {
+    display: inline-block;
+    text-transform: uppercase;
+  }
+}
+
+.svg {   
+
+  &__arrow-icon {
+    stroke: $color-grey-chateau;
+    height: 7px;
+    width: 4px;
+    padding: 0px 10px;
+    vertical-align: middle;
+  }
+}

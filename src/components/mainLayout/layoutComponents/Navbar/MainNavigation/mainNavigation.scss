@@ -32,6 +32,8 @@ $transparent: transparent;
         top: 50%;
         transform: translate(-50%, -50%);
         transition: transform 0.1s;
+        height: 9px;
+        width: 5px;
 
         &--background {
             background-color: $color-grey-7;

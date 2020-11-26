@@ -6,8 +6,7 @@
     },
     {
       "id": 2,
-      "instruction":
-      "run 'nvm use' or just set the node version to the one in .nvmrc file"
+      "instruction": "run 'nvm use' or just set the node version to the one in .nvmrc file"
     },
     {
       "id": 3,
@@ -92,11 +91,7 @@
             "rating": 4.0
           }
         ],
-        "categories": [
-          "Burger",
-          "Salads",
-          "Grill"
-        ]
+        "categories": ["Burger", "Salads", "Grill"]
       },
       {
         "name": "Jurgis ir Drakonas",
@@ -151,12 +146,7 @@
             "rating": 5.0
           }
         ],
-        "categories": [
-          "Salads",
-          "Pizza",
-          "Pancakes",
-          "Soups"
-        ]
+        "categories": ["Salads", "Pizza", "Pancakes", "Soups"]
       },
       {
         "name": "Mamma Pizza",
@@ -199,9 +189,7 @@
             "rating": 5.0
           }
         ],
-        "categories": [
-          "Pizza"
-        ]
+        "categories": ["Pizza"]
       },
       {
         "name": "MOMO Grill Kaunas",
@@ -268,11 +256,7 @@
             "rating": 5.0
           }
         ],
-        "categories": [
-          "Grill",
-          "Sweets",
-          "Brunch"
-        ]
+        "categories": ["Grill", "Sweets", "Brunch"]
       },
       {
         "name": "Restoranas Siesta",
@@ -309,11 +293,7 @@
             "rating": 5
           }
         ],
-        "categories": [
-          "Salads",
-          "Grill",
-          "Soup"
-        ]
+        "categories": ["Salads", "Grill", "Soup"]
       },
       {
         "name": "Restoranas DIA",
@@ -374,12 +354,7 @@
             "rating": 4.5
           }
         ],
-        "categories": [
-          "Salads",
-          "Grill",
-          "Brunch",
-          "Soups"
-        ]
+        "categories": ["Salads", "Grill", "Brunch", "Soups"]
       },
       {
         "name": "Agave",
@@ -410,11 +385,7 @@
             "rating": 5.0
           }
         ],
-        "categories": [
-          "Salads",
-          "Grill",
-          "Pancakes"
-        ]
+        "categories": ["Salads", "Grill", "Pancakes"]
       },
       {
         "name": "Moksha",
@@ -457,10 +428,7 @@
             "rating": 5.0
           }
         ],
-        "categories": [
-          "Salads",
-          "Ramen"
-        ]
+        "categories": ["Salads", "Ramen"]
       },
       {
         "name": "Avilys",
@@ -491,10 +459,7 @@
             "rating": 5.0
           }
         ],
-        "categories": [
-          "Burger",
-          "Sandwich"
-        ]
+        "categories": ["Burger", "Sandwich"]
       },
       {
         "name": "Katpedele",
@@ -543,10 +508,7 @@
             "rating": 4.5
           }
         ],
-        "categories": [
-          "Kebab",
-          "Sweets"
-        ]
+        "categories": ["Kebab", "Sweets"]
       },
       {
         "name": "Sushi Masters",
@@ -571,10 +533,7 @@
             "rating": 4.0
           }
         ],
-        "categories": [
-          "Sushi",
-          "Soups"
-        ]
+        "categories": ["Sushi", "Soups"]
       },
       {
         "name": "Talutti - Fresh and Tasty",
@@ -611,11 +570,7 @@
             "rating": 5.0
           }
         ],
-        "categories": [
-          "Burger",
-          "Brunch",
-          "Pancakes"
-        ]
+        "categories": ["Burger", "Brunch", "Pancakes"]
       },
       {
         "name": "ieti",
@@ -664,9 +619,7 @@
             "rating": 5
           }
         ],
-        "categories": [
-          "Sweets"
-        ]
+        "categories": ["Sweets"]
       },
       {
         "name": "Pas Stanley",
@@ -697,11 +650,7 @@
             "rating": 4.5
           }
         ],
-        "categories": [
-          "Kebab",
-          "Ramen",
-          "Burger"
-        ]
+        "categories": ["Kebab", "Ramen", "Burger"]
       },
       {
         "name": "Lithuanian Pub Entry",
@@ -726,11 +675,7 @@
             "rating": 4.5
           }
         ],
-        "categories": [
-          "Salads",
-          "Sandwich",
-          "Kebab"
-        ]
+        "categories": ["Salads", "Sandwich", "Kebab"]
       },
       {
         "name": "Casa Della Pasta, pizzeria - restaurant",
@@ -748,11 +693,7 @@
         "image": "https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80",
         "checkIns": 13,
         "reviews": [],
-        "categories": [
-          "Salads",
-          "Sandwich",
-          "Kebab"
-        ]
+        "categories": ["Salads", "Sandwich", "Kebab"]
       },
       {
         "name": "Vista Puode",
@@ -795,11 +736,7 @@
             "rating": 4.0
           }
         ],
-        "categories": [
-          "Burger",
-          "Grill",
-          "Sweets"
-        ]
+        "categories": ["Burger", "Grill", "Sweets"]
       },
       {
         "name": "Hop Doc Gastropub",
@@ -830,11 +767,7 @@
             "rating": 4.5
           }
         ],
-        "categories": [
-          "Salads",
-          "Sandwich",
-          "Kebab"
-        ]
+        "categories": ["Salads", "Sandwich", "Kebab"]
       },
       {
         "name": "Al Cantuccio",
@@ -877,11 +810,7 @@
             "rating": 5.0
           }
         ],
-        "categories": [
-          "Sweets",
-          "Pancakes",
-          "Ramen"
-        ]
+        "categories": ["Sweets", "Pancakes", "Ramen"]
       },
       {
         "name": "ManGi",
@@ -912,12 +841,7 @@
             "rating": 4.5
           }
         ],
-        "categories": [
-          "Grill",
-          "Kebab",
-          "Burger",
-          "Sushi"
-        ]
+        "categories": ["Grill", "Kebab", "Burger", "Sushi"]
       }
     ],
     "categories": [
@@ -958,13 +882,7 @@
         "Mobile",
         "Tablet"
       ],
-      "os": [
-        "MacOS",
-        "iOS",
-        "Android",
-        "Windows",
-        "Linux"
-      ],
+      "os": ["MacOS", "iOS", "Android", "Windows", "Linux"],
       "brand": [
         "Apple",
         "Dell",

@@ -1,10 +1,11 @@
 @import '../../styles/base/base';
-$_size-100: 100px;
 
-.clock-wrapper {
+.greeting-wrapper {
     color: $color-pickled-bluewood;
-    font-family: $main-font;
-    font-size: $_size-100;
+    font-size: $size-36;
     font-weight: bold;
     line-height: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

@@ -1,46 +1,65 @@
 @import '../../styles/base/base';
-@import '../../styles/mixins/mixins';
 
-.box {
+@mixin ratingbox($background, $element, $width) {
+    align-items: center;
+    background-color: $background;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: $element;
+    cursor: pointer;
     display: flex;
-    justify-content: flex-end;
-    overflow: hidden;
-    width: 145px;
+    font-size: $size-14;
+    font-weight: 700;
+    height: 32px;
+    justify-content: space-between;
+    padding: 8px 12px;
+    width: $width;
 }
 
 .rating {
-    @include ratingbox($color-yellow, $color-blue-bluewood, 65px);
+    $_this: &;
+    display: flex;
+    justify-content: flex-end;
+    width: 145px;
 
-    &__expand {
-        direction: rtl;
-        margin-left: -3.5px;
-        unicode-bidi: bidi-override;
+    &__star {
+        background: none;
+        border: 0;
+        content: url('../../assets/starFilled.svg');
+        cursor: pointer;
+        padding: 8px 8px 8px 0;
+        position: relative;
 
-        > span {
+        &:hover::before,
+        &:hover ~ #{$_this}__star::before {
             content: url('../../assets/starFilled.svg');
-            padding: 9px 8px 5px 0.1px;
-            position: relative;
-
-            &:hover::before,
-            &:hover ~ span::before {
-                content: url('../../assets/starFilled.svg');
-                padding-top: 7.7px;
-                position: absolute;
-            }
-        }
-
-        svg {
-            padding-bottom: 5px;
-            padding-top: 9px;
+            padding-top: 8px;
+            position: absolute;
         }
     }
 
-    &:hover {
-        width: 145px;
+    &__expand {
+        direction: rtl;
+        unicode-bidi: bidi-override;
 
-        .rating__expand > span {
-            content: '';
-            padding: 3.5px;
+        svg {
+            padding-bottom: 5px;
+            padding-top: 8px;
+        }
+    }
+
+    &__collapse {
+        @include ratingbox($color-yellow, $color-blue-bluewood, 65px);
+
+        overflow: hidden;
+
+        &:hover {
+            width: 145px;
+
+            #{$_this}__expand #{$_this}__star {
+                content: '';
+                padding-right: 7px;
+            }
         }
     }
 }

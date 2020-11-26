@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ReactComponent as User } from "assets/userIcon.svg";
+import SVGIcon from "../SVGIcon/SVGIcon";
 import "./check-ins.scss";
 
 export const CheckIns = ({ checkins }) => (
   <div className="users">
-    <User />
+    <SVGIcon name="user" />
     {checkins}
   </div>
 );

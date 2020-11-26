@@ -1,9 +1,11 @@
 import React from "react";
+import GreetingWidget from "../components/GreetingWidget/GreetingWidget";
 
 const Dashboard = () => {
   return (
-    <main>
-      <h1 style={{ margin: "auto", textAlign: "center" }}>Dashboard</h1>
+    <main className="content__header">
+      <GreetingWidget />
+      <div>Placeholder for weather widget</div>
     </main>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import GreetingWidget from "../components/GreetingWidget/GreetingWidget";
 import BestRestaurantWrapper from "../components/RestaurantCards/BestRestaurantWrapper/BestRestaurantWrapper";
+import "./dashboard.scss";
 
 const Dashboard = () => {
   return (

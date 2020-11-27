@@ -30,11 +30,13 @@
         padding: 8px 8px 8px 0;
         position: relative;
 
-        &:hover::before,
-        &:hover ~ #{$_this}__star::before {
-            content: url('../../assets/starFilled.svg');
-            padding-top: 8px;
-            position: absolute;
+        &:hover {
+            &::before,
+            ~ #{$_this}__star::before {
+                content: url('../../assets/starFilled.svg');
+                padding-top: 8px;
+                position: absolute;
+            }
         }
     }
 

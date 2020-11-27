@@ -5,15 +5,15 @@ import "./best-restaurant-wrapper.scss";
 import database from "../../../db.json";
 
 const BestRestaurantWrapper = () => {
-  const restaurant = database.restaurants.restaurantList;
-  let i = Math.floor(Math.random() * Math.floor(restaurant.length));
-  let j = Math.floor(Math.random() * Math.floor(restaurant.length));
+  const restaurants = database.restaurants.restaurantList;
+  let i = Math.floor(Math.random() * Math.floor(restaurants.length));
+  let j = Math.floor(Math.random() * Math.floor(restaurants.length));
 
   return (
     <div className="best-restaurant-wrapper">
       <RestaurantIntroCard></RestaurantIntroCard>
-      <RestaurantCard image={restaurant[i].image}></RestaurantCard>
-      <RestaurantCard image={restaurant[j].image}></RestaurantCard>
+      <RestaurantCard image={restaurants[i].image}></RestaurantCard>
+      <RestaurantCard image={restaurants[j].image}></RestaurantCard>
     </div>
   );
 };

@@ -5,7 +5,6 @@ import BirthdayCard from "./BirthdayFeed/BirthdayCard";
 import UsersReactions from "./UsersReactions/UsersReactions";
 import fakeData from "../../db.json";
 
-
 export const BirthdayCardFeed = () => {
   return fakeData.stories.map((data) => {
     if (data.type === "birthday") {
@@ -20,6 +19,5 @@ export const BirthdayCardFeed = () => {
     return;
   });
 };
-
 
 export default BirthdayCardFeed;

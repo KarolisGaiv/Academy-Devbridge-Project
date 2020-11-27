@@ -12,10 +12,7 @@ const WeatherWidget = () => {
   return (
     <div className="widget">
       <div className="widget__content">
-        <WeekDayLocationSection
-          weekDay={weather[i].weekDay}
-          location={weather[i].location}
-        />
+        <WeekDayLocationSection location={weather[i].location} />
         <WeatherPart
           type={weather[i].type}
           degreesInCelsius={weather[i].degreesInCelsius}

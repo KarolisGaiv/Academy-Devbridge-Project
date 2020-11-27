@@ -5,12 +5,12 @@ import GreetingWidget from "../../components/GreetingWidget/GreetingWidget";
 
 const Dashboard = () => {
   return (
-    <main className="dashboard">
-      <div className="dashboard__header">
+    <div className="dashboard">
+      <section className="dashboard__header">
         <GreetingWidget />
         <WeatherWidget />
-      </div>
-    </main>
+      </section>
+    </div>
   );
 };
 

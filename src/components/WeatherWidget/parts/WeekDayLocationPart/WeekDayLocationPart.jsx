@@ -2,9 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./week-day-location-part.scss";
 
-const WeekDayLocationPart = ({ weekDay, location }) => {
+const WeekDayLocationPart = ({ location }) => {
   let newDate = new Date();
   let date = newDate.getDate();
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
   let months = [
     "January",
     "February",
@@ -20,11 +29,11 @@ const WeekDayLocationPart = ({ weekDay, location }) => {
     "December",
   ];
   const month = months[newDate.getMonth()];
-
+  const day = days[newDate.getDay() - 1];
   return (
     <div className="place">
       <div className="place__week-day">
-        {weekDay}, {date} {month}
+        {day}, {date} {month}
       </div>
       <div className="place__divider">|</div>
       <div className="place__location">{location}</div>
@@ -35,6 +44,5 @@ const WeekDayLocationPart = ({ weekDay, location }) => {
 export default WeekDayLocationPart;
 
 WeekDayLocationPart.propTypes = {
-  weekDay: PropTypes.string,
   location: PropTypes.string,
 };

@@ -1,11 +1,11 @@
 import React from "react";
-import MainNavigation from "../components/MainNavigation/MainNavigation";
+import GreetingWidget from "../components/GreetingWidget/GreetingWidget";
 
 const Dashboard = () => {
   return (
-    <main>
-      <MainNavigation />
-      <h1 style={{ margin: "auto", textAlign: "center" }}>Dashboard</h1>
+    <main className="content__header">
+      <GreetingWidget />
+      <div>Placeholder for weather widget</div>
     </main>
   );
 };

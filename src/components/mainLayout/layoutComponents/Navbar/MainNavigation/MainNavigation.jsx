@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import propTypes from "prop-types";
-import SVGIcon from "./SVGIcon";
-import NavItemBackground from "./NavItem/NavItemBackground";
+import SVGIcon from "../../../../SVGIcon/SVGIcon";
 import NavItem from "./NavItem/NavItem";
 
 import "./mainNavigation.scss";
@@ -39,9 +38,6 @@ const MainNavigation = (props) => {
   const expandEventHandler = () => {
     if (expanded) {
       setExpanded(false);
-      navigationState.navItems.map((item) =>
-        document.getElementById("subtract-" + item.id).beginElement()
-      );
       expandNavigationState({
         navItems: [
           {
@@ -60,9 +56,6 @@ const MainNavigation = (props) => {
       });
     } else {
       setExpanded(true);
-      navigationState.navItems.map((item) =>
-        document.getElementById("expand-" + item.id).beginElement()
-      );
       expandNavigationState({
         navItems: [
           {
@@ -119,12 +112,7 @@ const MainNavigation = (props) => {
               activeClassName="selected"
             >
               <NavItem
-                background={
-                  <NavItemBackground
-                    className={"navigation__item-background"}
-                    id={item.id}
-                  />
-                }
+                expanded={expanded}
                 iconName={item.iconName}
                 itemStatus={item.itemStatus}
                 itemText={item.itemText}

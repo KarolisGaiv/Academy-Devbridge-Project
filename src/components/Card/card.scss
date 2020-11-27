@@ -9,3 +9,8 @@
   font-family: $main-font;  //delete when implemented
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import Divider from "../../Divider/Divider";
 import Card from "../../Card/Card";
@@ -10,19 +10,17 @@ import AddComment from "../Comments/AddComment";
 import "../news-feed.scss";
 
 export const BirthdayCard = (props) => {
-  //get the states for:
-  //commments array in a post,
-  //comment field,
-  //comment field emptiness,
-  //and comment counts
   const [commentsList, setComments] = useState({
     comments: props.data.comments,
   });
-  const [commentField, setCommentField] = useState("");
   const [isCommentEmpty, setCommentEmptyState] = useState(true);
-  const [commentCount, setCommentCountState] = useState(
+  const [commentsCount, setCommentsCountState] = useState(
     props.data.comments.length
   );
+  const commentField = useRef("");
+  const handleChange = (evt) => {
+    commentField.current = evt.target.value;
+  };
 
   //update comments array when comment submitted
   //reset the value of input field
@@ -32,44 +30,31 @@ export const BirthdayCard = (props) => {
         ...commentsList.comments,
         {
           userName: props.userName,
-          comment: commentField,
+          comment: commentField.current,
         },
       ],
     });
-    document
-      .querySelectorAll(".comment-add__textField")
-      .forEach((myClassElement) => (myClassElement.textContent = ""));
+    commentField.current = "";
   };
 
   //check if comment field is not empty.
   //IF NOT empty, allow to post, set
   //ELSE do not allow to post
   const isEmptyCheck = () => {
-    document
-      .querySelectorAll(".comment-add__textField")
-      .forEach((myClassElement) => {
-        if (myClassElement.textContent.length) {
-          setCommentEmptyState(false);
-          setCommentField(myClassElement.textContent);
-        } else {
-          setCommentEmptyState(true);
-        }
-      });
+    if (commentField.current.length > 0) {
+      setCommentEmptyState(false);
+    } else {
+      setCommentEmptyState(true);
+    }
   };
 
-  //Look for changes in text field
+  const handleBlur = () => {
+    isEmptyCheck();
+  };
+
   //Update comment count when posted
   useEffect(() => {
-    document
-      .querySelectorAll(".comment-add__textField")
-      .forEach((myClassElement) =>
-        myClassElement.addEventListener(
-          "input",
-          isEmptyCheck(myClassElement),
-          false
-        )
-      );
-    setCommentCountState(commentsList.comments.length);
+    setCommentsCountState(commentsList.comments.length);
   }, [commentsList.comments.length]);
 
   return (
@@ -77,7 +62,7 @@ export const BirthdayCard = (props) => {
       <Card>
         <BirthdayCardSection data={props.data} />
         <Divider />
-        <UsersReactions data={props.data} commentCount={commentCount} />
+        <UsersReactions data={props.data} commentCount={commentsCount} />
         <Divider />
         <div className="comment-section">
           {commentsList.comments.map((data, index) => (
@@ -92,8 +77,10 @@ export const BirthdayCard = (props) => {
         <AddComment
           avatar={props.avatar}
           submit={submitHandler}
-          commentField={commentField}
           isEmpty={isCommentEmpty}
+          commentText={commentField.current}
+          onBlur={handleBlur}
+          onChange={handleChange}
         />
       </Card>
     </div>

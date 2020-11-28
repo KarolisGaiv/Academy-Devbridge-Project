@@ -14,7 +14,13 @@ import { ReactComponent as PresentBtnColored } from "../../assets/presentBtnColo
 import { ReactComponent as CommentBtn } from "../../assets/commentBtn.svg";
 import { ReactComponent as HeartBtnColored } from "../../assets/heartBtnColored.svg";
 import { ReactComponent as HeartBtn } from "../../assets/heartBtn.svg";
-import { ReactComponent as EmptyStar } from "../../assets/emptyStar.svg";
+import { ReactComponent as StarEmpty } from "../../assets/starEmpty.svg";
+import { ReactComponent as User } from "../../assets/userIcon.svg";
+import { ReactComponent as Thunderstorm } from "../../assets/weather/thunderstorm.svg";
+import { ReactComponent as Sun } from "../../assets/weather/sun.svg";
+import { ReactComponent as Snow } from "../../assets/weather/snow.svg";
+import { ReactComponent as Rain } from "../../assets/weather/rain.svg";
+import { ReactComponent as Cloud } from "../../assets/weather/cloud.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -49,8 +55,20 @@ const SVGIcon = (props) => {
       return <HeartBtnColored className={props.className} />;
     case "heartBtn":
       return <HeartBtn className={props.className} />;
-    case "emptyStar":
-      return <EmptyStar className={props.className} />;
+    case "starEmpty":
+      return <StarEmpty className={props.className} />;
+    case "user":
+      return <User className={props.className} />;
+    case "Thunderstorm":
+      return <Thunderstorm />;
+    case "Sunny":
+      return <Sun />;
+    case "Snow":
+      return <Snow />;
+    case "Light shower":
+      return <Rain />;
+    case "Cloudy":
+      return <Cloud />;
     default:
       return "error";
   }

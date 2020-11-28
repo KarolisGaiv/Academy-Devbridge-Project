@@ -18,8 +18,10 @@ export const BirthdayCard = (props) => {
     props.data.comments.length
   );
   const commentField = useRef("");
-  const handleChange = (evt) => {
-    commentField.current = evt.target.value;
+
+  //update comment field value
+  const handleChange = (e) => {
+    commentField.current = e.target.value;
   };
 
   //update comments array when comment submitted
@@ -48,6 +50,7 @@ export const BirthdayCard = (props) => {
     }
   };
 
+  //check if empty when input field is not in focus
   const handleBlur = () => {
     isEmptyCheck();
   };

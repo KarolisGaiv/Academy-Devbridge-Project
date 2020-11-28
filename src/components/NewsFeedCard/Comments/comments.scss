@@ -1,23 +1,19 @@
 @import '../../../styles/base/base';
 
 .comment-section {
-  color: $color-grey-7;
-  font-size: $size-12;
-  width: 100%;
-  padding: 5px 0;
+    color: $color-grey-7;
+    font-size: $size-12;
+    padding: 5px 0;
+    width: 100%;
 }
 
 .comment {
-  margin: 5px 0 10px 0;
+    margin: 5px 0;
 
-  &:last-child {
-    margin-bottom: 5px;
-  }
-
-  &__user-name {
-    font-weight: $weight-medium;
-    float: left;
-    text-transform: uppercase;
-    padding-right: 10px;
-  }
+    &__user-name {
+        float: left;
+        font-weight: $weight-medium;
+        padding-right: 10px;
+        text-transform: uppercase;
+    }
 }

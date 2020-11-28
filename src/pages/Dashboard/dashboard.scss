@@ -1,8 +1,17 @@
+@import '../../styles/base/base';
+
 .dashboard {
     &__header {
         display: flex;
         height: 100%;
         justify-content: space-between;
         margin: 40px 0;
+    }
+
+    &__headline {
+        color: $color-pickled-bluewood;
+        font-family: $main-font;
+        font-size: $size-24;
+        margin: 70px 0;
     }
 }

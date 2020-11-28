@@ -7,6 +7,8 @@ import UsersReactions from "../UsersReactions/UsersReactions";
 import Comments from "../Comments/Comments";
 import AddComment from "../Comments/AddComment";
 
+import "../news-feed.scss";
+
 export const BirthdayCard = (props) => {
   //get the states for:
   //commments array in a post,
@@ -22,8 +24,6 @@ export const BirthdayCard = (props) => {
     props.data.comments.length
   );
 
-  var commentElement;
-
   //update comments array when comment submitted
   //reset the value of input field
   const submitHandler = () => {
@@ -36,61 +36,75 @@ export const BirthdayCard = (props) => {
         },
       ],
     });
-    commentElement.textContent = "";
+    document
+      .querySelectorAll(".comment-add__textField")
+      .forEach((myClassElement) => (myClassElement.textContent = ""));
   };
 
   //check if comment field is not empty.
   //IF NOT empty, allow to post, set
   //ELSE do not allow to post
   const isEmptyCheck = () => {
-    if (commentElement.textContent.length) {
-      setCommentEmptyState(false);
-      setCommentField(commentElement.textContent);
-    } else {
-      setCommentEmptyState(true);
-    }
+    document
+      .querySelectorAll(".comment-add__textField")
+      .forEach((myClassElement) => {
+        if (myClassElement.textContent.length) {
+          setCommentEmptyState(false);
+          setCommentField(myClassElement.textContent);
+        } else {
+          setCommentEmptyState(true);
+        }
+      });
   };
 
   //Look for changes in text field
   //Update comment count when posted
   useEffect(() => {
-    commentElement = document.getElementsByClassName(
-      "comment-add__textField"
-    )[0];
-    commentElement.addEventListener("input", isEmptyCheck, false);
+    document
+      .querySelectorAll(".comment-add__textField")
+      .forEach((myClassElement) =>
+        myClassElement.addEventListener(
+          "input",
+          isEmptyCheck(myClassElement),
+          false
+        )
+      );
     setCommentCountState(commentsList.comments.length);
-  });
+  }, [commentsList.comments.length]);
 
   return (
-    <Card>
-      <BirthdayCardSection data={props.data} />
-      <Divider />
-      <UsersReactions data={props.data} commentCount={commentCount} />
-      <Divider />
-      <div className="comment-section">
-        {commentsList.comments.map((data, index) => (
-          <Comments
-            key={index}
-            username={data.userName}
-            comment={data.comment}
-          />
-        ))}
-      </div>
-      <Divider />
-      <AddComment
-        avatar={props.avatar}
-        submit={submitHandler}
-        commentField={commentField}
-        isEmpty={isCommentEmpty}
-      />
-    </Card>
+    <div className="newsFeed__card">
+      <Card>
+        <BirthdayCardSection data={props.data} />
+        <Divider />
+        <UsersReactions data={props.data} commentCount={commentCount} />
+        <Divider />
+        <div className="comment-section">
+          {commentsList.comments.map((data, index) => (
+            <Comments
+              key={index}
+              username={data.userName}
+              comment={data.comment}
+            />
+          ))}
+        </div>
+        <Divider />
+        <AddComment
+          avatar={props.avatar}
+          submit={submitHandler}
+          commentField={commentField}
+          isEmpty={isCommentEmpty}
+        />
+      </Card>
+    </div>
   );
 };
 
 export default BirthdayCard;
 
 BirthdayCard.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.object,
+  textFieldIndex: PropTypes.number,
   userName: PropTypes.string,
   avatar: PropTypes.string,
 };

@@ -8,7 +8,7 @@ export const Rating = ({ rating }) => {
     <div className="rating">
       <div className="rating__collapse">
         <div className="rating__expand">
-          {[...Array(5)].map((star, i) => {
+          {[...Array(5)].map((star) => {
             return (
               <button
                 type="button"

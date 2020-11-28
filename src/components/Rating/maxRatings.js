@@ -12,6 +12,7 @@ export class Ratings {
     var maxrat = -1;
     var restname;
     var cats;
+    var catslen;
     var checkins;
     var time;
 
@@ -39,20 +40,34 @@ export class Ratings {
       }
       sum = 0;
     }
+    catslen = Object.keys(cats).length;
     //if there aren't any reviews, rating is 0
     if (sumrev === 0) maxrat = 0;
 
-    return [checkins, maxrat.toFixed(1), cats, restname, time];
+    return [checkins, maxrat.toFixed(1), cats, catslen, restname, time];
   }
   static numberTwoRating() {
     //get the best rating
     var no1 = Ratings.numberOneRating()[1];
     var checkins = Ratings.numberOneRating(no1)[0];
-    var no2 = Ratings.numberOneRating(no1)[1];
-    var cats = Ratings.numberOneRating(no1)[2];
+    var maxrat2 = Ratings.numberOneRating(no1)[1];
+    var cats2 = Ratings.numberOneRating(no1)[2];
+    var catslen2 = Object.keys(cats2).length;
     var restname2 = Ratings.numberOneRating(no1)[3];
     var time2 = Ratings.numberOneRating(no1)[4];
 
-    return [checkins, no2, cats, restname2, time2];
+    return [checkins, maxrat2, cats2, catslen2, restname2, time2];
+  }
+  static numberOneCats() {
+    var cats1 = Ratings.numberOneRating()[2];
+    var cats1len = Ratings.numberOneRating()[3];
+
+    return [cats1, cats1len];
+  }
+  static numberTwoCats() {
+    var cats2 = Ratings.numberTwoRating()[2];
+    var cats2len = Ratings.numberTwoRating()[3];
+
+    return [cats2, cats2len];
   }
 }

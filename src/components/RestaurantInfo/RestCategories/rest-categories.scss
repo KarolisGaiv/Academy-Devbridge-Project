@@ -1,0 +1,19 @@
+@import '../../../styles/base/base';
+
+.categories {
+    align-items: center;
+    display: flex;
+    width: 50%;
+
+    &__name {
+        color: $color-grey-6;
+        font-family: $main-font;
+        font-size: $size-10;
+        text-transform: uppercase;
+    }
+
+    svg {
+        flex-shrink: 0;
+        padding: 0 12px;
+    }
+}

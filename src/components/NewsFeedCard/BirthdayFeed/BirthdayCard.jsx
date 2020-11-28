@@ -7,7 +7,6 @@ import FormatDate from "../FormatDate";
 import "./birthday-card.scss";
 
 const BirthdayCard = (props) => {
-
   return (
     <div className="birthday">
       <div className="birthday__profile">
@@ -30,11 +29,15 @@ const BirthdayCard = (props) => {
         <>
           <SVGIcon
             name="confettiCircle"
-            className={`birthday__svg birthday__confetti-circle svg-circle--position-${index + 1}`}
+            className={`birthday__svg birthday__confetti-circle svg-circle--position-${
+              index + 1
+            }`}
           />
           <SVGIcon
             name="confettiStar"
-            className={`birthday__svg birthday__confetti-star svg-star--position-${index + 1}`}
+            className={`birthday__svg birthday__confetti-star svg-star--position-${
+              index + 1
+            }`}
           />
         </>
       ))}
@@ -44,6 +47,6 @@ const BirthdayCard = (props) => {
 
 export default BirthdayCard;
 
-BirthdayCard.PropTypes = {
+BirthdayCard.propTypes = {
   data: PropTypes.array,
 };

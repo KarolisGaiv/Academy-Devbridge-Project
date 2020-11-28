@@ -21,7 +21,7 @@ const UserAvatar = (props) => {
 
 export default UserAvatar;
 
-UserAvatar.PropTypes = {
-  size: PropTypes.int,
+UserAvatar.propTypes = {
+  size: PropTypes.number,
   imageSrc: PropTypes.string,
 };

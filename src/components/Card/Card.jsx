@@ -8,6 +8,6 @@ const Card = (props) => {
 
 export default Card;
 
-Card.PropTypes = {
-  children: PropTypes.obj,
+Card.propTypes = {
+  children: PropTypes.object,
 };

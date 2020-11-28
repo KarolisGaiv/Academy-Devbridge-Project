@@ -44,6 +44,6 @@ const UsersReactions = (props) => {
 
 export default UsersReactions;
 
-UsersReactions.PropTypes = {
+UsersReactions.propTypes = {
   data: PropTypes.array,
 };

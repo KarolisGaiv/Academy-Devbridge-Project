@@ -47,6 +47,6 @@ const BirthdayCard = (props) => {
 
 export default BirthdayCard;
 
-BirthdayCard.PropTypes = {
+BirthdayCard.propTypes = {
   data: PropTypes.array,
 };

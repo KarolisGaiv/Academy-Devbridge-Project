@@ -17,9 +17,9 @@
 
     &__reaction-count,
     &__comment-count {
-        font-size: 13px;
-        font-weight: 500;
         color: $color-grey-8;
+        font-size: $size-13;
+        font-weight: 500;
         margin: 0;
         padding-left: 5px;
     }

@@ -40,7 +40,11 @@ export const Breadcrumb = () => {
 
   //prevent click action for the last item in array
   const LastItemPreventClick = (e, index) => {
-    IsLast(index) ? e.preventDefault() : null;
+    if (IsLast(index)) {
+      e.preventDefault();
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -48,6 +52,7 @@ export const Breadcrumb = () => {
       <ul className="breadcrumb__list">
         {GetBreadcrumbs(pathname).map((value, index) => (
           <NavLink
+            key={index}
             to={CreatePath(pathname, index)}
             className="breadcrumb__link"
             onClick={(e) => LastItemPreventClick(e, index)}

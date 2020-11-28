@@ -41,6 +41,7 @@ export class Ratings {
       sum = 0;
     }
     catslen = Object.keys(cats).length;
+    time = time.substring(0, 2) + ":00 " + time.substring(3, 7) + ":00";
     //if there aren't any reviews, rating is 0
     if (sumrev === 0) maxrat = 0;
 
@@ -53,8 +54,8 @@ export class Ratings {
     var maxrat2 = Ratings.numberOneRating(no1)[1];
     var cats2 = Ratings.numberOneRating(no1)[2];
     var catslen2 = Object.keys(cats2).length;
-    var restname2 = Ratings.numberOneRating(no1)[3];
-    var time2 = Ratings.numberOneRating(no1)[4];
+    var restname2 = Ratings.numberOneRating(no1)[4];
+    var time2 = Ratings.numberOneRating(no1)[5];
 
     return [checkins, maxrat2, cats2, catslen2, restname2, time2];
   }

@@ -3,12 +3,13 @@
 .categories {
     align-items: center;
     display: flex;
+    padding: 4px 0;
     width: 50%;
 
     &__name {
         color: $color-grey-6;
-        font-family: $main-font;
         font-size: $size-10;
+        font-weight: 500;
         text-transform: uppercase;
     }
 

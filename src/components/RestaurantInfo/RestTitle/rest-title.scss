@@ -1,0 +1,14 @@
+@import '../../../styles/base/base';
+
+.title {
+    display: flex;
+
+    &__text {
+        color: $color-blue-dark;
+        font-size: $size-24;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

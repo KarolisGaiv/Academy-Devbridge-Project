@@ -2,9 +2,9 @@ import React from "react";
 import "./content.scss";
 
 import { Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import Reservations from "./pages/Reservations";
-import EatOut from "./pages/EatOut";
+import Dashboard from "../../../../pages/Dashboard/Dashboard";
+import Reservations from "../../../../pages/Reservations";
+import EatOut from "../../../../pages/EatOut";
 
 const Content = () => {
   return (

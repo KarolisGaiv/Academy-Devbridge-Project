@@ -1,10 +1,10 @@
 import React from "react";
-import MainNavigation from "../components/MainNavigation/MainNavigation";
+import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 const EatOut = () => {
   return (
     <main>
-      <MainNavigation />
+      <Breadcrumbs />
       <h1 style={{ margin: "auto", textAlign: "center" }}>EatOut</h1>
     </main>
   );

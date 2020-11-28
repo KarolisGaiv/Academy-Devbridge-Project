@@ -36,11 +36,6 @@
     "src/**/*.{js,jsx}": "eslint --fix --max-warnings 0",
     "src/**/*.{css,scss}": "stylelint"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "eslintConfig": {
     "extends": "react-app"
   },

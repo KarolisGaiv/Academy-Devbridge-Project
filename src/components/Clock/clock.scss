@@ -1,0 +1,10 @@
+@import '../../styles/base/base';
+$_size-100: 100px;
+
+.clock-wrapper {
+    color: $color-pickled-bluewood;
+    font-family: $main-font;
+    font-size: $_size-100;
+    font-weight: bold;
+    line-height: normal;
+}

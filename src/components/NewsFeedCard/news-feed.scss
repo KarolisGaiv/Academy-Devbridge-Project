@@ -1,6 +1,7 @@
 .newsFeed {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 50px;
     row-gap: 70px;
 
     &__card {

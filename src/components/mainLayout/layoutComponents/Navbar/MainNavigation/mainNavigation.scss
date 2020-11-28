@@ -129,7 +129,7 @@ $transparent: transparent;
 
     &__text {
         color: $color-grey-1;
-        font-weight: 500;
+        font-weight: $weight-medium;
         padding-left: 20px;
         vertical-align: middle;
     }

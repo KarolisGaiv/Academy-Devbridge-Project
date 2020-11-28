@@ -1,49 +1,96 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import UserAvatar from "../../UserAvatar/UserAvatar";
-import SVGIcon from "../../SVGIcon/SVGIcon";
-import FormatDate from "../FormatDate";
+import Divider from "../../Divider/Divider";
+import Card from "../../Card/Card";
+import BirthdayCardSection from "../BirthdayFeed/BirthdayCardSection";
+import UsersReactions from "../UsersReactions/UsersReactions";
+import Comments from "../Comments/Comments";
+import AddComment from "../Comments/AddComment";
 
-import "./birthday-card.scss";
+export const BirthdayCard = (props) => {
+  //get the states for:
+  //commments array in a post,
+  //comment field,
+  //comment field emptiness,
+  //and comment counts
+  const [commentsList, setComments] = useState({
+    comments: props.data.comments,
+  });
+  const [commentField, setCommentField] = useState("");
+  const [isCommentEmpty, setCommentEmptyState] = useState(true);
+  const [commentCount, setCommentCountState] = useState(
+    props.data.comments.length
+  );
 
-const BirthdayCard = (props) => {
+  var commentElement;
+
+  //update comments array when comment submitted
+  //reset the value of input field
+  const submitHandler = () => {
+    setComments({
+      comments: [
+        ...commentsList.comments,
+        {
+          userName: props.userName,
+          comment: commentField,
+        },
+      ],
+    });
+    commentElement.textContent = "";
+  };
+
+  //check if comment field is not empty.
+  //IF NOT empty, allow to post, set
+  //ELSE do not allow to post
+  const isEmptyCheck = () => {
+    if (commentElement.textContent.length) {
+      setCommentEmptyState(false);
+      setCommentField(commentElement.textContent);
+    } else {
+      setCommentEmptyState(true);
+    }
+  };
+
+  //Look for changes in text field
+  //Update comment count when posted
+  useEffect(() => {
+    commentElement = document.getElementsByClassName(
+      "comment-add__textField"
+    )[0];
+    commentElement.addEventListener("input", isEmptyCheck, false);
+    setCommentCountState(commentsList.comments.length);
+  });
 
   return (
-    <div className="birthday">
-      <div className="birthday__profile">
-        <UserAvatar size={96} imageSrc={props.data.userImage} />
+    <Card>
+      <BirthdayCardSection data={props.data} />
+      <Divider />
+      <UsersReactions data={props.data} commentCount={commentCount} />
+      <Divider />
+      <div className="comment-section">
+        {commentsList.comments.map((data, index) => (
+          <Comments
+            key={index}
+            username={data.userName}
+            comment={data.comment}
+          />
+        ))}
       </div>
-      <div className="birthday__text">
-        <p className="birthday__user">{props.data.userName}</p>
-        <p className="birthday__date">
-          Celebrated a birthday on{" "}
-          <span className="date">{FormatDate(props.data.birthdayDate)}</span>
-        </p>
-        <p className="birthday__wish">Send a wish!</p>
-      </div>
-      <SVGIcon name="confetti" className="birthday__svg birthday__confetti" />
-      <SVGIcon
-        name="openPresent"
-        className="birthday__svg birthday__open-present"
+      <Divider />
+      <AddComment
+        avatar={props.avatar}
+        submit={submitHandler}
+        commentField={commentField}
+        isEmpty={isCommentEmpty}
       />
-      {[...Array(4)].map((value, index) => (
-        <>
-          <SVGIcon
-            name="confettiCircle"
-            className={`birthday__svg birthday__confetti-circle svg-circle--position-${index + 1}`}
-          />
-          <SVGIcon
-            name="confettiStar"
-            className={`birthday__svg birthday__confetti-star svg-star--position-${index + 1}`}
-          />
-        </>
-      ))}
-    </div>
+    </Card>
   );
 };
 
 export default BirthdayCard;
 
-BirthdayCard.PropTypes = {
+BirthdayCard.propTypes = {
   data: PropTypes.array,
+  userName: PropTypes.string,
+  avatar: PropTypes.string,
 };

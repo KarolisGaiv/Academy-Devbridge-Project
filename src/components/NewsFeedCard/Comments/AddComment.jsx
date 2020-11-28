@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import propTypes from "prop-types";
-import UserAvatar from "../UserAvatar/UserAvatar";
+import React from "react";
+import PropTypes from "prop-types";
+import UserAvatar from "../../UserAvatar/UserAvatar";
 
 import "./add-comment.scss";
 
@@ -18,8 +18,7 @@ const AddComment = (props) => {
           className="comment-add__submitButton"
           type="button"
           value="post"
-          onClick={() => console.log(spanText)}
-          autoFocus
+          onClick={!props.isEmpty ? props.submit : null}
         />
       </form>
     </div>
@@ -27,3 +26,9 @@ const AddComment = (props) => {
 };
 
 export default AddComment;
+
+AddComment.propTypes = {
+  avatar: PropTypes.string,
+  isEmpty: PropTypes.bool,
+  submit: PropTypes.func,
+};

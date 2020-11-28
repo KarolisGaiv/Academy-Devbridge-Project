@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import SVGIcon from "../../SVGIcon/SVGIcon";
 
 import "./users-reactions.scss";
 
 const UsersReactions = (props) => {
+  //Determine which reaction data to take
   const reactionCountByType = (data) => {
     if (data.type === "birthday") {
       return data.wishes;
@@ -18,6 +19,7 @@ const UsersReactions = (props) => {
     reacted: false,
   });
 
+  //Determine wether the post was reacted to and select icon
   const reactionIconSelect = (data) => {
     if (reactionCountState.reacted) {
       if (data.type === "birthday") {
@@ -34,6 +36,7 @@ const UsersReactions = (props) => {
     }
   };
 
+  //if reaction was clicked, update reactionCount
   const onReactionClick = () => {
     if (reactionCountState.reacted) {
       setReactionCountState({
@@ -52,7 +55,7 @@ const UsersReactions = (props) => {
     <div className="user-reactions">
       <div className="user-reactions__reaction">
         <button
-          class="user-reactions__button"
+          className="user-reactions__button"
           type="submit"
           onClick={onReactionClick}
         >
@@ -66,15 +69,10 @@ const UsersReactions = (props) => {
         </p>
       </div>
       <div className="user-reactions__comment">
-        <button
-          class="user-reactions__button disabled"
-          type="submit"
-        >
+        <button className="user-reactions__button disabled" type="submit">
           <SVGIcon name="commentBtn" className="user-reactions__comment-icon" />
         </button>
-        <p className="user-reactions__comment-count">
-          {props.data.comments.length}
-        </p>
+        <p className="user-reactions__comment-count">{props.commentCount}</p>
       </div>
     </div>
   );
@@ -82,6 +80,7 @@ const UsersReactions = (props) => {
 
 export default UsersReactions;
 
-UsersReactions.PropTypes = {
-  data: PropTypes.array,
+UsersReactions.propTypes = {
+  data: PropTypes.object,
+  commentCount: PropTypes.number,
 };

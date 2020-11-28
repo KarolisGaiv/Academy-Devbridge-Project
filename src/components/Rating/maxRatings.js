@@ -14,6 +14,7 @@ export class Ratings {
     var cats;
     var checkins;
     var time;
+    var restimage;
 
     //loop through restaurants
     for (var i = 0; i < restlen; i++) {
@@ -35,6 +36,7 @@ export class Ratings {
           cats = rat.categories;
           checkins = rat.checkIns;
           time = rat.openingHours[0].hours;
+          restimage = rat.image;
         }
       }
       sum = 0;
@@ -42,7 +44,7 @@ export class Ratings {
     //if there aren't any reviews, rating is 0
     if (sumrev === 0) maxrat = 0;
 
-    return [checkins, maxrat.toFixed(1), cats, restname, time];
+    return [checkins, maxrat.toFixed(1), cats, restname, time, restimage];
   }
   static numberTwoRating() {
     //get the best rating
@@ -52,7 +54,8 @@ export class Ratings {
     var cats = Ratings.numberOneRating(no1)[2];
     var restname2 = Ratings.numberOneRating(no1)[3];
     var time2 = Ratings.numberOneRating(no1)[4];
+    var restimage2 = Ratings.numberOneRating(no1)[5];
 
-    return [checkins, no2, cats, restname2, time2];
+    return [checkins, no2, cats, restname2, time2, restimage2];
   }
 }

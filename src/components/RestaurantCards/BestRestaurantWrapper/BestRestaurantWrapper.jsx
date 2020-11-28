@@ -2,18 +2,22 @@ import React from "react";
 import { RestaurantIntroCard } from "../RestaurantIntroCard/RestaurantIntroCard";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import "./best-restaurant-wrapper.scss";
-import database from "../../../db.json";
+import { Ratings } from "../../Rating/maxRatings";
 
 const BestRestaurantWrapper = () => {
-  const restaurants = database.restaurants.restaurantList;
-  let i = Math.floor(Math.random() * Math.floor(restaurants.length));
-  let j = Math.floor(Math.random() * Math.floor(restaurants.length));
-
   return (
     <div className="best-restaurant-wrapper">
       <RestaurantIntroCard></RestaurantIntroCard>
-      <RestaurantCard image={restaurants[i].image}></RestaurantCard>
-      <RestaurantCard image={restaurants[j].image}></RestaurantCard>
+      <RestaurantCard
+        image={Ratings.numberOneRating()[5]}
+        checkins={Ratings.numberOneRating()[0]}
+        rating={Ratings.numberOneRating()[1]}
+      ></RestaurantCard>
+      <RestaurantCard
+        image={Ratings.numberTwoRating()[5]}
+        checkins={Ratings.numberTwoRating()[0]}
+        rating={Ratings.numberTwoRating()[1]}
+      ></RestaurantCard>
     </div>
   );
 };

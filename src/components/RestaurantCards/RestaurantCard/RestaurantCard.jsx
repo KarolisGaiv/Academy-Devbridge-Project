@@ -6,7 +6,6 @@ import { Rating } from "../../Rating/Rating";
 import "./restaurant-card.scss";
 
 const RestaurantCard = (props) => {
-  const { image, checkins, rating, children } = props;
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="restaurant-card">
@@ -37,7 +36,7 @@ export default RestaurantCard;
 
 RestaurantCard.propTypes = {
   checkins: PropTypes.number,
-  rating: PropTypes.number,
+  rating: PropTypes.string,
   image: PropTypes.string,
   children: PropTypes.object,
 };

@@ -1,11 +1,11 @@
+@import '../../../styles/mixins/mixins';
+
 .restaurant-card {
     &__top {
         position: relative;
     }
     &__checkins-rating {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex-space-between;
         position: absolute;
         z-index: 2;
         width: calc(100% - 32px);
@@ -44,8 +44,6 @@
         padding-bottom: 16px;
     }
     &__name-like {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex-space-between;
     }
 }

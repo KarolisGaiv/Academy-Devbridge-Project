@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import { CardContainer } from "../../CardContainer/CardContainer";
 import { CheckIns } from "../../CheckIns/CheckIns";
 import { Rating } from "../../Rating/Rating";
+import { RestCategories } from "../../RestaurantInfo/RestCategories/RestCategories";
+import { RestTitle } from "../../RestaurantInfo/RestTitle/RestTitle";
+import { RestHours } from "../../RestaurantInfo/RestHours/RestHours";
+import { HeartButton } from "../../../components/HeartButton/HeartButton";
 import "./restaurant-card.scss";
 
 const RestaurantCard = (props) => {
@@ -14,7 +18,9 @@ const RestaurantCard = (props) => {
             <CheckIns checkins={props.checkins}></CheckIns>
             <Rating rating={props.rating}></Rating>
           </div>
-          <div className="restaurant-card__categories">{props.children}</div>
+          <div className="restaurant-card__categories">
+            <RestCategories category={props.category}></RestCategories>
+          </div>
           <div className="restaurant-card__background"></div>
           <img
             src={props.image}
@@ -23,8 +29,13 @@ const RestaurantCard = (props) => {
           ></img>
         </div>
         <div className="restaurant-card__bottom">
-          <div className="restaurant-card__name-like">{props.children}</div>
-          <div className="restaurant-card__opening-hours">{props.children}</div>
+          <div className="restaurant-card__title-like">
+            <RestTitle title={props.title}></RestTitle>
+            <HeartButton></HeartButton>
+          </div>
+          <div className="restaurant-card__opening-hours">
+            <RestHours hours={props.hours}></RestHours>
+          </div>
         </div>
       </div>
     </CardContainer>
@@ -37,6 +48,8 @@ export default RestaurantCard;
 RestaurantCard.propTypes = {
   checkins: PropTypes.number,
   rating: PropTypes.string,
+  category: PropTypes.array,
   image: PropTypes.string,
-  children: PropTypes.object,
+  title: PropTypes.string,
+  hours: PropTypes.string,
 };

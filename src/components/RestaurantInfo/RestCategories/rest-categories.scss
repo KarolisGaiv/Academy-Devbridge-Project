@@ -1,0 +1,22 @@
+@import '../../../styles/base/base';
+
+.categories {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px 0;
+
+    &__name {
+        color: $color-grey-6;
+        font-size: $size-10;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    &__icon {
+        svg {
+            flex-shrink: 0;
+            padding: 3px 12px;
+        }
+    }
+}

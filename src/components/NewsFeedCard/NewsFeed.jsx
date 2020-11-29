@@ -5,6 +5,8 @@ import fakeData from "../../db.json";
 import "./news-feed.scss";
 
 const NewsFeed = () => {
+  const userAvatar = fakeData.userData.userImage;
+  const userName = fakeData.userData.userName;
   //VIDEO/POST stories can be added to IF statemenet
   return (
     <section className="newsFeed">
@@ -14,8 +16,8 @@ const NewsFeed = () => {
             <BirthdayCard
               key={index}
               data={data}
-              avatar={fakeData.userData.userImage}
-              userName={fakeData.userData.userName}
+              avatar={userAvatar}
+              userName={userName}
             />
           );
           // When created change this to an appropriate component
@@ -24,8 +26,8 @@ const NewsFeed = () => {
             <BirthdayCard
               key={index}
               data={data}
-              avatar={fakeData.userData.userImage}
-              userName={fakeData.userData.userName}
+              avatar={userAvatar}
+              userName={userName}
             />
           );
           // When created change this to an appropriate component
@@ -34,8 +36,8 @@ const NewsFeed = () => {
             <BirthdayCard
               key={index}
               data={data}
-              avatar={fakeData.userData.userImage}
-              userName={fakeData.userData.userName}
+              avatar={userAvatar}
+              userName={userName}
             />
           );
         } else {

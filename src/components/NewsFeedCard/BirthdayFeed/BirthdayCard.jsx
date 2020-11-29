@@ -15,7 +15,7 @@ export const BirthdayCard = (props) => {
   });
   const [isCommentEmpty, setCommentEmptyState] = useState(true);
   const [commentsCount, setCommentsCountState] = useState(
-    props.data.comments.length
+    commentsList.comments.length
   );
   const commentField = useRef("");
 

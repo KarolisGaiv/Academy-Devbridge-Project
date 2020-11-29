@@ -11,7 +11,7 @@ export const CheckIns = ({ checkins }) => (
 );
 
 CheckIns.propTypes = {
-  checkins: PropTypes.string,
+  checkins: PropTypes.number,
   type: PropTypes.string,
   className: PropTypes.string,
 };

@@ -61,7 +61,7 @@ export const BirthdayCard = (props) => {
   }, [commentsList.comments.length]);
 
   return (
-    <div className="newsFeed__card">
+    <div className="newsFeed__card birthday-card">
       <Card>
         <BirthdayCardSection data={props.data} />
         <Divider />

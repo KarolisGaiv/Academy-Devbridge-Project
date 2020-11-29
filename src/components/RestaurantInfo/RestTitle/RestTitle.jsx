@@ -2,11 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./rest-title.scss";
 
-export const RestTitle = ({ title }) => (
-  <div className="title">
-    <div className="title__text">{title}</div>
-  </div>
-);
+export const RestTitle = ({ title }) => <div className="title">{title}</div>;
 
 RestTitle.propTypes = {
   title: PropTypes.string,

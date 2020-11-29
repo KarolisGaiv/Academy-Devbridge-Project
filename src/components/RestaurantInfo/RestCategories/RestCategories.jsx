@@ -5,17 +5,19 @@ import "./rest-categories.scss";
 
 export const RestCategories = ({ category }) => (
   <div className="categories">
-    {[...Array(category[1] - 1)].map((name, i) => {
+    {[...Array(category[3] - 1)].map((name, i) => {
       return (
         <>
           <div className="categories__name" key={name}>
-            {category[0][i]}
+            {category[2][i]}
           </div>
-          <SVGIcon name="ellipseGrey" className="ellipseGrey" />
+          <div className="categories__icon">
+            <SVGIcon name="ellipseGrey" />
+          </div>
         </>
       );
     })}
-    <div className="categories__name"> {category[0][category[1] - 1]} </div>
+    <div className="categories__name"> {category[2][category[3] - 1]} </div>
   </div>
 );
 

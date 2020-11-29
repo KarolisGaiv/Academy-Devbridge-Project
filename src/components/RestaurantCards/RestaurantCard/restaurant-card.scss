@@ -3,23 +3,21 @@
 .restaurant-card {
     &__top {
         position: relative;
+        height: 180px;
     }
     &__checkins-rating {
         @include flex-space-between;
         position: absolute;
         z-index: 2;
         width: calc(100% - 32px);
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-top: 16px;
+        padding: 16px 16px 0 16px;
     }
     &__categories {
         position: absolute;
         bottom: 0;
         z-index: 2;
         width: calc(100% - 32px);
-        padding-left: 16px;
-        padding-right: 16px;
+        padding: 0 16px;
     }
     &__background {
         width: 100%;
@@ -38,7 +36,8 @@
         height: 180px;
         border-radius: 8px 8px 0px 0px;
     }
-    &__bottom {
+    &__middle {
+        margin: 0;
         padding-left: 16px;
         padding-right: 16px;
         padding-bottom: 16px;

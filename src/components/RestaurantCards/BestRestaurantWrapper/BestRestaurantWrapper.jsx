@@ -12,7 +12,7 @@ const BestRestaurantWrapper = () => {
         image={Ratings.numberOneRating()[6]}
         checkins={Ratings.numberOneRating()[0]}
         rating={Ratings.numberOneRating()[1]}
-        // category={Ratings.numberOneRating()}
+        category={Ratings.numberOneRating()}
         title={Ratings.numberOneRating()[4]}
         hours={Ratings.numberOneRating()[5]}
       ></RestaurantCard>
@@ -20,7 +20,7 @@ const BestRestaurantWrapper = () => {
         image={Ratings.numberTwoRating()[6]}
         checkins={Ratings.numberTwoRating()[0]}
         rating={Ratings.numberTwoRating()[1]}
-        // category={Ratings.numberTwoRating()}
+        category={Ratings.numberTwoRating()}
         title={Ratings.numberTwoRating()[4]}
         hours={Ratings.numberTwoRating()[5]}
       ></RestaurantCard>

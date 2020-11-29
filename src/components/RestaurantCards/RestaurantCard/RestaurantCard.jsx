@@ -28,12 +28,12 @@ const RestaurantCard = (props) => {
             className="restaurant-card__image"
           ></img>
         </div>
-        <div className="restaurant-card__bottom">
+        <div className="restaurant-card__middle">
           <div className="restaurant-card__title-like">
             <RestTitle title={props.title}></RestTitle>
             <HeartButton></HeartButton>
           </div>
-          <div className="restaurant-card__opening-hours">
+          <div className="restaurant-card__hours">
             <RestHours hours={props.hours}></RestHours>
           </div>
         </div>

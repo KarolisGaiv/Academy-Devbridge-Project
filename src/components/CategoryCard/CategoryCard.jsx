@@ -1,5 +1,5 @@
 import React from "react";
-import "./item-card.scss";
+import "./category-card.scss";
 import PropTypes from "prop-types";
 import SVGIcon from "../SVGIcon/SVGIcon";
 

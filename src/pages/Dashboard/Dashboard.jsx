@@ -2,7 +2,7 @@ import React from "react";
 import "./dashboard.scss";
 import WeatherWidget from "components/WeatherWidget/WeatherWidget";
 import GreetingWidget from "../../components/GreetingWidget/GreetingWidget";
-import ItemCard from "../../components/ItemCard/ItemCard";
+import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import database from "../../db.json";
 
 const Dashboard = () => {
@@ -17,19 +17,19 @@ const Dashboard = () => {
       <section className="dashboard__reservations-wrapper">
         <span className="dashboard__section-title">Reservations</span>
         <div className="dashboard__reservations-cards">
-          <ItemCard
+          <CategoryCard
             category="Devices"
             icon="Phone"
             totalNumber={reservationsData.devices.length}
             keyword={"reserved"}
           />
-          <ItemCard
+          <CategoryCard
             category="Books"
             icon="Book"
             totalNumber={reservationsData.books.length}
             keyword={"reserved"}
           />
-          <ItemCard
+          <CategoryCard
             category="Meeting rooms"
             icon="Door"
             totalNumber={reservationsData.meetingRooms.length}

@@ -5,6 +5,7 @@
     row-gap: 70px;
 
     &__card {
+        max-width: 450px;
         min-width: 450px;
 
         &:nth-child(3n + 1) {

@@ -12,7 +12,7 @@ const Dashboard = () => {
         <WeatherWidget />
       </section>
       <section className="dashboard__newsFeed">
-        <h1 className="dashboard__headline">News and Stories</h1>
+        <h2 className="dashboard__headline">News and Stories</h2>
         <NewsFeed />
       </section>
     </div>

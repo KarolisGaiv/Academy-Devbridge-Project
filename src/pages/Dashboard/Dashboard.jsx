@@ -15,7 +15,7 @@ const Dashboard = () => {
         <h2 className="dashboard__heading">Reservations</h2>
         <BestRestaurantWrapper></BestRestaurantWrapper>
       </section>
-      <section className="dashboard__news-and-stories">
+      <section className="dashboard__newsFeed">
         <h2 className="dashboard__heading">News and Stories</h2>
       </section>
     </div>

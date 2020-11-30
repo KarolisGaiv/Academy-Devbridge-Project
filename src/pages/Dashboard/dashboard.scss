@@ -8,23 +8,19 @@
         margin: 40px 0;
     }
 
-    &__section-title {
-        color: $color-pickled-bluewood;
-        font-size: $size-24;
-        font-weight: 900;
-    }
-
-    &__reservations-wrapper {
-        display: flex;
-        flex-direction: column;
-        margin-top: 70px;
-    }
-
     &__reservations-cards {
         column-gap: 40px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 100%;
         justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    &__heading {
+        color: $color-pickled-bluewood;
+        font-weight: 900;
+        line-height: 32px;
+        margin: 0;
     }
 }

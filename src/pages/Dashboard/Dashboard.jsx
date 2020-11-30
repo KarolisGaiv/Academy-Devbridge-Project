@@ -4,6 +4,7 @@ import WeatherWidget from "components/WeatherWidget/WeatherWidget";
 import GreetingWidget from "../../components/GreetingWidget/GreetingWidget";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import database from "../../db.json";
+import BestRestaurantWrapper from "../../components/RestaurantCards/BestRestaurantWrapper/BestRestaurantWrapper";
 
 const Dashboard = () => {
   const reservationsData = database.userData.reservations;
@@ -14,8 +15,8 @@ const Dashboard = () => {
         <GreetingWidget />
         <WeatherWidget />
       </section>
-      <section className="dashboard__reservations-wrapper">
-        <span className="dashboard__section-title">Reservations</span>
+      <section className="dashboard__reservations">
+        <h2 className="dashboard__heading">Reservations</h2>
         <div className="dashboard__reservations-cards">
           <CategoryCard
             category="Devices"
@@ -36,6 +37,10 @@ const Dashboard = () => {
             keyword={"reserved"}
           />
         </div>
+        <BestRestaurantWrapper></BestRestaurantWrapper>
+      </section>
+      <section className="dashboard__newsFeed">
+        <h2 className="dashboard__heading">News and Stories</h2>
       </section>
     </div>
   );

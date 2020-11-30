@@ -1,11 +1,10 @@
 @import '../../../styles/base/base';
+@import '../../../styles/mixins/mixins';
 
 .form-wrapper {
-    align-items: center;
-    background-color: $color-grey-90;
-    display: flex;
+    @include flex-center;
+    background-color: $color-mercury;
     height: 100vh;
-    justify-content: center;
     width: 100vw;
 
     &__field {
@@ -14,12 +13,11 @@
     }
 
     &__logo {
-        align-items: center;
-        display: flex;
+        @include flex-center;
         flex-direction: column;
-        justify-content: center;
     }
 }
+
 @media (max-height: 48.125em) {
     .form-wrapper {
         overflow: scroll;

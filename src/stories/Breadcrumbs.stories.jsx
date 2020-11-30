@@ -29,7 +29,7 @@ export const Breadcrumb = () => {
     let pathNameItems = path.split("/");
     pathNameItems.splice(index + 1);
     const pathName = pathNameItems.join("/");
-    
+
     return pathName;
   };
 
@@ -40,26 +40,31 @@ export const Breadcrumb = () => {
 
   //prevent click action for the last item in array
   const LastItemPreventClick = (e, index) => {
-    IsLast(index) ? e.preventDefault() : null;
+    if (IsLast(index)) {
+      e.preventDefault();
+    } else {
+      return null;
+    }
   };
 
   return (
-      <nav className="breadcrumb">
-        <ul className="breadcrumb__list">
-          {GetBreadcrumbs(pathname).map((value, index) => (
-            <NavLink
-              to={CreatePath(pathname, index)}
-              className="breadcrumb__link"
-              onClick={(e) => LastItemPreventClick(e, index)}
-            >
-              <li key={index} className="breadcrumb__list-item">
-                {value}
-                <SVGIcon name="chevron-right" className="svg__arrow-icon" />
-              </li>
-            </NavLink>
-          ))}
-        </ul>
-        <Switch />
-      </nav>
+    <nav className="breadcrumb">
+      <ul className="breadcrumb__list">
+        {GetBreadcrumbs(pathname).map((value, index) => (
+          <NavLink
+            key={index}
+            to={CreatePath(pathname, index)}
+            className="breadcrumb__link"
+            onClick={(e) => LastItemPreventClick(e, index)}
+          >
+            <li key={index} className="breadcrumb__list-item">
+              {value}
+              <SVGIcon name="chevron-right" className="svg__arrow-icon" />
+            </li>
+          </NavLink>
+        ))}
+      </ul>
+      <Switch />
+    </nav>
   );
 };

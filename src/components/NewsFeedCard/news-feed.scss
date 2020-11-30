@@ -1,12 +1,12 @@
 .newsFeed {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 50px;
+    margin: 64px 0;
     row-gap: 70px;
 
     &__card {
-        max-width: 450px;
-        min-width: 450px;
+        max-width: 395px;
+        min-width: 395px;
 
         &:nth-child(3n + 1) {
             justify-self: start;
@@ -29,7 +29,7 @@
         row-gap: 70px;
 
         &__card {
-            min-width: 500px;
+            min-width: 395px;
 
             &:nth-child(odd) {
                 justify-self: start;

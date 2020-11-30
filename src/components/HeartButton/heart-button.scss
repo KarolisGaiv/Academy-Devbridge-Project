@@ -1,0 +1,9 @@
+.heart {
+    appearance: none;
+    content: url('../../assets/heartBtn.svg');
+    cursor: pointer;
+
+    &:checked {
+        content: url('../../assets/heartBtnColored.svg');
+    }
+}

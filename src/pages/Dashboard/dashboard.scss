@@ -7,4 +7,11 @@
         justify-content: space-between;
         margin: 40px 0;
     }
+
+    &__heading {
+        color: $color-pickled-bluewood;
+        font-weight: 900;
+        line-height: 32px;
+        margin: 0;
+    }
 }

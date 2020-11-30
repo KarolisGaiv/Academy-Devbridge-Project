@@ -4,11 +4,7 @@ import "./card-container.scss";
 
 export const CardContainer = (props) => {
   return (
-    <>
-      <div className={`card-container ${props.styleName}`}>
-        {props.children}
-      </div>
-    </>
+    <div className={`card-container ${props.styleName}`}>{props.children}</div>
   );
 };
 

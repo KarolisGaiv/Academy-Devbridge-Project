@@ -15,11 +15,11 @@ const RestaurantCard = (props) => {
       <div className="restaurant-card">
         <div className="restaurant-card__top">
           <div className="restaurant-card__checkins-rating">
-            <CheckIns checkins={props.checkins}></CheckIns>
-            <Rating rating={props.rating}></Rating>
+            <CheckIns checkins={props.checkins} />
+            <Rating rating={props.rating} />
           </div>
           <div className="restaurant-card__categories">
-            <RestCategories category={props.category}></RestCategories>
+            <RestCategories category={props.category} />
           </div>
           <div className="restaurant-card__background"></div>
           <img
@@ -30,11 +30,11 @@ const RestaurantCard = (props) => {
         </div>
         <div className="restaurant-card__middle">
           <div className="restaurant-card__title-like">
-            <RestTitle title={props.title}></RestTitle>
-            <HeartButton></HeartButton>
+            <RestTitle title={props.title} />
+            <HeartButton />
           </div>
           <div className="restaurant-card__hours">
-            <RestHours hours={props.hours}></RestHours>
+            <RestHours hours={props.hours} />
           </div>
         </div>
       </div>

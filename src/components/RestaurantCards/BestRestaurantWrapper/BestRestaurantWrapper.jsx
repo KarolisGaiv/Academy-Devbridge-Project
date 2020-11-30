@@ -7,7 +7,7 @@ import { Ratings } from "../../Rating/maxRatings";
 const BestRestaurantWrapper = () => {
   return (
     <div className="best-restaurant-wrapper">
-      <RestaurantIntroCard></RestaurantIntroCard>
+      <RestaurantIntroCard />
       <RestaurantCard
         image={Ratings.numberOneRating()[6]}
         checkins={Ratings.numberOneRating()[0]}

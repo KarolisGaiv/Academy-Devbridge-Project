@@ -15,6 +15,9 @@ export class Ratings {
     var categories_length;
     var checkins;
     var time;
+    var rest_image;
+    var max_rating_sum;
+    var max_rating_reviewers;
 
     //loop through restaurants
     for (var i = 0; i < restlen; i++) {
@@ -36,6 +39,9 @@ export class Ratings {
           best_categories = restaurant.categories;
           checkins = restaurant.checkIns;
           time = restaurant.openingHours[0].hours;
+          rest_image = restaurant.image;
+          max_rating_sum = sum;
+          max_rating_reviewers = reviews_length;
         }
       }
       sum = 0;
@@ -52,6 +58,9 @@ export class Ratings {
       categories_length,
       rest_name,
       time,
+      rest_image,
+      max_rating_sum,
+      max_rating_reviewers,
     ];
   }
   static numberTwoRating() {
@@ -63,6 +72,9 @@ export class Ratings {
     var categories_length = Object.keys(categories).length;
     var rest_name = Ratings.numberOneRating(no1_rating)[4];
     var time = Ratings.numberOneRating(no1_rating)[5];
+    var rest_image = Ratings.numberOneRating(no1_rating)[6];
+    var max_rating_sum = Ratings.numberOneRating(no1_rating)[7];
+    var max_rating_reviewers = Ratings.numberOneRating(no1_rating)[8];
 
     return [
       checkins,
@@ -71,6 +83,20 @@ export class Ratings {
       categories_length,
       rest_name,
       time,
+      rest_image,
+      max_rating_sum,
+      max_rating_reviewers,
     ];
+  }
+  static finalRating(old_sum, old_reviewers, new_value) {
+    //have to flip because scss had right-to-left input
+    var value_flip = 3;
+    if (new_value === 5) value_flip = 1;
+    if (new_value === 4) value_flip = 2;
+    if (new_value === 2) value_flip = 4;
+    if (new_value === 1) value_flip = 5;
+
+    var final_rating = (old_sum + value_flip) / (old_reviewers + 1);
+    return final_rating.toFixed(1);
   }
 }

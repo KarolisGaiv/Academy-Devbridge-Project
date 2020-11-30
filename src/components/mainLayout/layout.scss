@@ -51,7 +51,7 @@ body {
         z-index: $z-index-base;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: $breakpoint-laptop) {
         grid-template-columns: 0.75fr 11.25fr;
         grid-template-rows: 1fr 10.25fr 0.75fr;
     }

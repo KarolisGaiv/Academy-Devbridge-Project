@@ -31,6 +31,7 @@ export class RestaurantIntroCard extends React.Component {
           </h2>
           <Button
             className="button button--enabled"
+            typeName="submit"
             handleClick={this.setRedirect}
           >
             browse list

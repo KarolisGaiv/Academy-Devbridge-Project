@@ -2,10 +2,10 @@
 @import '../../../styles/mixins/mixins';
 
 .form-wrapper {
+    @include flex-center;
+    background-color: $color-mercury;
     height: 100vh;
     width: 100vw;
-    background-color: $color-mercury;
-    @include flex-center;
 
     &__field {
         display: flex;

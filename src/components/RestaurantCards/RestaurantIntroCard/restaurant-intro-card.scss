@@ -3,15 +3,15 @@
 
 .restaurant-intro-card {
     @include flex-center;
-    padding: 53px 40px;
     flex-direction: column;
+    padding: 53px 40px;
 
     &__heading {
-        font-weight: 900;
-        text-align: center;
-        line-height: 32px;
-        margin: 0 0 24px 0;
         color: $color-black;
+        font-weight: 900;
+        line-height: 32px;
+        margin: 0 0 24px;
         opacity: 0.7;
+        text-align: center;
     }
 }

@@ -4,15 +4,3 @@
 @import 'mixins/mixins';
 
 @import 'print';
-
-html,
-body,
-body > div,
-.app {
-    font-family: $main-font;
-    height: 100%;
-}
-
-body {
-    margin: 0;
-}

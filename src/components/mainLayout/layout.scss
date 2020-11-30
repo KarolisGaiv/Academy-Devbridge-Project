@@ -1,6 +1,18 @@
 @import '../../styles/base/base';
 @import '../../styles/base/colors';
 
+html,
+body,
+body > div,
+.app {
+    font-family: $main-font;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
 .layout__wrapper {
     display: grid;
     grid-template-areas:

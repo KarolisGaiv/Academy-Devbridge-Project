@@ -27,7 +27,9 @@ const FormContainer = (props) => {
         <p className="form-container__sublegend">{sublegend}</p>
         <div className="form-container__form-grid">{children}</div>
         <footer className="form-container__footer">
-          <Button className="button button--enabled">{buttonText}</Button>
+          <Button className="button button--enabled" typeName="submit">
+            {buttonText}
+          </Button>
           <small className="form-container__footer-text">
             {smallText}
             <a className="form-container__sign-link" href={path}>

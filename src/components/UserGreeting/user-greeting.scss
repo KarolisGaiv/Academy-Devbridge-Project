@@ -1,12 +1,12 @@
 @import '../../styles/base/base';
 
-$_size-36: 36px;
-$_size-28: 26px;
-$_size-22: 16px;
+$_size-large: 36px;
+$_size-medium: 26px;
+$_size-small: 16px;
 
 .greeting-wrapper {
     color: $color-pickled-bluewood;
-    font-size: $_size-36;
+    font-size: $_size-large;
     font-weight: bold;
     line-height: normal;
     overflow: hidden;
@@ -14,10 +14,10 @@ $_size-22: 16px;
     white-space: nowrap;
 
     @media (max-width: $breakpoint-laptop) {
-        font-size: $_size-28;
+        font-size: $_size-medium;
     }
 
     @media (max-width: $breakpoint-tablet) {
-        font-size: $_size-22;
+        font-size: $_size-small;
     }
 }

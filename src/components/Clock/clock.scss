@@ -1,20 +1,20 @@
 @import '../../styles/base/base';
-$_size-100: 100px;
-$_size-80: 80px;
-$_size-60: 60px;
+$_size-large: 100px;
+$_size-medium: 80px;
+$_size-small: 60px;
 
 .clock-wrapper {
     color: $color-pickled-bluewood;
     font-family: $main-font;
-    font-size: $_size-100;
+    font-size: $_size-large;
     font-weight: bold;
     line-height: normal;
 
     @media (max-width: $breakpoint-laptop) {
-        font-size: $_size-80;
+        font-size: $_size-medium;
     }
 
     @media (max-width: $breakpoint-tablet) {
-        font-size: $_size-60;
+        font-size: $_size-small;
     }
 }

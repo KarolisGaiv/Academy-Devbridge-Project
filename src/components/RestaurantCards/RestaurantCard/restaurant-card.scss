@@ -52,13 +52,13 @@
     &__title-like {
         @include flex-space-between;
         position: absolute;
-        top: -18px;
+        top: -16px;
         width: calc(100% - 32px);
         z-index: $z-index-timeline;
     }
 
     &__hours {
         position: absolute;
-        top: 7px;
+        top: 12px;
     }
 }

@@ -7,14 +7,14 @@ export const RestCategories = ({ category }) => (
   <div className="categories">
     {[...Array(category[3] - 1)].map((name, i) => {
       return (
-        <>
+        <div className="categories" key={i}>
           <div className="categories__name" key={name}>
             {category[2][i]}
           </div>
           <div className="categories__icon">
             <SVGIcon name="ellipseGrey" />
           </div>
-        </>
+        </div>
       );
     })}
     <div className="categories__name"> {category[2][category[3] - 1]} </div>

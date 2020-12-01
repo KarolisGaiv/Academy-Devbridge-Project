@@ -23,7 +23,7 @@ export const Rating = ({ rating }) => {
                 className="rating__star"
                 value={ratingValue}
                 onClick={() => setRating(ratingValue)}
-                key={star}
+                key={i}
                 tabIndex={0}
               />
             );
@@ -36,7 +36,7 @@ export const Rating = ({ rating }) => {
 };
 
 Rating.propTypes = {
-  rating: PropTypes.string,
+  rating: PropTypes.array,
   newRating: PropTypes.string,
   type: PropTypes.string,
   className: PropTypes.string,

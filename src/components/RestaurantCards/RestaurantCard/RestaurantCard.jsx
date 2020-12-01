@@ -47,7 +47,7 @@ export default RestaurantCard;
 
 RestaurantCard.propTypes = {
   checkins: PropTypes.number,
-  rating: PropTypes.string,
+  rating: PropTypes.array,
   category: PropTypes.array,
   image: PropTypes.string,
   title: PropTypes.string,

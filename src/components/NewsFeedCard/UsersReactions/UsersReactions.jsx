@@ -70,7 +70,10 @@ const UsersReactions = (props) => {
       </div>
       <div className="user-reactions__comment">
         <button className="user-reactions__button disabled" type="submit">
-          <SVGIcon name="commentBtn" className="user-reactions__comment-icon" />
+          <SVGIcon
+            name="commentBtn"
+            className="user-reactions__comment-icon svg-icon"
+          />
         </button>
         <p className="user-reactions__comment-count">{props.commentCount}</p>
       </div>

@@ -5,9 +5,9 @@ import "./comments.scss";
 
 const Comments = (props) => {
   return (
-    <div className="comment clearfix">
-      <div className="comment__user-name">{props.username}</div>
-      <div className="comment__text">{props.comment}</div>
+    <div className="comment">
+      <span className="comment__user-name">{props.username}</span>
+      <span className="comment__text">{props.comment}</span>
     </div>
   );
 };

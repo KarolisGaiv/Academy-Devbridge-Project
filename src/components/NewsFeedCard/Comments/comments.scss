@@ -11,9 +11,12 @@
     margin: 5px 0;
 
     &__user-name {
-        float: left;
         font-weight: $weight-medium;
         padding-right: 10px;
         text-transform: uppercase;
+    }
+
+    &__text {
+        word-break: break-all;
     }
 }

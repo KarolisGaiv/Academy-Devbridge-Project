@@ -29,10 +29,6 @@
         border: hidden;
         cursor: pointer;
         padding: 0;
-
-        &:focus {
-            outline-color: $transparent;
-        }
     }
 
     .disabled {

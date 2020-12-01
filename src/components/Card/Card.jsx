@@ -9,5 +9,5 @@ const Card = (props) => {
 export default Card;
 
 Card.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.array,
 };

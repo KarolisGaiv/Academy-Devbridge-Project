@@ -1,0 +1,22 @@
+@import '../../../styles/base/base';
+
+.comment-section {
+    color: $color-grey-7;
+    font-size: $size-12;
+    padding: 5px 0;
+    width: 100%;
+}
+
+.comment {
+    margin: 5px 0;
+
+    &__user-name {
+        font-weight: $weight-medium;
+        padding-right: 10px;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        word-break: break-all;
+    }
+}

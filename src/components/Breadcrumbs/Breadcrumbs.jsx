@@ -1,6 +1,6 @@
 import React from "react";
 import SVGIcon from "../SVGIcon/SVGIcon";
-import { NavLink, Switch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./breadcrumbs.scss";
 
@@ -57,7 +57,6 @@ const Breadcrumbs = () => {
           </NavLink>
         ))}
       </ul>
-      <Switch />
     </nav>
   );
 };

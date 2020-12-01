@@ -5,6 +5,7 @@ import GreetingWidget from "../../components/GreetingWidget/GreetingWidget";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import database from "../../db.json";
 import BestRestaurantWrapper from "../../components/RestaurantCards/BestRestaurantWrapper/BestRestaurantWrapper";
+import NewsFeed from "../../components/NewsFeedCard/NewsFeed";
 
 const Dashboard = () => {
   const reservationsData = database.userData.reservations;
@@ -41,6 +42,7 @@ const Dashboard = () => {
       </section>
       <section className="dashboard__newsFeed">
         <h2 className="dashboard__heading">News and Stories</h2>
+        <NewsFeed />
       </section>
     </div>
   );

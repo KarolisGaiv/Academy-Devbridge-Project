@@ -22,12 +22,12 @@
     }
 
     &__user {
-        font-weight: 500;
+        font-weight: $weight-medium;
         text-transform: uppercase;
     }
 
     &__wish {
-        font-weight: 500;
+        font-weight: $weight-medium;
     }
 
     &__svg {
@@ -49,7 +49,7 @@
     }
 
     .date {
-        font-weight: 500;
+        font-weight: $weight-medium;
     }
 
     p {

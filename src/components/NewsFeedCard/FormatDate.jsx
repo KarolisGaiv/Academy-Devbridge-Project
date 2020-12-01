@@ -1,5 +1,3 @@
-//import React from "react";
-
 const FormatDate = function (date) {
   const months = [
     "Jan",
@@ -16,6 +14,7 @@ const FormatDate = function (date) {
     "Dec",
   ];
 
+  //find the st/nd/rd/th for the date
   const nth = (d) => {
     if (d > 3 && d < 21) return "th";
     switch (d % 10) {
@@ -31,7 +30,7 @@ const FormatDate = function (date) {
   };
 
   const formattedDate = new Date(date);
-
+  //fformat date in MMM DD format
   return `${months[formattedDate.getMonth()]} ${formattedDate.getDate()}${nth(
     formattedDate.getDate()
   )}`;

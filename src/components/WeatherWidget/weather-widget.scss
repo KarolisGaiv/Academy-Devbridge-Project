@@ -1,4 +1,4 @@
-@import '../../styles/base/colors';
+@import '../../styles/base/base';
 
 .widget {
     background: $color-white;
@@ -16,5 +16,9 @@
 
     &__icon-place {
         width: 116px;
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+        max-width: 280px;
     }
 }

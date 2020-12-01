@@ -35,7 +35,7 @@ const WeekDayLocationPart = ({ location }) => {
       <div className="place__week-day">
         {day}, {date} {month}
       </div>
-      <div className="place__divider">|</div>
+      <div className="place__divider" />
       <div className="place__location">{location}</div>
     </div>
   );

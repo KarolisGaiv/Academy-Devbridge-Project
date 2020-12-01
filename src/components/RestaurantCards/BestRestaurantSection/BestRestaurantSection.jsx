@@ -1,12 +1,12 @@
 import React from "react";
 import { RestaurantIntroCard } from "../RestaurantIntroCard/RestaurantIntroCard";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
-import "./best-restaurant-wrapper.scss";
+import "./best-restaurant-section.scss";
 import { Ratings } from "../../Rating/maxRatings";
 
-const BestRestaurantWrapper = () => {
+const BestRestaurantSection = () => {
   return (
-    <div className="best-restaurant-wrapper">
+    <div className="best-restaurants">
       <RestaurantIntroCard />
       <RestaurantCard
         image={Ratings.numberOneRating()[6]}
@@ -28,4 +28,4 @@ const BestRestaurantWrapper = () => {
   );
 };
 
-export default BestRestaurantWrapper;
+export default BestRestaurantSection;

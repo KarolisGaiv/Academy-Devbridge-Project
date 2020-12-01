@@ -1,0 +1,15 @@
+@import '../../../styles/base//base';
+
+.best-restaurants {
+    background-color: $color-porcelain;
+    column-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 395px));
+    justify-content: center;
+    padding: 64px 0;
+
+    @media (max-width: 1300px) {
+        grid-template-columns: auto;
+        row-gap: 40px;
+    }
+}

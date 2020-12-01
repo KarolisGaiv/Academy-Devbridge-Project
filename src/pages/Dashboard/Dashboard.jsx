@@ -2,7 +2,7 @@ import React from "react";
 import "./dashboard.scss";
 import WeatherWidget from "components/WeatherWidget/WeatherWidget";
 import GreetingWidget from "../../components/GreetingWidget/GreetingWidget";
-import BestRestaurantWrapper from "../../components/RestaurantCards/BestRestaurantWrapper/BestRestaurantWrapper";
+import BestRestaurantSection from "../../components/RestaurantCards/BestRestaurantSection/BestRestaurantSection";
 
 const Dashboard = () => {
   return (
@@ -13,7 +13,7 @@ const Dashboard = () => {
       </section>
       <section className="dashboard__reservations">
         <h2 className="dashboard__heading">Reservations</h2>
-        <BestRestaurantWrapper></BestRestaurantWrapper>
+        <BestRestaurantSection />
       </section>
       <section className="dashboard__newsFeed">
         <h2 className="dashboard__heading">News and Stories</h2>

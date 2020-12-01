@@ -13,6 +13,26 @@ const Dashboard = () => {
       </section>
       <section className="dashboard__reservations">
         <h2 className="dashboard__heading">Reservations</h2>
+        <div className="dashboard__reservations-caards">
+          <CategoryCard
+            category="Devices"
+            icon="Phone"
+            totalNumber={reservationsData.devices.length}
+            keyword={"reserved"}
+          />
+          <CategoryCard
+            category="Books"
+            icon="Book"
+            totalNumber={reservationsData.books.length}
+            keyword={"reserved"}
+          />
+          <CategoryCard
+            category="Meeting rooms"
+            icon="Door"
+            totalNumber={reservationsData.meetingsRooms.length}
+            keyword={"reserved"}
+          />
+        </div>
         <BestRestaurantWrapper />
       </section>
       <section className="dashboard__newsFeed">

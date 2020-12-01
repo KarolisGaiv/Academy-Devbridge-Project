@@ -1,0 +1,39 @@
+@import '../../styles/base/base';
+@import '../../styles/mixins/mixins';
+
+.card-wrapper {
+    @include flex-space-between;
+    background: $color-alabaster;
+    border-radius: 8px;
+    box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
+    height: 96px;
+    line-height: $size-22;
+    max-width: 555px;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 25px 0 26px 16px;
+    }
+
+    &__name {
+        @include text-overflow-ellipsis;
+        color: $color-pickled-bluewood;
+        font-size: $size-24;
+        font-weight: 900;
+        line-height: 32px;
+    }
+
+    &__details {
+        @include text-overflow-ellipsis;
+        color: $color-grey-8;
+        font-size: $size-12;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    &__icon {
+        transform: translateX(-15px);
+    }
+}

@@ -8,6 +8,13 @@
         margin: 40px 0;
     }
 
+    &__reservations-cards {
+        column-gap: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 30px;
+    }
+
     &__heading {
         color: $color-pickled-bluewood;
         font-weight: 900;

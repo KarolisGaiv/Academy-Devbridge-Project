@@ -12,6 +12,11 @@
     }
 }
 
+@mixin text-overflow-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 @mixin flex-center {
     align-items: center;
     display: flex;

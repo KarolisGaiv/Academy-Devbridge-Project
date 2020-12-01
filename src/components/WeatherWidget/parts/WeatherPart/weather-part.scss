@@ -3,6 +3,7 @@
 
 $_transperent-black-3: rgba(0, 0, 0, 0.3);
 $_size-60: 60px;
+$_transperent-black-7: #000000b3;
 
 .weather {
     display: flex;
@@ -16,6 +17,7 @@ $_size-60: 60px;
     }
 
     &__degrees {
+        color: $_transperent-black-7;
         font-size: $_size-60;
         font-weight: 300;
     }

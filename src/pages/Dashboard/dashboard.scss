@@ -1,6 +1,9 @@
 @import '../../styles/base/base';
 
 .dashboard {
+    margin: 0 auto;
+    max-width: 1265px;
+
     &__header {
         display: flex;
         height: 100%;

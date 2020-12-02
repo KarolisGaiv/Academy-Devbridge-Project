@@ -29,13 +29,8 @@
             'general';
         row-gap: 20px;
 
-        .restaurant-intro-card__wrapper {
-            grid-area: general;
-        }
-
         .restaurant-card__wrapper {
             column-gap: 20px;
-            grid-area: restaurant;
         }
     }
 }

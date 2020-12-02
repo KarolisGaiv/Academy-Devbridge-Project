@@ -22,11 +22,7 @@ const RestaurantCard = (props) => {
             <RestCategories category={props.category} />
           </div>
           <div className="restaurant-card__background">
-            <img
-              src={props.image}
-              alt=""
-              className="restaurant-card__image"
-            ></img>
+            <img src={props.image} alt="" className="restaurant-card__image" />
           </div>
         </div>
         <div className="restaurant-card__title-like">

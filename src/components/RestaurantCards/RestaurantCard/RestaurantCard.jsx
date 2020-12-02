@@ -21,21 +21,16 @@ const RestaurantCard = (props) => {
           <div className="restaurant-card__categories">
             <RestCategories category={props.category} />
           </div>
-          <div className="restaurant-card__background"></div>
-          <img
-            src={props.image}
-            alt=""
-            className="restaurant-card__image"
-          ></img>
+          <div className="restaurant-card__background">
+            <img src={props.image} alt="" className="restaurant-card__image" />
+          </div>
         </div>
-        <div className="restaurant-card__middle">
-          <div className="restaurant-card__title-like">
-            <RestTitle title={props.title} />
-            <HeartButton />
-          </div>
-          <div className="restaurant-card__hours">
-            <RestHours hours={props.hours} />
-          </div>
+        <div className="restaurant-card__title-like">
+          <RestTitle title={props.title} />
+          <HeartButton />
+        </div>
+        <div className="restaurant-card__hours">
+          <RestHours hours={props.hours} />
         </div>
       </div>
     </CardContainer>

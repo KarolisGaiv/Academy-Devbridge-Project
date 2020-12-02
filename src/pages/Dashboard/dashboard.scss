@@ -1,6 +1,9 @@
 @import '../../styles/base/base';
 
 .dashboard {
+    margin: 0 auto;
+    max-width: 1265px;
+
     &__header {
         display: flex;
         height: 100%;
@@ -20,5 +23,22 @@
         font-weight: 900;
         line-height: 32px;
         margin: 0;
+    }
+}
+
+@media (max-width: $breakpoint-laptop) {
+    .dashboard {
+        &__reservations-cards {
+            column-gap: 20px;
+            margin-top: 80px;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .dashboard {
+        &__header {
+            flex-direction: column;
+        }
     }
 }

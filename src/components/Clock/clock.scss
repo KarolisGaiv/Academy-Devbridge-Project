@@ -1,7 +1,7 @@
 @import '../../styles/base/base';
 $_size-large: 100px;
 $_size-medium: 80px;
-$_size-small: 60px;
+$_size-small: 40px;
 
 .clock-wrapper {
     color: $color-pickled-bluewood;
@@ -9,12 +9,17 @@ $_size-small: 60px;
     font-size: $_size-large;
     font-weight: bold;
     line-height: normal;
+    white-space: nowrap;
+}
 
-    @media (max-width: $breakpoint-laptop) {
+@media (max-width: $breakpoint-laptop) {
+    .clock-wrapper {
         font-size: $_size-medium;
     }
+}
 
-    @media (max-width: $breakpoint-tablet) {
+@media (max-width: $breakpoint-tablet-landscape) {
+    .clock-wrapper {
         font-size: $_size-small;
     }
 }

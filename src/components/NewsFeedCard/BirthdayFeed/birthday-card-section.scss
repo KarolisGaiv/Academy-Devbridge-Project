@@ -3,11 +3,10 @@
 .birthday {
     color: $color-blue-dark;
     font-size: $size-12;
-    margin-bottom: 15px;
+    margin: 0 15px 15px;
     padding-top: 65px;
     position: relative;
     text-align: center;
-    width: 100%;
 
     &__profile {
         left: 50%;
@@ -70,7 +69,7 @@
     }
 
     &--position-3 {
-        right: 35%;
+        right: 33%;
         top: 20%;
     }
 
@@ -92,7 +91,7 @@
     }
 
     &--position-3 {
-        right: 30%;
+        right: 27%;
         top: 12%;
     }
 

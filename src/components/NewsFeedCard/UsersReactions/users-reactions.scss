@@ -1,6 +1,8 @@
 @import '../../../styles/base/base';
 
 .user-reactions {
+    padding: 0 15px;
+
     &__reaction,
     &__comment {
         display: inline-block;

@@ -1,11 +1,21 @@
+@import '../../styles/base/base';
+
 .newsFeed {
     column-gap: 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
     margin: 64px 0;
     row-gap: 70px;
+}
 
-    &__card {
-        min-width: 395px;
+@media (max-width: $breakpoint-laptop) {
+    .newsFeed {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: $breakpoint-tablet-landscape) {
+    .newsFeed {
+        grid-template-columns: auto;
     }
 }

@@ -5,3 +5,9 @@
     flex-direction: column;
     max-width: 600px;
 }
+
+@media (max-width: $breakpoint-tablet) {
+    .widget-block {
+        margin-bottom: 20px;
+    }
+}

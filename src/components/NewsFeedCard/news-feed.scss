@@ -14,7 +14,7 @@
     }
 }
 
-@media (max-width: $breakpoint-tablet-landscape) {
+@media (max-width: $breakpoint-tablet) {
     .newsFeed {
         grid-template-columns: auto;
     }

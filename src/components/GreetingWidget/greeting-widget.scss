@@ -4,10 +4,8 @@
     display: flex;
     flex-direction: column;
     max-width: 600px;
-}
 
-@media (max-width: $breakpoint-tablet) {
-    .widget-block {
+    @media (max-width: $breakpoint-tablet) {
         margin-bottom: 20px;
     }
 }

@@ -7,3 +7,18 @@
     min-height: 320px;
     width: 100%;
 }
+
+.slides {
+    display: inline-flex;
+    overflow: hidden;
+    width: 820px;
+}
+
+.slides img {
+    border-radius: 10px 0 0 10px;
+    flex-shrink: 0;
+    max-height: 320px;
+    object-fit: cover;
+    transition: 300ms;
+    width: 100%;
+}

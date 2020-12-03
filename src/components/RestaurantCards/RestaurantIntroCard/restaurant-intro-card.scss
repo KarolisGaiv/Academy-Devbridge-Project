@@ -4,8 +4,7 @@
 .restaurant-intro-card {
     @include flex-center;
     flex-direction: column;
-    height: 100%;
-    margin: 0 15px;
+    padding: 53px 40px;
 
     &__heading {
         color: $color-black;
@@ -20,6 +19,6 @@
 @media (max-width: $breakpoint-tablet-landscape) {
     .restaurant-intro-card {
         height: auto;
-        padding: 30px 0;
+        padding: 30px;
     }
 }

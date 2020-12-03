@@ -37,6 +37,7 @@ export const BirthdayCard = (props) => {
       ],
     });
     commentField.current = "";
+    setCommentEmptyState(true);
   };
 
   //check if comment field is not empty.

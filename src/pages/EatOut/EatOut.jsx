@@ -5,6 +5,15 @@ import data from "../../db.json";
 import "./eat-out.scss";
 
 const EatOut = () => {
+  // loop through all restaurant and push their categories into one array
+  const test = data.restaurants.restaurantList.map((i) => i.categories).flat();
+
+  const countOccurences = (array, value) => {
+    return array.reduce((accumulator, element) => {
+      return value === element ? accumulator + 1 : accumulator;
+    }, 0);
+  };
+
   return (
     <main className="dashboard">
       <Breadcrumbs />
@@ -12,7 +21,12 @@ const EatOut = () => {
       <div className="dashboard__categories-wrapper">
         {data.restaurants.categories.map((item) => (
           <span key={item.id}>
-            <CategoryCard category={item} keyword="places" icon={item} />
+            <CategoryCard
+              category={item}
+              keyword="places"
+              icon={item}
+              totalNumber={countOccurences(test, item)}
+            />
           </span>
         ))}
       </div>

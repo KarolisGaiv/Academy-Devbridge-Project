@@ -62,7 +62,7 @@ export const BirthdayCard = (props) => {
 
   return (
     <div className="newsFeed__card birthday-card">
-      <CardContainer styleName={"card-container--shadow"}>
+      <CardContainer styleName="card-container--shadow">
         <BirthdayCardSection data={props.data} />
         <Divider />
         <UsersReactions data={props.data} commentCount={commentsCount} />

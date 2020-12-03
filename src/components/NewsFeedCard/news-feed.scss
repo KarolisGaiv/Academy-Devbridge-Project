@@ -3,19 +3,19 @@
 .newsFeed {
     column-gap: 40px;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin: 64px 0;
     row-gap: 70px;
-}
 
-@media (max-width: $breakpoint-laptop) {
-    .newsFeed {
-        grid-template-columns: auto auto;
+    @media (max-width: $breakpoint-laptop) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-}
 
-@media (max-width: $breakpoint-tablet) {
-    .newsFeed {
-        grid-template-columns: auto;
+    @media (max-width: $breakpoint-tablet-landscape) {
+        column-gap: 20px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: minmax(0, 1fr);
     }
 }

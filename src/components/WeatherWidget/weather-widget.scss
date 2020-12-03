@@ -17,10 +17,8 @@
     &__icon-place {
         width: 116px;
     }
-}
 
-@media (max-width: $breakpoint-laptop) {
-    .widget {
+    @media (max-width: $breakpoint-laptop) {
         height: 150px;
         margin-right: 90px;
         max-width: 280px;
@@ -28,16 +26,14 @@
         &__icon-place {
             width: 90px;
 
-            .icon > svg {
+            svg {
                 height: 100%;
                 width: 180px;
             }
         }
     }
-}
 
-@media (max-width: $breakpoint-tablet) {
-    .widget {
+    @media (max-width: $breakpoint-tablet) {
         height: 150px;
         margin-bottom: 0;
         margin-right: 0;
@@ -49,7 +45,7 @@
             position: absolute;
             transform: translateX(-100%);
 
-            .icon > svg {
+            svg {
                 height: 100%;
                 width: 180px;
             }

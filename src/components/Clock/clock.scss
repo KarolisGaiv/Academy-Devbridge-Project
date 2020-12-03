@@ -10,16 +10,12 @@ $_size-small: 40px;
     font-weight: bold;
     line-height: normal;
     white-space: nowrap;
-}
 
-@media (max-width: $breakpoint-laptop) {
-    .clock-wrapper {
+    @media (max-width: $breakpoint-laptop) {
         font-size: $_size-medium;
     }
-}
 
-@media (max-width: $breakpoint-tablet-landscape) {
-    .clock-wrapper {
+    @media (max-width: $breakpoint-tablet-landscape) {
         font-size: $_size-small;
     }
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
+import Carousel from "components/Carousel/Carousel";
 
 const EatOut = () => {
   return (
     <main>
       <Breadcrumbs />
-      <h1 style={{ margin: "auto", textAlign: "center" }}>EatOut</h1>
+      <Carousel />
     </main>
   );
 };

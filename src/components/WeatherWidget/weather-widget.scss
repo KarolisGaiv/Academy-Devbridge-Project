@@ -19,6 +19,36 @@
     }
 
     @media (max-width: $breakpoint-laptop) {
+        height: 150px;
+        margin-right: 90px;
         max-width: 280px;
+
+        &__icon-place {
+            width: 90px;
+
+            svg {
+                height: 100%;
+                width: 180px;
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        height: 150px;
+        margin-bottom: 0;
+        margin-right: 0;
+        max-width: calc(100% - 90px);
+        position: relative;
+
+        &__icon-place {
+            left: 100%;
+            position: absolute;
+            transform: translateX(-100%);
+
+            svg {
+                height: 100%;
+                width: 180px;
+            }
+        }
     }
 }

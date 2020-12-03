@@ -8,7 +8,6 @@
     box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
     height: 96px;
     line-height: $size-22;
-    max-width: 555px;
 
     &__info {
         display: flex;
@@ -35,5 +34,35 @@
 
     &__icon {
         transform: translateX(-15px);
+    }
+}
+
+@media (max-width: $breakpoint-laptop) {
+    .card-wrapper {
+        flex-direction: column-reverse;
+        height: calc(100% - 50px);
+
+        &__info {
+            align-items: center;
+            overflow: visible;
+            padding: 0;
+            transform: translate(0, -30%);
+        }
+
+        &__icon {
+            transform: translate(0, -15%);
+        }
+
+        &__name {
+            font-weight: $size-20;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .card-wrapper {
+        &__name {
+            font-size: $size-16;
+        }
     }
 }

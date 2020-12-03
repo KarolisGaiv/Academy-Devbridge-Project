@@ -25,3 +25,21 @@
         margin: 0;
     }
 }
+
+@media (max-width: $breakpoint-laptop) {
+    .dashboard {
+        &__reservations-cards {
+            align-items: end;
+            column-gap: 20px;
+            margin-top: 40px;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .dashboard {
+        &__header {
+            flex-direction: column;
+        }
+    }
+}

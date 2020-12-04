@@ -7,6 +7,7 @@
 }
 
 .profile {
+    height: 40px;
     position: relative;
 
     &__btn {
@@ -19,14 +20,15 @@
 
     .user-avatar {
         &__image {
-            transform: scale(1.5) translateY(5px);
+            height: auto;
+            transform: scale(1.4) translateY(3px);
         }
     }
 
     &__dropdown-arrow {
-        bottom: 10px;
+        bottom: 2px;
         position: absolute;
-        right: -5px;
+        right: 0;
     }
 }
 

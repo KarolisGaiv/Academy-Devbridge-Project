@@ -30,8 +30,16 @@
     .dashboard {
         &__reservations-cards {
             align-items: end;
-            column-gap: 20px;
+            column-gap: 40px;
             margin-top: 40px;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet-landscape) {
+    .dashboard {
+        &__reservations-cards {
+            column-gap: 20px;
         }
     }
 }

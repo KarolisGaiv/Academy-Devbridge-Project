@@ -6,10 +6,10 @@
     display: flex;
 
     &__text {
-        line-height: 13px;
+        line-height: 1.1;
         font-size: $size-12;
         font-weight: $weight-medium;
-        padding-left: 9px;
+        padding-left: 10px;
         text-transform: uppercase;
     }
 }

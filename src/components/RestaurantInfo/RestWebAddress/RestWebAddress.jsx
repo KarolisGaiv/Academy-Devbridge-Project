@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SVGIcon from "../SVGIcon/SVGIcon";
-import "./web-address.scss";
+import SVGIcon from "../../SVGIcon/SVGIcon";
+import "./rest-web-address.scss";
 
 export const WebAddress = ({ icon, text }) => {
   return (

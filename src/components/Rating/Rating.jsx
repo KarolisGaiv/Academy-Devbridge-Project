@@ -6,6 +6,7 @@ import { Ratings } from "./maxRatings";
 
 export const Rating = ({ rating }) => {
   const [newRating, setRating] = useState(null);
+  const [tabstatus, setExpand] = useState("rating__collapse");
   var final_rating;
 
   if (newRating == null) final_rating = rating[1];
@@ -13,7 +14,7 @@ export const Rating = ({ rating }) => {
 
   return (
     <div className="rating">
-      <div className="rating__collapse">
+      <div className={tabstatus}>
         <div className="rating__expand">
           {[...Array(5)].map((star, i) => {
             const ratingValue = i + 1;
@@ -24,7 +25,8 @@ export const Rating = ({ rating }) => {
                 value={ratingValue}
                 onClick={() => setRating(ratingValue)}
                 key={i}
-                tabIndex={0}
+                onFocus={() => setExpand("on-tab")}
+                onBlur={() => setExpand("rating__collapse")}
               />
             );
           })}

@@ -12,6 +12,7 @@
     font-weight: 700;
     height: 32px;
     justify-content: space-between;
+    overflow: hidden;
     padding: 8px 12px;
     width: $width;
 }
@@ -48,9 +49,8 @@
     &__collapse {
         @include ratingbox($color-yellow, $color-pickled-bluewood, 65px);
 
-        overflow: hidden;
-
         &:hover {
+            overflow: visible;
             width: 145px;
 
             #{$_this}__expand #{$_this}__star {
@@ -61,6 +61,21 @@
             #{$_this}__expand {
                 margin-left: 1px;
             }
+        }
+    }
+
+    .on-tab {
+        @include ratingbox($color-yellow, $color-pickled-bluewood, 65px);
+        overflow: visible;
+        width: 145px;
+
+        #{$_this}__expand #{$_this}__star {
+            margin: 4px 0 0;
+            padding: 3px;
+        }
+
+        #{$_this}__expand {
+            margin-left: 1px;
         }
     }
 }

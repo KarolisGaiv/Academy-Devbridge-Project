@@ -25,6 +25,8 @@ import { ReactComponent as Phone } from "../../assets/phone.svg";
 import { ReactComponent as Book } from "../../assets/book.svg";
 import { ReactComponent as Door } from "../../assets/door.svg";
 import { ReactComponent as EllipseGrey } from "../../assets/ellipseGrey.svg";
+import { ReactComponent as Globe } from "../../assets/globe.svg";
+import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -81,6 +83,10 @@ const SVGIcon = (props) => {
       return <Door className={props.className} />;
     case "ellipseGrey":
       return <EllipseGrey />;
+    case "Globe":
+      return <Globe />;
+    case "MapPin":
+      return <MapPin />;
     default:
       return "error";
   }

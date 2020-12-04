@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.scss";
-import { ReactComponent as NotificationBell } from "../../../../assets/notification.svg";
+import SVGIcon from "../../../SVGIcon/SVGIcon";
 import UserProfile from "../../../UserProfile/UserProfile";
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
         <UserProfile />
       </div>
       <div className="header__notification">
-        <NotificationBell />
+        <SVGIcon name="notificationBell" />
       </div>
     </header>
   );

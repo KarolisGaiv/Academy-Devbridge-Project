@@ -1,0 +1,19 @@
+.restaurant-card {
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 16px 0;
+    }
+
+    &__description {
+        color: #6a7889; // slate-grey
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    &__button-field {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

@@ -38,7 +38,7 @@ const Dashboard = () => {
             keyword={"reserved"}
           />
         </div>
-        <BestRestaurantWrapper></BestRestaurantWrapper>
+        <BestRestaurantWrapper />
       </section>
       <section className="dashboard__newsFeed">
         <h2 className="dashboard__heading">News and Stories</h2>

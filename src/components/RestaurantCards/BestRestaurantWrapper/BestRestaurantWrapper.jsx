@@ -12,7 +12,7 @@ const BestRestaurantWrapper = () => {
       </div>
       <div className="restaurant-card__wrapper">
         <RestaurantCard
-          image={Ratings.numberOneRating()[6]}
+          src={Ratings.numberOneRating()[6]}
           checkins={Ratings.numberOneRating()[0]}
           rating={Ratings.numberOneRating()}
           category={Ratings.numberOneRating()}
@@ -20,7 +20,7 @@ const BestRestaurantWrapper = () => {
           hours={Ratings.numberOneRating()[5]}
         ></RestaurantCard>
         <RestaurantCard
-          image={Ratings.numberTwoRating()[6]}
+          src={Ratings.numberTwoRating()[6]}
           checkins={Ratings.numberTwoRating()[0]}
           rating={Ratings.numberTwoRating()}
           category={Ratings.numberTwoRating()}

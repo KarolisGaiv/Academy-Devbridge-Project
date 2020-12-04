@@ -9,6 +9,10 @@
     &__top {
         height: 80%;
         position: relative;
+
+        @media (max-width: $breakpoint-tablet-landscape) {
+            height: 185px;
+        }
     }
 
     &__checkins-rating {

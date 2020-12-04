@@ -29,6 +29,8 @@ import { ReactComponent as DropdownArrow } from "../../assets/dropdownArrow.svg"
 import { ReactComponent as SettingsIcon } from "../../assets/settingsIcon.svg";
 import { ReactComponent as LogoutIcon } from "../../assets/logoutIcon.svg";
 import { ReactComponent as NotificationBell } from "../../assets/notification.svg";
+import { ReactComponent as Globe } from "../../assets/globe.svg";
+import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -93,6 +95,10 @@ const SVGIcon = (props) => {
       return <LogoutIcon className={props.className} />;
     case "notificationBell":
       return <NotificationBell className={props.className} />;
+    case "Globe":
+      return <Globe />;
+    case "MapPin":
+      return <MapPin />;
     default:
       return "error";
   }

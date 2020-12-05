@@ -3,18 +3,18 @@
 .dashboard {
     margin: 0 auto;
     max-width: 1265px;
+
+    &__categories-wrapper {
+        column-gap: 70px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-top: 70px;
+        row-gap: 60px;
+    }
 }
 
 .dashboard__top {
     background-color: $color-pickled-bluewood;
     height: 200px;
     width: 100%;
-}
-
-.dashboard__categories-wrapper {
-    column-gap: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top: 70px;
-    row-gap: 60px;
 }

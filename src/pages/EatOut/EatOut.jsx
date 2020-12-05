@@ -8,6 +8,7 @@ const EatOut = () => {
   // loop through all restaurant and push their categories into one array
   const test = data.restaurants.restaurantList.map((i) => i.categories).flat();
 
+  //loop through provided array to count number of times element appears
   const countOccurences = (array, value) => {
     return array.reduce((accumulator, element) => {
       return value === element ? accumulator + 1 : accumulator;
@@ -20,7 +21,7 @@ const EatOut = () => {
       <div className="dashboard__top">Placeholder for top widget</div>
       <div className="dashboard__categories-wrapper">
         {data.restaurants.categories.map((item) => (
-          <span key={item.id}>
+          <span key={item}>
             <CategoryCard
               category={item}
               keyword="places"

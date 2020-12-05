@@ -9,7 +9,7 @@ export const ResCard = ({ category, totalNumber, icon, keyword }) => {
       <div className="card-wrapper__info">
         <span className="card-wrapper__name">{category}</span>
         <span className="card-wrapper__details">
-          {totalNumber + " " + keyword}
+          {`${totalNumber} ${keyword}`}
         </span>
       </div>
       <div className="card-wrapper__icon">

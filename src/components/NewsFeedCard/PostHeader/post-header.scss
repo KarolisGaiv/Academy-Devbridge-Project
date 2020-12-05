@@ -32,4 +32,34 @@
         color: $color-grey-6;
         margin: 10px 15px 10px 5px;
     }
+
+    &__content {
+        max-height: 405px;
+        overflow: hidden;
+        position: relative;
+        width: 395px; //temporary for story
+
+        &:hover .playIcon_svg__play {
+            fill: $color-white;
+            stroke: $color-white;
+        }
+
+        &:hover .playIcon_svg__background {
+            fill: $color-purple-dark;
+        }
+    }
+
+    &__image {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &__video-play-button {
+        background: $transparent;
+        border: hidden;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

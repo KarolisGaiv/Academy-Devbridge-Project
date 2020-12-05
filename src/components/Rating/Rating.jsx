@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./rating.scss";
-import { useState } from "react";
 import { Ratings } from "./maxRatings";
+import SVGIcon from "components/SVGIcon/SVGIcon";
 
 export const Rating = ({ rating }) => {
   const [newRating, setRating] = useState(null);
   const [tabstatus, setExpand] = useState("rating__collapse");
+  const [hovered, setHover] = useState(null);
   var final_rating;
 
   if (newRating == null) final_rating = rating[1];
@@ -19,15 +20,30 @@ export const Rating = ({ rating }) => {
           {[...Array(5)].map((star, i) => {
             const ratingValue = i + 1;
             return (
-              <input
-                type="checkbox"
-                className="rating__star"
-                value={ratingValue}
-                onClick={() => setRating(ratingValue)}
-                key={i}
-                onFocus={() => setExpand("on-tab")}
-                onBlur={() => setExpand("rating__collapse")}
-              />
+              <label className="rating__label" key={i}>
+                <input
+                  className="rating__input"
+                  type="radio"
+                  name="newRating"
+                  value={ratingValue}
+                  onClick={() => setRating(ratingValue)}
+                  key={star}
+                  tabIndex={0}
+                />
+                <SVGIcon
+                  className="rating__star"
+                  name={
+                    ratingValue <= (hovered || newRating)
+                      ? "starFilled"
+                      : "starEmpty"
+                  }
+                  onMouseEnter={() => setHover(ratingValue)}
+                  onMouseLeave={() => setHover(null)}
+                  onFocus={() => setExpand("on-tab")}
+                  onBlur={() => setExpand("rating__collapse")}
+                  key={i}
+                />
+              </label>
             );
           })}
         </div>

@@ -89,14 +89,7 @@ export class Ratings {
     ];
   }
   static finalRating(old_sum, old_reviewers, new_value) {
-    //have to flip because scss had right-to-left input
-    var value_flip = 3;
-    if (new_value === 5) value_flip = 1;
-    if (new_value === 4) value_flip = 2;
-    if (new_value === 2) value_flip = 4;
-    if (new_value === 1) value_flip = 5;
-
-    var final_rating = (old_sum + value_flip) / (old_reviewers + 1);
+    var final_rating = (old_sum + new_value) / (old_reviewers + 1);
     return final_rating.toFixed(1);
   }
 }

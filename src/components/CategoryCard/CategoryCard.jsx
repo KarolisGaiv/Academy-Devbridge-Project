@@ -3,7 +3,13 @@ import "./category-card.scss";
 import PropTypes from "prop-types";
 import SVGIcon from "../SVGIcon/SVGIcon";
 
-export const ResCard = ({ category, totalNumber, icon, keyword }) => {
+export const ResCard = ({
+  category,
+  totalNumber,
+  icon,
+  keyword,
+  iconStyle,
+}) => {
   return (
     <div className="card-wrapper">
       <div className="card-wrapper__info">
@@ -12,7 +18,7 @@ export const ResCard = ({ category, totalNumber, icon, keyword }) => {
           {`${totalNumber} ${keyword}`}
         </span>
       </div>
-      <div className="card-wrapper__icon">
+      <div className={`card-wrapper__icon${iconStyle}`}>
         <SVGIcon name={icon} />
       </div>
     </div>
@@ -26,4 +32,5 @@ ResCard.propTypes = {
   icon: PropTypes.string,
   totalNumber: PropTypes.number,
   keyword: PropTypes.string,
+  iconStyle: PropTypes.string,
 };

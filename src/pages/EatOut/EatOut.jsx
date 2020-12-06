@@ -20,15 +20,15 @@ const EatOut = () => {
       <Breadcrumbs />
       <div className="dashboard__top">Placeholder for top widget</div>
       <div className="dashboard__categories-wrapper">
-        {data.restaurants.categories.map((item) => (
-          <span key={item}>
-            <CategoryCard
-              category={item}
-              keyword="places"
-              icon={item}
-              totalNumber={countOccurences(test, item)}
-            />
-          </span>
+        {data.restaurants.categories.sort().map((item) => (
+          <CategoryCard
+            category={item}
+            keyword="places"
+            icon={item}
+            totalNumber={countOccurences(test, item)}
+            key={item}
+            iconStyle="--outside"
+          />
         ))}
       </div>
     </main>

@@ -1,7 +1,6 @@
 import React from "react";
 import { RestaurantBigCard } from "../RestaurantCards/RestaurantBigCard/RestaurantBigCard";
 import "./discover-restaurant-section.scss";
-// import database from "../../../src/db.json";
 
 class DiscoverRestaurantSection extends React.Component {
   constructor(props) {
@@ -32,6 +31,10 @@ class DiscoverRestaurantSection extends React.Component {
       );
   }
 
+  //   increaseCheckin() {
+  //     return <RestaurantBigCard checkins={restaurant.checkIns + 1} />;
+  //   }
+
   // const restaurants = database.restaurants.restaurantList;
   // const i = Math.floor(Math.random() * Math.floor(restaurants.length));
   // const j = Math.floor(Math.random() * Math.floor(restaurants.length));
@@ -61,7 +64,9 @@ class DiscoverRestaurantSection extends React.Component {
                 restaurant.openingHours[0].hours.substring(3, 7) +
                 ":00"
               }
-              category={restaurant.categories}
+              //   handleClick={this.increaseCheckin()}
+              //   category={restaurant.categories}
+              //   category={["pizza", "pasta", "wine"]}
             />
           ))}
         </div>

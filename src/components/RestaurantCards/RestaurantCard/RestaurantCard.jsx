@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { CardContainer } from "../../CardContainer/CardContainer";
 import { CheckIns } from "../../CheckIns/CheckIns";
-import { Rating } from "../../Rating/Rating";
+// import { Rating } from "../../Rating/Rating";
 import { RestCategories } from "../../RestaurantInfo/RestCategories/RestCategories";
 import { RestTitle } from "../../RestaurantInfo/RestTitle/RestTitle";
 import { RestHours } from "../../RestaurantInfo/RestHours/RestHours";
@@ -13,16 +13,16 @@ const RestaurantCard = (props) => {
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="restaurant-card">
-        <div className="restaurant-card__top">
+        <div className={`restaurant-card__top ${props.style}`}>
           <div className="restaurant-card__checkins-rating">
             <CheckIns checkins={props.checkins} />
-            <Rating rating={props.rating} />
+            {/* <Rating rating={props.rating} /> */}
           </div>
           <div className="restaurant-card__categories">
-            <RestCategories category={props.category} />
+            {/* <RestCategories category={props.category} /> */}
           </div>
           <div className="restaurant-card__background">
-            <img src={props.image} alt="" className="restaurant-card__image" />
+            <img src={props.src} alt="" className="restaurant-card__image" />
           </div>
         </div>
         <div className="restaurant-card__title-like">
@@ -32,6 +32,7 @@ const RestaurantCard = (props) => {
         <div className="restaurant-card__hours">
           <RestHours hours={props.hours} />
         </div>
+        {props.children}
       </div>
     </CardContainer>
   );
@@ -41,10 +42,12 @@ const RestaurantCard = (props) => {
 export default RestaurantCard;
 
 RestaurantCard.propTypes = {
+  style: PropTypes.string,
   checkins: PropTypes.number,
   rating: PropTypes.array,
   category: PropTypes.array,
-  image: PropTypes.string,
+  src: PropTypes.string,
   title: PropTypes.string,
   hours: PropTypes.string,
+  children: PropTypes.object,
 };

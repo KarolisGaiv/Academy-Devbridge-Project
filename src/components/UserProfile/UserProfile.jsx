@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./user-profile.scss";
-import { ReactComponent as UserProfile } from "assets/profileIcon.svg";
-import { ReactComponent as SettingsIcon } from "assets/settingsIcon.svg";
-import { ReactComponent as LogoutIcon } from "assets/logoutIcon.svg";
+import UserAvatar from "../UserAvatar/UserAvatar";
+import SVGIcon from "../SVGIcon/SVGIcon";
+import fakeData from "../../db.json";
 
-class User_Profile extends Component {
+class UserProfile extends Component {
   constructor() {
     super();
 
@@ -43,9 +43,8 @@ class User_Profile extends Component {
       >
         <div className="profile">
           <button onClick={this.showMenu} className="profile__btn">
-            <div className="profile__icon-placeholder">
-              <UserProfile />
-            </div>
+            <UserAvatar imageSrc={fakeData.userData.userImage} size={40} />
+            <SVGIcon name="dropdown" className="profile__dropdown-arrow" />
           </button>
           {this.state.showMenu && (
             <nav className="drop-menu">
@@ -53,13 +52,13 @@ class User_Profile extends Component {
               <ul className="drop-menu__wrapper">
                 <li className="drop-menu__item">
                   <div className="drop-menu__item-body">
-                    <SettingsIcon />
+                    <SVGIcon name="settings" />
                     <span className="drop-menu__text">Settings</span>
                   </div>
                 </li>
                 <li className="drop-menu__item">
                   <div className="drop-menu__item-body">
-                    <LogoutIcon />
+                    <SVGIcon name="logout" />
                     <span className="drop-menu__text">Log out</span>
                   </div>
                 </li>
@@ -72,4 +71,4 @@ class User_Profile extends Component {
   }
 }
 
-export default User_Profile;
+export default UserProfile;

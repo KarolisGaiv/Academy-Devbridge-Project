@@ -25,6 +25,10 @@ import { ReactComponent as Phone } from "../../assets/phone.svg";
 import { ReactComponent as Book } from "../../assets/book.svg";
 import { ReactComponent as Door } from "../../assets/door.svg";
 import { ReactComponent as EllipseGrey } from "../../assets/ellipseGrey.svg";
+import { ReactComponent as DropdownArrow } from "../../assets/dropdownArrow.svg";
+import { ReactComponent as SettingsIcon } from "../../assets/settingsIcon.svg";
+import { ReactComponent as LogoutIcon } from "../../assets/logoutIcon.svg";
+import { ReactComponent as NotificationBell } from "../../assets/notification.svg";
 import { ReactComponent as Globe } from "../../assets/globe.svg";
 import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
 import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
@@ -84,6 +88,14 @@ const SVGIcon = (props) => {
       return <Door className={props.className} />;
     case "ellipseGrey":
       return <EllipseGrey />;
+    case "dropdown":
+      return <DropdownArrow className={props.className} />;
+    case "settings":
+      return <SettingsIcon className={props.className} />;
+    case "logout":
+      return <LogoutIcon className={props.className} />;
+    case "notificationBell":
+      return <NotificationBell className={props.className} />;
     case "Globe":
       return <Globe />;
     case "MapPin":

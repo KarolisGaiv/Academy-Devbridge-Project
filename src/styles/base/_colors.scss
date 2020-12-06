@@ -2,8 +2,18 @@ $color-black: #000;
 $color-white: #fff;
 $transparent: transparent;
 
-$color-blue-dark: #001836;
+$color-alabaster: #fafafa;
+$color-electric-violet: #6e44ff;
 $color-fiord: #3e5067;
+$color-geyser: #d3dce6;
+$color-grey-chateau: #9ea7b3;
+$color-mercury: #e5e5e5;
+$color-mirage: #1f2d3d;
+$color-pickled-bluewood: #31465e;
+$color-porcelain: #f6f7f8;
+$color-regent-gray: #8492a6;
+
+$color-blue-dark: #001836;
 $color-grey-8: #627485;
 $color-grey-7: #3e5067;
 $color-grey-6: #6a7889;
@@ -12,23 +22,18 @@ $color-grey-4: #cacfd5;
 $color-grey-3: #dcdfe3;
 $color-grey-2: #edeff1;
 $color-grey-1: #f6f7f8;
-$color-red: #ff6e75;
-$color-grey-mischka: #9ea7b3;
-$color-mercury: #e5e5e5;
-$color-porcelain: #f6f7f8;
-$color-yellow: #fadb5e;
-
-$color-grey-chateau: #9ea7b3;
 $color-grey-90: #e5e5e5;
+$color-red: #ff6e75;
+$color-yellow: #fadb5e;
 
 $color-purple-dark: #6e44ff;
 $color-hover-purple: #5836cc;
 $color-active-purple: #462ca3;
-
-$color-pickled-bluewood: #31465e;
 $color-post-reaction-text: #627485;
-
-$color-alabaster: #fafafa;
 
 $transperent-black-5: #00000080;
 $transperent-black-25: #00000040;
+
+$color-link: $color-regent-gray;
+$color-link-visited: $color-geyser;
+$color-link-hover: $color-mirage;

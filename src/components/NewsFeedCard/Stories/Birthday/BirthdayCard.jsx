@@ -89,6 +89,8 @@ const BirthdayCard = (props) => {
   );
 };
 
+BirthdayCard.displayName = "BirthdayCard";
+
 export default BirthdayCard;
 
 BirthdayCard.propTypes = {

@@ -1,7 +1,7 @@
 import React from "react";
 import Divider from "../components/Divider/Divider";
 import CardContainer from "../components/CardContainer/CardContainer";
-import BirthdayCard from "../components/NewsFeedCard/BirthdayFeed/BirthdayCard";
+import BirthdayCard from "../components/NewsFeedCard/Stories/Birthday/BirthdayCard";
 import UsersReactions from "../components/NewsFeedCard/UsersReactions/UsersReactions";
 import fakeData from "../db.json";
 

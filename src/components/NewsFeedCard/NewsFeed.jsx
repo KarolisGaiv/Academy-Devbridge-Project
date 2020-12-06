@@ -1,5 +1,7 @@
 import React from "react";
-import BirthdayCard from "./BirthdayFeed/BirthdayCard";
+import BirthdayCard from "./Stories/Birthday/BirthdayCard";
+import VideoCard from "./Stories/Video/VideoCard";
+import PostCard from "./Stories/Post/PostCard";
 import fakeData from "../../db.json";
 
 import "./news-feed.scss";
@@ -7,7 +9,6 @@ import "./news-feed.scss";
 const NewsFeed = () => {
   const userAvatar = fakeData.userData.userImage;
   const userName = fakeData.userData.userName;
-  //VIDEO/POST stories can be added to IF statemenet
   return (
     <section className="newsFeed">
       {fakeData.stories.map((data, index) => {
@@ -23,7 +24,7 @@ const NewsFeed = () => {
           // When created change this to an appropriate component
         } else if (data.type === "video") {
           return (
-            <BirthdayCard
+            <VideoCard
               key={index}
               data={data}
               avatar={userAvatar}
@@ -33,7 +34,7 @@ const NewsFeed = () => {
           // When created change this to an appropriate component
         } else if (data.type === "post") {
           return (
-            <BirthdayCard
+            <PostCard
               key={index}
               data={data}
               avatar={userAvatar}

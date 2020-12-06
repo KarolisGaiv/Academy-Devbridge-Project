@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import Divider from "../../Divider/Divider";
-import { CardContainer } from "../../CardContainer/CardContainer";
-import BirthdayCardSection from "../BirthdayFeed/BirthdayCardSection";
-import UsersReactions from "../UsersReactions/UsersReactions";
-import Comments from "../Comments/Comments";
-import AddComment from "../Comments/AddComment";
+import VideoContent from "./VideoContent";
+import StoriesHeader from "../../StoriesHeader/StoriesHeader";
+import UserReactions from "../../UsersReactions/UsersReactions";
+import Comments from "../../Comments/Comments";
+import AddComment from "../../Comments/AddComment";
+import Divider from "../../../Divider/Divider";
+import { CardContainer } from "../../../CardContainer/CardContainer";
 
-import "../news-feed.scss";
-
-export const BirthdayCard = (props) => {
+const VideoCard = (props) => {
   const [commentsList, setComments] = useState({
     comments: props.data.comments,
   });
@@ -62,11 +61,11 @@ export const BirthdayCard = (props) => {
   }, [commentsList.comments.length]);
 
   return (
-    <div className="newsFeed__card birthday-card">
+    <div className="newsFeed__card video-card">
       <CardContainer styleName="card-container--shadow">
-        <BirthdayCardSection data={props.data} />
-        <Divider />
-        <UsersReactions data={props.data} commentCount={commentsCount} />
+        <StoriesHeader data={props.data} />
+        <VideoContent data={props.data} />
+        <UserReactions data={props.data} commentCount={commentsCount} />
         <Divider />
         <div className="comment-section">
           {commentsList.comments.map((data, index) => (
@@ -91,11 +90,10 @@ export const BirthdayCard = (props) => {
   );
 };
 
-export default BirthdayCard;
+export default VideoCard;
 
-BirthdayCard.propTypes = {
+VideoCard.propTypes = {
   data: PropTypes.object,
-  textFieldIndex: PropTypes.number,
   userName: PropTypes.string,
   avatar: PropTypes.string,
 };

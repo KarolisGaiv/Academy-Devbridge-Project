@@ -7,13 +7,13 @@
 >
   <g clip-path="url(#clip0)">
     <g filter="url(#filter0_d)">
-      <path class="background"
+      <path class="svg__background"
         d="M36 66C52.5685 66 66 52.5685 66 36C66 19.4315 52.5685 6 36 6C19.4315 6 6 19.4315 6 36C6 52.5685 19.4315 66 36 66Z"
         fill="white"
       />
     </g>
     <path
-        class="play"
+        class="svg__play"
       d="M30 24L48 36L30 48V24Z"
       fill="#6E44FF"
       stroke="#6E44FF"

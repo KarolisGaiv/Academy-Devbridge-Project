@@ -7,7 +7,7 @@ const MasonryGrid = (props) => {
   const [gap, setgap] = useState(40);
   const columnWrapper = {};
   const result = [];
-
+  //get the screen size width
   const handleResize = () => {
     setwindowWidth(window.innerWidth);
   };
@@ -18,7 +18,7 @@ const MasonryGrid = (props) => {
       window.removeEventListener("resize", handleResize);
     };
   });
-
+  //set the no of columns and the size of gap depending on screen width
   const calcColumnsNo = () => {
     if (windowWidth > 1200) {
       setcolumnsNo(3);
@@ -39,6 +39,7 @@ const MasonryGrid = (props) => {
     columnWrapper[`column${i}`] = [];
   }
 
+  //set column gap as margin
   for (let i = 0; i < columnsNo; i++) {
     result.push(
       <div
@@ -51,7 +52,7 @@ const MasonryGrid = (props) => {
       </div>
     );
   }
-
+  //set gaps between cards as margin
   for (let i = 0; i < props.children.length; i++) {
     const columnIndex = i % columnsNo;
     if (i > 2 && props.children[i].type.displayName === "BirthdayCard") {

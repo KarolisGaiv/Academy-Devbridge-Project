@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import Divider from "../../Divider/Divider";
-import Card from "../../Card/Card";
+import { CardContainer } from "../../CardContainer/CardContainer";
 import BirthdayCardSection from "../BirthdayFeed/BirthdayCardSection";
 import UsersReactions from "../UsersReactions/UsersReactions";
 import Comments from "../Comments/Comments";
@@ -37,6 +37,7 @@ export const BirthdayCard = (props) => {
       ],
     });
     commentField.current = "";
+    setCommentEmptyState(true);
   };
 
   //check if comment field is not empty.
@@ -62,7 +63,7 @@ export const BirthdayCard = (props) => {
 
   return (
     <div className="newsFeed__card birthday-card">
-      <Card>
+      <CardContainer styleName="card-container--shadow">
         <BirthdayCardSection data={props.data} />
         <Divider />
         <UsersReactions data={props.data} commentCount={commentsCount} />
@@ -85,7 +86,7 @@ export const BirthdayCard = (props) => {
           onBlur={handleBlur}
           onChange={handleChange}
         />
-      </Card>
+      </CardContainer>
     </div>
   );
 };

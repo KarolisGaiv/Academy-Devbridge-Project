@@ -37,6 +37,12 @@ import { ReactComponent as Soups } from "../../assets/food/soups.svg";
 import { ReactComponent as Kebab } from "../../assets/food/kebab.svg";
 import { ReactComponent as Sweets } from "../../assets/food/sweets.svg";
 import { ReactComponent as Grill } from "../../assets/food/grill.svg";
+import { ReactComponent as DropdownArrow } from "../../assets/dropdownArrow.svg";
+import { ReactComponent as SettingsIcon } from "../../assets/settingsIcon.svg";
+import { ReactComponent as LogoutIcon } from "../../assets/logoutIcon.svg";
+import { ReactComponent as NotificationBell } from "../../assets/notification.svg";
+import { ReactComponent as Globe } from "../../assets/globe.svg";
+import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -117,6 +123,18 @@ const SVGIcon = (props) => {
       return <Grill />;
     case "ellipseGrey":
       return <EllipseGrey />;
+    case "dropdown":
+      return <DropdownArrow className={props.className} />;
+    case "settings":
+      return <SettingsIcon className={props.className} />;
+    case "logout":
+      return <LogoutIcon className={props.className} />;
+    case "notificationBell":
+      return <NotificationBell className={props.className} />;
+    case "Globe":
+      return <Globe />;
+    case "MapPin":
+      return <MapPin />;
     default:
       return "error";
   }

@@ -1,12 +1,16 @@
 import React from "react";
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
+import DiscoverRestaurantSection from "../components/DiscoverRestaurantSection/DiscoverRestaurantSection";
 
 const EatOut = () => {
   return (
-    <main>
+    <div className="eat-out">
       <Breadcrumbs />
-      <h1 style={{ margin: "auto", textAlign: "center" }}>EatOut</h1>
-    </main>
+      <section className="eat-out__discover-restaurants">
+        <h3 className="eat-out__heading">Discover near you</h3>
+        <DiscoverRestaurantSection />
+      </section>
+    </div>
   );
 };
 

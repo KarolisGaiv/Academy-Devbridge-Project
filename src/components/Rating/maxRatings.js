@@ -3,93 +3,110 @@ import rest from "../../db.json";
 export class Ratings {
   static numberOneRating(best) {
     const restlen = Object.keys(rest.restaurants.restaurantList).length;
-    //if this function is ran first time, there isn't best rating yet
-    //so let the best rating be number bigger than 5
     if (best == null) best = 6;
-    var sum = 0;
-    var reviews_sum = 0;
-    var current_rating;
-    var max_rating = -1;
-    var rest_name;
-    var best_categories;
-    var categories_length;
-    var checkins;
-    var time;
-    var rest_image;
-    var max_rating_sum;
-    var max_rating_reviewers;
+    let sum = 0;
+    let reviews_sum = 0;
+    let current_rating;
+    let max_rating = -1;
+    let max_rating_sum;
+    let max_rating_reviewers;
+    let index;
 
-    //loop through restaurants
-    for (var i = 0; i < restlen; i++) {
-      //get restaurant
+    for (let i = 0; i < restlen; i++) {
       const restaurant = rest.restaurants.restaurantList[i];
-      //count that restaurant's reviews
       const reviews_length = Object.keys(restaurant.reviews).length;
-      //get the amount of reviews
       reviews_sum += reviews_length;
-      //loop through reviews
-      for (var j = 0; j < reviews_length; j++) {
+
+      for (let j = 0; j < reviews_length; j++) {
         sum += restaurant.reviews[j].rating;
         current_rating = sum / reviews_length;
-        //check if rating is bigger than last one
-        //and if it's smaller than the biggest
         if (current_rating > max_rating && current_rating < best) {
           max_rating = current_rating;
-          rest_name = restaurant.name;
-          best_categories = restaurant.categories;
-          checkins = restaurant.checkIns;
-          time = restaurant.openingHours[0].hours;
-          rest_image = restaurant.image;
           max_rating_sum = sum;
           max_rating_reviewers = reviews_length;
+          index = i;
         }
       }
       sum = 0;
     }
-    categories_length = Object.keys(best_categories).length;
-    time = time.substring(0, 2) + ":00 " + time.substring(3, 7) + ":00";
-    //if there aren't any reviews, rating is 0
+    // if there werent any reviews, the number cant be null and still has to be shown
     if (reviews_sum === 0) max_rating = 0;
 
-    return [
-      checkins,
-      max_rating.toFixed(1),
-      best_categories,
-      categories_length,
-      rest_name,
-      time,
-      rest_image,
-      max_rating_sum,
-      max_rating_reviewers,
-    ];
+    return [max_rating.toFixed(1), max_rating_sum, max_rating_reviewers, index];
   }
   static numberTwoRating() {
-    //get the best rating
-    var no1_rating = Ratings.numberOneRating()[1];
-    var checkins = Ratings.numberOneRating(no1_rating)[0];
-    var no2_rating = Ratings.numberOneRating(no1_rating)[1];
-    var categories = Ratings.numberOneRating(no1_rating)[2];
-    var categories_length = Object.keys(categories).length;
-    var rest_name = Ratings.numberOneRating(no1_rating)[4];
-    var time = Ratings.numberOneRating(no1_rating)[5];
-    var rest_image = Ratings.numberOneRating(no1_rating)[6];
-    var max_rating_sum = Ratings.numberOneRating(no1_rating)[7];
-    var max_rating_reviewers = Ratings.numberOneRating(no1_rating)[8];
+    let no1_rating = Ratings.numberOneRating()[0];
+    let no2_rating = Ratings.numberOneRating(no1_rating)[0];
+    let max_rating_sum = Ratings.numberOneRating(no1_rating)[1];
+    let max_rating_reviewers = Ratings.numberOneRating(no1_rating)[2];
+    let index = Ratings.numberOneRating(no1_rating)[3];
 
-    return [
-      checkins,
-      no2_rating,
-      categories,
-      categories_length,
-      rest_name,
-      time,
-      rest_image,
-      max_rating_sum,
-      max_rating_reviewers,
-    ];
+    return [no2_rating, max_rating_sum, max_rating_reviewers, index];
   }
   static finalRating(old_sum, old_reviewers, new_value) {
-    var final_rating = (old_sum + new_value) / (old_reviewers + 1);
+    let final_rating = (old_sum + new_value) / (old_reviewers + 1);
     return final_rating.toFixed(1);
+  }
+  static numberOneCheckIns() {
+    let index = Ratings.numberOneRating()[3];
+    const restaurant = rest.restaurants.restaurantList[index];
+    let checkins = restaurant.checkIns;
+    return checkins;
+  }
+  static numberTwoCheckIns() {
+    let index = Ratings.numberTwoRating()[3];
+    const restaurant = rest.restaurants.restaurantList[index];
+    let checkins = restaurant.checkIns;
+    return checkins;
+  }
+  static numberOneCategories() {
+    let index = Ratings.numberOneRating()[3];
+    const restaurant = rest.restaurants.restaurantList[index];
+    let categories = restaurant.categories;
+    return categories;
+  }
+  static numberTwoCategories() {
+    let index = Ratings.numberTwoRating()[3];
+    const restaurant = rest.restaurants.restaurantList[index];
+    let categories = restaurant.categories;
+    return categories;
+  }
+  static numberOneTitle() {
+    let index = Ratings.numberOneRating()[3];
+    const restaurant = rest.restaurants.restaurantList[index];
+    let title = restaurant.name;
+    return title;
+  }
+  static numberTwoTitle() {
+    let index = Ratings.numberTwoRating()[3];
+    const restaurant = rest.restaurants.restaurantList[index];
+    let title = restaurant.name;
+    return title;
+  }
+  static numberOneHours() {
+    let index = Ratings.numberOneRating()[3];
+    const restaurant = rest.restaurants.restaurantList[index];
+    let hours = restaurant.openingHours[0].hours;
+    hours = hours.substring(0, 2) + ":00 " + hours.substring(3, 7) + ":00";
+    return hours;
+  }
+  static numberTwoHours() {
+    let index = Ratings.numberTwoRating()[3];
+    const restaurant = rest.restaurants.restaurantList[index];
+    let hours = restaurant.openingHours[0].hours;
+    hours = hours.substring(0, 2) + ":00 " + hours.substring(3, 7) + ":00";
+    return hours;
+  }
+  static numberOneImage() {
+    let index = Ratings.numberOneRating()[3];
+    const restaurant = rest.restaurants.restaurantList[index];
+    let image = restaurant.image;
+    return image;
+  }
+  static numberTwoImage() {
+    let index = Ratings.numberTwoRating()[3];
+    const restaurant = rest.restaurants.restaurantList[index];
+    let image = restaurant.image;
+    return image;
   }
 }

@@ -21,21 +21,4 @@
     &__categories-section {
         margin-top: 60px;
     }
-
-    &__restaurant-categories {
-        column-gap: 70px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        margin: 30px 30px 70px 0;
-        row-gap: 60px;
-    }
-}
-
-@media (max-width: $breakpoint-laptop) {
-    .eat-out {
-        &__restaurant-categories {
-            margin: 0;
-            padding-top: 60px;
-        }
-    }
 }

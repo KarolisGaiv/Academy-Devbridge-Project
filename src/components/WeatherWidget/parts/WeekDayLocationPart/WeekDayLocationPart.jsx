@@ -6,13 +6,13 @@ const WeekDayLocationPart = ({ location }) => {
   let newDate = new Date();
   let date = newDate.getDate();
   let days = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   let months = [
     "January",
@@ -29,7 +29,7 @@ const WeekDayLocationPart = ({ location }) => {
     "December",
   ];
   const month = months[newDate.getMonth()];
-  const day = days[newDate.getDay() - 1];
+  const day = days[newDate.getDay()];
   return (
     <div className="place">
       <div className="place__week-day">

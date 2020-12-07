@@ -8,8 +8,8 @@ const Carousel = (props) => {
   const restaurantList = db.restaurants.restaurantList;
 
   const slides = restaurantList.filter((restaurant) => restaurant.image);
-  const [x, setX] = useState(() => 0);
-  const [current, setCurrent] = useState(() => 0);
+  const [x, setX] = useState(0);
+  const [current, setCurrent] = useState(0);
 
   const toLeft = () => {
     setCurrent((prevSlide) => {

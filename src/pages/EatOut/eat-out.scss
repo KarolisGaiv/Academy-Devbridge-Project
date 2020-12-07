@@ -1,20 +1,41 @@
 @import '../../styles/base/base';
 
-.dashboard {
+.eat-out {
     margin: 0 auto;
     max-width: 1265px;
 
-    &__categories-wrapper {
+    &__heading {
+        color: $color-pickled-bluewood;
+        font-size: $size-36;
+        font-weight: 700;
+        line-height: 42px;
+        margin: 0 0 30px;
+
+        &--small {
+            color: $color-blue-dark;
+            font-size: $size-24;
+            font-weight: 500;
+        }
+    }
+
+    &__categories-section {
+        margin-top: 60px;
+    }
+
+    &__restaurant-categories {
         column-gap: 70px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        margin: 70px 30px 70px 0;
+        margin: 30px 30px 70px 0;
         row-gap: 60px;
     }
 }
 
-.dashboard__top {
-    background-color: $color-pickled-bluewood;
-    height: 200px;
-    width: 100%;
+@media (max-width: $breakpoint-laptop) {
+    .eat-out {
+        &__restaurant-categories {
+            margin: 0;
+            padding-top: 60px;
+        }
+    }
 }

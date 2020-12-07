@@ -43,6 +43,7 @@ import { ReactComponent as LogoutIcon } from "../../assets/logoutIcon.svg";
 import { ReactComponent as NotificationBell } from "../../assets/notification.svg";
 import { ReactComponent as Globe } from "../../assets/globe.svg";
 import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
+import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -135,6 +136,8 @@ const SVGIcon = (props) => {
       return <Globe />;
     case "MapPin":
       return <MapPin />;
+    case "play":
+      return <PlayIcon />;
     default:
       return "error";
   }

@@ -1,63 +1,77 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Redirect } from "react-router-dom";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import { Button } from "../../Button/Button";
 import { RestWebAddress } from "../../RestaurantInfo/RestWebAddress/RestWebAddress";
-// import { Rating } from "../../Rating/Rating";
-// import { RestCategories } from "../../RestaurantInfo/RestCategories/RestCategories";
+import { Link } from "../../Link/Link";
 import "./restaurant-big-card.scss";
 
-export const RestaurantBigCard = (props) => {
-  const {
-    checkins,
-    image,
-    title,
-    rating,
-    category,
-    hours,
-    web,
-    address,
-    description,
-  } = props;
+export class RestaurantBigCard extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.description = this.props.description;
+    this.state = {
+      expanded: false,
+    };
+  }
 
-  return (
-    <div className="restaurant-big-card">
-      <RestaurantCard
-        style="restaurant-card__top--fixed"
-        checkins={checkins}
-        src={image}
-        title={title}
-        // rating={rating}
-        category={category}
-        hours={hours}
-      >
-        <div className="restaurant-card__bottom">
-          <RestWebAddress icon="Globe" text={web} />
-          <RestWebAddress icon="MapPin" text={address} />
-          <p className="restaurant-card__description">{description}</p>
-          <div className="restaurant-card__button-field">
-            <a href="">READ MORE</a>
-            <Button
-              className="button button--enabled"
-              typeName="button"
-              //   handleClick={increaseCheckin}
-            >
-              check-in
-            </Button>
+  render() {
+    const { expanded } = this.state;
+    const toggledClass = expanded ? "expanded" : "collapsed";
+
+    return (
+      <div className="restaurant-big-card">
+        <RestaurantCard
+          style="restaurant-card__top--fixed"
+          checkins={this.props.checkins}
+          src={this.props.image}
+          title={this.props.title}
+          rating={this.props.rating}
+          categories={this.props.categories}
+          hours={this.props.hours}
+        >
+          <div className="restaurant-card__bottom">
+            <RestWebAddress
+              icon="Globe"
+              text={this.props.web
+                .replace(/^(?:https?:\/\/)?(?:www\.)?/i, "")
+                .split("/")}
+            />
+            <RestWebAddress icon="MapPin" text={this.props.address} />
+            {/* <p className={`restaurant-card__description`}>
+              {this.props.description}
+            </p> */}
+            <p className={`restaurant-card__description ${toggledClass}`}>
+              {this.props.description}
+            </p>
+            <div className="restaurant-card__button-field">
+              <Link
+                path="#"
+                handleClick={() => this.setState({ expanded: !expanded })}
+              >
+                {expanded ? "Read less" : "Read more"}
+              </Link>
+              <Button
+                className="button button--enabled"
+                typeName="button"
+                //   handleClick={increaseCheckin}
+              >
+                check-in
+              </Button>
+            </div>
           </div>
-        </div>
-      </RestaurantCard>
-    </div>
-  );
-};
+        </RestaurantCard>
+      </div>
+    );
+  }
+}
 
 RestaurantBigCard.propTypes = {
   web: PropTypes.string,
   address: PropTypes.string,
   checkins: PropTypes.number,
   rating: PropTypes.array,
-  category: PropTypes.array,
+  categories: PropTypes.array,
   image: PropTypes.string,
   title: PropTypes.string,
   hours: PropTypes.string,

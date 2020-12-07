@@ -7,12 +7,27 @@
 
     &__description {
         color: #6a7889; // slate-grey
+        // display: -webkit-box;
         font-weight: 400;
+        height: 72px;
         line-height: 1.5;
+        overflow: hidden;
+        // text-overflow: ellipsis;
+        // -webkit-box-orient: vertical;
+        // -webkit-line-clamp: 3;
+
+        &--collapsed {
+            height: 72px;
+            overflow: hidden;
+        }
+
+        &--expanded {
+            height: auto;
+            overflow: visible;
+        }
     }
 
     &__button-field {
-        align-items: center;
         display: flex;
         justify-content: flex-end;
     }

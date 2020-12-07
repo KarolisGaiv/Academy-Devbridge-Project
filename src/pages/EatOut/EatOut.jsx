@@ -27,7 +27,7 @@ const EatOut = () => {
             icon={item}
             totalNumber={countOccurences(test, item)}
             key={item}
-            iconStyle="--outside"
+            iconStyle="outside"
           />
         ))}
       </div>

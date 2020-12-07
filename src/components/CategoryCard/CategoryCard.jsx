@@ -18,7 +18,7 @@ export const ResCard = ({
           {`${totalNumber} ${keyword}`}
         </span>
       </div>
-      <div className={`card-wrapper__icon${iconStyle}`}>
+      <div className={`card-wrapper__icon card-wrapper__icon--${iconStyle}`}>
         <SVGIcon name={icon} />
       </div>
     </div>

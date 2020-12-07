@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import { CardContainer } from "../../CardContainer/CardContainer";
 import { CheckIns } from "../../CheckIns/CheckIns";
 // import { Rating } from "../../Rating/Rating";
-import { RestCategories } from "../../RestaurantInfo/RestCategories/RestCategories";
+import { NewRating } from "../../NewRating/NewRating";
+// import { NewCategories } from "../../NewCategories/NewCategories";
+// import { RestCategories } from "../../RestaurantInfo/RestCategories/RestCategories";
 import { RestTitle } from "../../RestaurantInfo/RestTitle/RestTitle";
 import { RestHours } from "../../RestaurantInfo/RestHours/RestHours";
 import { HeartButton } from "../../../components/HeartButton/HeartButton";
@@ -16,10 +18,10 @@ const RestaurantCard = (props) => {
         <div className={`restaurant-card__top ${props.style}`}>
           <div className="restaurant-card__checkins-rating">
             <CheckIns checkins={props.checkins} />
-            {/* <Rating rating={props.rating} /> */}
+            <NewRating rating={props.rating} />
           </div>
           <div className="restaurant-card__categories">
-            {/* <RestCategories category={props.category} /> */}
+            {/* <NewCategories categories={props.categories} /> */}
           </div>
           <div className="restaurant-card__background">
             <img src={props.src} alt="" className="restaurant-card__image" />
@@ -45,7 +47,7 @@ RestaurantCard.propTypes = {
   style: PropTypes.string,
   checkins: PropTypes.number,
   rating: PropTypes.array,
-  category: PropTypes.array,
+  categories: PropTypes.array,
   src: PropTypes.string,
   title: PropTypes.string,
   hours: PropTypes.string,

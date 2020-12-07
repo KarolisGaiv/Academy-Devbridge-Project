@@ -64,9 +64,14 @@ class DiscoverRestaurantSection extends React.Component {
                 restaurant.openingHours[0].hours.substring(3, 7) +
                 ":00"
               }
-              //   handleClick={this.increaseCheckin()}
-              //   category={restaurant.categories}
-              //   category={["pizza", "pasta", "wine"]}
+              categories={restaurant.categories}
+              rating={Number(
+                (
+                  Object.values(restaurant.reviews)
+                    .map((x) => x.rating)
+                    .reduce((a, b) => a + b, 0) / restaurant.reviews.length
+                ).toFixed(1)
+              )}
             />
           ))}
         </div>

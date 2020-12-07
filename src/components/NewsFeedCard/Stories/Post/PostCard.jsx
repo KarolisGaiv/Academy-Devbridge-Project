@@ -61,7 +61,7 @@ const PostCard = (props) => {
   }, [commentsList.comments.length]);
 
   return (
-    <div className="newsFeed__card post-card">
+    <div className="newsFeed__card post__card">
       <CardContainer styleName="card-container--shadow">
         <StoriesHeader data={props.data} />
         <PostContent data={props.data} />

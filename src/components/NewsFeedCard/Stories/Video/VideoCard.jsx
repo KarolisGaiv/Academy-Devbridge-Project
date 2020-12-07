@@ -61,7 +61,7 @@ const VideoCard = (props) => {
   }, [commentsList.comments.length]);
 
   return (
-    <div className="newsFeed__card video-card">
+    <div className="newsFeed__card video__card">
       <CardContainer styleName="card-container--shadow">
         <StoriesHeader data={props.data} />
         <VideoContent data={props.data} />

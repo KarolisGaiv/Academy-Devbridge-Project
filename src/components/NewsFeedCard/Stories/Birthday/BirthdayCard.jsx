@@ -60,7 +60,7 @@ const BirthdayCard = (props) => {
   }, [commentsList.comments.length]);
 
   return (
-    <div className="newsFeed__card birthday-card">
+    <div className="newsFeed__card birthday__card">
       <CardContainer styleName="card-container--shadow">
         <BirthdayContent data={props.data} />
         <Divider />

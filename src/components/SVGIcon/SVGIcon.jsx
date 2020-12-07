@@ -32,6 +32,8 @@ import { ReactComponent as NotificationBell } from "../../assets/notification.sv
 import { ReactComponent as Globe } from "../../assets/globe.svg";
 import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
 import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
+import { ReactComponent as SliderNavLeft } from "../../assets/sliderNavLeft.svg";
+import { ReactComponent as SliderNavRight } from "../../assets/sliderNavRight.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -102,6 +104,10 @@ const SVGIcon = (props) => {
       return <MapPin />;
     case "play":
       return <PlayIcon />;
+    case "sliderNavLeft":
+      return <SliderNavLeft className={props.className} />;
+    case "sliderNavRight":
+      return <SliderNavRight className={props.className} />;
     default:
       return "error";
   }

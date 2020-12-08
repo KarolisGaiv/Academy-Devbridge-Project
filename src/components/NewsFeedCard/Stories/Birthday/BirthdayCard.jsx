@@ -1,15 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import Divider from "../../Divider/Divider";
-import { CardContainer } from "../../CardContainer/CardContainer";
-import BirthdayCardSection from "../BirthdayFeed/BirthdayCardSection";
-import UsersReactions from "../UsersReactions/UsersReactions";
-import Comments from "../Comments/Comments";
-import AddComment from "../Comments/AddComment";
+import Divider from "../../../Divider/Divider";
+import { CardContainer } from "../../../CardContainer/CardContainer";
+import BirthdayContent from "./BirthdayContent";
+import UsersReactions from "../../UsersReactions/UsersReactions";
+import Comments from "../../Comments/Comments";
+import AddComment from "../../Comments/AddComment";
 
-import "../news-feed.scss";
-
-export const BirthdayCard = (props) => {
+const BirthdayCard = (props) => {
   const [commentsList, setComments] = useState({
     comments: props.data.comments,
   });
@@ -62,9 +60,9 @@ export const BirthdayCard = (props) => {
   }, [commentsList.comments.length]);
 
   return (
-    <div className="newsFeed__card birthday-card">
+    <div className="newsFeed__card birthday__card">
       <CardContainer styleName="card-container--shadow">
-        <BirthdayCardSection data={props.data} />
+        <BirthdayContent data={props.data} />
         <Divider />
         <UsersReactions data={props.data} commentCount={commentsCount} />
         <Divider />
@@ -91,11 +89,12 @@ export const BirthdayCard = (props) => {
   );
 };
 
+BirthdayCard.displayName = "BirthdayCard";
+
 export default BirthdayCard;
 
 BirthdayCard.propTypes = {
   data: PropTypes.object,
-  textFieldIndex: PropTypes.number,
   userName: PropTypes.string,
   avatar: PropTypes.string,
 };

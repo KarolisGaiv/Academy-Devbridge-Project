@@ -28,6 +28,7 @@ import { ReactComponent as Door } from "../../assets/door.svg";
 import { ReactComponent as EllipseGrey } from "../../assets/ellipseGrey.svg";
 import { ReactComponent as Globe } from "../../assets/globe.svg";
 import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
+import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -90,6 +91,8 @@ const SVGIcon = (props) => {
       return <Globe />;
     case "MapPin":
       return <MapPin />;
+    case "play":
+      return <PlayIcon />;
     default:
       return "error";
   }

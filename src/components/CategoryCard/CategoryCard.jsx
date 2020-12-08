@@ -20,9 +20,7 @@ export const ResCard = ({
       <div className="card-wrapper__info">
         <span className="card-wrapper__name">{category}</span>
         <span className="card-wrapper__details">
-          {totalNumber === 1 && keyword.endsWith("s")
-            ? `${totalNumber} ${keyword.slice(0, -1)}`
-            : `${totalNumber} ${keyword}`}
+          {`${totalNumber} ${keyword}`}
         </span>
       </div>
       <div className={iconStyle}>

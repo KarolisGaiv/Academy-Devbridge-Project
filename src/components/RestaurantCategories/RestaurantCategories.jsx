@@ -21,7 +21,9 @@ const RestaurantCategories = () => {
       {data.restaurants.categories.sort().map((item) => (
         <CategoryCard
           category={item}
-          keyword="places"
+          keyword={
+            countOccurences(existingCategories, item) === 1 ? "place" : "places"
+          }
           icon={item}
           totalNumber={countOccurences(existingCategories, item)}
           key={item}

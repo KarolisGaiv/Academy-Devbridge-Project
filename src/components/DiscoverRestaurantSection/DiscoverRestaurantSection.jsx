@@ -32,15 +32,6 @@ class DiscoverRestaurantSection extends React.Component {
       );
   }
 
-  //   increaseCheckin() {
-  //     return <RestaurantBigCard checkins={restaurant.checkIns + 1} />;
-  //   }
-
-  // const restaurants = database.restaurants.restaurantList;
-  // const i = Math.floor(Math.random() * Math.floor(restaurants.length));
-  // const j = Math.floor(Math.random() * Math.floor(restaurants.length));
-  // const k = Math.floor(Math.random() * Math.floor(restaurants.length));
-
   render() {
     const { error, isLoaded, restaurantList } = this.state;
     if (error) {
@@ -59,12 +50,7 @@ class DiscoverRestaurantSection extends React.Component {
               description={restaurant.description}
               web={restaurant.website}
               address={restaurant.address}
-              hours={
-                restaurant.openingHours[0].hours.substring(0, 2) +
-                ":00 " +
-                restaurant.openingHours[0].hours.substring(3, 7) +
-                ":00"
-              }
+              hours={Ratings.showHours(restaurantList.indexOf(restaurant))}
               categories={restaurant.categories}
               rating={Ratings.countRating(restaurantList.indexOf(restaurant))}
             />

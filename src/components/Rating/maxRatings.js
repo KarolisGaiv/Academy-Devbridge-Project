@@ -133,4 +133,11 @@ export class Ratings {
 
     return [rating, ratingSum, ratingReviewers, index];
   }
+
+  static showHours(i) {
+    const restaurant = rest.restaurants.restaurantList[i];
+    let hours = restaurant.openingHours[0].hours;
+    hours = hours.substring(0, 2) + ":00 " + hours.substring(3, 7) + ":00";
+    return hours;
+  }
 }

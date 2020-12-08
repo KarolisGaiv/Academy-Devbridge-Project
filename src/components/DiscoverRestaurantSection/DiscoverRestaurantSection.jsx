@@ -1,5 +1,6 @@
 import React from "react";
 import { RestaurantBigCard } from "../RestaurantCards/RestaurantBigCard/RestaurantBigCard";
+import { Ratings } from "../Rating/maxRatings";
 import "./discover-restaurant-section.scss";
 
 class DiscoverRestaurantSection extends React.Component {
@@ -65,13 +66,7 @@ class DiscoverRestaurantSection extends React.Component {
                 ":00"
               }
               categories={restaurant.categories}
-              rating={Number(
-                (
-                  Object.values(restaurant.reviews)
-                    .map((x) => x.rating)
-                    .reduce((a, b) => a + b, 0) / restaurant.reviews.length
-                ).toFixed(1)
-              )}
+              rating={Ratings.countRating(restaurantList.indexOf(restaurant))}
             />
           ))}
         </div>

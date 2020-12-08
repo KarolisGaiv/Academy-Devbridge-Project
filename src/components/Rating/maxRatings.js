@@ -109,4 +109,28 @@ export class Ratings {
     let image = restaurant.image;
     return image;
   }
+
+  static countRating(i) {
+    let restaurantList = rest.restaurants.restaurantList;
+    let index = i;
+    let rating = Number(
+      (
+        Object.values(restaurantList[i].reviews)
+          .map((x) => x.rating)
+          .reduce((a, b) => a + b, 0) / restaurantList[i].reviews.length
+      ).toFixed(1)
+    );
+
+    if (!rating) {
+      rating = 0.0;
+    }
+
+    let ratingSum = Object.values(restaurantList[i].reviews)
+      .map((x) => x.rating)
+      .reduce((a, b) => a + b, 0);
+
+    let ratingReviewers = restaurantList[i].reviews.length;
+
+    return [rating, ratingSum, ratingReviewers, index];
+  }
 }

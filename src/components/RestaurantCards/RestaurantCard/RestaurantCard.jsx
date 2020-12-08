@@ -2,10 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { CardContainer } from "../../CardContainer/CardContainer";
 import { CheckIns } from "../../CheckIns/CheckIns";
-// import { Rating } from "../../Rating/Rating";
-import { NewRating } from "../../NewRating/NewRating";
-// import { NewCategories } from "../../NewCategories/NewCategories";
-// import { RestCategories } from "../../RestaurantInfo/RestCategories/RestCategories";
+import { Rating } from "../../Rating/Rating";
+import { RestCategories } from "../../RestaurantInfo/RestCategories/RestCategories";
 import { RestTitle } from "../../RestaurantInfo/RestTitle/RestTitle";
 import { RestHours } from "../../RestaurantInfo/RestHours/RestHours";
 import { HeartButton } from "../../../components/HeartButton/HeartButton";
@@ -18,13 +16,13 @@ const RestaurantCard = (props) => {
         <div className={`restaurant-card__top ${props.style}`}>
           <div className="restaurant-card__checkins-rating">
             <CheckIns checkins={props.checkins} />
-            <NewRating rating={props.rating} />
+            <Rating rating={props.rating} />
           </div>
           <div className="restaurant-card__categories">
-            {/* <NewCategories categories={props.categories} /> */}
+            <RestCategories categories={props.categories} />
           </div>
           <div className="restaurant-card__background">
-            <img src={props.src} alt="" className="restaurant-card__image" />
+            <img src={props.image} alt="" className="restaurant-card__image" />
           </div>
         </div>
         <div className="restaurant-card__title-like">
@@ -44,12 +42,12 @@ const RestaurantCard = (props) => {
 export default RestaurantCard;
 
 RestaurantCard.propTypes = {
+  children: PropTypes.object,
   style: PropTypes.string,
   checkins: PropTypes.number,
   rating: PropTypes.array,
   categories: PropTypes.array,
-  src: PropTypes.string,
+  image: PropTypes.string,
   title: PropTypes.string,
   hours: PropTypes.string,
-  children: PropTypes.object,
 };

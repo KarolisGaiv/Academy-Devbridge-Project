@@ -12,20 +12,20 @@ const BestRestaurantWrapper = () => {
       </div>
       <div className="restaurant-card__wrapper">
         <RestaurantCard
-          src={Ratings.numberOneRating()[6]}
-          checkins={Ratings.numberOneRating()[0]}
+          image={Ratings.numberOneImage()}
+          checkins={Ratings.numberOneCheckIns()}
           rating={Ratings.numberOneRating()}
-          category={Ratings.numberOneRating()}
-          title={Ratings.numberOneRating()[4]}
-          hours={Ratings.numberOneRating()[5]}
+          categories={Ratings.numberOneCategories()}
+          title={Ratings.numberOneTitle()}
+          hours={Ratings.numberOneHours()}
         ></RestaurantCard>
         <RestaurantCard
-          src={Ratings.numberTwoRating()[6]}
-          checkins={Ratings.numberTwoRating()[0]}
+          image={Ratings.numberTwoImage()}
+          checkins={Ratings.numberTwoCheckIns()}
           rating={Ratings.numberTwoRating()}
-          category={Ratings.numberTwoRating()}
-          title={Ratings.numberTwoRating()[4]}
-          hours={Ratings.numberTwoRating()[5]}
+          categories={Ratings.numberTwoCategories()}
+          title={Ratings.numberTwoTitle()}
+          hours={Ratings.numberTwoHours()}
         ></RestaurantCard>
       </div>
     </div>

@@ -15,6 +15,7 @@ import { ReactComponent as CommentBtn } from "../../assets/commentBtn.svg";
 import { ReactComponent as HeartBtnColored } from "../../assets/heartBtnColored.svg";
 import { ReactComponent as HeartBtn } from "../../assets/heartBtn.svg";
 import { ReactComponent as StarEmpty } from "../../assets/starEmpty.svg";
+import { ReactComponent as StarFilled } from "../../assets/starFilled.svg";
 import { ReactComponent as User } from "../../assets/userIcon.svg";
 import { ReactComponent as Thunderstorm } from "../../assets/weather/thunderstorm.svg";
 import { ReactComponent as Sun } from "../../assets/weather/sun.svg";
@@ -25,10 +26,6 @@ import { ReactComponent as Phone } from "../../assets/phone.svg";
 import { ReactComponent as Book } from "../../assets/book.svg";
 import { ReactComponent as Door } from "../../assets/door.svg";
 import { ReactComponent as EllipseGrey } from "../../assets/ellipseGrey.svg";
-import { ReactComponent as DropdownArrow } from "../../assets/dropdownArrow.svg";
-import { ReactComponent as SettingsIcon } from "../../assets/settingsIcon.svg";
-import { ReactComponent as LogoutIcon } from "../../assets/logoutIcon.svg";
-import { ReactComponent as NotificationBell } from "../../assets/notification.svg";
 import { ReactComponent as Globe } from "../../assets/globe.svg";
 import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
 import propTypes from "prop-types";
@@ -67,6 +64,8 @@ const SVGIcon = (props) => {
       return <HeartBtn className={props.className} />;
     case "starEmpty":
       return <StarEmpty className={props.className} />;
+    case "starFilled":
+      return <StarFilled className={props.className} />;
     case "user":
       return <User className={props.className} />;
     case "Thunderstorm":
@@ -87,14 +86,6 @@ const SVGIcon = (props) => {
       return <Door className={props.className} />;
     case "ellipseGrey":
       return <EllipseGrey />;
-    case "dropdown":
-      return <DropdownArrow className={props.className} />;
-    case "settings":
-      return <SettingsIcon className={props.className} />;
-    case "logout":
-      return <LogoutIcon className={props.className} />;
-    case "notificationBell":
-      return <NotificationBell className={props.className} />;
     case "Globe":
       return <Globe />;
     case "MapPin":

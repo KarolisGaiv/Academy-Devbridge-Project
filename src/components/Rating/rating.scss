@@ -12,6 +12,7 @@
     font-weight: 700;
     height: 32px;
     justify-content: space-between;
+    overflow: hidden;
     padding: 8px 12px;
     width: $width;
 }
@@ -22,35 +23,25 @@
     justify-content: flex-end;
     width: 145px;
 
+    &__input {
+        display: none;
+        //visibility: visible !important;
+        //opacity: 0 !important;
+    }
+
     &__star {
-        appearance: none;
-        content: url('../../assets/starEmpty.svg');
         cursor: pointer;
         margin: 0 8px 0 0;
         padding-bottom: 9px;
         padding-top: 13px;
         position: relative;
-
-        &:hover,
-        &:checked {
-            content: url('../../assets/starFilled.svg');
-            ~ #{$_this}__star {
-                content: url('../../assets/starFilled.svg');
-            }
-        }
-    }
-
-    &__expand {
-        direction: rtl;
-        unicode-bidi: bidi-override;
     }
 
     &__collapse {
         @include ratingbox($color-yellow, $color-pickled-bluewood, 65px);
 
-        overflow: hidden;
-
         &:hover {
+            overflow: visible;
             width: 145px;
 
             #{$_this}__expand #{$_this}__star {
@@ -61,6 +52,21 @@
             #{$_this}__expand {
                 margin-left: 1px;
             }
+        }
+    }
+
+    .on-tab {
+        @include ratingbox($color-yellow, $color-pickled-bluewood, 65px);
+        overflow: visible;
+        width: 145px;
+
+        #{$_this}__expand #{$_this}__star {
+            margin: 4px 0 0;
+            padding: 3px;
+        }
+
+        #{$_this}__expand {
+            margin-left: 1px;
         }
     }
 }

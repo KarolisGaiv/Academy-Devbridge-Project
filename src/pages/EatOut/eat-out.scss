@@ -8,4 +8,13 @@
         line-height: 42px;
         margin: 0 0 30px;
     }
+
+    &__small-heading {
+        color: $color-midnight;
+        font-size: $size-24;
+        font-weight: $weight-medium;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+        margin-bottom: 32px;
+    }
 }

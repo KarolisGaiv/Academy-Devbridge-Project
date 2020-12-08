@@ -13,11 +13,27 @@ export class RestaurantBigCard extends React.Component {
     this.state = {
       expanded: false,
     };
+    this.toggledClass = this.toggledClass.bind(this);
   }
+
+  // changeClass() {
+  //   this.setState({
+  //     expanded: !expanded,
+  //   });
+  //   const toggledClass = expanded ? "expanded" : "collapsed";
+  // }
+
+  toggledClass = () => {
+    if (this.state.expanded) {
+      return "expanded";
+    } else {
+      return "collapsed";
+    }
+  };
 
   render() {
     const { expanded } = this.state;
-    const toggledClass = expanded ? "expanded" : "collapsed";
+    // const toggledClass = expanded ? "expanded" : "collapsed";
 
     return (
       <div className="restaurant-big-card">
@@ -41,7 +57,7 @@ export class RestaurantBigCard extends React.Component {
             {/* <p className={`restaurant-card__description`}>
               {this.props.description}
             </p> */}
-            <p className={`restaurant-card__description ${toggledClass}`}>
+            <p className={`restaurant-card__description ${this.toggledClass}`}>
               {this.props.description}
             </p>
             <div className="restaurant-card__button-field">

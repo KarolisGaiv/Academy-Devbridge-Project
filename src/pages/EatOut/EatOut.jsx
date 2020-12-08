@@ -9,11 +9,11 @@ const EatOut = () => {
     <div className="eat-out">
       <Breadcrumbs />
       <section className="eat-out__discover-restaurants">
-        <h2 className="eat-out__heading">Hungry? Find the best place!</h2>
+        <h1 className="eat-out__title">Hungry? Find the best place!</h1>
         <Carousel />
       </section>
       <div className="eat-out__categories-section">
-        <h2 className="eat-out__heading eat-out__heading--small">Categories</h2>
+        <h2 className="eat-out__heading">Categories</h2>
         <RestaurantCategories />
       </div>
     </div>

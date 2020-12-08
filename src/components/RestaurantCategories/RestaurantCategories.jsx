@@ -25,7 +25,7 @@ const RestaurantCategories = () => {
           icon={item}
           totalNumber={countOccurences(existingCategories, item)}
           key={item}
-          iconStyle="outside"
+          iconsOutside={true}
         />
       ))}
     </div>

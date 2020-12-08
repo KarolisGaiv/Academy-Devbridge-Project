@@ -92,7 +92,8 @@
             "rating": 4.0
           }
         ],
-        "categories": ["Burger", "Salads", "Grill"]
+        "categories": ["Burger", "Salads", "Grill"],
+        "slogan": "Delicious burgers all the time"
       },
       {
         "name": "Jurgis ir Drakonas",
@@ -147,7 +148,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Salads", "Pizza", "Pancakes", "Soups"]
+        "categories": ["Salads", "Pizza", "Pancakes", "Soups"],
+        "slogan": "Wide variety of chief exclusive masterpieces"
       },
       {
         "name": "Mamma Pizza",
@@ -190,7 +192,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Pizza"]
+        "categories": ["Pizza"],
+        "slogan": "Find the pizza for all ocations"
       },
       {
         "name": "MOMO Grill Kaunas",

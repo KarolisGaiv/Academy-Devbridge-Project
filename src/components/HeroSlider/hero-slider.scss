@@ -3,10 +3,14 @@
 
 $_transparent: transparent;
 
-.carousel {
+.hero {
     display: grid;
     grid-template-columns: 70% 30%;
     grid-template-rows: 320px;
+
+    &__desc {
+        border: $color-black;
+    }
 
     &__slides {
         position: relative;
@@ -25,7 +29,43 @@ $_transparent: transparent;
         }
     }
 
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 24px;
+        padding: 24px;
+    }
+
+    &__info {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    &__pagination-container {
+        border: 1px solid $color-red;
+        //justify-content: center;
+        overflow: hidden;
+    }
+
+    &__pagination {
+        background-color: $color-silver;
+        border-radius: 50%;
+        display: inline-block;
+        height: 6px;
+        justify-self: start;
+        margin: 5px;
+        width: 6px;
+
+        &--choosed {
+            background-color: $color-red;
+            height: 8px;
+            width: 8px;
+        }
+    }
+
     &__nav {
+        justify-self: end;
+
         button {
             background-color: $_transparent;
             border: 0;

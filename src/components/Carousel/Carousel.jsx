@@ -46,10 +46,6 @@ const Carousel = (props) => {
           ))}
         </div>
         <div className={`carousel__content ${props.contentStyles}`}>
-          <div className={`carousel__nav ${props.navStyles}`}>
-            <button onClick={() => toLeft()}> {props.leftButton} </button>
-            <button onClick={() => toRight()}> {props.rightButton} </button>
-          </div>
           <div
             className={`carousel__pagination ${props.paginationContainerStyles}`}
           >
@@ -63,7 +59,13 @@ const Carousel = (props) => {
               );
             })}
           </div>
-          {props.children}
+          <div className={`carousel__nav ${props.navStyles}`}>
+            <button onClick={() => toLeft()}> {props.leftButton} </button>
+            <button onClick={() => toRight()}> {props.rightButton} </button>
+          </div>
+          <div className={`carousel__info ${props.infoStyles}`}>
+            {props.content}
+          </div>
         </div>
       </div>
     </CardContainer>
@@ -83,5 +85,6 @@ Carousel.propTypes = {
   paginationContainerStyles: PropTypes.string,
   paginationStyles: PropTypes.string,
   choosedPaginationStyles: PropTypes.string,
-  children: PropTypes.object,
+  content: PropTypes.object,
+  infoStyles: PropTypes.string,
 };

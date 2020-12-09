@@ -7,14 +7,14 @@
 
     &__description {
         color: #6a7889; // slate-grey
-        // display: -webkit-box;
+        display: -webkit-box;
         font-weight: 400;
         height: 72px;
         line-height: 1.5;
         overflow: hidden;
-        // text-overflow: ellipsis;
-        // -webkit-box-orient: vertical;
-        // -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
 
         &--collapsed {
             height: 72px;
@@ -24,6 +24,7 @@
         &--expanded {
             height: auto;
             overflow: visible;
+            display: inline-block;
         }
     }
 

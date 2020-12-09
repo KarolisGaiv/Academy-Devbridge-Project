@@ -13,6 +13,9 @@ const CategoryRestaurants = () => {
         <h1 className="category-restaurants__heading">
           The best places for the {category}
         </h1>
+        <div className="category-restaurants__list">
+          Insert restaurants here
+        </div>
       </section>
     </div>
   );

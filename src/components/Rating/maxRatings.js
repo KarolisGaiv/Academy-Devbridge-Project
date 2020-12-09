@@ -1,7 +1,7 @@
 import rest from "../../db.json";
 
 export class Ratings {
-  static numberOneRating(best) {
+  static numberOneRating(best, id2) {
     const restlen = Object.keys(rest.restaurants.restaurantList).length;
     if (best == null) best = 6;
     let sum = 0;
@@ -11,6 +11,8 @@ export class Ratings {
     let max_rating_sum;
     let max_rating_reviewers;
     let index;
+    let index2;
+    index2 = id2;
 
     for (let i = 0; i < restlen; i++) {
       const restaurant = rest.restaurants.restaurantList[i];
@@ -32,7 +34,19 @@ export class Ratings {
     // if there werent any reviews, the number cant be null and still has to be shown
     if (reviews_sum === 0) max_rating = 0;
 
-    return [max_rating.toFixed(1), max_rating_sum, max_rating_reviewers, index];
+    //if function is running 1st time, there isn't second best rating yet
+    if (index2 == null) {
+      //passing 1 so that this recursion would end
+      index2 = this.numberOneRating(max_rating, 1)[3];
+    }
+
+    return [
+      max_rating.toFixed(1),
+      max_rating_sum,
+      max_rating_reviewers,
+      index,
+      index2,
+    ];
   }
   static numberTwoRating() {
     let no1_rating = Ratings.numberOneRating()[0];
@@ -47,66 +61,9 @@ export class Ratings {
     let final_rating = (old_sum + new_value) / (old_reviewers + 1);
     return final_rating.toFixed(1);
   }
-  static numberOneCheckIns() {
-    let index = Ratings.numberOneRating()[3];
-    const restaurant = rest.restaurants.restaurantList[index];
-    let checkins = restaurant.checkIns;
-    return checkins;
-  }
-  static numberTwoCheckIns() {
-    let index = Ratings.numberTwoRating()[3];
-    const restaurant = rest.restaurants.restaurantList[index];
-    let checkins = restaurant.checkIns;
-    return checkins;
-  }
-  static numberOneCategories() {
-    let index = Ratings.numberOneRating()[3];
-    const restaurant = rest.restaurants.restaurantList[index];
-    let categories = restaurant.categories;
-    return categories;
-  }
-  static numberTwoCategories() {
-    let index = Ratings.numberTwoRating()[3];
-    const restaurant = rest.restaurants.restaurantList[index];
-    let categories = restaurant.categories;
-    return categories;
-  }
-  static numberOneTitle() {
-    let index = Ratings.numberOneRating()[3];
-    const restaurant = rest.restaurants.restaurantList[index];
-    let title = restaurant.name;
-    return title;
-  }
-  static numberTwoTitle() {
-    let index = Ratings.numberTwoRating()[3];
-    const restaurant = rest.restaurants.restaurantList[index];
-    let title = restaurant.name;
-    return title;
-  }
-  static numberOneHours() {
-    let index = Ratings.numberOneRating()[3];
-    const restaurant = rest.restaurants.restaurantList[index];
-    let hours = restaurant.openingHours[0].hours;
-    hours = hours.substring(0, 2) + ":00 " + hours.substring(3, 7) + ":00";
-    return hours;
-  }
-  static numberTwoHours() {
-    let index = Ratings.numberTwoRating()[3];
-    const restaurant = rest.restaurants.restaurantList[index];
-    let hours = restaurant.openingHours[0].hours;
-    hours = hours.substring(0, 2) + ":00 " + hours.substring(3, 7) + ":00";
-    return hours;
-  }
-  static numberOneImage() {
-    let index = Ratings.numberOneRating()[3];
-    const restaurant = rest.restaurants.restaurantList[index];
-    let image = restaurant.image;
-    return image;
-  }
-  static numberTwoImage() {
-    let index = Ratings.numberTwoRating()[3];
-    const restaurant = rest.restaurants.restaurantList[index];
-    let image = restaurant.image;
-    return image;
+  static formatHours(hours) {
+    let hour_minute =
+      hours.substring(0, 2) + ":00 " + hours.substring(3, 7) + ":00";
+    return hour_minute;
   }
 }

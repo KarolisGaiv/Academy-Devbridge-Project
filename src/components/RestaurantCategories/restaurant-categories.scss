@@ -8,7 +8,7 @@
     row-gap: 60px;
 
     @media (max-width: $breakpoint-laptop) {
-        column-gap: 40px;
+        column-gap: $column-gap-small;
         grid-template-columns: repeat(3, 1fr);
         margin: 0;
         padding-top: 60px;

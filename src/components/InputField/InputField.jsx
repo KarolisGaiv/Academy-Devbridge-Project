@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-
 import { validateInput } from "components/InputField/inputValidators";
+import { LabelRed } from "components/Text/LabelRed/LabelRed";
 import { ReactComponent as CrossIcon } from "assets/redCrossIcon.svg";
 import "./input-field.scss";
 
@@ -43,7 +43,7 @@ const InputField = ({
       />
       {error && (
         <div className="input-error-cross">
-          <span className="text-danger"> {error.message} </span>
+          <LabelRed text={error.message} />
           <CrossIcon />
         </div>
       )}

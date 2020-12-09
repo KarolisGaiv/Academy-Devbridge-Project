@@ -1,0 +1,21 @@
+@import '../../styles/base/base';
+
+.category-restaurants {
+    margin: 0 auto;
+    max-width: 1265px;
+
+    &__heading {
+        color: $color-pickled-bluewood;
+        font-size: $size-36;
+        font-weight: 700;
+        line-height: 42px;
+        margin: 0 0 30px;
+    }
+
+    &__list {
+        column-gap: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 40px;
+    }
+}

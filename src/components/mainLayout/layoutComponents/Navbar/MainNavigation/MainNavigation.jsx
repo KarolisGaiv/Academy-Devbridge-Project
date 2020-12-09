@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import propTypes from "prop-types";
 import SVGIcon from "../../../../SVGIcon/SVGIcon";
 import NavItem from "./NavItem/NavItem";
 
@@ -13,6 +12,7 @@ const MainNavigation = (props) => {
         id: "1",
         iconName: "home",
         itemStatus: "inactive",
+        exactURL: true,
         pageURL: "",
         itemText: "",
       },
@@ -20,6 +20,7 @@ const MainNavigation = (props) => {
         id: "2",
         iconName: "bookmark",
         itemStatus: "inactive",
+        exactURL: false,
         pageURL: "reservations",
         itemText: "",
       },
@@ -27,6 +28,7 @@ const MainNavigation = (props) => {
         id: "3",
         iconName: "compass",
         itemStatus: "inactive",
+        exactURL: false,
         pageURL: "eat-out",
         itemText: "",
       },
@@ -104,21 +106,36 @@ const MainNavigation = (props) => {
           </button>
         </div>
         <ul>
-          {navigationState.navItems.map((item) => (
-            <NavLink
-              key={item.id}
-              to={`/${item.pageURL}`}
-              exact
-              activeClassName="selected"
-            >
-              <NavItem
-                expanded={expanded}
-                iconName={item.iconName}
-                itemStatus={item.itemStatus}
-                itemText={item.itemText}
-              />
-            </NavLink>
-          ))}
+          {navigationState.navItems.map((item) =>
+            item.exactURL ? (
+              <NavLink
+                key={item.id}
+                to={`/${item.pageURL}`}
+                exact
+                activeClassName="selected"
+              >
+                <NavItem
+                  expanded={expanded}
+                  iconName={item.iconName}
+                  itemStatus={item.itemStatus}
+                  itemText={item.itemText}
+                />
+              </NavLink>
+            ) : (
+              <NavLink
+                key={item.id}
+                to={`/${item.pageURL}`}
+                activeClassName="selected"
+              >
+                <NavItem
+                  expanded={expanded}
+                  iconName={item.iconName}
+                  itemStatus={item.itemStatus}
+                  itemText={item.itemText}
+                />
+              </NavLink>
+            )
+          )}
         </ul>
       </nav>
     </div>
@@ -126,7 +143,3 @@ const MainNavigation = (props) => {
 };
 
 export default MainNavigation;
-
-MainNavigation.propTypes = {
-  toggleMenuHander: propTypes.func,
-};

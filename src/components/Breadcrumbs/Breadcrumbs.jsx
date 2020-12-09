@@ -12,7 +12,7 @@ const Breadcrumbs = () => {
     //create an array that contains main value
     let breadcrumbsItems = ["Dashboard"];
     //Split pathname to an array
-    let pathNameItems = path.replace("%20", " ").split("/");
+    let pathNameItems = path.replace(/%20/g, " ").split("/");
     //populate an array with pathNameItems array items
     breadcrumbsItems.push(...pathNameItems);
     //filter out empty string values

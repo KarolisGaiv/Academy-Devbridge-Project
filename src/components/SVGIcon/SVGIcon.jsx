@@ -15,6 +15,7 @@ import { ReactComponent as CommentBtn } from "../../assets/commentBtn.svg";
 import { ReactComponent as HeartBtnColored } from "../../assets/heartBtnColored.svg";
 import { ReactComponent as HeartBtn } from "../../assets/heartBtn.svg";
 import { ReactComponent as StarEmpty } from "../../assets/starEmpty.svg";
+import { ReactComponent as StarFilled } from "../../assets/starFilled.svg";
 import { ReactComponent as User } from "../../assets/userIcon.svg";
 import { ReactComponent as Thunderstorm } from "../../assets/weather/thunderstorm.svg";
 import { ReactComponent as Sun } from "../../assets/weather/sun.svg";
@@ -80,6 +81,8 @@ const SVGIcon = (props) => {
       return <HeartBtn className={props.className} />;
     case "starEmpty":
       return <StarEmpty className={props.className} />;
+    case "starFilled":
+      return <StarFilled className={props.className} />;
     case "user":
       return <User className={props.className} />;
     case "Thunderstorm":

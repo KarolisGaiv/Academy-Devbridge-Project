@@ -14,6 +14,10 @@ export const RestaurantBigCard = (props) => {
     clicked: false,
   });
 
+  const toggledClass = expanded
+    ? "restaurant-card__description restaurant-card__description--expanded"
+    : "restaurant-card__description restaurant-card__description--collapsed";
+
   const increaseCheckinNumber = () => {
     if (checkinNumberState.clicked) {
       setCheckinNumberState({
@@ -47,15 +51,7 @@ export const RestaurantBigCard = (props) => {
               .split("/")}
           />
           <RestWebAddress icon="MapPin" text={props.address} />
-          <p
-            className={
-              expanded
-                ? "restaurant-card__description restaurant-card__description--expanded"
-                : "restaurant-card__description restaurant-card__description--collapsed"
-            }
-          >
-            {props.description}
-          </p>
+          <p className={toggledClass}>{props.description}</p>
           <div className="restaurant-card__button-field">
             <Link handleClick={() => setExpanded(!expanded)}>
               {expanded ? "Read less" : "Read more"}

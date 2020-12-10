@@ -1,6 +1,5 @@
 import React from "react";
-import { RestaurantBigCard } from "../RestaurantCards/RestaurantBigCard/RestaurantBigCard";
-import { Ratings } from "../Rating/maxRatings";
+import RestaurantsCarousel from "../RestaurantsCarousel/RestaurantsCarousel";
 import "./discover-restaurant-section.scss";
 
 class DiscoverRestaurantSection extends React.Component {
@@ -41,20 +40,7 @@ class DiscoverRestaurantSection extends React.Component {
     } else {
       return (
         <div className="discover-restaurant-section">
-          {restaurantList.map((restaurant) => (
-            <RestaurantBigCard
-              key={restaurant.id}
-              checkins={restaurant.checkIns}
-              image={restaurant.image}
-              title={restaurant.name}
-              description={restaurant.description}
-              web={restaurant.website}
-              address={restaurant.address}
-              hours={Ratings.showHours(restaurantList.indexOf(restaurant))}
-              categories={restaurant.categories}
-              rating={Ratings.countRating(restaurantList.indexOf(restaurant))}
-            />
-          ))}
+          <RestaurantsCarousel restaurantList={restaurantList} />
         </div>
       );
     }

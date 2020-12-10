@@ -1,0 +1,24 @@
+@import '../../styles/base/base';
+
+.restaurants-carousel__slider {
+    display: inline-flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.restaurants-carousel__slide {
+    flex-shrink: 0;
+    padding: 0 40px 0 0;
+    transition: 400ms;
+    width: 395px;
+
+    @media (max-width: $breakpoint-tablet-landscape) {
+        padding: 0 40px 0 0;
+        width: 612px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        padding: 0;
+        width: 100%;
+    }
+}

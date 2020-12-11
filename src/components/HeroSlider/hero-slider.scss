@@ -8,15 +8,24 @@ $_transparent: transparent;
     grid-template-columns: 70% 30%;
     grid-template-rows: 320px;
 
+    &__desc-wrap {
+        -webkit-box-orient: vertical;
+        color: $color-grey-6;
+        display: -webkit-box;
+        height: 101px;
+        -webkit-line-clamp: 4;
+        margin: 16px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     &__box {
-        height: 248px;
+        height: 232px;
         overflow: hidden;
     }
 
     &__title {
-        text-overflow: initial;
-        white-space: initial;
-        word-break: break-word;
+        line-height: 37px;
     }
 
     &__slides {
@@ -39,7 +48,7 @@ $_transparent: transparent;
     &__content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 24px;
+        grid-template-rows: 40px;
         padding: 24px;
     }
 
@@ -51,7 +60,6 @@ $_transparent: transparent;
 
     &__pagination-container {
         border: 1px solid $color-red;
-        //justify-content: center;
         overflow: hidden;
     }
 
@@ -77,6 +85,7 @@ $_transparent: transparent;
         button {
             background-color: $_transparent;
             border: 0;
+            cursor: pointer;
             height: 30px;
             width: 30px;
 
@@ -84,5 +93,11 @@ $_transparent: transparent;
                 transform: translateX(-7px);
             }
         }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 60% 40%;
     }
 }

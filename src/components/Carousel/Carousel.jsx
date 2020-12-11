@@ -5,6 +5,7 @@ import { CardContainer } from "components/CardContainer/CardContainer";
 import { LabelRed } from "components/Text/LabelRed/LabelRed";
 import { DescriptionGrey } from "components/Text/DescriptionGrey/DescriptionGrey";
 import { RestTitle } from "components/RestaurantInfo/RestTitle/RestTitle";
+import { Button } from "components/Button/Button";
 import PropTypes from "prop-types";
 
 const Carousel = (props) => {
@@ -83,21 +84,23 @@ const Carousel = (props) => {
             <button onClick={() => toRight()}> {props.rightButton} </button>
           </div>
           <div className={`carousel__info ${props.infoStyles}`}>
-            {slides2.map((slide, index) => (
+            {slides2.map((slide1, index) => (
               <div
                 key={index}
                 style={{ transform: `translateY(${y}%)` }}
                 className="hero__box"
               >
-                <LabelRed text={slide.slogan}> </LabelRed>
+                <LabelRed text={slide1.slogan}> </LabelRed>
                 <RestTitle
-                  title={slide.name}
+                  title={slide1.name}
                   titleStyle="hero__title"
                 ></RestTitle>
                 <DescriptionGrey
                   descStyle="hero__desc"
-                  text={slide.description}
+                  descWrapStyle="hero__desc-wrap"
+                  text={slide1.description}
                 ></DescriptionGrey>
+                <Button className="button button--red">Learn More</Button>
               </div>
             ))}
           </div>

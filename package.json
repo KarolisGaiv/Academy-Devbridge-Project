@@ -41,9 +41,6 @@
     "extends": "react-app"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "browserslist": {
     "production": [

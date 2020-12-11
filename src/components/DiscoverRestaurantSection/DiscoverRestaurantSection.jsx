@@ -1,7 +1,7 @@
 import React from "react";
 import { RestaurantBigCard } from "../RestaurantCards/RestaurantBigCard/RestaurantBigCard";
 import { Ratings } from "../Rating/maxRatings";
-import "./discover-restaurant-section.scss";
+import "../RestaurantSection/restaurant-section.scss";
 
 class DiscoverRestaurantSection extends React.Component {
   constructor(props) {
@@ -34,13 +34,14 @@ class DiscoverRestaurantSection extends React.Component {
 
   render() {
     const { error, isLoaded, restaurantList } = this.state;
+
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Is loading...</div>;
     } else {
       return (
-        <div className="discover-restaurant-section">
+        <div className="restaurant-section">
           {restaurantList.map((restaurant) => (
             <RestaurantBigCard
               key={restaurant.id}

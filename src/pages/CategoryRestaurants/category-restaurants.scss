@@ -1,10 +1,10 @@
 @import '../../styles/base/base';
 
-.eat-out {
+.category-restaurants {
     margin: 0 auto;
     max-width: 1265px;
 
-    &__title {
+    &__heading {
         color: $color-pickled-bluewood;
         font-size: $size-36;
         font-weight: 700;
@@ -12,13 +12,10 @@
         margin: 0 0 30px;
     }
 
-    &__heading {
-        color: $color-blue-dark;
-        font-size: $size-24;
-        font-weight: 500;
-    }
-
-    &__categories-section {
-        margin-top: 60px;
+    &__list {
+        column-gap: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 40px;
     }
 }

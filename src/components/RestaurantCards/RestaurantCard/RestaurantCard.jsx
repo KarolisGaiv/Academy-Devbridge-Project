@@ -19,7 +19,7 @@ const RestaurantCard = (props) => {
             <Rating rating={props.rating} />
           </div>
           <div className="restaurant-card__categories">
-            <RestCategories category={props.category} />
+            <RestCategories categories={props.categories} />
           </div>
           <div className="restaurant-card__background">
             <img src={props.image} alt="" className="restaurant-card__image" />
@@ -43,7 +43,7 @@ export default RestaurantCard;
 RestaurantCard.propTypes = {
   checkins: PropTypes.number,
   rating: PropTypes.array,
-  category: PropTypes.array,
+  categories: PropTypes.array,
   image: PropTypes.string,
   title: PropTypes.string,
   hours: PropTypes.string,

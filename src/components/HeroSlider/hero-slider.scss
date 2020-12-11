@@ -8,8 +8,15 @@ $_transparent: transparent;
     grid-template-columns: 70% 30%;
     grid-template-rows: 320px;
 
-    &__desc {
-        border: $color-black;
+    &__box {
+        height: 248px;
+        overflow: hidden;
+    }
+
+    &__title {
+        text-overflow: initial;
+        white-space: initial;
+        word-break: break-word;
     }
 
     &__slides {
@@ -39,6 +46,7 @@ $_transparent: transparent;
     &__info {
         grid-column: 1 / 3;
         grid-row: 2 / 3;
+        overflow: hidden;
     }
 
     &__pagination-container {

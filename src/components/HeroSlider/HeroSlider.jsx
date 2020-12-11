@@ -2,9 +2,6 @@ import React from "react";
 import Carousel from "components/Carousel/Carousel";
 import "./hero-slider.scss";
 import SVGIcon from "components/SVGIcon/SVGIcon";
-import { LabelRed } from "components/Text/LabelRed/LabelRed";
-import { DescriptionGrey } from "components/Text/DescriptionGrey/DescriptionGrey";
-import { RestTitle } from "components/RestaurantInfo/RestTitle/RestTitle";
 
 export const HeroSlider = () => {
   return (
@@ -20,16 +17,6 @@ export const HeroSlider = () => {
         leftButton={<SVGIcon name="sliderNavLeft" />}
         rightButton={<SVGIcon name="sliderNavRight" />}
         infoStyles="hero__info"
-        content={
-          <>
-            <LabelRed text="texttt"> </LabelRed>
-            <RestTitle title="Restorano pavadinimas"> </RestTitle>
-            <DescriptionGrey
-              descStyle="hero__desc"
-              text="dsdas asdad adas"
-            ></DescriptionGrey>
-          </>
-        }
       ></Carousel>
     </>
   );

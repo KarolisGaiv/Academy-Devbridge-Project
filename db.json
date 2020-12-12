@@ -92,8 +92,8 @@
             "rating": 4.0
           }
         ],
-        "newPlace": false,
-        "categories": ["Burger", "Salads", "Grill"]
+        "categories": ["Burger", "Salads", "Grill"],
+        "openingDate": "September 17, 2019"
       },
       {
         "name": "Jurgis ir Drakonas",
@@ -148,8 +148,8 @@
             "rating": 5.0
           }
         ],
-        "newPlace": false,
-        "categories": ["Salads", "Pizza", "Pancakes", "Soups"]
+        "categories": ["Salads", "Pizza", "Pancakes", "Soups"],
+        "openingDate": "October 2, 2017"
       },
       {
         "name": "Mamma Pizza",
@@ -192,8 +192,8 @@
             "rating": 5.0
           }
         ],
-        "newPlace": false,
-        "categories": ["Pizza"]
+        "categories": ["Pizza"],
+        "openingDate": "January 17, 2020"
       },
       {
         "name": "MOMO Grill Kaunas",
@@ -260,8 +260,8 @@
             "rating": 5.0
           }
         ],
-        "newPlace": true,
-        "categories": ["Grill", "Sweets", "Brunch"]
+        "categories": ["Grill", "Sweets", "Brunch"],
+        "openingDate": "June 1, 2020"
       },
       {
         "name": "Restoranas Siesta",
@@ -298,8 +298,8 @@
             "rating": 5
           }
         ],
-        "newPlace": true,
-        "categories": ["Salads", "Grill", "Soup"]
+        "categories": ["Salads", "Grill", "Soup"],
+        "openingDate": "November 30, 2019"
       },
       {
         "name": "Restoranas DIA",
@@ -360,8 +360,8 @@
             "rating": 4.5
           }
         ],
-        "newPlace": true,
-        "categories": ["Salads", "Grill", "Brunch", "Soups"]
+        "categories": ["Salads", "Grill", "Brunch", "Soups"],
+        "openingDate": "September 10, 2015"
       },
       {
         "name": "Agave",
@@ -392,8 +392,8 @@
             "rating": 5.0
           }
         ],
-        "newPlace": true,
-        "categories": ["Salads", "Grill", "Pancakes"]
+        "categories": ["Salads", "Grill", "Pancakes"],
+        "openingDate": "May 20, 2013"
       },
       {
         "name": "Moksha",
@@ -436,8 +436,8 @@
             "rating": 5.0
           }
         ],
-        "newPlace": true,
-        "categories": ["Salads", "Ramen"]
+        "categories": ["Salads", "Ramen"],
+        "openingDate": "September 1, 2020"
       },
       {
         "name": "Avilys",
@@ -517,8 +517,8 @@
             "rating": 4.5
           }
         ],
-        "newPlace": false,
-        "categories": ["Kebab", "Sweets"]
+        "categories": ["Kebab", "Sweets"],
+        "openingDate": "May 1, 2019"
       },
       {
         "name": "Sushi Masters",
@@ -580,8 +580,8 @@
             "rating": 5.0
           }
         ],
-        "newPlace": true,
-        "categories": ["Burger", "Brunch", "Pancakes"]
+        "categories": ["Burger", "Brunch", "Pancakes"],
+        "openingDate": "August 1, 2015"
       },
       {
         "name": "ieti",
@@ -630,8 +630,8 @@
             "rating": 5
           }
         ],
-        "newPlace": true,
-        "categories": ["Sweets"]
+        "categories": ["Sweets"],
+        "openingDate": "July 19, 2020"
       },
       {
         "name": "Pas Stanley",
@@ -662,8 +662,8 @@
             "rating": 4.5
           }
         ],
-        "newPlace": false,
-        "categories": ["Kebab", "Ramen", "Burger"]
+        "categories": ["Kebab", "Ramen", "Burger"],
+        "openingDate": "December 5, 2019"
       },
       {
         "name": "Lithuanian Pub Entry",
@@ -688,8 +688,8 @@
             "rating": 4.5
           }
         ],
-        "newPlace": true,
-        "categories": ["Salads", "Sandwich", "Kebab"]
+        "categories": ["Salads", "Sandwich", "Kebab"],
+        "openingDate": "August 17, 2014"
       },
       {
         "name": "Casa Della Pasta, pizzeria - restaurant",
@@ -707,7 +707,8 @@
         "image": "https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80",
         "checkIns": 13,
         "reviews": [],
-        "categories": ["Salads", "Sandwich", "Kebab"]
+        "categories": ["Salads", "Sandwich", "Kebab"],
+        "openingDate": "April 27, 2019"
       },
       {
         "name": "Vista Puode",
@@ -750,8 +751,8 @@
             "rating": 4.0
           }
         ],
-        "newPlace": true,
-        "categories": ["Burger", "Grill", "Sweets"]
+        "categories": ["Burger", "Grill", "Sweets"],
+        "openingDate": "September 1, 2010"
       },
       {
         "name": "Hop Doc Gastropub",
@@ -782,8 +783,8 @@
             "rating": 4.5
           }
         ],
-        "newPlace": true,
-        "categories": ["Salads", "Sandwich", "Kebab"]
+        "categories": ["Salads", "Sandwich", "Kebab"],
+        "openingDate": "February 10, 2019"
       },
       {
         "name": "Al Cantuccio",
@@ -826,8 +827,8 @@
             "rating": 5.0
           }
         ],
-        "newPlace": false,
-        "categories": ["Sweets", "Pancakes", "Ramen"]
+        "categories": ["Sweets", "Pancakes", "Ramen"],
+        "openingDate": "August 10, 2018"
       },
       {
         "name": "ManGi",
@@ -858,8 +859,8 @@
             "rating": 4.5
           }
         ],
-        "newPlace": true,
-        "categories": ["Grill", "Kebab", "Burger", "Sushi"]
+        "categories": ["Grill", "Kebab", "Burger", "Sushi"],
+        "openingDate": "July 20, 2020"
       }
     ],
     "categories": [

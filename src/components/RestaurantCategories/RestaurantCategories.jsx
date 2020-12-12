@@ -28,6 +28,7 @@ const RestaurantCategories = () => {
           totalNumber={countOccurences(existingCategories, item)}
           key={item}
           iconsOutside={true}
+          directTo="eat-out"
         />
       ))}
     </div>

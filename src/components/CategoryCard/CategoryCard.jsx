@@ -3,6 +3,7 @@ import "./category-card.scss";
 import PropTypes from "prop-types";
 import SVGIcon from "../SVGIcon/SVGIcon";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 
 export const ResCard = ({
   category,
@@ -10,6 +11,7 @@ export const ResCard = ({
   icon,
   keyword,
   iconsOutside,
+  directTo,
 }) => {
   const iconStyle = classNames("card-wrapper__icon", {
     "card-wrapper__icon--outside": iconsOutside === true,
@@ -17,12 +19,19 @@ export const ResCard = ({
 
   return (
     <div className="card-wrapper">
-      <div className="card-wrapper__info">
-        <span className="card-wrapper__name">{category}</span>
-        <span className="card-wrapper__details">
-          {`${totalNumber} ${keyword}`}
-        </span>
-      </div>
+      <Link
+        to={`${directTo}/${category}`}
+        className="card-wrapper__link"
+        aria-label={`${category}, ${totalNumber} ${keyword}`}
+      >
+        <div className="card-wrapper__info">
+          <span className="card-wrapper__name">{category}</span>
+          <span className="card-wrapper__details">
+            {`${totalNumber} ${keyword}`}
+          </span>
+        </div>
+      </Link>
+
       <div className={iconStyle}>
         <SVGIcon name={icon} />
       </div>
@@ -38,4 +47,5 @@ ResCard.propTypes = {
   totalNumber: PropTypes.number,
   keyword: PropTypes.string,
   iconsOutside: PropTypes.bool,
+  directTo: PropTypes.string,
 };

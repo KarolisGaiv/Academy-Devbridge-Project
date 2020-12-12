@@ -12,7 +12,10 @@ const CategoryRestaurants = () => {
       <Breadcrumbs />
       <section className="category-restaurants__restaurants">
         <h1 className="category-restaurants__heading">
-          The best places for the {category}
+          The best places for the{" "}
+          <span className="category-restaurants__category-name">
+            {category}
+          </span>
         </h1>
         <div className="category-restaurants__list">
           <CategoryRestaurantSection filter="category" category={category} />

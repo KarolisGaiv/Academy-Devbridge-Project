@@ -1,7 +1,8 @@
 import React from "react";
-import { RestaurantBigCard } from "../RestaurantCards/RestaurantBigCard/RestaurantBigCard";
-import { Ratings } from "../Rating/maxRatings";
-import "../RestaurantSection/restaurant-section.scss";
+import PropTypes from "prop-types";
+import { RestaurantBigCard } from "../../RestaurantCards/RestaurantBigCard/RestaurantBigCard";
+import { Ratings } from "../../Rating/maxRatings";
+import "./restaurant-section.scss";
 
 class DiscoverRestaurantSection extends React.Component {
   constructor(props) {
@@ -35,9 +36,34 @@ class DiscoverRestaurantSection extends React.Component {
   render() {
     const { error, isLoaded, restaurantList } = this.state;
 
-    const restaurants = restaurantList.filter(
-      (restaurant) => restaurant.newPlace === true
-    );
+    let restaurants = restaurantList;
+    const restaurantFilterDate = new Date();
+
+    switch (this.props.filter) {
+      case "new":
+        restaurantFilterDate.setDate(restaurantFilterDate.getDate() - 365);
+        restaurants = restaurantList.filter(
+          (restaurant) =>
+            Date.parse(restaurant.openingDate) > restaurantFilterDate
+        );
+        break;
+      case "category":
+        restaurants = restaurantList.filter((restaurant) =>
+          restaurant.categories.some(
+            (category) => category === this.props.categoryName
+          )
+        );
+        break;
+      case "similar":
+        restaurants = restaurantList.filter((restaurant) =>
+          restaurant.categories.some((item) =>
+            this.props.mainRestaurantCategories.includes(item)
+          )
+        );
+        break;
+      default:
+        restaurants = restaurantList;
+    }
 
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -67,3 +93,10 @@ class DiscoverRestaurantSection extends React.Component {
 }
 
 export default DiscoverRestaurantSection;
+
+DiscoverRestaurantSection.propTypes = {
+  restaurants: PropTypes.string,
+  categoryName: PropTypes.string,
+  filter: PropTypes.string,
+  mainRestaurantCategories: PropTypes.array,
+};

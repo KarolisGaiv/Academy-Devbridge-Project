@@ -11,7 +11,8 @@ import PropTypes from "prop-types";
 const Carousel = (props) => {
   const restaurantList = db.restaurants.restaurantList;
 
-  const slides = restaurantList.filter((restaurant) => restaurant.image);
+  const slides1 = restaurantList.filter((restaurant) => restaurant.image);
+  const slides = slides1.slice(0, 5);
   const slides2 = restaurantList.filter((restaurant) => restaurant);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
@@ -23,7 +24,7 @@ const Carousel = (props) => {
       return prevSlide !== 0 ? prevSlide - 1 : (prevSlide = slides.length - 1);
     });
     setCurrentY((prevSlide) => {
-      return prevSlide !== 0 ? prevSlide - 1 : (prevSlide = slides.length - 1);
+      return prevSlide !== 0 ? prevSlide - 1 : (prevSlide = slides2.length - 1);
     });
 
     setX((prevX) => {
@@ -32,7 +33,7 @@ const Carousel = (props) => {
     setY((prevY) => {
       return currentY !== 0
         ? prevY + 100
-        : (prevY = (slides.length - 1) * -100);
+        : (prevY = (slides2.length - 1) * -100);
     });
   };
 
@@ -41,13 +42,13 @@ const Carousel = (props) => {
       return prevSlide !== slides.length - 1 ? prevSlide + 1 : (prevSlide = 0);
     });
     setCurrentY((prevSlide) => {
-      return prevSlide !== 0 ? prevSlide - 1 : (prevSlide = slides.length - 1);
+      return prevSlide !== 0 ? prevSlide - 1 : (prevSlide = slides2.length - 1);
     });
     setX((prevX) => {
       return current !== slides.length - 1 ? prevX - 100 : (prevX = 0);
     });
     setY((prevY) => {
-      return currentY !== slides.length - 1 ? prevY - 100 : (prevY = 0);
+      return currentY !== slides2.length - 1 ? prevY - 100 : (prevY = 0);
     });
   };
 
@@ -84,7 +85,7 @@ const Carousel = (props) => {
             <button onClick={() => toRight()}> {props.rightButton} </button>
           </div>
           <div className={`carousel__info ${props.infoStyles}`}>
-            {slides2.map((slide1, index) => (
+            {slides2.slice(0, 5).map((slide1, index) => (
               <div
                 key={index}
                 style={{ transform: `translateY(${y}%)` }}

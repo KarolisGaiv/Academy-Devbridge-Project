@@ -7,46 +7,62 @@ import { Ratings } from "../Rating/maxRatings";
 const Carousel = (props) => {
   const { restaurantList } = props;
 
-  const [x, setX] = useState(0);
+  const [xCoord, setXCoord] = useState(0);
   const [current, setCurrent] = useState(0);
 
   const toLeft = () => {
+    let lastCoordIndex = 1; // variable to find last slide index coord
+    if (window.screen.width > 1024) {
+      lastCoordIndex = 3;
+    } else if (window.screen.width > 768) {
+      lastCoordIndex = 2;
+    }
+
     setCurrent((prevSlide) => {
       return prevSlide !== 0
         ? prevSlide - 1
-        : (prevSlide = restaurantList.length - 1);
+        : (prevSlide = restaurantList.length - lastCoordIndex);
     });
 
-    setX((prevX) => {
+    setXCoord((prevXCoord) => {
       return current !== 0
-        ? prevX + 100
-        : (prevX = (restaurantList.length - 1) * -100);
+        ? prevXCoord + 100
+        : (prevXCoord = (restaurantList.length - lastCoordIndex) * -100);
     });
   };
 
   const toRight = () => {
+    let lastCoordIndex = 1; // variable to find last slide index coord
+    if (window.screen.width > 1024) {
+      lastCoordIndex = 3;
+    } else if (window.screen.width > 768) {
+      lastCoordIndex = 2;
+    }
+
     setCurrent((prevSlide) => {
-      return prevSlide !== restaurantList.length - 1
+      return prevSlide !== restaurantList.length - lastCoordIndex
         ? prevSlide + 1
         : (prevSlide = 0);
     });
 
-    setX((prevX) => {
-      return current !== restaurantList.length - 1 ? prevX - 100 : (prevX = 0);
+    setXCoord((prevXCoord) => {
+      return current !== restaurantList.length - lastCoordIndex
+        ? prevXCoord - 100
+        : (prevXCoord = 0);
     });
   };
 
   return (
     <div styleName="restaurants-carousel">
-      <div className={`restaurants-carousel__buttons`}>
+      <div className="restaurants-carousel__buttons">
         <button onClick={() => toLeft()}> {"<"} </button>
         <button onClick={() => toRight()}> {">"} </button>
       </div>
-      <div className={`restaurants-carousel__slider`}>
+      <div className="restaurants-carousel__slider">
         {restaurantList.map((restaurant) => (
           <div
             key={restaurant.id}
-            style={{ transform: `translateX(${x}%)` }}
+            style={{ transform: `translateX(${xCoord}%)` }}
             className="restaurants-carousel__slide"
           >
             <RestaurantBigCard

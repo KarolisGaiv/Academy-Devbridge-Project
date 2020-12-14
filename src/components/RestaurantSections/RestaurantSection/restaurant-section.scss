@@ -2,7 +2,7 @@
 
 .restaurant-section {
     background-color: $color-porcelain;
-    column-gap: 40px;
+    column-gap: $column-gap-small;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: auto;

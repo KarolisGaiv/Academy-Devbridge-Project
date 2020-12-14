@@ -19,7 +19,7 @@ $_transparent: transparent;
         text-overflow: ellipsis;
     }
 
-    &__box {
+    &__info-wrap {
         height: 232px;
         overflow: hidden;
     }
@@ -59,7 +59,7 @@ $_transparent: transparent;
     }
 
     &__pagination-container {
-        border: 1px solid $color-red;
+        height: 20px;
         overflow: hidden;
     }
 

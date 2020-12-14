@@ -69,7 +69,7 @@ const Carousel = (props) => {
           <div
             className={`carousel__pagination ${props.paginationContainerStyles}`}
           >
-            {slides.map((slide, index) => {
+            {[...Array(5)].map((slide, index) => {
               return index === current ? (
                 <div
                   className={`${props.paginationStyles} ${props.choosedPaginationStyles}`}
@@ -88,7 +88,7 @@ const Carousel = (props) => {
               <div
                 key={index}
                 style={{ transform: `translateY(${y}%)` }}
-                className="hero__box"
+                className="hero__info-wrap"
               >
                 <LabelRed text={slide1.slogan}> </LabelRed>
                 <RestTitle

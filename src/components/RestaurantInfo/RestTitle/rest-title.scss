@@ -3,8 +3,7 @@
 .title {
     color: $color-blue-dark;
     font-size: $size-24;
-    font-weight: 500;
-    line-height: 28px;
+    font-weight: $weight-medium;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

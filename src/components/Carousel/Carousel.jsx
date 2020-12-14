@@ -100,7 +100,7 @@ const Carousel = (props) => {
                   descWrapStyle="hero__desc-wrap"
                   text={slide1.description}
                 ></DescriptionGrey>
-                <Button className="button button--red">Learn More</Button>
+                <Button className="button button--slider">Learn More</Button>
               </div>
             ))}
           </div>

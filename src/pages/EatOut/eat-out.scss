@@ -15,7 +15,8 @@
     &__heading {
         color: $color-blue-dark;
         font-size: $size-24;
-        font-weight: 500;
+        font-weight: $weight-medium;
+        letter-spacing: 0.5px;
     }
 
     &__categories-section {

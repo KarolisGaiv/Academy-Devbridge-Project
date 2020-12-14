@@ -129,14 +129,6 @@ const SVGIcon = (props) => {
       return <Grill />;
     case "ellipseGrey":
       return <EllipseGrey />;
-    case "dropdown":
-      return <DropdownArrow className={props.className} />;
-    case "settings":
-      return <SettingsIcon className={props.className} />;
-    case "logout":
-      return <LogoutIcon className={props.className} />;
-    case "notificationBell":
-      return <NotificationBell className={props.className} />;
     case "Globe":
       return <Globe />;
     case "MapPin":

@@ -10,6 +10,10 @@
         height: 80%;
         position: relative;
 
+        &--fixed {
+            height: 185px;
+        }
+
         @media (max-width: $breakpoint-tablet-landscape) {
             height: 185px;
         }

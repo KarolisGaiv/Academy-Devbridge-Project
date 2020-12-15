@@ -20,12 +20,10 @@
 
         &--collapsed {
             height: 72px;
-            overflow: hidden;
         }
 
         &--expanded {
             display: inline-block;
-            min-height: 72px;
             overflow: visible;
         }
     }

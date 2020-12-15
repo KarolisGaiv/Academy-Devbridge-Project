@@ -31,7 +31,7 @@ const BestRestaurantWrapper = () => {
           rating={Ratings.numberTwoRating()}
           categories={no2.categories}
           title={no2.name}
-          hours={Ratings.formatHours(no1.openingHours[0].hours)}
+          hours={Ratings.formatHours(no2.openingHours[0].hours)}
         ></RestaurantCard>
       </div>
     </div>

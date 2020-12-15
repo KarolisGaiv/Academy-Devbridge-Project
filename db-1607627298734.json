@@ -71,7 +71,7 @@
             "userName": "Luke Skywalker",
             "id": "730tybsl12",
             "comment": "Tasty burgers, but had to wait a long line.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Uncle Roger",
@@ -83,17 +83,20 @@
             "userName": "Sara Lars",
             "id": "183gstwpl6",
             "comment": "Food didn’t meet my expectations, but it was fine. But the customer experience was flawless!",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Wade Owen Watts",
             "id": "183620uer",
             "comment": "Good burgers, good price",
-            "rating": 4.0
+            "rating": 4
           }
         ],
-        "categories": ["Burger", "Salads", "Grill"],
-        "openingDate": "September 17, 2019"
+        "categories": [
+          "Burger",
+          "Salads",
+          "Grill"
+        ]
       },
       {
         "name": "Jurgis ir Drakonas",
@@ -121,35 +124,39 @@
             "userName": "Edgar Abbott",
             "id": "0rqlywcr8c",
             "comment": "Nice place, a lot of natural food, exclusive pizza. Ice cream which you can get only in this restaurant. Good place for children.",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Samantha Henry",
             "id": "9hku9agnj4",
             "comment": "Ok pizza, good beer. Environment is better for family than for business traveler attempting to relax over dinner. Lots of kids.",
-            "rating": 3.0
+            "rating": 3
           },
           {
             "userName": "Edric Ingram",
             "id": "fs6jf8u00z",
             "comment": "Nice pizza, but not the best I had. Friendly staff, reasonably priced menu. Was very quiet when we visited.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Valerie Jordan",
             "id": "3snsdmmxz1",
             "comment": "Hated it.",
-            "rating": 1.0
+            "rating": 1
           },
           {
             "userName": "Samuel Frost",
             "id": "wdni7vwbuy",
             "comment": "Most awesome pizza I ever had!",
-            "rating": 5.0
+            "rating": 5
           }
         ],
-        "categories": ["Salads", "Pizza", "Pancakes", "Soups"],
-        "openingDate": "October 2, 2017"
+        "categories": [
+          "Salads",
+          "Pizza",
+          "Pancakes",
+          "Soups"
+        ]
       },
       {
         "name": "Mamma Pizza",
@@ -171,7 +178,7 @@
             "userName": "Eloise Matthews",
             "id": "o0qtbt1x97",
             "comment": "One of The best Pizza in town. Good fresh juice. Family friendly and quite nice music.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Marc Baxter",
@@ -183,17 +190,18 @@
             "userName": "Stewart Henry",
             "id": "iyvfh3hlqj",
             "comment": "We ordered two pizzas. Both were almost cold when served (it was not busy time). Beer and cider one the other hand were warm on a day of 30 degrees celsius.",
-            "rating": 1.0
+            "rating": 1
           },
           {
             "userName": "Travis Farmer",
             "id": "5bcbeuz4py",
             "comment": "The best pizza`s in Kaunas. Very delicious, quality ingredients, very kind and good service and affordable prices. Must visit.",
-            "rating": 5.0
+            "rating": 5
           }
         ],
-        "categories": ["Pizza"],
-        "openingDate": "January 17, 2020"
+        "categories": [
+          "Pizza"
+        ]
       },
       {
         "name": "MOMO Grill Kaunas",
@@ -215,7 +223,7 @@
             "userName": "Derek Daves",
             "id": "8m69jg4evv",
             "comment": "Very tasty, good service, nice ambience, good location. 10 points ;) Mimosas, soups, beef, coffee, ice cream.",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Chase Oliver",
@@ -233,7 +241,7 @@
             "userName": "Samson Jensen",
             "id": "6hmnta6rse",
             "comment": "My favorite restaurant in Kaunas for brunch, lunch, dinner or sweet dessert!",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Matt Hodges",
@@ -245,7 +253,7 @@
             "userName": "Nina Bowen",
             "id": "afr99kdf9q",
             "comment": "I love good steak and this is the best one i can get in Kaunas city.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Lance Marrow",
@@ -257,11 +265,14 @@
             "userName": "Tommy Nelson",
             "id": "gf77pv4o1n",
             "comment": "Best brunch in town! Egg Benedicts and English breakfast was really very delicious! Best wishes, can't wait to come back!",
-            "rating": 5.0
+            "rating": 5
           }
         ],
-        "categories": ["Grill", "Sweets", "Brunch"],
-        "openingDate": "June 1, 2020"
+        "categories": [
+          "Grill",
+          "Sweets",
+          "Brunch"
+        ]
       },
       {
         "name": "Restoranas Siesta",
@@ -283,7 +294,7 @@
             "userName": "Rocky Thornton",
             "id": "x1y6iixy5l",
             "comment": "Beautiful restaurant in the centre of Lithuania next to highway Klaipėda-Kaunas. Delicious food, nice choice, good local and imported drinks.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Laurel Robbins",
@@ -298,8 +309,11 @@
             "rating": 5
           }
         ],
-        "categories": ["Salads", "Grill", "Soup"],
-        "openingDate": "November 30, 2019"
+        "categories": [
+          "Salads",
+          "Grill",
+          "Soup"
+        ]
       },
       {
         "name": "Restoranas DIA",
@@ -321,13 +335,13 @@
             "userName": "Blossom Schuman",
             "id": "oqk2m7wtlz",
             "comment": "We visited with friends. Great service, very tasty food, cozy environment. The prices are quite high but the quality is good.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Henrietta Fields",
             "id": "tmw3rri8r7",
             "comment": "Soup was ok, reminded me of a ragu that had been transformed into a soup. Nothing special but ok.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Halsey Cress",
@@ -345,13 +359,13 @@
             "userName": "Whitney Rehbein",
             "id": "9agnj4fs6j",
             "comment": "Good choice for tasty meals and good service, nice interior. The place, where I'd like to come back again.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Ford Meskill",
             "id": "f8u00z3sns",
             "comment": "Very good quality and well presented.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Geoffrey Howe",
@@ -360,8 +374,12 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Salads", "Grill", "Brunch", "Soups"],
-        "openingDate": "September 10, 2015"
+        "categories": [
+          "Salads",
+          "Grill",
+          "Brunch",
+          "Soups"
+        ]
       },
       {
         "name": "Agave",
@@ -383,17 +401,20 @@
             "userName": "Laura Palmer",
             "id": "bt1x97n2je",
             "comment": "Best Mexican place in Kaunas for sure. Appetizers, main course, dessert, all are on the high level.",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Dale Cooper",
             "id": "bjv5kciyvf",
             "comment": "We had a pleasant experience.",
-            "rating": 5.0
+            "rating": 5
           }
         ],
-        "categories": ["Salads", "Grill", "Pancakes"],
-        "openingDate": "May 20, 2013"
+        "categories": [
+          "Salads",
+          "Grill",
+          "Pancakes"
+        ]
       },
       {
         "name": "Moksha",
@@ -415,13 +436,13 @@
             "userName": "Pandora Burns",
             "id": "euz4pyx8bd",
             "comment": "I would never usually consider going to a vegan/vegetarian restaurant but now I will because this place was so good!",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Mabel Mckinney",
             "id": "7ozuj68m69",
             "comment": "Wonderful place!",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Elvira Gill",
@@ -433,11 +454,13 @@
             "userName": "Hadden Barrett",
             "id": "qbs4m5c8l9",
             "comment": "Amazing food. Freshly prepared.",
-            "rating": 5.0
+            "rating": 5
           }
         ],
-        "categories": ["Salads", "Ramen"],
-        "openingDate": "September 1, 2020"
+        "categories": [
+          "Salads",
+          "Ramen"
+        ]
       },
       {
         "name": "Avilys",
@@ -459,16 +482,19 @@
             "userName": "Samantha Pena",
             "id": "ta6rsejw2u",
             "comment": "Went twice in a week, and would go again.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Roger Hudson",
             "id": "gddcg5afr9",
             "comment": "We enjoyed our meal here. The vaulted basement is quite atmospheric. The fried bread with cheese starter was a meal in itself. The food was very good, along with the service. Tried the beer of course.",
-            "rating": 5.0
+            "rating": 5
           }
         ],
-        "categories": ["Burger", "Sandwich"]
+        "categories": [
+          "Burger",
+          "Sandwich"
+        ]
       },
       {
         "name": "Katpedele",
@@ -490,25 +516,25 @@
             "userName": "Carl Rodriquez",
             "id": "aohbksgf77",
             "comment": "Very tasty food, nice place, good service, tasty coctails.",
-            "rating": 3.0
+            "rating": 3
           },
           {
             "userName": "Derick Dinwiddie",
             "id": "pv4o1n3gog",
             "comment": "Great and nice place, delicious Lithuanian food and good atmosphere.",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Mia Bird",
             "id": "eanl0px1y6",
             "comment": "Didn't really like the food here.",
-            "rating": 3.0
+            "rating": 3
           },
           {
             "userName": "Phyllis Adkins",
             "id": "iixy5l8s3q",
             "comment": "Nice place for family dinner.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Dana Castillo",
@@ -517,8 +543,10 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Kebab", "Sweets"],
-        "openingDate": "May 1, 2019"
+        "categories": [
+          "Kebab",
+          "Sweets"
+        ]
       },
       {
         "name": "Sushi Masters",
@@ -540,10 +568,13 @@
             "userName": "Vania Walters",
             "id": "m7wtlztmw3",
             "comment": "Taste is perfect, but prices are very high and portions too small for this price.",
-            "rating": 4.0
+            "rating": 4
           }
         ],
-        "categories": ["Sushi", "Soups"]
+        "categories": [
+          "Sushi",
+          "Soups"
+        ]
       },
       {
         "name": "Talutti - Fresh and Tasty",
@@ -565,23 +596,26 @@
             "userName": "Emily Tyler",
             "id": "fi0rqlywcr",
             "comment": "Cozy and nice place to have a brunch :) Tasty and fresh food, a lot of different options in the menu, prices not so high as well.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Arnold Mason",
             "id": "8c9hku9agn",
             "comment": "Good prices, great food.",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Hazel Strickland",
             "id": "j4fs6jf8u0",
             "comment": "I’m a local, I can say this is my favourite restaurant in town! Very reasonably priced, big portions, delicious food and just a great atmosphere!",
-            "rating": 5.0
+            "rating": 5
           }
         ],
-        "categories": ["Burger", "Brunch", "Pancakes"],
-        "openingDate": "August 1, 2015"
+        "categories": [
+          "Burger",
+          "Brunch",
+          "Pancakes"
+        ]
       },
       {
         "name": "ieti",
@@ -603,7 +637,7 @@
             "userName": "Herbert Madron",
             "id": "z1wdni7vwb",
             "comment": "Almost all other reviews about this restaurant praise it very highly indeed. And they are quite correct!",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Milo Conner",
@@ -615,7 +649,7 @@
             "userName": "Roxanne Bowman",
             "id": "h1o0qtbt1x",
             "comment": "I liked the interior.",
-            "rating": 3.0
+            "rating": 3
           },
           {
             "userName": "John Dunn",
@@ -630,8 +664,9 @@
             "rating": 5
           }
         ],
-        "categories": ["Sweets"],
-        "openingDate": "July 19, 2020"
+        "categories": [
+          "Sweets"
+        ]
       },
       {
         "name": "Pas Stanley",
@@ -653,7 +688,7 @@
             "userName": "Zach Robinson",
             "id": "pyx8bd7ozu",
             "comment": "Delicious homemade lemonade.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Cedric Fairbank",
@@ -662,8 +697,11 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Kebab", "Ramen", "Burger"],
-        "openingDate": "December 5, 2019"
+        "categories": [
+          "Kebab",
+          "Ramen",
+          "Burger"
+        ]
       },
       {
         "name": "Lithuanian Pub Entry",
@@ -688,8 +726,11 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Salads", "Sandwich", "Kebab"],
-        "openingDate": "August 17, 2014"
+        "categories": [
+          "Salads",
+          "Sandwich",
+          "Kebab"
+        ]
       },
       {
         "name": "Casa Della Pasta, pizzeria - restaurant",
@@ -707,8 +748,11 @@
         "image": "https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80",
         "checkIns": 13,
         "reviews": [],
-        "categories": ["Salads", "Sandwich", "Kebab"],
-        "openingDate": "April 27, 2019"
+        "categories": [
+          "Salads",
+          "Sandwich",
+          "Kebab"
+        ]
       },
       {
         "name": "Vista Puode",
@@ -730,7 +774,7 @@
             "userName": "Lisa Lambert",
             "id": "g5afr99kdf",
             "comment": "Nice place to eat. Food is nothing special, but it's good.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Henrietta Fennimore",
@@ -748,11 +792,14 @@
             "userName": "Caesar Francis",
             "id": "1n3gogeanl",
             "comment": "Nice modern-folk restaurant.",
-            "rating": 4.0
+            "rating": 4
           }
         ],
-        "categories": ["Burger", "Grill", "Sweets"],
-        "openingDate": "September 1, 2010"
+        "categories": [
+          "Burger",
+          "Grill",
+          "Sweets"
+        ]
       },
       {
         "name": "Hop Doc Gastropub",
@@ -774,7 +821,7 @@
             "userName": "Bob Morales",
             "id": "0h4ozlq391",
             "comment": "Brilliant food and tasty beer.",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Skye Langstaff",
@@ -783,8 +830,11 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Salads", "Sandwich", "Kebab"],
-        "openingDate": "February 10, 2019"
+        "categories": [
+          "Salads",
+          "Sandwich",
+          "Kebab"
+        ]
       },
       {
         "name": "Al Cantuccio",
@@ -806,7 +856,7 @@
             "userName": "Selena Jimenez",
             "id": "n2bl8kadvn",
             "comment": "Food was delicious. Staff efficient and well mannered.",
-            "rating": 4.0
+            "rating": 4
           },
           {
             "userName": "Unity Harding",
@@ -818,17 +868,20 @@
             "userName": "Ned Alexander",
             "id": "fp45cjfzan",
             "comment": "This is the top place in Kaunas to eat. Very nice inner yard with helpful staff. Very nice selection of pasta and tasty salads. We will definitely come back again.",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Faye Macy",
             "id": "1eb3pvwvyo",
             "comment": "One of my favorite restaurants.",
-            "rating": 5.0
+            "rating": 5
           }
         ],
-        "categories": ["Sweets", "Pancakes", "Ramen"],
-        "openingDate": "August 10, 2018"
+        "categories": [
+          "Sweets",
+          "Pancakes",
+          "Ramen"
+        ]
       },
       {
         "name": "ManGi",
@@ -850,7 +903,7 @@
             "userName": "Wilona Burke",
             "id": "je3qs6qt3a",
             "comment": "Best hot dogs in the Universe.",
-            "rating": 5.0
+            "rating": 5
           },
           {
             "userName": "Ike Green",
@@ -859,8 +912,12 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Grill", "Kebab", "Burger", "Sushi"],
-        "openingDate": "July 20, 2020"
+        "categories": [
+          "Grill",
+          "Kebab",
+          "Burger",
+          "Sushi"
+        ]
       }
     ],
     "categories": [
@@ -901,7 +958,13 @@
         "Mobile",
         "Tablet"
       ],
-      "os": ["MacOS", "iOS", "Android", "Windows", "Linux"],
+      "os": [
+        "MacOS",
+        "iOS",
+        "Android",
+        "Windows",
+        "Linux"
+      ],
       "brand": [
         "Apple",
         "Dell",
@@ -1109,7 +1172,7 @@
           "score": 0.78,
           "userCount": 150
         },
-        "title": "La Dame aux Cam\u00e9lias",
+        "title": "La Dame aux Camélias",
         "genre": "Literary Fiction",
         "image": "http://books.google.com/books/content?id=57JoHdPqLkEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         "author": "Alexandre Dumas",
@@ -1161,10 +1224,10 @@
           "score": 3.65,
           "userCount": 32
         },
-        "title": "\u5c11\u5e74\u7dad\u7279\u7684\u7169\u60f1(\u96d9\u8a9e\u7248)",
+        "title": "少年維特的煩惱(雙語版)",
         "genre": "Literary Fiction",
         "image": "http://books.google.com/books/content?id=hMtCDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "author": "\u7d04\u7ff0\u00b7 \u6c83\u723e\u592b\u5ca1\u00b7 \u99ae\u00b7 \u6b4c\u5fb7",
+        "author": "約翰· 沃爾夫岡· 馮· 歌德",
         "id": "hMtCDwAAQBAJ",
         "bookedUntil": "2021-02-22"
       },
@@ -2019,10 +2082,10 @@
           "score": 3.34,
           "userCount": 11
         },
-        "title": "The Dor\u00e9 Illustrations for Dante's Divine Comedy",
+        "title": "The Doré Illustrations for Dante's Divine Comedy",
         "genre": "Poetry",
         "image": "http://books.google.com/books/content?id=R2TkMiHSOjUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "author": "Gustave Dor\u00e9",
+        "author": "Gustave Doré",
         "id": "R2TkMiHSOjUC",
         "bookedUntil": "null"
       },
@@ -2269,7 +2332,7 @@
         "title": "Crime and Violence in Latin America",
         "genre": "True Crime",
         "image": "http://books.google.com/books/content?id=H7Ge7kkOCIkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "author": "H. Hugo Fr\u00fchling",
+        "author": "H. Hugo Frühling",
         "id": "H7Ge7kkOCIkC",
         "bookedUntil": "null"
       },

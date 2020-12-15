@@ -38,13 +38,16 @@ import { ReactComponent as Soups } from "../../assets/food/soups.svg";
 import { ReactComponent as Kebab } from "../../assets/food/kebab.svg";
 import { ReactComponent as Sweets } from "../../assets/food/sweets.svg";
 import { ReactComponent as Grill } from "../../assets/food/grill.svg";
+import { ReactComponent as Globe } from "../../assets/globe.svg";
+import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
+import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
+import { ReactComponent as SliderNavLeft } from "../../assets/sliderNavLeft.svg";
+import { ReactComponent as SliderNavRight } from "../../assets/sliderNavRight.svg";
+import { ReactComponent as ButtonArrow } from "../../assets/buttonArrow.svg";
 import { ReactComponent as DropdownArrow } from "../../assets/dropdownArrow.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/settingsIcon.svg";
 import { ReactComponent as LogoutIcon } from "../../assets/logoutIcon.svg";
 import { ReactComponent as NotificationBell } from "../../assets/notification.svg";
-import { ReactComponent as Globe } from "../../assets/globe.svg";
-import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
-import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -133,6 +136,20 @@ const SVGIcon = (props) => {
       return <MapPin />;
     case "play":
       return <PlayIcon />;
+    case "sliderNavLeft":
+      return <SliderNavLeft className={props.className} />;
+    case "sliderNavRight":
+      return <SliderNavRight className={props.className} />;
+    case "buttonArrow":
+      return <ButtonArrow />;
+    case "dropdown":
+      return <DropdownArrow className={props.className} />;
+    case "settings":
+      return <SettingsIcon className={props.className} />;
+    case "logout":
+      return <LogoutIcon className={props.className} />;
+    case "notificationBell":
+      return <NotificationBell className={props.className} />;
     default:
       return "error";
   }

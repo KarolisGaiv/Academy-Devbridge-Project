@@ -92,7 +92,8 @@
             "rating": 4.0
           }
         ],
-        "categories": ["Burger", "Salads", "Grill"]
+        "categories": ["Burger", "Salads", "Grill"],
+        "slogan": "Delicious burgers all the time"
       },
       {
         "name": "Jurgis ir Drakonas",
@@ -147,7 +148,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Salads", "Pizza", "Pancakes", "Soups"]
+        "categories": ["Salads", "Pizza", "Pancakes", "Soups"],
+        "slogan": "Chief exclusive masterpieces"
       },
       {
         "name": "Mamma Pizza",
@@ -190,7 +192,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Pizza"]
+        "categories": ["Pizza"],
+        "slogan": "Find the pizza for all ocations"
       },
       {
         "name": "MOMO Grill Kaunas",
@@ -257,7 +260,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Grill", "Sweets", "Brunch"]
+        "categories": ["Grill", "Sweets", "Brunch"],
+        "slogan": "From meat to sweets"
       },
       {
         "name": "Restoranas Siesta",
@@ -294,7 +298,8 @@
             "rating": 5
           }
         ],
-        "categories": ["Salads", "Grill", "Soup"]
+        "categories": ["Salads", "Grill", "Soup"],
+        "slogan": "Chief exclusive masterpieces"
       },
       {
         "name": "Restoranas DIA",
@@ -355,7 +360,8 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Salads", "Grill", "Brunch", "Soups"]
+        "categories": ["Salads", "Grill", "Brunch", "Soups"],
+        "slogan": "Over 12 types of salad"
       },
       {
         "name": "Agave",
@@ -386,7 +392,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Salads", "Grill", "Pancakes"]
+        "categories": ["Salads", "Grill", "Pancakes"],
+        "slogan": "Quiet and bright atmosphere"
       },
       {
         "name": "Moksha",
@@ -429,7 +436,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Salads", "Ramen"]
+        "categories": ["Salads", "Ramen"],
+        "slogan": "We serve the best quality noodles"
       },
       {
         "name": "Avilys",
@@ -460,7 +468,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Burger", "Sandwich"]
+        "categories": ["Burger", "Sandwich"],
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Katpedele",
@@ -509,7 +518,8 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Kebab", "Sweets"]
+        "categories": ["Kebab", "Sweets"],
+        "slogan": "Chief exclusive masterpieces"
       },
       {
         "name": "Sushi Masters",
@@ -534,7 +544,8 @@
             "rating": 4.0
           }
         ],
-        "categories": ["Sushi", "Soups"]
+        "categories": ["Sushi", "Soups"],
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Talutti - Fresh and Tasty",
@@ -571,7 +582,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Burger", "Brunch", "Pancakes"]
+        "categories": ["Burger", "Brunch", "Pancakes"],
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "ieti",
@@ -620,7 +632,8 @@
             "rating": 5
           }
         ],
-        "categories": ["Sweets"]
+        "categories": ["Sweets"],
+        "slogan": "Chief exclusive masterpieces"
       },
       {
         "name": "Pas Stanley",
@@ -651,7 +664,8 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Kebab", "Ramen", "Burger"]
+        "categories": ["Kebab", "Ramen", "Burger"],
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Lithuanian Pub Entry",
@@ -676,7 +690,8 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Salads", "Sandwich", "Kebab"]
+        "categories": ["Salads", "Sandwich", "Kebab"],
+        "slogan": "Chief exclusive masterpieces"
       },
       {
         "name": "Casa Della Pasta, pizzeria - restaurant",
@@ -694,7 +709,8 @@
         "image": "https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80",
         "checkIns": 13,
         "reviews": [],
-        "categories": ["Salads", "Sandwich", "Kebab"]
+        "categories": ["Salads", "Sandwich", "Kebab"],
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Vista Puode",
@@ -737,7 +753,8 @@
             "rating": 4.0
           }
         ],
-        "categories": ["Burger", "Grill", "Sweets"]
+        "categories": ["Burger", "Grill", "Sweets"],
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Hop Doc Gastropub",
@@ -768,7 +785,8 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Salads", "Sandwich", "Kebab"]
+        "categories": ["Salads", "Sandwich", "Kebab"],
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Al Cantuccio",
@@ -811,7 +829,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Sweets", "Pancakes", "Ramen"]
+        "categories": ["Sweets", "Pancakes", "Ramen"],
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "ManGi",
@@ -842,7 +861,8 @@
             "rating": 4.5
           }
         ],
-        "categories": ["Grill", "Kebab", "Burger", "Sushi"]
+        "categories": ["Grill", "Kebab", "Burger", "Sushi"],
+        "slogan": "Exclusive variety of dishes"
       }
     ],
     "categories": [

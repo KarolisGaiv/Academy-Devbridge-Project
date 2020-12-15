@@ -1,7 +1,7 @@
 import React from "react";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import DiscoverRestaurantSection from "components/RestaurantSections/DiscoverRestaurantSection";
-import { NewRestaurantSection } from "components/RestaurantSections/NewRestaurantSection";
+import { DiscoverRestaurantSection } from "components/RestaurantCarouselSections/DiscoverRestaurantSection";
+import { NewRestaurantSection } from "components/RestaurantCarouselSections/NewRestaurantSection";
 import RestaurantCategories from "components/RestaurantCategories/RestaurantCategories";
 import "./eat-out.scss";
 import { HeroSlider } from "components/HeroSlider/HeroSlider";

@@ -12,12 +12,17 @@ export const ButtonEnabled = () => {
   const disabled = boolean("Disabled", false);
 
   return (
-    <Button
-      className={
-        disabled ? "button button--disabled" : "button button--enabled"
-      }
-    >
-      {text("Label", "register")}
-    </Button>
+    <>
+      <Button
+        className={
+          disabled ? "button button--disabled" : "button button--enabled"
+        }
+      >
+        {text("Label 1", "register")}
+      </Button>
+      <Button className="button button--slider">
+        {text("Label 2", "see more")}
+      </Button>
+    </>
   );
 };

@@ -142,6 +142,14 @@ const SVGIcon = (props) => {
       return <SliderNavRight className={props.className} />;
     case "buttonArrow":
       return <ButtonArrow />;
+    case "dropdown":
+      return <DropdownArrow className={props.className} />;
+    case "settings":
+      return <SettingsIcon className={props.className} />;
+    case "logout":
+      return <LogoutIcon className={props.className} />;
+    case "notificationBell":
+      return <NotificationBell className={props.className} />;
     default:
       return "error";
   }

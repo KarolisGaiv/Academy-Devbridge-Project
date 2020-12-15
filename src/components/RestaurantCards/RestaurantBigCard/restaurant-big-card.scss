@@ -13,19 +13,17 @@
         color: $color-slate-grey;
         display: -webkit-box;
         font-weight: 400;
-        height: 72px;
+        min-height: 72px;
         line-height: 1.5;
         overflow: hidden;
         text-overflow: ellipsis;
 
         &--collapsed {
             height: 72px;
-            overflow: hidden;
         }
 
         &--expanded {
             display: inline-block;
-            height: auto;
             overflow: visible;
         }
     }

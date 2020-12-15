@@ -29,7 +29,7 @@ const RestaurantCard = (props) => {
         <div className="restaurant-card__title-like">
           <Link
             className="restaurant-card__link"
-            to={`eat-out//${props.title}`}
+            to={`/eat-out//${props.title}`}
           >
             <RestTitle title={props.title} />
           </Link>
@@ -43,7 +43,6 @@ const RestaurantCard = (props) => {
     </CardContainer>
   );
 };
-// }
 
 export default RestaurantCard;
 

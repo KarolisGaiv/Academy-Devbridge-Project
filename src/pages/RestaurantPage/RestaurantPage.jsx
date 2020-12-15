@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Breadcrumbs from "components/Breadcrumbs/Breadcrumbs";
-import "./restaurant-page.scss";
 
 const RestaurantPage = () => {
   const { restaurant } = useParams();

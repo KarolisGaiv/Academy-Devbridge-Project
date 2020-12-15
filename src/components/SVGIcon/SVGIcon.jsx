@@ -144,8 +144,6 @@ const SVGIcon = (props) => {
       return <LogoutIcon className={props.className} />;
     case "notificationBell":
       return <NotificationBell className={props.className} />;
-    case "buttonArrow":
-      return <ButtonArrow />;
     case "sliderNavLeft":
       return <SliderNavLeft className={props.className} />;
     case "sliderNavRight":

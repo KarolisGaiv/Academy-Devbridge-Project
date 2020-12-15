@@ -28,6 +28,7 @@ const RestaurantCard = (props) => {
         </div>
         <div className="restaurant-card__title-like">
           <Link
+            title={`${props.title} - Restaurant page`}
             className="restaurant-card__link"
             to={`/eat-out//${props.title}`}
           >

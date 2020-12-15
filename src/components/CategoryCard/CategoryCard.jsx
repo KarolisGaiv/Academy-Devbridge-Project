@@ -20,6 +20,7 @@ export const ResCard = ({
   return (
     <div className="card-wrapper">
       <Link
+        title={`${category} Page`}
         to={`${directTo}/${category}`}
         className="card-wrapper__link"
         aria-label={`${category}, ${totalNumber} ${keyword}`}

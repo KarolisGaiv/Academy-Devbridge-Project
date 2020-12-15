@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { RestaurantBigCard } from "../../RestaurantCards/RestaurantBigCard/RestaurantBigCard";
 import { Ratings } from "../../Rating/maxRatings";
 import "./restaurant-section.scss";
+import RestaurantsCarousel from "../RestaurantsCarousel/RestaurantsCarousel";
+import "./discover-restaurant-section.scss";
 
 class DiscoverRestaurantSection extends React.Component {
   constructor(props) {
@@ -86,6 +88,8 @@ class DiscoverRestaurantSection extends React.Component {
               rating={Ratings.countRating(restaurantList.indexOf(restaurant))}
             />
           ))}
+        <div className="discover-restaurant-section">
+          <RestaurantsCarousel restaurantList={restaurantList} />
         </div>
       );
     }

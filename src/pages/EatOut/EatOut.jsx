@@ -1,7 +1,7 @@
 import React from "react";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Carousel from "components/Carousel/Carousel";
-import { DiscoverRestaurantSection } from "components/RestaurantSections/DiscoverRestaurantSection";
+import DiscoverRestaurantSection from "components/RestaurantSections/DiscoverRestaurantSection";
 import { NewRestaurantSection } from "components/RestaurantSections/NewRestaurantSection";
 import RestaurantCategories from "components/RestaurantCategories/RestaurantCategories";
 import "./eat-out.scss";

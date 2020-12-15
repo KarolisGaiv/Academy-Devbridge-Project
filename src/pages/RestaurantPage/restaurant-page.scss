@@ -1,9 +1,13 @@
 @import '../../styles/base/base';
 
 .restaurant {
+    margin: 0 auto;
+    max-width: 1265px;
+
     &__similar-restaurants {
         margin-bottom: 64px;
     }
+
     &__heading {
         color: $color-midnight;
         font-weight: $weight-medium;

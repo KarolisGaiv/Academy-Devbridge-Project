@@ -5,8 +5,6 @@ import { SimilarRestaurantSection } from "components/RestaurantCarouselSections/
 import "./restaurant-page.scss";
 import db from "../../db.json";
 
-import { DiscoverRestaurantSection } from "../../components/RestaurantCarouselSections/DiscoverRestaurantSection";
-
 const RestaurantPage = () => {
   const { restaurant } = useParams();
 
@@ -17,7 +15,7 @@ const RestaurantPage = () => {
   );
 
   return (
-    <div>
+    <div className="restaurant">
       <Breadcrumbs />
       This will be restaurant {restaurant} page
       <section className="restaurant__similar-restaurants">

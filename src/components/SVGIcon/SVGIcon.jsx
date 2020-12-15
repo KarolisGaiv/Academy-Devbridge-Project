@@ -136,14 +136,6 @@ const SVGIcon = (props) => {
       return <MapPin />;
     case "play":
       return <PlayIcon />;
-    case "dropdown":
-      return <DropdownArrow className={props.className} />;
-    case "settings":
-      return <SettingsIcon className={props.className} />;
-    case "logout":
-      return <LogoutIcon className={props.className} />;
-    case "notificationBell":
-      return <NotificationBell className={props.className} />;
     case "sliderNavLeft":
       return <SliderNavLeft className={props.className} />;
     case "sliderNavRight":

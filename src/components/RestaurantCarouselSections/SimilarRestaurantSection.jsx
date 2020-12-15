@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import RestaurantCarouselSection from "./RestaurantCarouselSection/RestaurantCarouselSection";
+import RestaurantCarouselSection from "./RestaurantCarouselSection";
 
 export const SimilarRestaurantSection = (props) => {
   return (

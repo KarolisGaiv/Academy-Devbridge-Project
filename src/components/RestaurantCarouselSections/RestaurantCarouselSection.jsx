@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import RestaurantsCarousel from "../../RestaurantsCarousel/RestaurantsCarousel";
-import "./restaurant-carousel-section.scss";
+import RestaurantsCarousel from "../RestaurantsCarousel/RestaurantsCarousel";
 
 class RestaurantCarouselSection extends React.Component {
   constructor(props) {
@@ -62,11 +61,7 @@ class RestaurantCarouselSection extends React.Component {
     } else if (!isLoaded) {
       return <div>Is loading...</div>;
     } else {
-      return (
-        <div className="restaurant-carousel-section">
-          <RestaurantsCarousel restaurantList={restaurants} />
-        </div>
-      );
+      return <RestaurantsCarousel restaurantList={restaurants} />;
     }
   }
 }

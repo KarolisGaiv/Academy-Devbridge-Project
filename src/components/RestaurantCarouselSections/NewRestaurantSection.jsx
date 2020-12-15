@@ -1,5 +1,5 @@
 import React from "react";
-import RestaurantCarouselSection from "./RestaurantCarouselSection/RestaurantCarouselSection";
+import RestaurantCarouselSection from "./RestaurantCarouselSection";
 
 export const NewRestaurantSection = () => {
   return <RestaurantCarouselSection filter="new" />;

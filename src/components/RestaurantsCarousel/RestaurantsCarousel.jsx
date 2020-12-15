@@ -54,7 +54,7 @@ const Carousel = (props) => {
   };
 
   return (
-    <div styleName="restaurants-carousel">
+    <div className="restaurants-carousel">
       <div className="restaurants-carousel__buttons">
         <button
           onClick={() => toLeft()}

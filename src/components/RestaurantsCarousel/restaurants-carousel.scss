@@ -1,6 +1,8 @@
 @import '../../styles/base/base';
 
 .restaurants-carousel {
+    position: relative;
+
     &__buttons {
         position: absolute;
         right: 0;

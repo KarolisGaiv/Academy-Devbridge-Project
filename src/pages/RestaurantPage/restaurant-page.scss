@@ -1,0 +1,13 @@
+@import '../../styles/base/base';
+
+.restaurant {
+    &__similar-restaurants {
+        margin-bottom: 64px;
+    }
+    &__heading {
+        color: $color-midnight;
+        font-weight: $weight-medium;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+    }
+}

@@ -48,6 +48,8 @@ import { ReactComponent as DropdownArrow } from "../../assets/dropdownArrow.svg"
 import { ReactComponent as SettingsIcon } from "../../assets/settingsIcon.svg";
 import { ReactComponent as LogoutIcon } from "../../assets/logoutIcon.svg";
 import { ReactComponent as NotificationBell } from "../../assets/notification.svg";
+import { ReactComponent as X } from "../../assets/x.svg";
+import { ReactComponent as Check } from "../../assets/check.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -150,6 +152,10 @@ const SVGIcon = (props) => {
       return <LogoutIcon className={props.className} />;
     case "notificationBell":
       return <NotificationBell className={props.className} />;
+    case "X":
+      return <X />;
+    case "check":
+      return <Check />;
     default:
       return "error";
   }

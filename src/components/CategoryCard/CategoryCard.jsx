@@ -25,17 +25,18 @@ export const ResCard = ({
         className="card-wrapper__link"
         aria-label={`${category}, ${totalNumber} ${keyword}`}
       >
-        <div className="card-wrapper__info">
-          <span className="card-wrapper__name">{category}</span>
-          <span className="card-wrapper__details">
-            {`${totalNumber} ${keyword}`}
-          </span>
+        <div className="card-wrapper__container">
+          <div className="card-wrapper__info">
+            <span className="card-wrapper__name">{category}</span>
+            <span className="card-wrapper__details">
+              {`${totalNumber} ${keyword}`}
+            </span>
+          </div>
+          <div className={iconStyle}>
+            <SVGIcon name={icon} />
+          </div>
         </div>
       </Link>
-
-      <div className={iconStyle}>
-        <SVGIcon name={icon} />
-      </div>
     </div>
   );
 };

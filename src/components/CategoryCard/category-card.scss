@@ -2,12 +2,18 @@
 @import '../../styles/mixins/mixins';
 
 .card-wrapper {
-    @include flex-space-between;
     background: $color-alabaster;
     border-radius: 8px;
     box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
     height: 96px;
+    justify-content: center;
     line-height: $size-22;
+
+    &__container {
+        @include flex-space-between;
+    }
 
     &__info {
         display: flex;
@@ -43,6 +49,10 @@
     &__link {
         text-decoration: none;
     }
+}
+
+.test {
+    @include flex-space-between;
 }
 
 @media (max-width: $breakpoint-laptop) {

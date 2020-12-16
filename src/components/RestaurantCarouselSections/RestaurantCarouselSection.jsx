@@ -35,6 +35,7 @@ class RestaurantCarouselSection extends React.Component {
     const { error, isLoaded, restaurantList } = this.state;
 
     let restaurants = restaurantList;
+
     const restaurantFilterDate = new Date();
 
     switch (this.props.filter) {
@@ -46,11 +47,13 @@ class RestaurantCarouselSection extends React.Component {
         );
         break;
       case "similar":
-        restaurants = restaurantList.filter((restaurant) =>
-          restaurant.categories.some((item) =>
-            this.props.mainRestaurantCategories.includes(item)
-          )
-        );
+        restaurants = restaurantList
+          .filter((rest) => rest !== this.props.mainRestaurant)
+          .filter((rest) =>
+            rest.categories.some((item) =>
+              this.props.mainRestaurant.categories.includes(item)
+            )
+          );
         break;
       default:
         restaurants = restaurantList;
@@ -70,5 +73,5 @@ export default RestaurantCarouselSection;
 
 RestaurantCarouselSection.propTypes = {
   filter: PropTypes.string,
-  mainRestaurantCategories: PropTypes.array,
+  mainRestaurant: PropTypes.object,
 };

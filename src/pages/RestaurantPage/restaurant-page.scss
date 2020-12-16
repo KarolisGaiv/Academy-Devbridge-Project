@@ -1,0 +1,14 @@
+@import '../../styles/base/base';
+
+.restaurant-page {
+    margin: 0 auto;
+    max-width: 1265px;
+
+    &__heading {
+        color: $color-blue-dark;
+        font-size: $size-24;
+        font-weight: $weight-medium;
+        letter-spacing: 0.5px;
+        margin-top: 64px;
+    }
+}

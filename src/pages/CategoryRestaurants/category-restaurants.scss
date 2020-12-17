@@ -2,6 +2,7 @@
 
 .category-restaurants {
     margin: 0 auto;
+    margin-bottom: 64px;
     max-width: 1265px;
 
     &__heading {
@@ -13,7 +14,7 @@
     }
 
     &__category-name {
-        text-transform: uppercase;
         margin-left: 8px;
+        text-transform: uppercase;
     }
 }

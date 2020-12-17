@@ -5,7 +5,7 @@ import RestaurantCarouselSection from "./RestaurantCarouselSection";
 export const SimilarRestaurantSection = (props) => {
   return (
     <RestaurantCarouselSection
-      mainRestaurantCategories={props.categories}
+      mainRestaurant={props.mainRestaurant}
       filter={props.filter}
     />
   );
@@ -13,5 +13,5 @@ export const SimilarRestaurantSection = (props) => {
 
 SimilarRestaurantSection.propTypes = {
   filter: PropTypes.string,
-  categories: PropTypes.array,
+  mainRestaurant: PropTypes.object,
 };

@@ -52,7 +52,8 @@ import { ReactComponent as InformationMapPin } from "../../assets/information/cl
 import { ReactComponent as InformationPhone } from "../../assets/information/globe.svg";
 import { ReactComponent as InformationGlobe } from "../../assets/information/mapPin.svg";
 import { ReactComponent as InformationClock } from "../../assets/information/phone.svg";
-
+import { ReactComponent as X } from "../../assets/x.svg";
+import { ReactComponent as Check } from "../../assets/check.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -163,6 +164,10 @@ const SVGIcon = (props) => {
       return <InformationMapPin />;
     case "informationPhone":
       return <InformationPhone />;
+    case "X":
+      return <X />;
+    case "check":
+      return <Check />;
     default:
       return "error";
   }

@@ -2,8 +2,12 @@ import React from "react";
 import "./information-section.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import InformationCard from "./InformationCard/InformationCard";
+import PropTypes from "prop-types";
 
-const InformationSection = () => {
+const InformationSection = ({ address, phone, website, openingHours }) => {
+  const workHours = openingHours[0].days + " " + openingHours[0].hours;
+  const site = website.replace(/^(https:\/\/)|^(http:\/\/)/, "");
+
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="information-section">
@@ -11,24 +15,24 @@ const InformationSection = () => {
           <InformationCard
             icon="informationClock"
             title="Address"
-            description="Islandijos pl. 32, Kaunas 47483"
+            description={address}
           />
           <InformationCard
             icon="informationGlobe"
             title="Website"
-            description="Islandijos p Kaunas 47483"
+            description={site}
           />
         </div>
         <div className="information-section__column">
           <InformationCard
             icon="informationPhone"
             title="Phone number"
-            description="Islandijos pl. 47483"
+            description={phone}
           />
           <InformationCard
             icon="informationMapPin"
             title="Work hours"
-            description="Islandijos pl. 32, Kaunas 47483"
+            description={workHours}
           />
         </div>
       </div>
@@ -37,3 +41,10 @@ const InformationSection = () => {
 };
 
 export default InformationSection;
+
+InformationSection.propTypes = {
+  address: PropTypes.string,
+  phone: PropTypes.string,
+  website: PropTypes.string,
+  openingHours: PropTypes.array,
+};

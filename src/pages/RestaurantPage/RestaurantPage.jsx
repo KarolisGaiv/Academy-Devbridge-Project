@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Breadcrumbs from "components/Breadcrumbs/Breadcrumbs";
 import RestaurantsCarousel from "components/RestaurantsCarousel/RestaurantsCarousel";
+import { RestaurantInteractionsBanner } from "components/RestaurantInteractionsBanner/RestaurantInteractionsBanner";
+import { Ratings } from "components/Rating/maxRatings";
 import "./restaurant-page.scss";
 
 const useFetch = (url) => {
@@ -27,6 +29,8 @@ const RestaurantPage = () => {
   // Use mainRestaurant to get website, address etc., e.g. mainRestaurant.website
   const mainRestaurant = data.find((rest) => rest.name === restaurant);
 
+  const indexOfMainRestaurant = data.indexOf(mainRestaurant);
+
   // Removes mainRestaurant from restaurantList and filters restaurants that have similar categories to mainRestaurant's:
   const similarRestaurants = data
     .filter((rest) => rest !== mainRestaurant)
@@ -40,6 +44,12 @@ const RestaurantPage = () => {
     <div className="restaurant">
       <Breadcrumbs />
       This will be restaurant {restaurant} page
+      <section className="restaurant__hero">
+        <RestaurantInteractionsBanner
+          checkins={mainRestaurant.checkIns}
+          rating={Ratings.countRating(indexOfMainRestaurant)}
+        />
+      </section>
       <section className="restaurant__similar-restaurants">
         <h3 className="restaurant__heading">Also you could like</h3>
         <RestaurantsCarousel restaurantList={similarRestaurants} />

@@ -62,7 +62,6 @@ const RestaurantPage = () => {
       <section className="restaurant__similar-restaurants">
         <h3 className="restaurant__heading">Also you could like</h3>
         <RestaurantsCarousel restaurantList={similarRestaurants} />
-        {/* >>>>>>> develop */}
       </section>
     </div>
   );

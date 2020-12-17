@@ -18,7 +18,7 @@ const Carousel = (props) => {
   const [current, setCurrent] = useState(0);
   const [currentY, setCurrentY] = useState(0);
 
-  const toLeft = () => {
+  const toLeft = (n) => {
     setCurrent((prevSlide) => {
       return prevSlide !== 0 ? prevSlide - 1 : (prevSlide = slides.length - 1);
     });
@@ -34,9 +34,13 @@ const Carousel = (props) => {
         ? prevY + 100
         : (prevY = (slides.length - 1) * -100);
     });
+    for (let i = 1; i < n; i++) {
+      n--;
+      toLeft(n);
+    }
   };
 
-  const toRight = () => {
+  const toRight = (n) => {
     setCurrent((prevSlide) => {
       return prevSlide !== slides.length - 1 ? prevSlide + 1 : (prevSlide = 0);
     });
@@ -49,6 +53,10 @@ const Carousel = (props) => {
     setY((prevY) => {
       return currentY !== slides.length - 1 ? prevY - 100 : (prevY = 0);
     });
+    for (let i = 1; i < n; i++) {
+      n--;
+      toRight(n);
+    }
   };
 
   return (
@@ -73,6 +81,46 @@ const Carousel = (props) => {
               return index === current ? (
                 <div
                   className={`${props.paginationStyles} ${props.choosedPaginationStyles}`}
+                />
+              ) : index === current + 1 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toRight(1)}
+                />
+              ) : index === current + 2 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toRight(2)}
+                />
+              ) : index === current + 3 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toRight(3)}
+                />
+              ) : index === current + 4 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toRight(4)}
+                />
+              ) : index === current - 1 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toLeft(1)}
+                />
+              ) : index === current - 2 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toLeft(2)}
+                />
+              ) : index === current - 3 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toLeft(3)}
+                />
+              ) : index === current - 4 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toLeft(4)}
                 />
               ) : (
                 <div className={`${props.paginationStyles}`} />

@@ -5,7 +5,14 @@ import InformationCard from "./InformationCard/InformationCard";
 import PropTypes from "prop-types";
 
 const InformationSection = ({ address, phone, website, openingHours }) => {
-  const workHours = openingHours[0].days + " " + openingHours[0].hours;
+  let workHours =
+    openingHours[0].days +
+    " " +
+    openingHours[0].hours.substring(0, 2) +
+    ":00 " +
+    openingHours[0].hours.substring(3, 7) +
+    ":00";
+
   const site = website.replace(/^(https:\/\/)|^(http:\/\/)/, "");
 
   return (

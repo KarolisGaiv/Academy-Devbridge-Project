@@ -1,8 +1,12 @@
 @import '../../styles/base/base';
 
 .review {
-    padding: 20px 15px;
-    position: relative;
+    margin: 20px 0;
+
+    &__wrapper {
+        padding: 20px 15px;
+        position: relative;
+    }
 
     &__username,
     &__text {

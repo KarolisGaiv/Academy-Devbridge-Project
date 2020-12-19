@@ -1,0 +1,18 @@
+@import '../../styles/base/base';
+
+.list-section {
+    transform: translateY(-44px);
+
+    &__results {
+        display: flex;
+        font-size: $size-20;
+        font-weight: $weight-medium;
+        line-height: 1.2;
+        margin: 0 0 20px;
+    }
+
+    &__categories {
+        font-style: italic;
+        margin: 0 0 0 15px;
+    }
+}

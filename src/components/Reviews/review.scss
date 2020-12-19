@@ -24,10 +24,12 @@
         background-color: $color-yellow;
         border-radius: 0 8px;
         display: flex;
+        justify-content: center;
         padding: 5px 10px;
         position: absolute;
         right: 0;
         top: 0;
+        width: 45px;
     }
 
     &__rating-number {

@@ -24,7 +24,6 @@ const useFetch = (url) => {
 const Reservations = () => {
   const page = "devices"; // fully responsive filter just need to change "devices" to "books"
   const { data, loading } = useFetch(`http://localhost:3008/${page}`);
-  const filterCategories = data.filterCategories;
 
   //object for filter collecstion
   const [filterList, setFilterList] = useState({});
@@ -67,7 +66,7 @@ const Reservations = () => {
       <section className="reservations__section">
         <aside className="reservations__side-filters">
           <SideFilters
-            filterCategories={filterCategories}
+            filterCategories={data.filterCategories}
             filterList={filterList}
             addItemToFilterList={addItemToFilterList}
             clearFilterList={clearFilterList}

@@ -59,23 +59,25 @@ const RestaurantPage = () => {
           rating={Ratings.countRating(indexOfMainRestaurant)}
         />
       </section>
-      <section className="restaurant-page__information">
-        <h3 className="restaurant-page__heading">Information</h3>
-        <InformationSection
-          address={mainRestaurant.address}
-          phone={mainRestaurant.phone}
-          website={mainRestaurant.website}
-          openingHours={mainRestaurant.openingHours}
-        />
+      <section className="restaurant__about-restaurant">
+        <section className="restaurant__information">
+          <h3 className="restaurant__heading">Information</h3>
+          <InformationSection
+            address={mainRestaurant.address}
+            phone={mainRestaurant.phone}
+            website={mainRestaurant.website}
+            openingHours={mainRestaurant.openingHours}
+          />
+        </section>
+        <section className="restaurant__location">
+          <h3 className="restaurant__heading">Location</h3>
+          <LocationSection />
+        </section>
+        <aside className="restaurant__reviews">
+          <h3 className="restaurant__heading">Reviews</h3>
+          <ReviewsList reviews={mainRestaurant.reviews} />
+        </aside>
       </section>
-      <section className="restaurant-page__location">
-        <h3 className="restaurant-page__heading">Location</h3>
-        <LocationSection />
-      </section>
-      <aside className="restaurant-page__reviews">
-        <h3 className="restaurant-page__heading">Reviews</h3>
-        <ReviewsList reviews={mainRestaurant.reviews} />
-      </aside>
       <section className="restaurant__similar-restaurants">
         <h3 className="restaurant__heading">Also you could like</h3>
         <RestaurantsCarousel restaurantList={similarRestaurants} />

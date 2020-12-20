@@ -17,6 +17,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 @mixin flex-center {
     align-items: center;
     display: flex;
@@ -27,4 +28,10 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
+}
+
+@mixin flex-center-column {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }

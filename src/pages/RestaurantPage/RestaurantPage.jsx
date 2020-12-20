@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Breadcrumbs from "components/Breadcrumbs/Breadcrumbs";
 import RestaurantsCarousel from "components/RestaurantsCarousel/RestaurantsCarousel";
+import { RestaurantPageHero } from "components/RestaurantPageHero/RestaurantPageHero";
 import InformationSection from "components/InformationSection/InformationSection";
-import { RestaurantInteractionsBanner } from "components/RestaurantInteractionsBanner/RestaurantInteractionsBanner";
 import { Ratings } from "components/Rating/maxRatings";
 import "./restaurant-page.scss";
 import { LocationSection } from "components/LocationSection/LocationSection";
@@ -50,9 +50,11 @@ const RestaurantPage = () => {
   ) : (
     <div className="restaurant">
       <Breadcrumbs />
-      This will be restaurant {restaurant} page
       <section className="restaurant__hero">
-        <RestaurantInteractionsBanner
+        <RestaurantPageHero
+          image={mainRestaurant.image}
+          categories={mainRestaurant.categories}
+          title={mainRestaurant.name}
           checkins={mainRestaurant.checkIns}
           rating={Ratings.countRating(indexOfMainRestaurant)}
         />

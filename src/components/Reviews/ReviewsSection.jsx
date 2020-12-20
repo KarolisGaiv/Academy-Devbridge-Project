@@ -37,7 +37,7 @@ const ReviewsSection = (props) => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown, false);
     };
-  }, []);
+  });
 
   return (
     <>

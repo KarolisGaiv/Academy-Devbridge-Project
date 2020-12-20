@@ -5,9 +5,9 @@ import RestaurantsCarousel from "components/RestaurantsCarousel/RestaurantsCarou
 import InformationSection from "components/InformationSection/InformationSection";
 import { RestaurantInteractionsBanner } from "components/RestaurantInteractionsBanner/RestaurantInteractionsBanner";
 import { Ratings } from "components/Rating/maxRatings";
-import ReviewsList from "components/Reviews/ReviewsList";
 import "./restaurant-page.scss";
 import { LocationSection } from "components/LocationSection/LocationSection";
+import ReviewsSection from "components/Reviews/ReviewsSection";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -73,7 +73,7 @@ const RestaurantPage = () => {
         </section>
         <aside className="restaurant__reviews">
           <h3 className="restaurant__heading">Reviews</h3>
-          <ReviewsList reviews={mainRestaurant.reviews} />
+          <ReviewsSection reviews={mainRestaurant.reviews} />
         </aside>
       </section>
       <section className="restaurant__similar-restaurants">

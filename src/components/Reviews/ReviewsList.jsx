@@ -1,13 +1,13 @@
 import React from "react";
 import propTypes from "prop-types";
-import Review from "components/Reviews/Review";
+import SingleReview from "components/Reviews/SingleReview";
 
 const ReviewsList = (props) => {
   return (
     <div className="reviews-list">
       {props.reviews.map((review) => {
         return (
-          <Review
+          <SingleReview
             key={review.id}
             username={review.userName}
             comment={review.comment}

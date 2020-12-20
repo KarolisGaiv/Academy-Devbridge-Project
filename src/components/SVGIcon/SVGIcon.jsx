@@ -165,7 +165,7 @@ const SVGIcon = (props) => {
     case "informationPhone":
       return <InformationPhone />;
     case "X":
-      return <X />;
+      return <X className={props.className} />;
     case "check":
       return <Check />;
     default:

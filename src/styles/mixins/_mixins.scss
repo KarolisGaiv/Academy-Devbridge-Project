@@ -35,3 +35,10 @@
     display: flex;
     flex-direction: column;
 }
+
+@mixin h3-heading {
+    color: $color-midnight;
+    font-weight: $weight-medium;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}

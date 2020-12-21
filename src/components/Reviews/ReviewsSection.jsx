@@ -4,7 +4,7 @@ import { Button } from "components/Button/Button";
 import ReviewsList from "./ReviewsList";
 import SingleReview from "components/Reviews/SingleReview";
 import "./reviews-section.scss";
-import ReviewsModal from "../Modal/Modal";
+import Modal from "../Modal/Modal";
 
 const ReviewsSection = (props) => {
   const [anyHidden, setAnyHidden] = useState(false);
@@ -51,7 +51,7 @@ const ReviewsSection = (props) => {
           Show more
         </Button>
       ) : null}
-      <ReviewsModal
+      <Modal
         open={isOpen}
         heading={"All reviews"}
         onClose={() => {
@@ -70,7 +70,7 @@ const ReviewsSection = (props) => {
             );
           })}
         </div>
-      </ReviewsModal>
+      </Modal>
     </>
   );
 };

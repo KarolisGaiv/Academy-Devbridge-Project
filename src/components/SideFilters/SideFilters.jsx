@@ -1,24 +1,37 @@
 import React from "react";
 import "./side-filters.scss";
-import db from "../../db.json";
+import PropTypes from "prop-types";
 import { SideFilterCard } from "./SideFilterCard/SideFilterCard";
 
-export const SideFilters = () => {
-  const filterCategories = db.devices.filterCategories;
+export const SideFilters = (props) => {
+  const {
+    filterCategories,
+    addItemToFilterList,
+    clearFilterList,
+    deleteItemFromFilterList,
+  } = props;
 
   return (
     <div className="side-filters">
-      <SideFilterCard
-        categoryTitle={"device type"}
-        category={filterCategories.deviceType}
-      />
-
-      <SideFilterCard categoryTitle={"os"} category={filterCategories.os} />
-
-      <SideFilterCard
-        categoryTitle={"brand"}
-        category={filterCategories.brand}
-      />
+      {Object.keys(filterCategories).map((key, index) => {
+        return (
+          <SideFilterCard
+            key={index}
+            categoryTitle={key}
+            category={filterCategories[key]}
+            addItemToFilterList={addItemToFilterList}
+            clearFilterList={clearFilterList}
+            deleteItemFromFilterList={deleteItemFromFilterList}
+          />
+        );
+      })}
     </div>
   );
+};
+
+SideFilters.propTypes = {
+  filterCategories: PropTypes.object,
+  addItemToFilterList: PropTypes.func,
+  clearFilterList: PropTypes.func,
+  deleteItemFromFilterList: PropTypes.func,
 };

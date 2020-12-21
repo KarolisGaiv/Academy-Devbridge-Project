@@ -1,3 +1,4 @@
+import { ListSection } from "components/ListSection/ListSection";
 import { SideFilters } from "components/SideFilters/SideFilters";
 import React from "react";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
@@ -11,8 +12,9 @@ const Reservations = () => {
         <aside className="reservations__side-filters">
           <SideFilters />
         </aside>
-
-        <section></section>
+        <section className="reservations__list ">
+          <ListSection />
+        </section>
       </section>
     </div>
   );

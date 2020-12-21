@@ -19,7 +19,8 @@ export const RestaurantPageHero = (props) => {
         <div className="restaurant-page-hero__info">
           <RestCategories
             categories={props.categories}
-            nameStyle="categories__name"
+            nameStyle="categories__name--dark"
+            iconStyle="categories__icon--none"
           />
           <RestTitle titleStyle="title--bigger" title={props.title} />
         </div>

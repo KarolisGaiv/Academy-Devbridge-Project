@@ -56,6 +56,8 @@ import { ReactComponent as X } from "../../assets/x.svg";
 import { ReactComponent as Check } from "../../assets/check.svg";
 import { ReactComponent as Available } from "../../assets/available.svg";
 import { ReactComponent as HeartBtnBold } from "../../assets/heartBtnBold.svg";
+import { ReactComponent as AvailableProduct } from "../../assets/availableProduct.svg";
+import { ReactComponent as NotAvailableProduct } from "../../assets/notAvailableProduct.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -176,6 +178,10 @@ const SVGIcon = (props) => {
       return <HeartBtnBold className={props.className} />;
     case "none":
       return null;
+    case "availableProduct":
+      return <AvailableProduct />;
+    case "notAvailableProduct":
+      return <NotAvailableProduct />;
     default:
       return "error";
   }

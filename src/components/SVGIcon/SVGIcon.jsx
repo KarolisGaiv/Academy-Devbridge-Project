@@ -54,6 +54,8 @@ import { ReactComponent as InformationGlobe } from "../../assets/information/map
 import { ReactComponent as InformationClock } from "../../assets/information/phone.svg";
 import { ReactComponent as X } from "../../assets/x.svg";
 import { ReactComponent as Check } from "../../assets/check.svg";
+import { ReactComponent as Available } from "../../assets/available.svg";
+import { ReactComponent as HeartBtnBold } from "../../assets/heartBtnBold.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -168,6 +170,12 @@ const SVGIcon = (props) => {
       return <X />;
     case "check":
       return <Check />;
+    case "available":
+      return <Available className={props.className} />;
+    case "heartBtnBold":
+      return <HeartBtnBold className={props.className} />;
+    case "none":
+      return null;
     default:
       return "error";
   }

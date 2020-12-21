@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Breadcrumbs from "components/Breadcrumbs/Breadcrumbs";
 import RestaurantsCarousel from "components/RestaurantsCarousel/RestaurantsCarousel";
+import { RestaurantPageHero } from "components/RestaurantPageHero/RestaurantPageHero";
 import InformationSection from "components/InformationSection/InformationSection";
-import { RestaurantInteractionsBanner } from "components/RestaurantInteractionsBanner/RestaurantInteractionsBanner";
 import { Ratings } from "components/Rating/maxRatings";
+import ReviewsList from "components/Reviews/ReviewsList";
 import "./restaurant-page.scss";
 import { LocationSection } from "components/LocationSection/LocationSection";
 
@@ -49,25 +50,33 @@ const RestaurantPage = () => {
   ) : (
     <div className="restaurant">
       <Breadcrumbs />
-      This will be restaurant {restaurant} page
       <section className="restaurant__hero">
-        <RestaurantInteractionsBanner
+        <RestaurantPageHero
+          image={mainRestaurant.image}
+          categories={mainRestaurant.categories}
+          title={mainRestaurant.name}
           checkins={mainRestaurant.checkIns}
           rating={Ratings.countRating(indexOfMainRestaurant)}
         />
       </section>
-      <section className="restaurant-page__information">
-        <h3 className="restaurant-page__heading">Information</h3>
-        <InformationSection
-          address={mainRestaurant.address}
-          phone={mainRestaurant.phone}
-          website={mainRestaurant.website}
-          openingHours={mainRestaurant.openingHours}
-        />
-      </section>
-      <section className="restaurant-page__location">
-        <h3 className="restaurant-page__heading">Location</h3>
-        <LocationSection />
+      <section className="restaurant__about-restaurant">
+        <section className="restaurant__information">
+          <h3 className="restaurant__heading">Information</h3>
+          <InformationSection
+            address={mainRestaurant.address}
+            phone={mainRestaurant.phone}
+            website={mainRestaurant.website}
+            openingHours={mainRestaurant.openingHours}
+          />
+        </section>
+        <section className="restaurant__location">
+          <h3 className="restaurant__heading">Location</h3>
+          <LocationSection />
+        </section>
+        <aside className="restaurant__reviews">
+          <h3 className="restaurant__heading">Reviews</h3>
+          <ReviewsList reviews={mainRestaurant.reviews} />
+        </aside>
       </section>
       <section className="restaurant__similar-restaurants">
         <h3 className="restaurant__heading">Also you could like</h3>

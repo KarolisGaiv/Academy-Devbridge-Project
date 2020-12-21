@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ListSection } from "components/ListSection/ListSection";
 import { SideFilters } from "components/SideFilters/SideFilters";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "./reservations.scss";
@@ -63,6 +64,12 @@ const Reservations = () => {
   ) : (
     <div className="reservations">
       <Breadcrumbs />
+      <section>
+        {Object.keys(filterList).map((key, index) => {
+          const test = `${key}: ${filterList[key]}`;
+          return <div key={index}>{test}</div>;
+        })}
+      </section>
       <section className="reservations__section">
         <aside className="reservations__side-filters">
           <SideFilters
@@ -73,12 +80,8 @@ const Reservations = () => {
             deleteItemFromFilterList={deleteItemFromFilterList}
           />
         </aside>
-
-        <section>
-          {Object.keys(filterList).map((key, index) => {
-            const test = `${key}: ${filterList[key]}`;
-            return <div key={index}>{test}</div>;
-          })}
+        <section className="reservations__list ">
+          <ListSection />
         </section>
       </section>
     </div>

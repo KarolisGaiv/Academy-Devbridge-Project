@@ -7,4 +7,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    &--bigger {
+        font-size: $size-48;
+        font-weight: $weight-bold;
+    }
 }

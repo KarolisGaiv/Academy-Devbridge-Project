@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { PaginationButton } from "../PaginationButton/PaginationButton";
-import SVGIcon from "../SVGIcon/SVGIcon";
 import { ListItemCard } from "../ListSection/ListItemCard/ListItemCard";
+import SVGIcon from "../SVGIcon/SVGIcon";
 import "./pagination.scss";
 
 export class Pagination extends React.Component {
@@ -17,7 +17,6 @@ export class Pagination extends React.Component {
       isPrevBtnActive: "disabled",
       isNextBtnActive: "",
       pageBound: 3,
-      active: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -29,28 +28,23 @@ export class Pagination extends React.Component {
   }
 
   handleClick(e) {
-    let listid = Number(e.target.id);
-    const currentState = this.state.active;
+    let listId = Number(e.target.id);
     this.setState({
-      currentPage: listid,
-      active: !currentState,
+      currentPage: listId,
     });
-
-    // $("ul li.active").removeClass("active");
-    // $("ul li#" + listid).addClass("active");
-    this.setPrevAndNextBtnClass(listid);
+    this.setPrevAndNextBtnClass(listId);
   }
 
-  setPrevAndNextBtnClass(listid) {
+  setPrevAndNextBtnClass(listId) {
     let totalPage = Math.ceil(
       this.state.cards.length / this.state.cardsPerPage
     );
     this.setState({ isNextBtnActive: "disabled" });
     this.setState({ isPrevBtnActive: "disabled" });
 
-    if (totalPage === listid && totalPage > 1) {
+    if (totalPage === listId && totalPage > 1) {
       this.setState({ isPrevBtnActive: "" });
-    } else if (listid === 1 && totalPage > 1) {
+    } else if (listId === 1 && totalPage > 1) {
       this.setState({ isNextBtnActive: "" });
     } else if (totalPage > 1) {
       this.setState({ isNextBtnActive: "" });
@@ -66,9 +60,9 @@ export class Pagination extends React.Component {
       lowerPageBound: this.state.lowerPageBound + this.state.pageBound,
     });
 
-    let listid = this.state.upperPageBound + 1;
-    this.setState({ currentPage: listid });
-    this.setPrevAndNextBtnClass(listid);
+    let listId = this.state.upperPageBound + 1;
+    this.setState({ currentPage: listId });
+    this.setPrevAndNextBtnClass(listId);
   }
 
   btnDecrementClick() {
@@ -78,9 +72,9 @@ export class Pagination extends React.Component {
     this.setState({
       lowerPageBound: this.state.lowerPageBound - this.state.pageBound,
     });
-    let listid = this.state.upperPageBound - this.state.pageBound;
-    this.setState({ currentPage: listid });
-    this.setPrevAndNextBtnClass(listid);
+    let listId = this.state.upperPageBound - this.state.pageBound;
+    this.setState({ currentPage: listId });
+    this.setPrevAndNextBtnClass(listId);
   }
 
   btnPrevClick() {
@@ -93,9 +87,9 @@ export class Pagination extends React.Component {
       });
     }
 
-    let listid = this.state.currentPage - 1;
-    this.setState({ currentPage: listid });
-    this.setPrevAndNextBtnClass(listid);
+    let listId = this.state.currentPage - 1;
+    this.setState({ currentPage: listId });
+    this.setPrevAndNextBtnClass(listId);
   }
 
   btnNextClick() {
@@ -108,9 +102,9 @@ export class Pagination extends React.Component {
       });
     }
 
-    let listid = this.state.currentPage + 1;
-    this.setState({ currentPage: listid });
-    this.setPrevAndNextBtnClass(listid);
+    let listId = this.state.currentPage + 1;
+    this.setState({ currentPage: listId });
+    this.setPrevAndNextBtnClass(listId);
   }
 
   render() {
@@ -122,7 +116,6 @@ export class Pagination extends React.Component {
       lowerPageBound,
       isPrevBtnActive,
       isNextBtnActive,
-      active,
     } = this.state;
 
     const indexOfLastCard = currentPage * cardsPerPage;
@@ -151,7 +144,7 @@ export class Pagination extends React.Component {
     }
 
     const renderPageNumbers = pageNumbers.map((number) => {
-      if (number === 1 && currentPage === 1) {
+      if ((number === 1 && currentPage === 1) || number === currentPage) {
         return (
           <PaginationButton
             key={number}

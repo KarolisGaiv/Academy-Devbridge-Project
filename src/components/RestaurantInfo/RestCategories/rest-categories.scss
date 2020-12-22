@@ -11,10 +11,24 @@
         font-size: $size-10;
         font-weight: 500;
         text-transform: uppercase;
+
+        &--dark {
+            background-color: $color-midnight;
+            border-radius: 8px;
+            color: $color-white;
+            font-size: $size-12;
+            margin-right: 10px;
+            padding: 6px 12px;
+            text-transform: none;
+        }
     }
 
     &__icon {
         display: flex;
+
+        &--none {
+            display: none;
+        }
 
         svg {
             flex-shrink: 0;

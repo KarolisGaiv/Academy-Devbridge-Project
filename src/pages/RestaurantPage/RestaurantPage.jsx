@@ -33,7 +33,6 @@ const RestaurantPage = () => {
 
   const { data, loading } = useFetch("http://localhost:3008/restaurants");
 
-  // Use mainRestaurant to get website, address etc., e.g. mainRestaurant.website
   const mainRestaurant = data.find((rest) => rest.name === restaurant);
 
   const indexOfMainRestaurant = data.indexOf(mainRestaurant);

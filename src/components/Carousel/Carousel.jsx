@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 
 const Carousel = (props) => {
   const restaurantList = db.restaurants.restaurantList;
-
   const slides1 = restaurantList.filter((restaurant) => restaurant.image);
   const slides = slides1.slice(0, 5);
   const [x, setX] = useState(0);
@@ -18,14 +17,13 @@ const Carousel = (props) => {
   const [current, setCurrent] = useState(0);
   const [currentY, setCurrentY] = useState(0);
 
-  const toLeft = (n) => {
+  const toLeft = () => {
     setCurrent((prevSlide) => {
       return prevSlide !== 0 ? prevSlide - 1 : (prevSlide = slides.length - 1);
     });
     setCurrentY((prevSlide) => {
       return prevSlide !== 0 ? prevSlide - 1 : (prevSlide = slides.length - 1);
     });
-
     setX((prevX) => {
       return current !== 0 ? prevX + 100 : (prevX = (slides.length - 1) * -100);
     });
@@ -82,46 +80,57 @@ const Carousel = (props) => {
           >
             {[...Array(5)].map((slide, index) => {
               return index === current ? (
-                <div className={`${props.choosedPaginationStyles}`} />
+                <div
+                  className={`${props.choosedPaginationStyles}`}
+                  key={index}
+                />
               ) : index === current + 1 ? (
                 <button
                   className={`${props.paginationStyles}`}
-                  onClick={() => toRight(1)}
+                  onClick={() => toRight()}
+                  key={index}
                 />
               ) : index === current + 2 ? (
                 <button
                   className={`${props.paginationStyles}`}
                   onClick={() => toRightTimesX(2)}
+                  key={index}
                 />
               ) : index === current + 3 ? (
                 <button
                   className={`${props.paginationStyles}`}
                   onClick={() => toRightTimesX(3)}
+                  key={index}
                 />
               ) : index === current + 4 ? (
                 <button
                   className={`${props.paginationStyles}`}
                   onClick={() => toRightTimesX(4)}
+                  key={index}
                 />
               ) : index === current - 1 ? (
                 <button
                   className={`${props.paginationStyles}`}
                   onClick={() => toLeft()}
+                  key={index}
                 />
               ) : index === current - 2 ? (
                 <button
                   className={`${props.paginationStyles}`}
                   onClick={() => toLeftTimesX(2)}
+                  key={index}
                 />
               ) : index === current - 3 ? (
                 <button
                   className={`${props.paginationStyles}`}
                   onClick={() => toLeftTimesX(3)}
+                  key={index}
                 />
               ) : index === current - 4 ? (
                 <button
                   className={`${props.paginationStyles}`}
                   onClick={() => toLeftTimesX(4)}
+                  key={index}
                 />
               ) : (
                 <></>
@@ -167,8 +176,8 @@ Carousel.propTypes = {
   imageStyles: PropTypes.string,
   contentStyles: PropTypes.string,
   navStyles: PropTypes.string,
-  leftButton: PropTypes.string,
-  rightButton: PropTypes.string,
+  leftButton: PropTypes.object,
+  rightButton: PropTypes.object,
   paginationContainerStyles: PropTypes.string,
   paginationStyles: PropTypes.string,
   choosedPaginationStyles: PropTypes.string,

@@ -892,6 +892,50 @@
         "bookedUntil": "2021-02-13",
         "quantity": 3,
         "image": "https://images-na.ssl-images-amazon.com/images/I/618ZI2Xyw%2BL._AC_SL1500_.jpg"
+      },
+      {
+        "name": "Samsung Galaxy S20",
+        "id": "193ywpe741",
+        "deviceType": "Mobile",
+        "os": "Android",
+        "brand": "Samsung",
+        "favourite": true,
+        "bookedUntil": "2020-12-24",
+        "quantity": 4,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/71Zh6vtYQBL._AC_SX679_.jpg"
+      },
+      {
+        "name": "Dell Inspiron 15",
+        "id": "193ywpe742",
+        "deviceType": "Laptop",
+        "os": "Windows",
+        "brand": "Dell",
+        "favourite": false,
+        "bookedUntil": "2021-01-02",
+        "quantity": 2,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81LPb4VdYML._AC_SX466_.jpg"
+      },
+      {
+        "name": "Razer Death Adder Chroma",
+        "id": "193ywpe740",
+        "deviceType": "Accessories",
+        "os": null,
+        "brand": "Razer",
+        "favourite": false,
+        "bookedUntil": "2021-01-13",
+        "quantity": 3,
+        "image": "https://www.maxgaming.com/img/bilder/artiklar/15912.jpg?m=1588925493&w=720"
+      },
+      {
+        "name": "iPad Pro",
+        "id": "193ywpe743",
+        "deviceType": "Tablet",
+        "os": "iOS",
+        "brand": "Apple",
+        "favourite": true,
+        "bookedUntil": "2021-01-17",
+        "quantity": 3,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SX342_.jpg"
       }
     ],
     "filterCategories": {

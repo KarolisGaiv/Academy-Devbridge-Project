@@ -9,6 +9,7 @@
         border-radius: 5px;
         cursor: pointer;
         height: 32px;
+        margin-right: 16px;
         width: 32px;
 
         &--right {
@@ -18,7 +19,7 @@
         &--numbered {
             color: $color-fiord;
             font-size: $size-14;
-            font-weight: 900;
+            font-weight: $weight-black;
         }
 
         &--active {
@@ -26,7 +27,7 @@
             border: none;
             color: $color-white;
             font-size: $size-14;
-            font-weight: $weight-super-bold;
+            font-weight: $weight-black;
         }
     }
 }

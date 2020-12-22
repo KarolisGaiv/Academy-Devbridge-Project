@@ -64,13 +64,20 @@ $_transparent: transparent;
     }
 
     &__pagination {
-        background-color: $color-silver;
         border-radius: 50%;
+        cursor: pointer;
         display: inline-block;
         height: 6px;
         justify-self: start;
         margin: 5px;
         width: 6px;
+
+        &--default {
+            background-color: $color-silver;
+            border: 0;
+            padding: 0;
+            transform: translateY(-5px);
+        }
 
         &--choosed {
             background-color: $color-red;
@@ -86,10 +93,13 @@ $_transparent: transparent;
             background-color: $_transparent;
             border: 0;
             cursor: pointer;
-            height: 30px;
-            width: 30px;
+            height: 25px;
+            padding: 0;
+            transform: translateX(-6px);
+            width: 24px;
 
             &:last-child {
+                padding: 0;
                 transform: translateX(-7px);
             }
         }

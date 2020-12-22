@@ -12,7 +12,7 @@ export const HeroSlider = () => {
         contentStyles="hero__content"
         navStyles="hero__nav"
         paginationContainerStyles="hero__pagination-container"
-        paginationStyles="hero__pagination"
+        paginationStyles="hero__pagination hero__pagination--default"
         choosedPaginationStyles="hero__pagination hero__pagination--choosed"
         leftButton={<SVGIcon name="sliderNavLeft" />}
         rightButton={<SVGIcon name="sliderNavRight" />}

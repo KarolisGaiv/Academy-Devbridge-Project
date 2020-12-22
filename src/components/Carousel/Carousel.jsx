@@ -40,7 +40,7 @@ const Carousel = (props) => {
     }
   };
 
-  const toRight = (n) => {
+  const toRight = () => {
     setCurrent((prevSlide) => {
       return prevSlide !== slides.length - 1 ? prevSlide + 1 : (prevSlide = 0);
     });
@@ -53,9 +53,16 @@ const Carousel = (props) => {
     setY((prevY) => {
       return currentY !== slides.length - 1 ? prevY - 100 : (prevY = 0);
     });
-    for (let i = 1; i < n; i++) {
-      n--;
-      toRight(n);
+  };
+
+  const toRightTimesX = (k) => {
+    for (let i = 0; i < k; i++) {
+      toRight();
+    }
+  };
+  const toLeftTimesX = (k) => {
+    for (let i = 0; i < k; i++) {
+      toLeft();
     }
   };
 
@@ -79,9 +86,7 @@ const Carousel = (props) => {
           >
             {[...Array(5)].map((slide, index) => {
               return index === current ? (
-                <div
-                  className={`${props.paginationStyles} ${props.choosedPaginationStyles}`}
-                />
+                <div className={`${props.choosedPaginationStyles}`} />
               ) : index === current + 1 ? (
                 <button
                   className={`${props.paginationStyles}`}
@@ -90,40 +95,40 @@ const Carousel = (props) => {
               ) : index === current + 2 ? (
                 <button
                   className={`${props.paginationStyles}`}
-                  onClick={() => toRight(2)}
+                  onClick={() => toRightTimesX(2)}
                 />
               ) : index === current + 3 ? (
                 <button
                   className={`${props.paginationStyles}`}
-                  onClick={() => toRight(3)}
+                  onClick={() => toRightTimesX(3)}
                 />
               ) : index === current + 4 ? (
                 <button
                   className={`${props.paginationStyles}`}
-                  onClick={() => toRight(4)}
+                  onClick={() => toRightTimesX(4)}
                 />
               ) : index === current - 1 ? (
                 <button
                   className={`${props.paginationStyles}`}
-                  onClick={() => toLeft(1)}
+                  onClick={() => toLeft()}
                 />
               ) : index === current - 2 ? (
                 <button
                   className={`${props.paginationStyles}`}
-                  onClick={() => toLeft(2)}
+                  onClick={() => toLeftTimesX(2)}
                 />
               ) : index === current - 3 ? (
                 <button
                   className={`${props.paginationStyles}`}
-                  onClick={() => toLeft(3)}
+                  onClick={() => toLeftTimesX(3)}
                 />
               ) : index === current - 4 ? (
                 <button
                   className={`${props.paginationStyles}`}
-                  onClick={() => toLeft(4)}
+                  onClick={() => toLeftTimesX(4)}
                 />
               ) : (
-                <div className={`${props.paginationStyles}`} />
+                <></>
               );
             })}
           </div>

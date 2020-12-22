@@ -1,0 +1,18 @@
+@import '../../styles/base/base';
+$_size-large: 32px;
+
+.search-section {
+    padding: 40px;
+
+    &__title {
+        color: $color-fiord;
+        font-size: $_size-large;
+        font-weight: $weight-medium;
+        margin: 0;
+    }
+
+    &__tag-wrapper {
+        display: flex;
+        margin: 25px 0;
+    }
+}

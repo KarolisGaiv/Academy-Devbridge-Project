@@ -1,14 +1,9 @@
 import React from "react";
-// import PropTypes from "prop-types"; will be needed when side filter will be merged
+import PropTypes from "prop-types";
 import "./list-section.scss";
-import db from "../../db.json";
 import { ListItemCard } from "./ListItemCard/ListItemCard";
 
-export const ListSection = () => {
-  // fully responsive needs only to change productList
-  // const productList = db.devices.deviceList;
-  const productList = db.books.bookList;
-
+export const ListSection = ({ productList }) => {
   return (
     <div className="list-section">
       <div className="list-section__results">
@@ -34,4 +29,6 @@ export const ListSection = () => {
   );
 };
 
-// ListSection.propTypes = {}; will be needed when side filter will be merged
+ListSection.propTypes = {
+  productList: PropTypes.object,
+};

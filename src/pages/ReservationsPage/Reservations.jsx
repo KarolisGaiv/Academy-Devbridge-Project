@@ -4,6 +4,7 @@ import { SideFilters } from "components/SideFilters/SideFilters";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "./reservations.scss";
 import SearchSection from "components/SearchSection/SearchSection";
+import { TagFilter } from "components/SideFilters/TagFilter";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -24,8 +25,8 @@ const useFetch = (url) => {
 };
 
 const Reservations = () => {
-  const page = "devices"; // fully responsive filter just need to change "devices" to "books"
-  const { data, loading } = useFetch(`http://localhost:3008/${page}`);
+  const page = "book"; // fully responsive filter and list just need to change "device" to "book"
+  const { data, loading } = useFetch(`http://localhost:3008/${page}s`);
 
   //object for filter collecstion
   const [filterList, setFilterList] = useState({});
@@ -60,18 +61,14 @@ const Reservations = () => {
       return { ...prevFilterList, [key]: [] };
     });
 
+  const productList = TagFilter(data[`${page}List`], filterList);
+
   return loading ? (
     <div>...loading</div>
   ) : (
     <div className="reservations">
       <Breadcrumbs />
       <SearchSection />
-      <section>
-        {Object.keys(filterList).map((key, index) => {
-          const test = `${key}: ${filterList[key]}`;
-          return <div key={index}>{test}</div>;
-        })}
-      </section>
       <section className="reservations__section">
         <aside className="reservations__side-filters">
           <SideFilters
@@ -83,7 +80,7 @@ const Reservations = () => {
           />
         </aside>
         <section className="reservations__list ">
-          <ListSection />
+          <ListSection productList={productList} />
         </section>
       </section>
     </div>

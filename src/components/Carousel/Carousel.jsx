@@ -34,10 +34,6 @@ const Carousel = (props) => {
         ? prevY + 100
         : (prevY = (slides.length - 1) * -100);
     });
-    for (let i = 1; i < n; i++) {
-      n--;
-      toLeft(n);
-    }
   };
 
   const toRight = () => {

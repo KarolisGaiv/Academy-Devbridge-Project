@@ -2,7 +2,7 @@ import React from "react";
 import propTypes from "prop-types";
 import SVGIcon from "../SVGIcon/SVGIcon";
 import { CardContainer } from "../CardContainer/CardContainer";
-import "./review.scss";
+import "./single-review.scss";
 
 const Review = (props) => {
   const { username, comment, rating } = props;

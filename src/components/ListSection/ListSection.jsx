@@ -1,19 +1,42 @@
 import React from "react";
-// import PropTypes from "prop-types"; will be needed when side filter will be merged
+import PropTypes from "prop-types";
 import "./list-section.scss";
-import db from "../../db.json";
 import { ListItemCard } from "./ListItemCard/ListItemCard";
+import { XButton } from "../XButtonForReservations/XButton";
 
-export const ListSection = () => {
-  // fully responsive needs only to change productList
-  // const productList = db.devices.deviceList;
-  const productList = db.books.bookList;
+export const ListSection = (props) => {
+  const { productList, filterList, deleteItemFromFilterList } = props;
+  const filterValues = Array.prototype.concat.apply(
+    [],
+    Object.values(filterList)
+  );
 
   return (
     <div className="list-section">
       <div className="list-section__results">
-        {`${productList.length} results for:`}
-        <div className="list-section__categories">{` All`}</div>
+        <div className="list-section__result-text">{`${productList.length} results for:`}</div>
+        <div className="list-section__search-results">{` All`}</div>
+        <div className="list-section__filter-results">
+          {filterValues.map((value, index) => {
+            return (
+              <XButton
+                key={index}
+                customClass="list-section__filter-item"
+                handleClick={() => {
+                  const categoryTitle = Object.keys(filterList).find((key) => {
+                    return filterList[key].filter((item) => {
+                      return item === value;
+                    });
+                  });
+
+                  deleteItemFromFilterList(categoryTitle, value);
+                }}
+              >
+                {value}
+              </XButton>
+            );
+          })}
+        </div>
       </div>
       {Object.keys(productList).map((key, index) => {
         return (
@@ -34,4 +57,8 @@ export const ListSection = () => {
   );
 };
 
-// ListSection.propTypes = {}; will be needed when side filter will be merged
+ListSection.propTypes = {
+  productList: PropTypes.object,
+  filterList: PropTypes.object,
+  deleteItemFromFilterList: PropTypes.func,
+};

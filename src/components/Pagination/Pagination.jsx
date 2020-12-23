@@ -230,7 +230,7 @@ export class Pagination extends React.Component {
     }
 
     return (
-      <div>
+      <React.Fragment>
         <div className="cards">{renderCards}</div>
         <div className="pagination-area">
           {renderPrevBtn}
@@ -239,7 +239,7 @@ export class Pagination extends React.Component {
           {pageIncrementBtn}
           {renderNextBtn}
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -25,7 +25,7 @@ const useFetch = (url) => {
 };
 
 const Reservations = () => {
-  const page = "device"; // fully responsive filter and list just need to change "device" to "book"
+  const page = "book"; // fully responsive filter and list just need to change "device" to "book"
   const { data, loading } = useFetch(`http://localhost:3008/${page}s`);
 
   //object for filter collecstion

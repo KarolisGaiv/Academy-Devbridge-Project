@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: auto;
+    position: relative;
     row-gap: 40px;
 
     @media (max-width: $breakpoint-tablet-landscape) {
@@ -18,5 +19,4 @@
         grid-template-columns: 1fr;
         row-gap: 20px;
     }
-    position: relative;
 }

@@ -4,8 +4,13 @@
     margin: 0 auto;
     max-width: 1265px;
 
-    &__similar-restaurants {
+    &__similar-restaurants,
+    &__hero {
         margin-bottom: 64px;
+    }
+
+    &__similar-restaurants {
+        margin-top: 64px;
     }
 
     &__heading {
@@ -13,5 +18,26 @@
         font-weight: $weight-medium;
         letter-spacing: 0.5px;
         line-height: 1.2;
+    }
+
+    &__about-restaurant {
+        column-gap: $column-gap-small;
+        display: grid;
+        grid-template-areas:
+            'information information reviews'
+            'location location reviews';
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__information {
+        grid-area: information;
+    }
+
+    &__location {
+        grid-area: location;
+    }
+
+    &__reviews {
+        grid-area: reviews;
     }
 }

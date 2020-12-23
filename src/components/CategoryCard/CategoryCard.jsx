@@ -31,11 +31,10 @@ export const ResCard = ({
             {`${totalNumber} ${keyword}`}
           </span>
         </div>
+        <div className={iconStyle}>
+          <SVGIcon name={icon} />
+        </div>
       </Link>
-
-      <div className={iconStyle}>
-        <SVGIcon name={icon} />
-      </div>
     </div>
   );
 };

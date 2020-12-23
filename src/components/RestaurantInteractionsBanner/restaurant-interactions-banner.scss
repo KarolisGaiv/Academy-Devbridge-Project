@@ -1,0 +1,48 @@
+@import '../../styles/base/base';
+@import '../../styles/mixins/mixins';
+
+.restaurant-interactions-banner {
+    &__banner-flex {
+        align-items: center;
+        display: flex;
+        height: 64px;
+        justify-content: space-between;
+        padding: 0 16px;
+    }
+
+    &__rating-heart {
+        display: flex;
+    }
+
+    &__heart-button-box {
+        padding-left: 10px;
+    }
+
+    &__check-in-textbox {
+        color: $color-fiord;
+        font-size: $size-14;
+        font-weight: 700;
+        line-height: 1.15;
+        text-transform: uppercase;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        &__banner-flex {
+            height: 120px;
+        }
+
+        &__check-in-textbox {
+            text-align: center;
+            width: 40%;
+        }
+
+        &__rating-heart,
+        &__link-button {
+            @include flex-center-column;
+        }
+
+        &__heart-button-box {
+            padding: 10px 0 0;
+        }
+    }
+}

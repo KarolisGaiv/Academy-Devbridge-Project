@@ -9,12 +9,12 @@
 
     &__description {
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
         color: $color-slate-grey;
         display: -webkit-box;
         font-weight: 400;
-        min-height: 72px;
+        -webkit-line-clamp: 3;
         line-height: 1.5;
+        min-height: 72px;
         overflow: hidden;
         text-overflow: ellipsis;
 

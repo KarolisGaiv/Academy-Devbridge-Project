@@ -42,12 +42,28 @@ import { ReactComponent as Globe } from "../../assets/globe.svg";
 import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
 import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
 import { ReactComponent as SliderNavLeft } from "../../assets/sliderNavLeft.svg";
+import { ReactComponent as SliderNavLeftHover } from "../../assets/sliderNavLeftHover.svg";
+import { ReactComponent as SliderNavLeftActive } from "../../assets/sliderNavLeftActive.svg";
 import { ReactComponent as SliderNavRight } from "../../assets/sliderNavRight.svg";
+import { ReactComponent as SliderNavRightHover } from "../../assets/sliderNavRightHover.svg";
+import { ReactComponent as SliderNavRightActive } from "../../assets/sliderNavRightActive.svg";
 import { ReactComponent as ButtonArrow } from "../../assets/buttonArrow.svg";
 import { ReactComponent as DropdownArrow } from "../../assets/dropdownArrow.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/settingsIcon.svg";
 import { ReactComponent as LogoutIcon } from "../../assets/logoutIcon.svg";
 import { ReactComponent as NotificationBell } from "../../assets/notification.svg";
+import { ReactComponent as InformationMapPin } from "../../assets/information/clock.svg";
+import { ReactComponent as InformationPhone } from "../../assets/information/globe.svg";
+import { ReactComponent as InformationGlobe } from "../../assets/information/mapPin.svg";
+import { ReactComponent as InformationClock } from "../../assets/information/phone.svg";
+import { ReactComponent as X } from "../../assets/x.svg";
+import { ReactComponent as Check } from "../../assets/check.svg";
+import { ReactComponent as Available } from "../../assets/available.svg";
+import { ReactComponent as HeartBtnBold } from "../../assets/heartBtnBold.svg";
+import { ReactComponent as AvailableProduct } from "../../assets/availableProduct.svg";
+import { ReactComponent as NotAvailableProduct } from "../../assets/notAvailableProduct.svg";
+import { ReactComponent as Search } from "../../assets/searchIcon.svg";
+import { ReactComponent as Cancel } from "../../assets/cancel.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -138,8 +154,16 @@ const SVGIcon = (props) => {
       return <PlayIcon />;
     case "sliderNavLeft":
       return <SliderNavLeft className={props.className} />;
+    case "sliderNavLeftHover":
+      return <SliderNavLeftHover />;
+    case "sliderNavLeftActive":
+      return <SliderNavLeftActive />;
     case "sliderNavRight":
       return <SliderNavRight className={props.className} />;
+    case "sliderNavRightActive":
+      return <SliderNavRightActive />;
+    case "sliderNavRightHover":
+      return <SliderNavRightHover />;
     case "buttonArrow":
       return <ButtonArrow />;
     case "dropdown":
@@ -150,6 +174,32 @@ const SVGIcon = (props) => {
       return <LogoutIcon className={props.className} />;
     case "notificationBell":
       return <NotificationBell className={props.className} />;
+    case "informationClock":
+      return <InformationClock />;
+    case "informationGlobe":
+      return <InformationGlobe />;
+    case "informationMapPin":
+      return <InformationMapPin />;
+    case "informationPhone":
+      return <InformationPhone />;
+    case "X":
+      return <X className={props.className} />;
+    case "check":
+      return <Check />;
+    case "available":
+      return <Available className={props.className} />;
+    case "heartBtnBold":
+      return <HeartBtnBold className={props.className} />;
+    case "none":
+      return null;
+    case "availableProduct":
+      return <AvailableProduct />;
+    case "notAvailableProduct":
+      return <NotAvailableProduct />;
+    case "search":
+      return <Search />;
+    case "cancel":
+      return <Cancel />;
     default:
       return "error";
   }

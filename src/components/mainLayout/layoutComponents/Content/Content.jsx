@@ -2,7 +2,7 @@ import React from "react";
 import "./content.scss";
 import { Route, Switch } from "react-router-dom";
 import Dashboard from "../../../../pages/Dashboard/Dashboard";
-import Reservations from "../../../../pages/Reservations";
+import Reservations from "../../../../pages/ReservationsPage/Reservations";
 import EatOut from "../../../../pages/EatOut/EatOut";
 import CategoryRestaurants from "../../../../pages/CategoryRestaurants/CategoryRestaurants";
 import RestaurantPage from "../../../../pages/RestaurantPage/RestaurantPage";

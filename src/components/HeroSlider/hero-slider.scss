@@ -88,21 +88,6 @@ $_transparent: transparent;
 
     &__nav {
         justify-self: end;
-
-        button {
-            background-color: $_transparent;
-            border: 0;
-            cursor: pointer;
-            height: 25px;
-            padding: 0;
-            transform: translateX(-6px);
-            width: 24px;
-
-            &:last-child {
-                padding: 0;
-                transform: translateX(-7px);
-            }
-        }
     }
 }
 

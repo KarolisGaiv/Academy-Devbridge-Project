@@ -6,6 +6,7 @@ import { LabelRed } from "components/Text/LabelRed/LabelRed";
 import { DescriptionGrey } from "components/Text/DescriptionGrey/DescriptionGrey";
 import { RestTitle } from "components/RestaurantInfo/RestTitle/RestTitle";
 import { Button } from "components/Button/Button";
+import SliderNavButtons from "components/SliderNavButtons/SliderNavButtons";
 import PropTypes from "prop-types";
 
 const Carousel = (props) => {
@@ -138,8 +139,10 @@ const Carousel = (props) => {
             })}
           </div>
           <div className={`carousel__nav ${props.navStyles}`}>
-            <button onClick={() => toLeft()}> {props.leftButton} </button>
-            <button onClick={() => toRight()}> {props.rightButton} </button>
+            <SliderNavButtons
+              leftClicked={() => toLeft()}
+              rightClicked={() => toRight()}
+            />
           </div>
           <div className={`carousel__info ${props.infoStyles}`}>
             {slides.slice(0, 5).map((slide, index) => (

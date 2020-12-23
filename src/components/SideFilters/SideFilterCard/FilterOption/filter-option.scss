@@ -38,7 +38,7 @@
         color: $color-fiord;
         cursor: pointer;
         font-size: $size-14;
-        margin: 0 0 0 15px;
+        margin-left: 15px;
     }
 
     &__original:checked ~ &__custom {

@@ -1,0 +1,64 @@
+@import '../../../styles/base/base';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: $main-font;
+    font-size: $size-14;
+
+    &__header {
+        color: $color-grey-chateau;
+        font-weight: $weight-bold;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+}
+
+.calendar-wrapper {
+    background: $color-white;
+    border: 1px solid $color-ghost;
+    border-radius: 5px;
+    color: $color-ghost;
+    display: flex;
+    padding: 13px 16px;
+    position: relative;
+
+    &:hover,
+    &:focus-within {
+        border-color: $color-fiord;
+        color: $color-fiord;
+    }
+
+    &__calendar-field {
+        border: 0;
+        color: $color-ghost;
+        cursor: pointer;
+        font-family: $main-font;
+        font-size: $size-14;
+        font-weight: $weight-regular;
+        width: 100%;
+
+        &::after {
+            background: none;
+            content: url('../../../assets/calendar.svg');
+        }
+
+        &::-webkit-calendar-picker-indicator {
+            background: transparent;
+            bottom: 0;
+            color: $transparent;
+            height: auto;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: auto;
+        }
+
+        &:focus,
+        &:hover {
+            color: $color-fiord;
+            outline: none;
+        }
+    }
+}

@@ -3,6 +3,7 @@ import "./search-section.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import TagButton from "./TagButton/TagButton";
 import SearchBar from "./SearchBar/SearchBar";
+import DatePicker from "./DatePicker/DatePicker";
 
 const SearchSection = () => {
   return (
@@ -15,6 +16,7 @@ const SearchSection = () => {
           <TagButton buttonText="Available" icon="available" />
         </div>
         <SearchBar />
+        <DatePicker />
       </div>
     </CardContainer>
   );

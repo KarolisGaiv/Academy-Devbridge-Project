@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./side-filter-card.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import PropTypes from "prop-types";
@@ -10,22 +10,15 @@ export const SideFilterCard = (props) => {
   const {
     categoryTitle,
     category,
+    checkedCategories,
     addItemToFilterList,
     clearFilterList,
     deleteItemFromFilterList,
   } = props;
 
-  const [isUnchecked, setIsUnchecked] = useState(false);
-
   // on "Clear all" button click, removes checked checkboxes and clears FilterList
   const clearHandler = () => {
     clearFilterList(categoryTitle);
-    setIsUnchecked(true);
-  };
-
-  // when checkboxes are unchecked this function called for prevent isUnchecked
-  const setToCheck = () => {
-    setIsUnchecked(false);
   };
 
   return (
@@ -45,8 +38,7 @@ export const SideFilterCard = (props) => {
                 categoryTitle={categoryTitle}
                 addItemToFilterList={addItemToFilterList}
                 deleteItemFromFilterList={deleteItemFromFilterList}
-                unchecked={isUnchecked}
-                setIsUnchecked={setToCheck}
+                isChecked={checkedCategories.includes(title) ? true : false}
               />
             );
           })}
@@ -59,6 +51,7 @@ export const SideFilterCard = (props) => {
 SideFilterCard.propTypes = {
   categoryTitle: PropTypes.string,
   category: PropTypes.array,
+  checkedCategories: PropTypes.array,
   addItemToFilterList: PropTypes.func,
   clearFilterList: PropTypes.func,
   deleteItemFromFilterList: PropTypes.func,

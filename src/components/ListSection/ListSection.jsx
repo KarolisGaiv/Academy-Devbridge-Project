@@ -58,7 +58,7 @@ export const ListSection = (props) => {
 };
 
 ListSection.propTypes = {
-  productList: PropTypes.object,
+  productList: PropTypes.array,
   filterList: PropTypes.object,
   deleteItemFromFilterList: PropTypes.func,
 };

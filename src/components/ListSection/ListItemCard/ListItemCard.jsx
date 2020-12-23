@@ -93,5 +93,5 @@ ListItemCard.propTypes = {
   name: PropTypes.string,
   bookedUntil: PropTypes.string,
   rating: PropTypes.object,
-  quantity: PropTypes.string,
+  quantity: PropTypes.number,
 };

@@ -6,6 +6,7 @@ import { SideFilterCard } from "./SideFilterCard/SideFilterCard";
 export const SideFilters = (props) => {
   const {
     filterCategories,
+    filterList,
     addItemToFilterList,
     clearFilterList,
     deleteItemFromFilterList,
@@ -19,6 +20,7 @@ export const SideFilters = (props) => {
             key={index}
             categoryTitle={key}
             category={filterCategories[key]}
+            checkedCategories={[key] in filterList ? filterList[key] : []}
             addItemToFilterList={addItemToFilterList}
             clearFilterList={clearFilterList}
             deleteItemFromFilterList={deleteItemFromFilterList}
@@ -31,6 +33,7 @@ export const SideFilters = (props) => {
 
 SideFilters.propTypes = {
   filterCategories: PropTypes.object,
+  filterList: PropTypes.object,
   addItemToFilterList: PropTypes.func,
   clearFilterList: PropTypes.func,
   deleteItemFromFilterList: PropTypes.func,

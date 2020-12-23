@@ -7,18 +7,15 @@ export const FilterOption = (props) => {
   const {
     title,
     categoryTitle,
-    unchecked,
-    setIsUnchecked,
+    isChecked,
     addItemToFilterList,
     deleteItemFromFilterList,
   } = props;
-  const clickHandler = (event) => {
+  const changeHandler = (event) => {
     event.target.checked
       ? addItemToFilterList(categoryTitle, title)
       : deleteItemFromFilterList(categoryTitle, title);
   };
-
-  if (unchecked) setIsUnchecked();
 
   return (
     <div className="filter-option">
@@ -27,8 +24,8 @@ export const FilterOption = (props) => {
           type="checkbox"
           id={title}
           className="checkbox__original"
-          onClick={clickHandler}
-          checked={unchecked ? false : null}
+          onChange={changeHandler}
+          checked={isChecked}
         />
         <span className="checkbox__custom" />
         <span className="checkbox__check">
@@ -45,8 +42,7 @@ export const FilterOption = (props) => {
 FilterOption.propTypes = {
   title: PropTypes.string,
   categoryTitle: PropTypes.string,
-  unchecked: PropTypes.bool,
-  setIsUnchecked: PropTypes.func,
+  isChecked: PropTypes.bool,
   addItemToFilterList: PropTypes.func,
   deleteItemFromFilterList: PropTypes.func,
 };

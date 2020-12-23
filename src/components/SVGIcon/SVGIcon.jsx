@@ -58,6 +58,8 @@ import { ReactComponent as Available } from "../../assets/available.svg";
 import { ReactComponent as HeartBtnBold } from "../../assets/heartBtnBold.svg";
 import { ReactComponent as AvailableProduct } from "../../assets/availableProduct.svg";
 import { ReactComponent as NotAvailableProduct } from "../../assets/notAvailableProduct.svg";
+import { ReactComponent as Search } from "../../assets/searchIcon.svg";
+import { ReactComponent as Cancel } from "../../assets/cancel.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -182,6 +184,10 @@ const SVGIcon = (props) => {
       return <AvailableProduct />;
     case "notAvailableProduct":
       return <NotAvailableProduct />;
+    case "search":
+      return <Search />;
+    case "cancel":
+      return <Cancel />;
     default:
       return "error";
   }

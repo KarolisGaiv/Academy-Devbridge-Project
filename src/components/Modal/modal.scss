@@ -46,9 +46,7 @@
     }
 
     &__head {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
+        @include flex-space-between;
     }
 
     &__close-button {

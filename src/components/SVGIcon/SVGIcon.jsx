@@ -42,7 +42,11 @@ import { ReactComponent as Globe } from "../../assets/globe.svg";
 import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
 import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
 import { ReactComponent as SliderNavLeft } from "../../assets/sliderNavLeft.svg";
+import { ReactComponent as SliderNavLeftHover } from "../../assets/sliderNavLeftHover.svg";
+import { ReactComponent as SliderNavLeftActive } from "../../assets/sliderNavLeftActive.svg";
 import { ReactComponent as SliderNavRight } from "../../assets/sliderNavRight.svg";
+import { ReactComponent as SliderNavRightHover } from "../../assets/sliderNavRightHover.svg";
+import { ReactComponent as SliderNavRightActive } from "../../assets/sliderNavRightActive.svg";
 import { ReactComponent as ButtonArrow } from "../../assets/buttonArrow.svg";
 import { ReactComponent as DropdownArrow } from "../../assets/dropdownArrow.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/settingsIcon.svg";
@@ -150,8 +154,16 @@ const SVGIcon = (props) => {
       return <PlayIcon />;
     case "sliderNavLeft":
       return <SliderNavLeft className={props.className} />;
+    case "sliderNavLeftHover":
+      return <SliderNavLeftHover />;
+    case "sliderNavLeftActive":
+      return <SliderNavLeftActive />;
     case "sliderNavRight":
       return <SliderNavRight className={props.className} />;
+    case "sliderNavRightActive":
+      return <SliderNavRightActive />;
+    case "sliderNavRightHover":
+      return <SliderNavRightHover />;
     case "buttonArrow":
       return <ButtonArrow />;
     case "dropdown":

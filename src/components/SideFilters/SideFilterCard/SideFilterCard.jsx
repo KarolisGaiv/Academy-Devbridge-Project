@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import "./side-filter-card.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import PropTypes from "prop-types";
-import { Button } from "components/Button/Button";
-import SVGIcon from "../../SVGIcon/SVGIcon";
 import Divider from "components/Divider/Divider";
 import { FilterOption } from "./FilterOption/FilterOption";
+import { XButton } from "components/XButtonForReservations/XButton";
 
 export const SideFilterCard = (props) => {
   const {
@@ -34,13 +33,7 @@ export const SideFilterCard = (props) => {
       <div className="side-filter-card">
         <div className="side-filter-card__header">
           <div className="side-filter-card__title"> {categoryTitle} </div>
-          <Button
-            className="side-filter-card__button"
-            handleClick={clearHandler}
-          >
-            <div className="side-filter-card__button-text"> Clear all </div>
-            <SVGIcon name="X" />
-          </Button>
+          <XButton handleClick={clearHandler}> Clear all </XButton>
         </div>
         <Divider />
         <div className="side-filter-card__content">

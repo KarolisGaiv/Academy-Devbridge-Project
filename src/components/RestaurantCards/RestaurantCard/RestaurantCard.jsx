@@ -14,7 +14,7 @@ const RestaurantCard = (props) => {
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="restaurant-card">
-        <div className={`restaurant-card__top ${props.styles}`}>
+        <div className={`restaurant-card__top ${props.customClass}`}>
           <div className="restaurant-card__checkins-rating">
             <CheckIns checkins={props.checkins} />
             <Rating rating={props.rating} />
@@ -49,7 +49,7 @@ export default RestaurantCard;
 
 RestaurantCard.propTypes = {
   children: PropTypes.object,
-  styles: PropTypes.string,
+  customClass: PropTypes.string,
   checkins: PropTypes.number,
   rating: PropTypes.array,
   categories: PropTypes.array,

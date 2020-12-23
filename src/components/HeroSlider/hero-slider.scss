@@ -59,6 +59,8 @@ $_transparent: transparent;
     }
 
     &__pagination-container {
+        align-items: center;
+        display: flex;
         height: 20px;
         overflow: hidden;
     }
@@ -66,7 +68,6 @@ $_transparent: transparent;
     &__pagination {
         border-radius: 50%;
         cursor: pointer;
-        display: inline-block;
         height: 6px;
         justify-self: start;
         margin: 5px;
@@ -76,7 +77,6 @@ $_transparent: transparent;
             background-color: $color-silver;
             border: 0;
             padding: 0;
-            transform: translateY(-5px);
         }
 
         &--choosed {

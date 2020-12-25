@@ -151,17 +151,19 @@ const Carousel = (props) => {
                 style={{ transform: `translateY(${y}%)` }}
                 className="hero__info-wrap"
               >
-                <LabelRed text={slide.slogan}> </LabelRed>
-                <RestTitle
-                  title={slide.name}
-                  titleStyle="hero__title"
-                ></RestTitle>
+                <LabelRed text={slide.slogan} />
+                <RestTitle title={slide.name} titleStyle="hero__title" />
                 <DescriptionGrey
                   descStyle="hero__desc"
                   descWrapStyle="hero__desc-wrap"
                   text={slide.description}
-                ></DescriptionGrey>
-                <Button className="button button--slider">Learn More</Button>
+                />
+                <Button
+                  className="button button--slider"
+                  tabIndex={index === current ? 0 : -1}
+                >
+                  Learn More
+                </Button>
               </div>
             ))}
           </div>

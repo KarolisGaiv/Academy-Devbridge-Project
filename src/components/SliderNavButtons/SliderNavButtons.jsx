@@ -18,11 +18,11 @@ const SliderNavButtons = ({ leftClicked, rightClicked }) => {
   return (
     <div className="buttons-wrapper">
       <button
-        onKeyDown={() => leftButtonPressed("sliderNavLeftActive", leftClicked)}
         onMouseEnter={() => setColorLeft("sliderNavLeftHover")}
         onMouseLeave={() => setColorLeft("sliderNavLeft")}
         onFocus={() => setColorLeft("sliderNavLeftHover")}
         onBlur={() => setColorLeft("sliderNavLeft")}
+        onClick={() => leftButtonPressed("sliderNavLeftActive", leftClicked)}
         onMouseDown={() =>
           leftButtonPressed("sliderNavLeftActive", leftClicked)
         }
@@ -30,16 +30,14 @@ const SliderNavButtons = ({ leftClicked, rightClicked }) => {
         <SVGIcon name={leftState} />
       </button>
       <button
-        onKeyDown={() =>
+        onClick={() => rightButtonPressed("sliderNavRightActive", rightClicked)}
+        onMouseDown={() =>
           rightButtonPressed("sliderNavRightActive", rightClicked)
         }
         onMouseEnter={() => setColorRight("sliderNavRightHover")}
         onMouseLeave={() => setColorRight("sliderNavRight")}
         onFocus={() => setColorRight("sliderNavRightHover")}
         onBlur={() => setColorRight("sliderNavRight")}
-        onMouseDown={() =>
-          rightButtonPressed("sliderNavRightActive", rightClicked)
-        }
       >
         <SVGIcon name={rightState} />
       </button>

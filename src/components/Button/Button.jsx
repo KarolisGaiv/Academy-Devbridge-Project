@@ -9,7 +9,7 @@ export const Button = ({ children, className, typeName, handleClick }) => (
 );
 
 Button.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   typeName: PropTypes.string,
   className: PropTypes.string,
   handleClick: PropTypes.func,

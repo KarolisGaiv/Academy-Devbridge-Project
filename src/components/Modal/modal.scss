@@ -1,0 +1,72 @@
+@import '../../styles/base/base';
+@import '../../styles/mixins/index';
+
+.modal {
+    position: relative;
+
+    &__overlay {
+        background-color: $transperent-black-5;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: $z-index-modal;
+    }
+
+    &__content-wrapper {
+        left: 50%;
+        position: fixed;
+        text-align: end;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: $z-index-modal;
+    }
+
+    &__content {
+        background-color: $color-mercury;
+        border-radius: 8px;
+        height: calc(100vh - 200px);
+        overflow-y: scroll;
+        padding: 30px;
+        text-align: start;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $color-electric-violet;
+            border-radius: 10px;
+
+            &:hover {
+                background: $color-purple-heart;
+            }
+        }
+    }
+
+    &__head {
+        @include flex-space-between;
+    }
+
+    &__close-button {
+        background-color: $transparent;
+        border: hidden;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 20px;
+    }
+
+    &__close-icon {
+        height: 40px;
+        width: 40px;
+
+        path {
+            stroke: $color-mercury;
+        }
+    }
+
+    &__heading {
+        @include h3-heading;
+    }
+}

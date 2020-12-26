@@ -1,32 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import "./side-filter-card.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import PropTypes from "prop-types";
-import { Button } from "components/Button/Button";
-import SVGIcon from "../../SVGIcon/SVGIcon";
 import Divider from "components/Divider/Divider";
 import { FilterOption } from "./FilterOption/FilterOption";
+import { XButton } from "components/XButtonForReservations/XButton";
 
 export const SideFilterCard = (props) => {
   const {
     categoryTitle,
     category,
+    checkedCategories,
     addItemToFilterList,
     clearFilterList,
     deleteItemFromFilterList,
   } = props;
 
-  const [isUnchecked, setIsUnchecked] = useState(false);
-
   // on "Clear all" button click, removes checked checkboxes and clears FilterList
   const clearHandler = () => {
     clearFilterList(categoryTitle);
-    setIsUnchecked(true);
-  };
-
-  // when checkboxes are unchecked this function called for prevent isUnchecked
-  const setToCheck = () => {
-    setIsUnchecked(false);
   };
 
   return (
@@ -34,13 +26,7 @@ export const SideFilterCard = (props) => {
       <div className="side-filter-card">
         <div className="side-filter-card__header">
           <div className="side-filter-card__title"> {categoryTitle} </div>
-          <Button
-            className="side-filter-card__button"
-            handleClick={clearHandler}
-          >
-            <div className="side-filter-card__button-text"> Clear all </div>
-            <SVGIcon name="X" />
-          </Button>
+          <XButton handleClick={clearHandler}> Clear all </XButton>
         </div>
         <Divider />
         <div className="side-filter-card__content">
@@ -52,8 +38,7 @@ export const SideFilterCard = (props) => {
                 categoryTitle={categoryTitle}
                 addItemToFilterList={addItemToFilterList}
                 deleteItemFromFilterList={deleteItemFromFilterList}
-                unchecked={isUnchecked}
-                setIsUnchecked={setToCheck}
+                isChecked={checkedCategories.includes(title) ? true : false}
               />
             );
           })}
@@ -66,6 +51,7 @@ export const SideFilterCard = (props) => {
 SideFilterCard.propTypes = {
   categoryTitle: PropTypes.string,
   category: PropTypes.array,
+  checkedCategories: PropTypes.array,
   addItemToFilterList: PropTypes.func,
   clearFilterList: PropTypes.func,
   deleteItemFromFilterList: PropTypes.func,

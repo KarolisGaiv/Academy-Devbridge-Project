@@ -16,12 +16,13 @@
     &__image {
         margin: 0 15px 0 0;
         max-height: 128px;
+        width: 100px;
     }
 
     &__description {
         font-size: $size-12;
         font-weight: $weight-medium;
-        max-width: 300px;
+        max-width: 600px;
 
         #{$this}__subtitle {
             color: $color-slate-grey;
@@ -33,6 +34,9 @@
             color: $color-mirage;
             font-size: $size-24;
             margin: 0 0 8px;
+        }
+
+        #{$this}__title--hidden {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -48,6 +52,11 @@
 
         #{$this}__availability-text {
             margin: 0 0 0 10px;
+        }
+
+        #{$this}__quantity {
+            color: $color-grey-8;
+            text-transform: uppercase;
         }
 
         #{$this}__rating {

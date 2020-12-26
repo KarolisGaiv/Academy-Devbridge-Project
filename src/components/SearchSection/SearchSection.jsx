@@ -2,6 +2,7 @@ import React from "react";
 import "./search-section.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import TagButton from "./TagButton/TagButton";
+import SearchBar from "./SearchBar/SearchBar";
 
 const SearchSection = () => {
   return (
@@ -13,6 +14,7 @@ const SearchSection = () => {
           <TagButton buttonText="Favorites" icon="heartBtnBold" />
           <TagButton buttonText="Available" icon="available" />
         </div>
+        <SearchBar />
       </div>
     </CardContainer>
   );

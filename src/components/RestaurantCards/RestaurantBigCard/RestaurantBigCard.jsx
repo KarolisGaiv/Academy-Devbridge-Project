@@ -35,7 +35,7 @@ export const RestaurantBigCard = (props) => {
   return (
     <div className="restaurant-big-card">
       <RestaurantCard
-        style="restaurant-card__top--fixed"
+        customClass="restaurant-card__top--fixed"
         checkins={checkinNumberState.checkinNumber}
         image={props.image}
         title={props.title}

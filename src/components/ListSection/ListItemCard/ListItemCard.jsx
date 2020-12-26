@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./list-item-card.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import SVGIcon from "components/SVGIcon/SVGIcon";
-// import { Rating } from "components/Rating/Rating"; will be needed
+import { Rating } from "components/Rating/Rating";
 import { HeartButton } from "components/HeartButton/HeartButton";
 import { Link } from "components/Link/Link";
 import { Button } from "components/Button/Button";
+import { Ratings } from "components/Rating/maxRatings";
 
 export const ListItemCard = (props) => {
   const {
@@ -24,6 +25,8 @@ export const ListItemCard = (props) => {
   const productTitle = title ?? name;
   const productBookedUntil = bookedUntil && bookedUntil.replace(/-/g, "/");
 
+  const [viewMore, setViewMore] = useState(false);
+
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="list-item-card">
@@ -35,7 +38,15 @@ export const ListItemCard = (props) => {
           />
           <div className="list-item-card__description">
             <div className="list-item-card__subtitle">{productSubtitle}</div>
-            <div className="list-item-card__title">{productTitle}</div>
+            <div
+              className={
+                viewMore
+                  ? "list-item-card__title"
+                  : "list-item-card__title list-item-card__title--hidden"
+              }
+            >
+              {productTitle}
+            </div>
             {productBookedUntil === "null" || productBookedUntil === null ? (
               <div className="list-item-card__availability">
                 <SVGIcon name="availableProduct" />
@@ -57,8 +68,12 @@ export const ListItemCard = (props) => {
               </div>
             ) : (
               <div className="list-item-card__rating">
-                rating {rating.score}
-                {/* <Rating rating={product.rating.score} /> */}
+                <Rating
+                  rating={Ratings.calculateRating(
+                    rating.score,
+                    rating.userCount
+                  )}
+                />
               </div>
             )}
           </div>
@@ -68,9 +83,17 @@ export const ListItemCard = (props) => {
             <HeartButton />
           </div>
           <div className="list-item-card__buttons">
-            <Link styleName="list-item-card__link" handleClick={() => {}}>
-              view more
-            </Link>
+            {productTitle.length > 50 && (
+              <Link
+                styleName="list-item-card__link"
+                handleClick={() => {
+                  setViewMore(!viewMore);
+                }}
+              >
+                {viewMore ? "view less" : "view more"}
+              </Link>
+            )}
+
             <Button
               className="list-item-card__button button--enabled"
               typeName="button"
@@ -93,5 +116,5 @@ ListItemCard.propTypes = {
   name: PropTypes.string,
   bookedUntil: PropTypes.string,
   rating: PropTypes.object,
-  quantity: PropTypes.string,
+  quantity: PropTypes.number,
 };

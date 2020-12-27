@@ -14,8 +14,9 @@
     font-family: $main-font;
     font-size: $size-12;
     font-weight: 500;
-    height: 100px;
     max-width: 100%;
+    position: relative;
+    z-index: $z-index-timeline;
 
     &__list {
         margin-top: 35px;

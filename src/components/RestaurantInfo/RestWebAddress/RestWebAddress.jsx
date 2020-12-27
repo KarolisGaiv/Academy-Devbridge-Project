@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import SVGIcon from "../../SVGIcon/SVGIcon";
 import "./rest-web-address.scss";
 
-export const WebAddress = ({ icon, text }) => {
+export const RestWebAddress = ({ icon, text }) => {
   return (
     <div className="restaurant-contact">
       <div className="restaurant-contact__icon">
@@ -14,7 +14,7 @@ export const WebAddress = ({ icon, text }) => {
   );
 };
 
-WebAddress.propTypes = {
+RestWebAddress.propTypes = {
   icon: PropTypes.string,
   text: PropTypes.string,
 };

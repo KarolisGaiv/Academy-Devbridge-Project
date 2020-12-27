@@ -4,19 +4,35 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    padding: 4px 0;
+    padding: 2px 0;
 
     &__name {
         color: $color-grey-6;
         font-size: $size-10;
         font-weight: 500;
         text-transform: uppercase;
+
+        &--dark {
+            background-color: $color-midnight;
+            border-radius: 8px;
+            color: $color-white;
+            font-size: $size-12;
+            margin-right: 10px;
+            padding: 6px 12px;
+            text-transform: none;
+        }
     }
 
     &__icon {
+        display: flex;
+
+        &--none {
+            display: none;
+        }
+
         svg {
             flex-shrink: 0;
-            padding: 3px 12px;
+            padding: 0 12px;
         }
     }
 }

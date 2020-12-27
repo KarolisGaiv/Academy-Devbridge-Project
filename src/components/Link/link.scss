@@ -1,0 +1,27 @@
+@import '../../styles/base/base';
+
+.link {
+    color: $color-link;
+    cursor: pointer;
+    font-size: $size-14;
+    font-weight: $weight-regular;
+    height: 40px;
+    line-height: 1.7;
+    padding: 8px 16px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:link {
+        color: $color-link;
+    }
+
+    &:visited {
+        color: $color-link-visited;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $color-link-hover;
+    }
+}

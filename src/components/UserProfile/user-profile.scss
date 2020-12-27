@@ -1,5 +1,4 @@
-@import '../../styles/base/typography';
-@import '../../styles/base/colors';
+@import '../../styles/base/base';
 
 .widget-container {
     align-items: center;
@@ -8,22 +7,28 @@
 }
 
 .profile {
+    height: 40px;
     position: relative;
-    width: 40px;
 
     &__btn {
+        background: none;
         border: 0;
         border-radius: 50%;
         cursor: pointer;
-        height: 40px;
-        outline: 0;
-        width: 40px;
+        padding: 0;
     }
 
-    &__icon-placeholder {
-        left: 0;
+    .user-avatar {
+        &__image {
+            height: auto;
+            transform: scale(1.4) translateY(3px);
+        }
+    }
+
+    &__dropdown-arrow {
+        bottom: 2px;
         position: absolute;
-        top: 0;
+        right: 0;
     }
 }
 

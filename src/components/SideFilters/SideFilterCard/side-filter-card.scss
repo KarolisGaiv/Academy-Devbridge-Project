@@ -1,0 +1,24 @@
+@import '../../../styles/base/base';
+
+.side-filter-card {
+    margin: 0 0 40px;
+    padding: 0 25px;
+
+    &__header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        color: $color-grey-chateau;
+        font-size: $size-14;
+        font-weight: $weight-bold;
+    }
+
+    &__content {
+        padding: 15px 0 5px;
+    }
+}

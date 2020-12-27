@@ -1,5 +1,7 @@
 import React from "react";
-import BirthdayCard from "../components/NewsFeedCard/BirthdayFeed/BirthdayCard";
+import BirthdayCard from "../components/NewsFeedCard/Stories/Birthday/BirthdayCard";
+import VideoCard from "../components/NewsFeedCard/Stories/Video/VideoCard";
+import PostCard from "../components/NewsFeedCard/Stories/Post/PostCard";
 import fakeData from "../db.json";
 
 export default {
@@ -7,9 +9,8 @@ export default {
 };
 
 export const NewsdFeed = () => {
-  //VIDEO/POST stories can be added to IF statemenet
   return fakeData.stories.map((data, index) => {
-    if (data.type == "birthday") {
+    if (data.type === "birthday") {
       return (
         <BirthdayCard
           key={index}
@@ -18,6 +19,24 @@ export const NewsdFeed = () => {
           userName={fakeData.userData.userName}
         />
       );
-    }
+    } else if (data.type === "video") {
+      return (
+        <VideoCard
+          key={index}
+          data={data}
+          avatar={fakeData.userData.userImage}
+          userName={fakeData.userData.userName}
+        />
+      );
+    } else if (data.type === "post") {
+      return (
+        <PostCard
+          key={index}
+          data={data}
+          avatar={fakeData.userData.userImage}
+          userName={fakeData.userData.userName}
+        />
+      );
+    } else return null;
   });
 };

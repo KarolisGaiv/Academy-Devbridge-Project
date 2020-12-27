@@ -26,8 +26,8 @@ export const Rating = ({ rating }) => {
 
   var final_rating;
 
-  if (newRating == null) final_rating = rating[1];
-  else final_rating = Ratings.finalRating(rating[7], rating[8], newRating);
+  if (newRating == null) final_rating = rating[0];
+  else final_rating = Ratings.finalRating(rating[1], rating[2], newRating);
 
   return (
     <div className="rating">

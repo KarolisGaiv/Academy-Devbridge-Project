@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import UserAvatar from "../../UserAvatar/UserAvatar";
-import SVGIcon from "../../SVGIcon/SVGIcon";
-import FormatDate from "../FormatDate";
+import UserAvatar from "../../../UserAvatar/UserAvatar";
+import SVGIcon from "../../../SVGIcon/SVGIcon";
+import FormatDate from "../../FormatDate";
 
-import "./birthday-card-section.scss";
+import "./birthday-content.scss";
 
-const BirthdayCardSection = (props) => {
+const BirthdayContent = (props) => {
   return (
     <div className="birthday">
       <div className="birthday__profile">
@@ -45,8 +45,8 @@ const BirthdayCardSection = (props) => {
   );
 };
 
-export default BirthdayCardSection;
+export default BirthdayContent;
 
-BirthdayCardSection.propTypes = {
+BirthdayContent.propTypes = {
   data: PropTypes.object,
 };

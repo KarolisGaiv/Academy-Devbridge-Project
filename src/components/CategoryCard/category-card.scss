@@ -2,12 +2,14 @@
 @import '../../styles/mixins/mixins';
 
 .card-wrapper {
-    @include flex-space-between;
     background: $color-alabaster;
     border-radius: 8px;
-    box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 23px $transperent-black-25;
+    display: flex;
+    flex-direction: column;
     height: 96px;
-    line-height: $size-22;
+    justify-content: center;
+    line-height: 1.2;
 
     &__info {
         display: flex;
@@ -34,27 +36,38 @@
 
     &__icon {
         transform: translateX(-15px);
+
+        &--outside {
+            transform: translateX(30px);
+        }
+    }
+
+    &__link {
+        @include flex-space-between;
+        text-decoration: none;
     }
 }
 
 @media (max-width: $breakpoint-laptop) {
     .card-wrapper {
-        flex-direction: column-reverse;
         height: calc(100% - 50px);
+        justify-content: flex-end;
 
         &__info {
             align-items: center;
-            overflow: visible;
-            padding: 0;
-            transform: translate(0, -30%);
+            padding: 10px;
         }
 
         &__icon {
-            transform: translate(0, -15%);
+            transform: translate(0);
         }
 
         &__name {
             font-weight: $size-20;
+        }
+
+        &__link {
+            flex-direction: column-reverse;
         }
     }
 }

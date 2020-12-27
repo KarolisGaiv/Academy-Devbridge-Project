@@ -1,0 +1,19 @@
+.reservations {
+    margin: 0 auto;
+    max-width: 1265px;
+
+    &__section {
+        display: flex;
+    }
+
+    &__side-filters {
+        box-sizing: content-box;
+        flex-shrink: 0;
+        margin: 0 40px 0 0;
+        width: 285px; // while no other section styles
+    }
+
+    &__list {
+        width: 100%;
+    }
+}

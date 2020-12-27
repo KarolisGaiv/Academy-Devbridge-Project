@@ -1,0 +1,14 @@
+@import '../../styles/base/base';
+
+.buttons-wrapper {
+    button {
+        background-color: $color-white;
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+
+        &:nth-child(1) {
+            transform: translateX(1px);
+        }
+    }
+}

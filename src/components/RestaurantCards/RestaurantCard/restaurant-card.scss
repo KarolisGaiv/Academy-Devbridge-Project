@@ -10,6 +10,10 @@
         height: 80%;
         position: relative;
 
+        &--fixed {
+            height: 185px;
+        }
+
         @media (max-width: $breakpoint-tablet-landscape) {
             height: 185px;
         }
@@ -61,6 +65,11 @@
     &__title-like {
         @include flex-space-between;
         padding: 0 16px;
+    }
+
+    &__link {
+        overflow: hidden;
+        text-decoration: none;
     }
 
     &__hours {

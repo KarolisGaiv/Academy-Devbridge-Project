@@ -8,6 +8,22 @@ export const Rating = ({ rating }) => {
   const [newRating, setRating] = useState(null);
   const [tabstatus, setExpand] = useState("rating__collapse");
   const [hovered, setHover] = useState(null);
+  const [tabbed, setTabCount] = useState(null);
+  const [fifthRating, setHeight] = useState(null);
+
+  const handleTab = (value) => {
+    setTabCount(value);
+    setHeight(null);
+  };
+  const handleFocus = () => {
+    setExpand("on-tab");
+    setHeight(null);
+  };
+  const handleBlur = (index) => {
+    setExpand("rating__collapse");
+    if (index === 4 && tabbed === 5) setHeight("fifth-rating-height");
+  };
+
   var final_rating;
 
   if (newRating == null) final_rating = rating[1];
@@ -20,34 +36,37 @@ export const Rating = ({ rating }) => {
           {[...Array(5)].map((star, i) => {
             const ratingValue = i + 1;
             return (
-              <label className="rating__label" key={i}>
+              <button
+                key={i}
+                onMouseEnter={() => setHover(ratingValue)}
+                onMouseLeave={() => setHover(null)}
+                onKeyUp={() => handleTab(ratingValue)}
+                onFocus={() => handleFocus()}
+                onBlur={() => handleBlur(i)}
+                onClick={() => setRating(ratingValue)}
+              >
                 <input
                   className="rating__input"
                   type="radio"
                   name="newRating"
                   value={ratingValue}
-                  onClick={() => setRating(ratingValue)}
                   key={star}
                   tabIndex={0}
                 />
                 <SVGIcon
                   className="rating__star"
                   name={
-                    ratingValue <= (hovered || newRating)
+                    ratingValue <= (newRating || hovered || tabbed)
                       ? "starFilled"
                       : "starEmpty"
                   }
-                  onMouseEnter={() => setHover(ratingValue)}
-                  onMouseLeave={() => setHover(null)}
-                  onFocus={() => setExpand("on-tab")}
-                  onBlur={() => setExpand("rating__collapse")}
                   key={i}
                 />
-              </label>
+              </button>
             );
           })}
         </div>
-        {final_rating}
+        <div className={fifthRating}>{final_rating}</div>
       </div>
     </div>
   );

@@ -21,11 +21,10 @@
     $_this: &;
     display: flex;
     justify-content: flex-end;
+    width: 145px;
 
     &__input {
         display: none;
-        // visibility: visible !important;
-        // //opacity: 0 !important;
     }
 
     button {

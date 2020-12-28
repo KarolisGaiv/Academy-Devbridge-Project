@@ -6,43 +6,68 @@ import SVGIcon from "components/SVGIcon/SVGIcon";
 
 export const Rating = ({ rating }) => {
   const [newRating, setRating] = useState(null);
-  const [tabstatus, setExpand] = useState("rating__collapse");
+  const [boxStatus, setWidth] = useState("rating__collapse");
   const [hovered, setHover] = useState(null);
   const [tabbed, setTabCount] = useState(null);
-  const [fifthRating, setHeight] = useState(null);
+  const [ratingHeight, setHeight] = useState(null);
+
+  const handleMouseEnter = (value) => {
+    setHover(value);
+    if (tabbed !== null) setHeight(null);
+  };
+
+  const handleMouseEnterBox = () => {
+    setWidth("rating__expand");
+    if (tabbed !== null) setHeight(null);
+  };
+
+  const handleMouseLeaveBox = () => {
+    setWidth("rating__collapse");
+    if (tabbed === 2) setHeight("second-rating-height");
+    if (tabbed === 3) setHeight("third-rating-height");
+    if (tabbed === 4) setHeight("fourth-rating-height");
+    if (tabbed === 5) setHeight("fifth-rating-height");
+  };
 
   const handleTab = (value) => {
     setTabCount(value);
     setHeight(null);
   };
   const handleFocus = () => {
-    setExpand("on-tab");
+    setWidth("rating__expand");
     setHeight(null);
   };
-  const handleBlur = (index) => {
-    setExpand("rating__collapse");
-    if (index === 4 && tabbed === 5) setHeight("fifth-rating-height");
+  const handleBlur = (value) => {
+    setWidth("rating__collapse");
+    if (tabbed === 2) setHeight("second-rating-height");
+    if (tabbed === 3) setHeight("third-rating-height");
+    if (tabbed === 4) setHeight("fourth-rating-height");
+    if (tabbed === 5) setHeight("fifth-rating-height");
   };
 
   var final_rating;
 
-  if (newRating == null) final_rating = rating[1];
-  else final_rating = Ratings.finalRating(rating[7], rating[8], newRating);
+  if (newRating == null) final_rating = rating[0];
+  else final_rating = Ratings.finalRating(rating[1], rating[2], newRating);
 
   return (
     <div className="rating">
-      <div className={tabstatus}>
-        <div className="rating__expand">
+      <div
+        className={boxStatus}
+        onMouseEnter={() => handleMouseEnterBox()}
+        onMouseLeave={() => handleMouseLeaveBox()}
+      >
+        <div className="rating__star-box">
           {[...Array(5)].map((star, i) => {
             const ratingValue = i + 1;
             return (
               <button
                 key={i}
-                onMouseEnter={() => setHover(ratingValue)}
+                onMouseEnter={() => handleMouseEnter(ratingValue)}
                 onMouseLeave={() => setHover(null)}
                 onKeyUp={() => handleTab(ratingValue)}
                 onFocus={() => handleFocus()}
-                onBlur={() => handleBlur(i)}
+                onBlur={() => handleBlur(ratingValue)}
                 onClick={() => setRating(ratingValue)}
               >
                 <input
@@ -66,7 +91,7 @@ export const Rating = ({ rating }) => {
             );
           })}
         </div>
-        <div className={fifthRating}>{final_rating}</div>
+        <div className={ratingHeight}>{final_rating}</div>
       </div>
     </div>
   );

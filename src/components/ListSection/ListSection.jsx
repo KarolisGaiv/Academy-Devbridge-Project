@@ -24,7 +24,7 @@ export const ListSection = (props) => {
                 customClass="list-section__filter-item"
                 handleClick={() => {
                   const categoryTitle = Object.keys(filterList).find((key) => {
-                    return filterList[key].filter((item) => {
+                    return filterList[key].some((item) => {
                       return item === value;
                     });
                   });
@@ -44,7 +44,7 @@ export const ListSection = (props) => {
 };
 
 ListSection.propTypes = {
-  productList: PropTypes.object,
+  productList: PropTypes.array,
   filterList: PropTypes.object,
   deleteItemFromFilterList: PropTypes.func,
 };

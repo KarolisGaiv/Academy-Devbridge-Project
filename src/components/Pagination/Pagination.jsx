@@ -9,7 +9,6 @@ export class Pagination extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: this.props.list,
       currentPage: 1,
       cardsPerPage: 6,
       upperPageBound: 3,
@@ -36,9 +35,7 @@ export class Pagination extends React.Component {
   }
 
   setPrevAndNextBtnClass(listId) {
-    let totalPage = Math.ceil(
-      this.state.cards.length / this.state.cardsPerPage
-    );
+    let totalPage = Math.ceil(this.props.list.length / this.state.cardsPerPage);
     this.setState({ isNextBtnActive: "disabled" });
     this.setState({ isPrevBtnActive: "disabled" });
 
@@ -109,7 +106,6 @@ export class Pagination extends React.Component {
 
   render() {
     const {
-      cards,
       currentPage,
       cardsPerPage,
       upperPageBound,
@@ -120,7 +116,10 @@ export class Pagination extends React.Component {
 
     const indexOfLastCard = currentPage * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-    const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
+    const currentCards = this.props.list.slice(
+      indexOfFirstCard,
+      indexOfLastCard
+    );
 
     const renderCards = Object.keys(currentCards).map((key, index) => {
       return (
@@ -139,7 +138,11 @@ export class Pagination extends React.Component {
     });
 
     const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(cards.length / cardsPerPage); i++) {
+    for (
+      let i = 1;
+      i <= Math.ceil(this.props.list.length / cardsPerPage);
+      i++
+    ) {
       pageNumbers.push(i);
     }
 

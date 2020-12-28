@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { ListSection } from "components/ListSection/ListSection";
 import { SideFilters } from "components/SideFilters/SideFilters";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
@@ -41,7 +41,9 @@ const Reservations = () => {
 
   //search bar related states
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState("");
 
+  //on Search button click
   const handleSearch = (dataToSearchIn, arrOfKeys) => {
     const results = SearchFunction(searchTerm, dataToSearchIn, arrOfKeys);
     setSearchResults(results);
@@ -76,12 +78,10 @@ const Reservations = () => {
     setFilterList((prevFilterList) => {
       return { ...prevFilterList, [key]: [] };
     });
-  const [searchResults, setSearchResults] = useState("");
-  const productList = TagFilter(data[`${page}List`], filterList);
 
-  useEffect(() => {
-    setSearchResults(productList);
-  }, [productList]);
+  const productList = useMemo(() => {
+    return TagFilter(data[`${page}List`], filterList);
+  }, [data, filterList]);
 
   //search bar input value handler
   const handleChange = (e) => {
@@ -92,6 +92,10 @@ const Reservations = () => {
     setSearchTerm("");
     setSearchResults(productList);
   };
+
+  useEffect(() => {
+    setSearchResults(productList);
+  }, [productList]);
 
   return loading ? (
     <div>...loading</div>

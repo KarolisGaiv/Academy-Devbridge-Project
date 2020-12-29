@@ -54,12 +54,14 @@ $_color-bold: #050504;
     border: 1px solid $color-ghost;
     border-radius: 5px;
     padding: 15px 30px;
+    width: 284px;
 
     &__navigation {
         height: 20px;
 
         &__arrow {
             @include flex-center;
+            border-radius: 5px;
         }
 
         &__prev2-button,
@@ -72,6 +74,7 @@ $_color-bold: #050504;
         }
 
         &__label {
+            border-radius: 5px;
             font-family: $main-font;
             font-size: $_size-15;
             font-weight: $weight-medium;
@@ -85,7 +88,7 @@ $_color-bold: #050504;
             color: $color-fiord;
             font-size: $size-12;
             font-weight: $weight-medium;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             text-transform: none;
 
             abbr {
@@ -95,6 +98,7 @@ $_color-bold: #050504;
 
         &__days {
             &__day {
+                border-radius: 50%;
                 color: $color-fiord;
             }
 
@@ -110,7 +114,6 @@ $_color-bold: #050504;
 
     &__tile {
         background: $color-porcelain;
-        border-radius: 50%;
         font-family: $main-font;
         font-size: $size-12;
         font-weight: $weight-regular;
@@ -136,6 +139,24 @@ $_color-bold: #050504;
             //         background: lighten($color-fiord, 10%);
             //     }
             // }
+        }
+    }
+
+    &__decade-view {
+        &__years {
+            &__year {
+                @include flex-center;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    &__year-view {
+        &__months {
+            &__month {
+                @include flex-center;
+                border-radius: 5px;
+            }
         }
     }
 }

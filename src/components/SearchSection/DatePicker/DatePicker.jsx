@@ -15,7 +15,6 @@ const Calendar = () => {
         calendarIcon={<SVGIcon name="calendar" />}
         prevLabel={<SVGIcon name="buttonArrow" />}
         nextLabel={<SVGIcon name="buttonArrow" />}
-        tileClassName="test"
       />
     </div>
   );

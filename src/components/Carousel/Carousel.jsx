@@ -7,6 +7,7 @@ import { DescriptionGrey } from "components/Text/DescriptionGrey/DescriptionGrey
 import { RestTitle } from "components/RestaurantInfo/RestTitle/RestTitle";
 import { Button } from "components/Button/Button";
 import SliderNavButtons from "components/SliderNavButtons/SliderNavButtons";
+import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Carousel = (props) => {
@@ -17,6 +18,7 @@ const Carousel = (props) => {
   const [y, setY] = useState(0);
   const [current, setCurrent] = useState(0);
   const [currentY, setCurrentY] = useState(0);
+  const [redirectLink, setRedirect] = useState(null);
 
   const toLeft = () => {
     setCurrent((prevSlide) => {
@@ -55,12 +57,20 @@ const Carousel = (props) => {
       toRight();
     }
   };
+
   const toLeftTimesX = (k) => {
     for (let i = 0; i < k; i++) {
       toLeft();
     }
   };
 
+  const learnMoreLink = (title) => {
+    setRedirect(title);
+  };
+
+  if (redirectLink !== null) {
+    return <Redirect to={"/eat-out//" + redirectLink} />;
+  }
   return (
     <CardContainer styleName="card-container--shadow">
       <div className={`carousel ${props.blockStyles}`}>
@@ -161,6 +171,7 @@ const Carousel = (props) => {
                 <Button
                   className="button button--slider"
                   tabIndex={index === current ? 0 : -1}
+                  handleClick={() => learnMoreLink(slide.name)}
                 >
                   Learn More
                 </Button>

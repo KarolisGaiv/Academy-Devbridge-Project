@@ -1,24 +1,22 @@
 import React, { useState } from "react";
+import DatePicker from "react-date-picker";
+import SVGIcon from "components/SVGIcon/SVGIcon";
 import "./date-picker.scss";
 
 const Calendar = () => {
-  const [date, setDate] = useState(new Date().toISOString().substr(0, 10));
-
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
-  };
+  const [value, onChange] = useState(new Date());
 
   return (
     <div className="wrapper">
-      <span className="wrapper__header">select date</span>
-      <div className="calendar-wrapper">
-        <input
-          type="date"
-          className="calendar-wrapper__calendar-field"
-          value={date}
-          onChange={handleDateChange}
-        />
-      </div>
+      <span className="wrapper__header">reservation date</span>
+      <DatePicker
+        onChange={onChange}
+        value={value}
+        calendarIcon={<SVGIcon name="calendar" />}
+        prevLabel={<SVGIcon name="buttonArrow" />}
+        nextLabel={<SVGIcon name="buttonArrow" />}
+        tileClassName="test"
+      />
     </div>
   );
 };

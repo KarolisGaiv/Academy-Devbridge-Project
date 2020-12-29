@@ -1,4 +1,7 @@
 @import '../../../styles/base/base';
+@import '../../../styles/mixins/mixins';
+$_size-15: 15px;
+$_color-bold: #050504;
 
 .wrapper {
     display: flex;
@@ -14,51 +17,125 @@
     }
 }
 
-.calendar-wrapper {
-    background: $color-white;
-    border: 1px solid $color-ghost;
-    border-radius: 5px;
-    color: $color-ghost;
-    display: flex;
-    padding: 13px 16px;
-    position: relative;
+.react-date-picker {
+    &__wrapper {
+        align-items: center;
+        background: $color-white;
+        border: 1px solid $color-ghost;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        height: 45px;
+        padding: 13px 16px;
+        position: relative;
 
-    &:hover,
-    &:focus-within {
-        border-color: $color-fiord;
-        color: $color-fiord;
+        &:hover,
+        &focus {
+            border-color: $color-fiord;
+            color: $color-fiord;
+        }
     }
 
-    &__calendar-field {
-        border: 0;
-        color: $color-ghost;
-        cursor: pointer;
+    &__clear-button {
+        display: none;
+    }
+
+    &__calendar {
+        &--open {
+            bottom: unset !important;
+            margin-top: 5px;
+            top: 100% !important;
+        }
+    }
+}
+
+.react-calendar {
+    background: $color-porcelain;
+    border: 1px solid $color-ghost;
+    border-radius: 5px;
+    padding: 15px 30px;
+
+    &__navigation {
+        height: 20px;
+
+        &__arrow {
+            @include flex-center;
+        }
+
+        &__prev2-button,
+        &__next2-button {
+            display: none;
+        }
+
+        &__next-button {
+            transform: rotate(180deg);
+        }
+
+        &__label {
+            font-family: $main-font;
+            font-size: $_size-15;
+            font-weight: $weight-medium;
+        }
+    }
+
+    &__month-view {
         font-family: $main-font;
-        font-size: $size-14;
-        font-weight: $weight-regular;
-        width: 100%;
 
-        &::after {
-            background: none;
-            content: url('../../../assets/calendar.svg');
-        }
-
-        &::-webkit-calendar-picker-indicator {
-            background: transparent;
-            bottom: 0;
-            color: $transparent;
-            height: auto;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: auto;
-        }
-
-        &:focus,
-        &:hover {
+        &__weekdays {
             color: $color-fiord;
-            outline: none;
+            font-size: $size-12;
+            font-weight: $weight-medium;
+            margin-bottom: 20px;
+            text-transform: none;
+
+            abbr {
+                text-decoration: none;
+            }
+        }
+
+        &__days {
+            &__day {
+                color: $color-fiord;
+            }
+
+            &__day--weekend {
+                color: $_color-bold;
+            }
+
+            &__day--neighboringMonth {
+                color: $color-grey-chateau;
+            }
+        }
+    }
+
+    &__tile {
+        background: $color-porcelain;
+        border-radius: 50%;
+        font-family: $main-font;
+        font-size: $size-12;
+        font-weight: $weight-regular;
+        height: 32px;
+        width: 32px;
+
+        // On hover design
+        &:enabled {
+            &:hover,
+            &:focus {
+                background: $color-iron;
+            }
+        }
+
+        // Choosen day design
+        &--active {
+            background: $color-fiord;
+            color: $color-white;
+
+            // &:enabled {
+            //     &:hover,
+            //     &:focus {
+            //         background: lighten($color-fiord, 10%);
+            //     }
+            // }
         }
     }
 }

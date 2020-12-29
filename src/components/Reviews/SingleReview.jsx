@@ -17,7 +17,7 @@ const Review = (props) => {
             <div className="review_rating-svg">
               <SVGIcon name="starFilled" />
             </div>
-            <span className="review__rating-number">{rating}</span>
+            <span className="review__rating-number">{rating.toFixed(1)}</span>
           </div>
         </div>
       </CardContainer>

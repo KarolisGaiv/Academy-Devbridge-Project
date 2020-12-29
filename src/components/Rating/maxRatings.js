@@ -88,7 +88,7 @@ export class Ratings {
 
     let ratingReviewers = restaurantList[i].reviews.length;
 
-    return [rating, ratingSum, ratingReviewers, index];
+    return [rating.toFixed(1), ratingSum, ratingReviewers, index];
   }
 
   static showHours(i) {

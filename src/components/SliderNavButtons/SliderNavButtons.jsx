@@ -23,17 +23,11 @@ const SliderNavButtons = ({ leftClicked, rightClicked }) => {
         onFocus={() => setColorLeft("sliderNavLeftHover")}
         onBlur={() => setColorLeft("sliderNavLeft")}
         onClick={() => leftButtonPressed("sliderNavLeftActive", leftClicked)}
-        onMouseDown={() =>
-          leftButtonPressed("sliderNavLeftActive", leftClicked)
-        }
       >
         <SVGIcon name={leftState} />
       </button>
       <button
         onClick={() => rightButtonPressed("sliderNavRightActive", rightClicked)}
-        onMouseDown={() =>
-          rightButtonPressed("sliderNavRightActive", rightClicked)
-        }
         onMouseEnter={() => setColorRight("sliderNavRightHover")}
         onMouseLeave={() => setColorRight("sliderNavRight")}
         onFocus={() => setColorRight("sliderNavRightHover")}

@@ -172,6 +172,8 @@ export class Pagination extends React.Component {
       }
     });
 
+    const ellipsis = "...";
+
     let pageIncrementBtn = null;
     if (pageNumbers.length > upperPageBound) {
       pageIncrementBtn = (
@@ -179,7 +181,7 @@ export class Pagination extends React.Component {
           className="pagination__button--numbered"
           handleClick={this.btnIncrementClick}
         >
-          &hellip;
+          {ellipsis}
         </PaginationButton>
       );
     }
@@ -191,7 +193,7 @@ export class Pagination extends React.Component {
           className="pagination__button--numbered"
           handleClick={this.btnDecrementClick}
         >
-          &hellip;
+          {ellipsis}
         </PaginationButton>
       );
     }

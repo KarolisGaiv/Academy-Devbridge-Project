@@ -26,7 +26,6 @@ $_color-bold: #050504;
         cursor: pointer;
         display: flex;
         height: 45px;
-        padding: 13px 16px;
         position: relative;
 
         &:hover,
@@ -36,10 +35,21 @@ $_color-bold: #050504;
         }
     }
 
+    &__inputGroup {
+        line-height: 45px;
+        padding-left: 16px;
+    }
+
     &__clear-button {
         display: none;
     }
 
+    &__calendar-button {
+        line-height: 45px;
+        margin-right: 10px;
+    }
+
+    // Calendar popup placement
     &__calendar {
         &--open {
             bottom: unset !important;
@@ -133,12 +143,10 @@ $_color-bold: #050504;
             background: $color-fiord;
             color: $color-white;
 
-            // &:enabled {
-            //     &:hover,
-            //     &:focus {
-            //         background: lighten($color-fiord, 10%);
-            //     }
-            // }
+            &:enabled:hover,
+            &:enabled:focus {
+                background: lighten($color-fiord, 10%);
+            }
         }
     }
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { ListSection } from "components/ListSection/ListSection";
 import { SideFilters } from "components/SideFilters/SideFilters";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
@@ -25,8 +26,13 @@ const useFetch = (url) => {
 };
 
 const Reservations = () => {
-  const page = "book"; // fully responsive filter and list just need to change "device" to "book"
-  const { data, loading } = useFetch(`http://localhost:3008/${page}s`);
+  //const page = "book"; // fully responsive filter and list just need to change "device" to "book"
+  const { itemPlural } = useParams();
+  let itemSingular;
+  if (itemPlural === undefined) itemSingular = "book";
+  else itemSingular = itemPlural.substring(0, itemPlural.length - 1); // remove s letter
+
+  const { data, loading } = useFetch(`http://localhost:3008/${itemSingular}s`);
 
   //object for filter collecstion
   const [filterList, setFilterList] = useState({});
@@ -61,7 +67,7 @@ const Reservations = () => {
       return { ...prevFilterList, [key]: [] };
     });
 
-  const productList = TagFilter(data[`${page}List`], filterList);
+  const productList = TagFilter(data[`${itemSingular}List`], filterList);
 
   return loading ? (
     <div>...loading</div>

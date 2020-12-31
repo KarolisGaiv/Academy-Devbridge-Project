@@ -24,6 +24,15 @@
         font-weight: $weight-bold;
         line-height: 1.2;
         text-transform: uppercase;
+
+        &--link {
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+                color: $color-regent-gray;
+            }
+        }
     }
 
     &--margin {

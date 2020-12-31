@@ -3,7 +3,14 @@ import "./information-card.scss";
 import SVGIcon from "../../SVGIcon/SVGIcon";
 import PropTypes from "prop-types";
 
-const InformationCard = ({ styleName, icon, title, description }) => {
+const InformationCard = ({
+  styleName,
+  href,
+  icon,
+  title,
+  className,
+  description,
+}) => {
   return (
     <div className={`information-card information-card--${styleName}`}>
       <div className="information-card__icon">
@@ -11,7 +18,13 @@ const InformationCard = ({ styleName, icon, title, description }) => {
       </div>
       <div className="information-card__text">
         <div className="information-card__title"> {title} </div>
-        <div className="information-card__description"> {description} </div>
+        <a
+          className={`information-card__description ${className}`}
+          href={href}
+          target="_blank"
+        >
+          {description}
+        </a>
       </div>
     </div>
   );
@@ -23,5 +36,7 @@ InformationCard.propTypes = {
   styleName: PropTypes.string,
   icon: PropTypes.string,
   title: PropTypes.string,
+  className: PropTypes.string,
   description: PropTypes.string,
+  href: PropTypes.string,
 };

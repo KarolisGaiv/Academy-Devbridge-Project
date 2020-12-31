@@ -3,18 +3,26 @@ import PropTypes from "prop-types";
 import SVGIcon from "../../SVGIcon/SVGIcon";
 import "./rest-web-address.scss";
 
-export const RestWebAddress = ({ icon, text }) => {
+export const RestWebAddress = ({ icon, href, className, text }) => {
   return (
     <div className="restaurant-contact">
       <div className="restaurant-contact__icon">
         <SVGIcon name={icon} />
       </div>
-      <p className="restaurant-contact__text">{text}</p>
+      <a
+        href={href}
+        target="_blank"
+        className={`restaurant-contact__text ${className}`}
+      >
+        {text}
+      </a>
     </div>
   );
 };
 
 RestWebAddress.propTypes = {
   icon: PropTypes.string,
+  href: PropTypes.string,
+  className: PropTypes.string,
   text: PropTypes.string,
 };

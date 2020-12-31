@@ -10,7 +10,6 @@ export const TagFilter = (productList, filterList) => {
         delete filterList[key];
       }
     }
-
     const filteredList = productList.filter((product) => {
       return Object.keys(filterList).every((key) => {
         return filterList[key].some((item) => {

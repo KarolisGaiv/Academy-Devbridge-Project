@@ -8,6 +8,17 @@ import fakeData from "../../db.json";
 const NewsFeed = () => {
   const userAvatar = fakeData.userData.userImage;
   const userName = fakeData.userData.userName;
+
+  //sort posts by date
+  fakeData.stories.sort(function (a, b) {
+    let keyA = new Date(a.postDate),
+      keyB = new Date(b.postDate);
+
+    if (keyA > keyB) return -1;
+    if (keyA < keyB) return 1;
+    return 0;
+  });
+
   return (
     <section className="newsFeed">
       <MasonryGrid>

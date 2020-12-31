@@ -25,12 +25,14 @@ const BirthdayCard = (props) => {
   //update comments array when comment submitted
   //reset the value of input field
   const submitHandler = () => {
+    const postDate = new Date();
     setComments({
       comments: [
         ...commentsList.comments,
         {
           userName: props.userName,
           comment: commentField.current,
+          date: postDate,
         },
       ],
     });
@@ -54,10 +56,20 @@ const BirthdayCard = (props) => {
     isEmptyCheck();
   };
 
+  //sort comments by date
+  commentsList.comments.sort(function (a, b) {
+    let keyA = new Date(a.date),
+      keyB = new Date(b.date);
+
+    if (keyA < keyB) return -1;
+    if (keyA > keyB) return 1;
+    return 0;
+  });
+
   //Update comment count when posted
   useEffect(() => {
     setCommentsCountState(commentsList.comments.length);
-  }, [commentsList.comments.length]);
+  }, [commentsList]);
 
   return (
     <div className="newsFeed__card birthday__card">

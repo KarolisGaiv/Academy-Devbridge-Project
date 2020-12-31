@@ -60,13 +60,19 @@ const Carousel = (props) => {
           onClick={() => toLeft()}
           className="restaurants-carousel__button restaurants-carousel__button--left"
         >
-          <SVGIcon name="buttonArrow" />
+          <SVGIcon
+            name="buttonArrow"
+            className="restaurants-carousel__button-arrow"
+          />
         </button>
         <button
           onClick={() => toRight()}
           className="restaurants-carousel__button restaurants-carousel__button--right"
         >
-          <SVGIcon name="buttonArrow" />
+          <SVGIcon
+            name="buttonArrow"
+            className="restaurants-carousel__button-arrow"
+          />
         </button>
       </div>
       <div className="restaurants-carousel__slider">

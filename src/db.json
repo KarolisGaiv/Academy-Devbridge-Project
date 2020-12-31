@@ -892,6 +892,50 @@
         "bookedUntil": "2021-02-13",
         "quantity": 3,
         "image": "https://images-na.ssl-images-amazon.com/images/I/618ZI2Xyw%2BL._AC_SL1500_.jpg"
+      },
+      {
+        "name": "Samsung Galaxy S20",
+        "id": "193ywpe741",
+        "deviceType": "Mobile",
+        "os": "Android",
+        "brand": "Samsung",
+        "favourite": true,
+        "bookedUntil": "2020-12-24",
+        "quantity": 4,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/71Zh6vtYQBL._AC_SX679_.jpg"
+      },
+      {
+        "name": "Dell Inspiron 15",
+        "id": "193ywpe742",
+        "deviceType": "Laptop",
+        "os": "Windows",
+        "brand": "Dell",
+        "favourite": false,
+        "bookedUntil": "2021-01-02",
+        "quantity": 2,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81LPb4VdYML._AC_SX466_.jpg"
+      },
+      {
+        "name": "Razer Death Adder Chroma",
+        "id": "193ywpe740",
+        "deviceType": "Accessories",
+        "os": null,
+        "brand": "Razer",
+        "favourite": false,
+        "bookedUntil": "2021-01-13",
+        "quantity": 3,
+        "image": "https://www.maxgaming.com/img/bilder/artiklar/15912.jpg?m=1588925493&w=720"
+      },
+      {
+        "name": "iPad Pro",
+        "id": "193ywpe743",
+        "deviceType": "Tablet",
+        "os": "iOS",
+        "brand": "Apple",
+        "favourite": true,
+        "bookedUntil": "2021-01-17",
+        "quantity": 3,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SX342_.jpg"
       }
     ],
     "filterCategories": {
@@ -2388,6 +2432,7 @@
       "userName": "Uncle Roger",
       "userImage": "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
       "birthdayDate": "1987-10-31",
+      "postDate": "2020-10-31T00:00:00.000Z",
       "wishes": 15,
       "comments": [
         {
@@ -2499,6 +2544,7 @@
       "userName": "Jason Monroe",
       "userImage": "https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80",
       "birthdayDate": "1984-11-15",
+      "postDate": "2020-11-15T00:00:00.000Z",
       "wishes": 22,
       "comments": [
         {
@@ -2578,24 +2624,24 @@
       "userName": "Wade Owen Watts",
       "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2062&q=80",
       "postLocation": "VLN",
-      "postDate": "2020-11-08T10:27:00.000Z",
+      "postDate": "2020-10-31T10:27:00.000Z",
       "postVideo": "https://images.unsplash.com/photo-1573339886518-264aa6f194b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
       "likes": 27,
       "comments": [
         {
           "userName": "Uncle Roger",
           "comment": "Cool!",
-          "date": "2020-11-08T14:48:00.000Z"
+          "date": "2020-10-31T14:48:00.000Z"
         },
         {
           "userName": "Luke Skywalker",
           "comment": "Hope you'll have a good time!",
-          "date": "2020-11-09T15:48:00.000Z"
+          "date": "2020-10-31T15:48:00.000Z"
         },
         {
           "userName": "Wade Owen Watts",
           "comment": "Looks like a lot of fun",
-          "date": "2020-11-09T18:48:00.000Z"
+          "date": "2020-10-31T18:48:00.000Z"
         }
       ]
     },
@@ -2605,6 +2651,7 @@
       "userName": "Sara Lars",
       "userImage": "https://images.unsplash.com/photo-1607158802355-e850798e3b72?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
       "birthdayDate": "1984-12-15",
+      "postDate": "2020-12-15T00:00:00.000Z",
       "wishes": 22,
       "comments": [
         {
@@ -2613,14 +2660,14 @@
           "date": "2020-12-16T14:48:00.000Z"
         },
         {
-          "userName": "Luke Skywalker",
-          "comment": "Hope you'll have a good time!",
-          "date": "2020-12-17T15:48:00.000Z"
-        },
-        {
           "userName": "Sasha Baron",
           "comment": "Have a good one!",
           "date": "2020-12-18T14:48:00.000Z"
+        },
+        {
+          "userName": "Luke Skywalker",
+          "comment": "Hope you'll have a good time!",
+          "date": "2020-12-17T15:48:00.000Z"
         }
       ]
     }

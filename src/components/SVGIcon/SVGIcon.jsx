@@ -165,7 +165,7 @@ const SVGIcon = (props) => {
     case "sliderNavRightHover":
       return <SliderNavRightHover />;
     case "buttonArrow":
-      return <ButtonArrow />;
+      return <ButtonArrow className={props.className} />;
     case "dropdown":
       return <DropdownArrow className={props.className} />;
     case "settings":
@@ -197,7 +197,7 @@ const SVGIcon = (props) => {
     case "notAvailableProduct":
       return <NotAvailableProduct />;
     case "search":
-      return <Search />;
+      return <Search className={props.className} />;
     case "cancel":
       return <Cancel />;
     default:

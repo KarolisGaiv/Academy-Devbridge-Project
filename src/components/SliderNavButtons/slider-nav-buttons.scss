@@ -1,14 +1,41 @@
 @import '../../styles/base/base';
 
-.buttons-wrapper {
-    button {
-        background-color: $color-white;
-        border: 0;
-        cursor: pointer;
-        padding: 0;
+.slider-button {
+    align-items: center;
+    background: $color-white;
+    border: 1px solid $color-grey-3;
+    border-radius: 5px 0 0 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    height: 25px;
+    justify-content: center;
+    width: 25px;
 
-        &:nth-child(1) {
-            transform: translateX(1px);
+    &:nth-child(2) {
+        transform: rotate(180deg);
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $color-grey-chateau;
+
+        svg {
+            path {
+                fill: $color-white;
+                stroke: $color-grey-chateau;
+            }
+        }
+    }
+
+    &:active {
+        background-color: $color-fiord;
+
+        svg {
+            path {
+                fill: $color-white;
+                stroke: $color-fiord;
+            }
         }
     }
 }

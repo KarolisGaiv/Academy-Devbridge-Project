@@ -20,6 +20,24 @@
         justify-content: center;
         width: 25px;
 
+        &:hover {
+            background: $color-grey-chateau;
+
+            .restaurants-carousel__button-arrow path {
+                fill: $color-white;
+                stroke: $color-grey-chateau;
+            }
+        }
+
+        &:focus {
+            background: $color-fiord;
+
+            .restaurants-carousel__button-arrow path {
+                fill: $color-white;
+                stroke: $color-fiord;
+            }
+        }
+
         &--right {
             transform: rotate(180deg);
         }

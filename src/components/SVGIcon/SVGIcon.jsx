@@ -165,7 +165,7 @@ const SVGIcon = (props) => {
     case "sliderNavRightHover":
       return <SliderNavRightHover />;
     case "buttonArrow":
-      return <ButtonArrow />;
+      return <ButtonArrow className={props.className} />;
     case "dropdown":
       return <DropdownArrow className={props.className} />;
     case "settings":

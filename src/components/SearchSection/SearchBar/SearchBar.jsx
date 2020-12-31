@@ -1,18 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import propTypes from "prop-types";
 import "./search-bar.scss";
 import SVGIcon from "components/SVGIcon/SVGIcon";
 
-const SearchBar = () => {
-  const [inputValue, setInputValue] = useState("");
-
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleCancelClick = () => {
-    setInputValue("");
-  };
-
+const SearchBar = (props) => {
   return (
     <div className="search-bar">
       <button className="search-bar__button" type="submit">
@@ -22,16 +13,16 @@ const SearchBar = () => {
         type="text"
         placeholder="Search"
         className="search-bar__text-field"
-        value={inputValue}
-        onChange={handleChange}
+        value={props.inputValue}
+        onChange={props.handleChange}
       />
       <button
         className={
-          inputValue === ""
+          props.inputValue === ""
             ? "search-bar__button search-bar__button--hidden"
             : "search-bar__button"
         }
-        onClick={handleCancelClick}
+        onClick={props.handleCancelClick}
       >
         <SVGIcon name="cancel" />
       </button>
@@ -40,3 +31,9 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  inputValue: propTypes.string,
+  handleChange: propTypes.func,
+  handleCancelClick: propTypes.func,
+};

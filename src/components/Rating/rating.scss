@@ -19,9 +19,6 @@
 
 .rating {
     $_this: &;
-    display: flex;
-    justify-content: flex-end;
-    width: 145px;
 
     &__input {
         display: none;

@@ -2,7 +2,7 @@ import React from "react";
 import propTypes from "prop-types";
 import SVGIcon from "../SVGIcon/SVGIcon";
 import { CardContainer } from "../CardContainer/CardContainer";
-import "./review.scss";
+import "./single-review.scss";
 
 const Review = (props) => {
   const { username, comment, rating } = props;
@@ -17,7 +17,7 @@ const Review = (props) => {
             <div className="review_rating-svg">
               <SVGIcon name="starFilled" />
             </div>
-            <span className="review__rating-number">{rating}</span>
+            <span className="review__rating-number">{rating.toFixed(1)}</span>
           </div>
         </div>
       </CardContainer>

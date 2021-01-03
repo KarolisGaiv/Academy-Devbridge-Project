@@ -6,17 +6,19 @@ import { LabelRed } from "components/Text/LabelRed/LabelRed";
 import { DescriptionGrey } from "components/Text/DescriptionGrey/DescriptionGrey";
 import { RestTitle } from "components/RestaurantInfo/RestTitle/RestTitle";
 import { Button } from "components/Button/Button";
+import SliderNavButtons from "components/SliderNavButtons/SliderNavButtons";
+import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Carousel = (props) => {
   const restaurantList = db.restaurants.restaurantList;
-
   const slides1 = restaurantList.filter((restaurant) => restaurant.image);
   const slides = slides1.slice(0, 5);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const [current, setCurrent] = useState(0);
   const [currentY, setCurrentY] = useState(0);
+  const [redirectLink, setRedirect] = useState(null);
 
   const toLeft = () => {
     setCurrent((prevSlide) => {
@@ -25,7 +27,6 @@ const Carousel = (props) => {
     setCurrentY((prevSlide) => {
       return prevSlide !== 0 ? prevSlide - 1 : (prevSlide = slides.length - 1);
     });
-
     setX((prevX) => {
       return current !== 0 ? prevX + 100 : (prevX = (slides.length - 1) * -100);
     });
@@ -51,6 +52,25 @@ const Carousel = (props) => {
     });
   };
 
+  const toRightTimesX = (k) => {
+    for (let i = 0; i < k; i++) {
+      toRight();
+    }
+  };
+
+  const toLeftTimesX = (k) => {
+    for (let i = 0; i < k; i++) {
+      toLeft();
+    }
+  };
+
+  const learnMoreLink = (title) => {
+    setRedirect(title);
+  };
+
+  if (redirectLink !== null) {
+    return <Redirect to={"/eat-out//" + redirectLink} />;
+  }
   return (
     <CardContainer styleName="card-container--shadow">
       <div className={`carousel ${props.blockStyles}`}>
@@ -72,16 +92,68 @@ const Carousel = (props) => {
             {[...Array(5)].map((slide, index) => {
               return index === current ? (
                 <div
-                  className={`${props.paginationStyles} ${props.choosedPaginationStyles}`}
+                  className={`${props.choosedPaginationStyles}`}
+                  key={index}
+                />
+              ) : index === current + 1 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toRight()}
+                  key={index}
+                />
+              ) : index === current + 2 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toRightTimesX(2)}
+                  key={index}
+                />
+              ) : index === current + 3 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toRightTimesX(3)}
+                  key={index}
+                />
+              ) : index === current + 4 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toRightTimesX(4)}
+                  key={index}
+                />
+              ) : index === current - 1 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toLeft()}
+                  key={index}
+                />
+              ) : index === current - 2 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toLeftTimesX(2)}
+                  key={index}
+                />
+              ) : index === current - 3 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toLeftTimesX(3)}
+                  key={index}
+                />
+              ) : index === current - 4 ? (
+                <button
+                  className={`${props.paginationStyles}`}
+                  onClick={() => toLeftTimesX(4)}
+                  key={index}
                 />
               ) : (
-                <div className={`${props.paginationStyles}`} />
+                <></>
               );
             })}
           </div>
           <div className={`carousel__nav ${props.navStyles}`}>
-            <button onClick={() => toLeft()}> {props.leftButton} </button>
-            <button onClick={() => toRight()}> {props.rightButton} </button>
+            <SliderNavButtons
+              buttonIcon="buttonArrow"
+              leftClicked={() => toLeft()}
+              rightClicked={() => toRight()}
+            />
           </div>
           <div className={`carousel__info ${props.infoStyles}`}>
             {slides.slice(0, 5).map((slide, index) => (
@@ -90,17 +162,20 @@ const Carousel = (props) => {
                 style={{ transform: `translateY(${y}%)` }}
                 className="hero__info-wrap"
               >
-                <LabelRed text={slide.slogan}> </LabelRed>
-                <RestTitle
-                  title={slide.name}
-                  titleStyle="hero__title"
-                ></RestTitle>
+                <LabelRed text={slide.slogan} />
+                <RestTitle title={slide.name} titleStyle="hero__title" />
                 <DescriptionGrey
                   descStyle="hero__desc"
                   descWrapStyle="hero__desc-wrap"
                   text={slide.description}
-                ></DescriptionGrey>
-                <Button className="button button--slider">Learn More</Button>
+                />
+                <Button
+                  className="button button--slider"
+                  tabIndex={index === current ? 0 : -1}
+                  handleClick={() => learnMoreLink(slide.name)}
+                >
+                  Learn More
+                </Button>
               </div>
             ))}
           </div>
@@ -118,8 +193,8 @@ Carousel.propTypes = {
   imageStyles: PropTypes.string,
   contentStyles: PropTypes.string,
   navStyles: PropTypes.string,
-  leftButton: PropTypes.string,
-  rightButton: PropTypes.string,
+  leftButton: PropTypes.object,
+  rightButton: PropTypes.object,
   paginationContainerStyles: PropTypes.string,
   paginationStyles: PropTypes.string,
   choosedPaginationStyles: PropTypes.string,

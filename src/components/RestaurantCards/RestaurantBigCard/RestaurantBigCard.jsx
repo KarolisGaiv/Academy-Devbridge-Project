@@ -35,7 +35,7 @@ export const RestaurantBigCard = (props) => {
   return (
     <div className="restaurant-big-card">
       <RestaurantCard
-        style="restaurant-card__top--fixed"
+        customClass="restaurant-card__top--fixed"
         checkins={checkinNumberState.checkinNumber}
         image={props.image}
         title={props.title}
@@ -45,10 +45,12 @@ export const RestaurantBigCard = (props) => {
       >
         <div className="restaurant-card__bottom">
           <RestWebAddress
+            className="restaurant-contact__text--link"
             icon="Globe"
             text={props.web
               .replace(/^(?:https?:\/\/)?(?:www\.)?/i, "")
               .split("/")}
+            href={props.web}
           />
           <RestWebAddress icon="MapPin" text={props.address} />
           <p className={toggledClass}>{props.description}</p>

@@ -1,11 +1,14 @@
 import React from "react";
+import propTypes from "prop-types";
 import "./search-section.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import TagButton from "./TagButton/TagButton";
 import SearchBar from "./SearchBar/SearchBar";
 import DatePicker from "./DatePicker/DatePicker";
+import { Button } from "components/Button/Button";
+import SVGIcon from "components/SVGIcon/SVGIcon";
 
-const SearchSection = () => {
+const SearchSection = (props) => {
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="search-section">
@@ -15,11 +18,35 @@ const SearchSection = () => {
           <TagButton buttonText="Favorites" icon="heartBtnBold" />
           <TagButton buttonText="Available" icon="available" />
         </div>
-        <SearchBar />
-        <DatePicker />
+        <div className="search-section__search-bar-section">
+          <SearchBar
+            inputValue={props.inputValue}
+            handleCancelClick={props.handleCancelClick}
+            handleChange={props.handleChange}
+          />
+          <DatePicker />
+          <Button
+            className="button button--enabled search-section__search-button"
+            type="button"
+            handleClick={props.handleSearch}
+          >
+            <SVGIcon
+              name="search"
+              className="search-section__search-button-icon"
+            />
+            Search
+          </Button>
+        </div>
       </div>
     </CardContainer>
   );
 };
 
 export default SearchSection;
+
+SearchSection.propTypes = {
+  inputValue: propTypes.string,
+  handleSearch: propTypes.func,
+  handleCancelClick: propTypes.func,
+  handleChange: propTypes.func,
+};

@@ -892,6 +892,50 @@
         "bookedUntil": "2021-02-13",
         "quantity": 3,
         "image": "https://images-na.ssl-images-amazon.com/images/I/618ZI2Xyw%2BL._AC_SL1500_.jpg"
+      },
+      {
+        "name": "Samsung Galaxy S20",
+        "id": "193ywpe741",
+        "deviceType": "Mobile",
+        "os": "Android",
+        "brand": "Samsung",
+        "favourite": true,
+        "bookedUntil": "2020-12-24",
+        "quantity": 4,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/71Zh6vtYQBL._AC_SX679_.jpg"
+      },
+      {
+        "name": "Dell Inspiron 15",
+        "id": "193ywpe742",
+        "deviceType": "Laptop",
+        "os": "Windows",
+        "brand": "Dell",
+        "favourite": false,
+        "bookedUntil": "2021-01-02",
+        "quantity": 2,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81LPb4VdYML._AC_SX466_.jpg"
+      },
+      {
+        "name": "Razer Death Adder Chroma",
+        "id": "193ywpe740",
+        "deviceType": "Accessories",
+        "os": null,
+        "brand": "Razer",
+        "favourite": false,
+        "bookedUntil": "2021-01-13",
+        "quantity": 3,
+        "image": "https://www.maxgaming.com/img/bilder/artiklar/15912.jpg?m=1588925493&w=720"
+      },
+      {
+        "name": "iPad Pro",
+        "id": "193ywpe743",
+        "deviceType": "Tablet",
+        "os": "iOS",
+        "brand": "Apple",
+        "favourite": true,
+        "bookedUntil": "2021-01-17",
+        "quantity": 3,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SX342_.jpg"
       }
     ],
     "filterCategories": {
@@ -2323,6 +2367,293 @@
       ]
     }
   },
+  "meetingRooms": {
+    "meetingRoomList": [
+      {
+        "name": "Workland Didžioji",
+        "id": "absuyvhcxn",
+        "city": "Vilnius",
+        "district": "Senamiestis",
+        "address": "Didžioji g. 18, Vilnius",
+        "favourite": false,
+        "bookedUntil": "2021-04-13",
+        "quantity": 3,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/workland-didzioji/main-1587456076.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Workland Gedimino",
+        "id": "x637a3w4e8",
+        "city": "Vilnius",
+        "district": "Naujamiestis",
+        "address": "Gedimino pr. 20, Vilnius",
+        "favourite": true,
+        "bookedUntil": null,
+        "quantity": 5,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/workland-gedimino/main-1587394185.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Baltic Cowork",
+        "id": "bev62y6rom",
+        "city": "Vilnius",
+        "district": "Naujamiestis",
+        "address": "A. Smetonos g. 5, Vilnius",
+        "favourite": false,
+        "bookedUntil": "2021-02-04",
+        "quantity": 4,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/baltic-cowork/main-1590413077.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "UMA GO9",
+        "id": "wh9nprytjy",
+        "city": "Vilnius",
+        "district": "Senamiestis",
+        "address": "Gedimino pr. 9, Vilnius",
+        "favourite": false,
+        "bookedUntil": "2021-05-21",
+        "quantity": 6,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/uma-go9/main.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Work'inn",
+        "id": "pjdgqljhk4",
+        "city": "Vilnius",
+        "district": "Antakalnis",
+        "address": "Saulėtekio al. 15, Vilnius",
+        "favourite": false,
+        "bookedUntil": null,
+        "quantity": 2,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/workinn/main-1513032994.png?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Creative industries centre Pakrantė",
+        "id": "pccgzkulad",
+        "city": "Vilnius",
+        "district": "Valakampiai",
+        "address": "Vaidilutės g. 79, Vilnius",
+        "favourite": true,
+        "bookedUntil": "2021-01-28",
+        "quantity": 5,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/creative-industries-centre-pakrante/main-1484234264.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Vilnius Tech Park",
+        "id": "f6dxglr0xg",
+        "city": "Vilnius",
+        "district": "Antakalnis",
+        "address": "Antakalnio g. 17, Vilnius",
+        "favourite": false,
+        "bookedUntil": "2021-01-11",
+        "quantity": 2,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/vilnius-tech-park/main.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "SEPT",
+        "id": "2pxxvk5mhf",
+        "city": "Vilnius",
+        "district": "Naujamiestis",
+        "address": "Panerių g. 39, Vilnius",
+        "favourite": false,
+        "bookedUntil": null,
+        "quantity": 3,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/sept/main.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "WHUB",
+        "id": "kqf3pgqmbu",
+        "city": "Vilnius",
+        "district": "Senamiestis",
+        "address": "Naugarduko g. 3, Vilnius",
+        "favourite": false,
+        "bookedUntil": "2021-01-24",
+        "quantity": 4,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/whub/main-1581424056.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Monday office",
+        "id": "9cuvv1cn37",
+        "city": "Vilnius",
+        "district": "Žvėrynas",
+        "address": "Upės g. 23, Vilnius",
+        "favourite": true,
+        "bookedUntil": null,
+        "quantity": 6,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/monday-office/main.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Business Hive Vilnius",
+        "id": "37zv27bge6",
+        "city": "Vilnius",
+        "district": "Vilkpėdė",
+        "address": "Savanorių pr. 178F, Vilnius",
+        "favourite": false,
+        "bookedUntil": "2021-02-27",
+        "quantity": 3,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/business-hive-vilnius/main.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Regus Vilnius Lvovo",
+        "id": "hjq0otrosw",
+        "city": "Vilnius",
+        "district": "Šnipiškės",
+        "address": "Lvovo g. 105, Vilnius",
+        "favourite": false,
+        "bookedUntil": "2021-03-22",
+        "quantity": 5,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/regus-vilnius-lvovo/main.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Wolf Space",
+        "id": "08u3r0vuvr",
+        "city": "Vilnius",
+        "district": "Senamiestis",
+        "address": "Naugarduko g. 3, Vilnius",
+        "favourite": false,
+        "bookedUntil": null,
+        "quantity": 3,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/wolf-space/main.JPG?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Workland Quadrum",
+        "id": "7rev8h2z54",
+        "city": "Vilnius",
+        "district": "Šnipiškės",
+        "address": "Konstitucijos pr. 21, Vilnius",
+        "favourite": true,
+        "bookedUntil": "2021-04-25",
+        "quantity": 7,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/workland-quadrum/main-1587373957.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Bos Group",
+        "id": "4bfnh4djaf",
+        "city": "Vilnius",
+        "district": "Naujamiestis",
+        "address": "Vasario 16-osios g. 2, Vilnius",
+        "favourite": false,
+        "bookedUntil": null,
+        "quantity": 3,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/bos-group/main.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Talent Garden Vilnius",
+        "id": "09ceax5pis",
+        "city": "Vilnius",
+        "district": "Senamiestis",
+        "address": "Vilniaus g. 33, Vilnius",
+        "favourite": false,
+        "bookedUntil": "2021",
+        "quantity": 3,
+        "image": "https://coworker.imgix.net/photos/lithuania/vilnius/talent-garden-vilnius/main.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "PIXEL HUB",
+        "id": "79d6wqxxbt",
+        "city": "Kaunas",
+        "district": "Petrašiūnai",
+        "address": "Pramonės prospektas 4A 2 aukštas, Kaunas",
+        "favourite": true,
+        "bookedUntil": "2020-01-11",
+        "quantity": 8,
+        "image": "https://coworker.imgix.net/photos/lithuania/kaunas/pixel-hub/main-1539878913.png?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Redakcija",
+        "id": "e2ezxtbkjs",
+        "city": "Kaunas",
+        "district": "Centras",
+        "address": "Vilniaus gatvė 34, Kaunas",
+        "favourite": true,
+        "bookedUntil": null,
+        "quantity": 4,
+        "image": "https://coworker.imgix.net/photos/lithuania/kaunas/redakcija/main-1528901409.png?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "VR Project Hub",
+        "id": "zxoshqc6c0",
+        "city": "Kaunas",
+        "district": "Gričiupis",
+        "address": "K. Baršausko g. 59, Kaunas",
+        "favourite": false,
+        "bookedUntil": "2021-02-17",
+        "quantity": 3,
+        "image": "https://coworker.imgix.net/photos/lithuania/kaunas/vr-project-hub/main.JPG?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "ZELMALAB",
+        "id": "10672bo2y5",
+        "city": "Kaunas",
+        "district": "Centras",
+        "address": "I. Kanto g. 4, Kaunas",
+        "favourite": false,
+        "bookedUntil": null,
+        "quantity": 3,
+        "image": "https://coworker.imgix.net/photos/lithuania/kaunas/zelmalab/main.JPG?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Workland Laisvės",
+        "id": "55kft5p4ea",
+        "city": "Kaunas",
+        "district": "Centras",
+        "address": "Laisvės al. 82, Kaunas",
+        "favourite": false,
+        "bookedUntil": "2021-03-20",
+        "quantity": 4,
+        "image": "https://coworker.imgix.net/photos/lithuania/kaunas/workland-laisves/main.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "NexturyHUB",
+        "id": "4vb5ryum9s",
+        "city": "Kaunas",
+        "district": "Eiguliai",
+        "address": "Ašigalio g. 1b, Kaunas",
+        "favourite": false,
+        "bookedUntil": "2021-02-11",
+        "quantity": 3,
+        "image": "https://coworker.imgix.net/photos/lithuania/kaunas/nexturyhub/main.jpg?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Light House Klaipeda",
+        "id": "m40btrvr21",
+        "city": "Klaipėda",
+        "district": "Šauliai",
+        "address": "Liepų g. 83, Klaipėda",
+        "favourite": false,
+        "bookedUntil": "2021-04-08",
+        "quantity": 4,
+        "image": "https://coworker.imgix.net/photos/lithuania/klaipeda/light-house-klaipeda/main-1583418093.JPG?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      },
+      {
+        "name": "Kultūros Fabrikas",
+        "id": "j95niyn6ed",
+        "city": "Klaipėda",
+        "district": "Pelenynas",
+        "address": "Bangų g. 5A, Klaipėda",
+        "favourite": true,
+        "bookedUntil": "2021-02-07",
+        "quantity": 3,
+        "image": "https://coworker.imgix.net/photos/lithuania/klaipeda/kulturos-fabrikas/main-1596545809.JPG?w=210&h=168&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle"
+      }
+    ],
+    "filterCategories": {
+      "city": ["Vilnius", "Kaunas", "Klaipėda"],
+      "district": [
+        "Antakalnis",
+        "Valakampiai",
+        "Antakalnis",
+        "Senamiestis",
+        "Naujamiestis",
+        "Šnipiškės",
+        "Žvėrynas",
+        "Vilkpėdė",
+        "Petrašiūnai",
+        "Gričiupis",
+        "Centras",
+        "Eiguliai",
+        "Šauliai",
+        "Pelenynas"
+      ]
+    }
+  },
   "weather": [
     {
       "weekDay": "Monday",
@@ -2388,6 +2719,7 @@
       "userName": "Uncle Roger",
       "userImage": "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
       "birthdayDate": "1987-10-31",
+      "postDate": "2020-10-31T00:00:00.000Z",
       "wishes": 15,
       "comments": [
         {
@@ -2499,6 +2831,7 @@
       "userName": "Jason Monroe",
       "userImage": "https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80",
       "birthdayDate": "1984-11-15",
+      "postDate": "2020-11-15T00:00:00.000Z",
       "wishes": 22,
       "comments": [
         {
@@ -2578,24 +2911,24 @@
       "userName": "Wade Owen Watts",
       "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2062&q=80",
       "postLocation": "VLN",
-      "postDate": "2020-11-08T10:27:00.000Z",
+      "postDate": "2020-10-31T10:27:00.000Z",
       "postVideo": "https://images.unsplash.com/photo-1573339886518-264aa6f194b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
       "likes": 27,
       "comments": [
         {
           "userName": "Uncle Roger",
           "comment": "Cool!",
-          "date": "2020-11-08T14:48:00.000Z"
+          "date": "2020-10-31T14:48:00.000Z"
         },
         {
           "userName": "Luke Skywalker",
           "comment": "Hope you'll have a good time!",
-          "date": "2020-11-09T15:48:00.000Z"
+          "date": "2020-10-31T15:48:00.000Z"
         },
         {
           "userName": "Wade Owen Watts",
           "comment": "Looks like a lot of fun",
-          "date": "2020-11-09T18:48:00.000Z"
+          "date": "2020-10-31T18:48:00.000Z"
         }
       ]
     },
@@ -2605,6 +2938,7 @@
       "userName": "Sara Lars",
       "userImage": "https://images.unsplash.com/photo-1607158802355-e850798e3b72?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
       "birthdayDate": "1984-12-15",
+      "postDate": "2020-12-15T00:00:00.000Z",
       "wishes": 22,
       "comments": [
         {
@@ -2613,14 +2947,14 @@
           "date": "2020-12-16T14:48:00.000Z"
         },
         {
-          "userName": "Luke Skywalker",
-          "comment": "Hope you'll have a good time!",
-          "date": "2020-12-17T15:48:00.000Z"
-        },
-        {
           "userName": "Sasha Baron",
           "comment": "Have a good one!",
           "date": "2020-12-18T14:48:00.000Z"
+        },
+        {
+          "userName": "Luke Skywalker",
+          "comment": "Hope you'll have a good time!",
+          "date": "2020-12-17T15:48:00.000Z"
         }
       ]
     }

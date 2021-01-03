@@ -28,6 +28,8 @@ const InformationSection = ({ address, phone, website, openingHours }) => {
             icon="informationGlobe"
             title="Website"
             description={site}
+            className="information-card__description--link"
+            href={website}
           />
         </div>
         <div className="information-section__column">

@@ -41,8 +41,6 @@ import { ReactComponent as Grill } from "../../assets/food/grill.svg";
 import { ReactComponent as Globe } from "../../assets/globe.svg";
 import { ReactComponent as MapPin } from "../../assets/mapPin.svg";
 import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
-import { ReactComponent as SliderNavLeft } from "../../assets/sliderNavLeft.svg";
-import { ReactComponent as SliderNavRight } from "../../assets/sliderNavRight.svg";
 import { ReactComponent as ButtonArrow } from "../../assets/buttonArrow.svg";
 import { ReactComponent as DropdownArrow } from "../../assets/dropdownArrow.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/settingsIcon.svg";
@@ -149,12 +147,8 @@ const SVGIcon = (props) => {
       return <MapPin />;
     case "play":
       return <PlayIcon />;
-    case "sliderNavLeft":
-      return <SliderNavLeft className={props.className} />;
-    case "sliderNavRight":
-      return <SliderNavRight className={props.className} />;
     case "buttonArrow":
-      return <ButtonArrow />;
+      return <ButtonArrow className={props.className} />;
     case "dropdown":
       return <DropdownArrow className={props.className} />;
     case "settings":
@@ -172,7 +166,7 @@ const SVGIcon = (props) => {
     case "informationPhone":
       return <InformationPhone />;
     case "X":
-      return <X />;
+      return <X className={props.className} />;
     case "check":
       return <Check />;
     case "available":
@@ -186,7 +180,7 @@ const SVGIcon = (props) => {
     case "notAvailableProduct":
       return <NotAvailableProduct />;
     case "search":
-      return <Search />;
+      return <Search className={props.className} />;
     case "cancel":
       return <Cancel />;
     case "calendar":

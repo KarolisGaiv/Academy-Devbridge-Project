@@ -4,13 +4,24 @@
 
     &__section {
         display: flex;
+
+        &--column {
+            @media (max-width: 1024px) {
+                flex-direction: column;
+            }
+        }
     }
 
     &__side-filters {
         box-sizing: content-box;
         flex-shrink: 0;
         margin: 0 40px 0 0;
-        width: 285px; // while no other section styles
+        width: 285px;
+
+        @media (max-width: 1024px) {
+            margin: 0 0 100px;
+            width: 100%;
+        }
     }
 
     &__list {

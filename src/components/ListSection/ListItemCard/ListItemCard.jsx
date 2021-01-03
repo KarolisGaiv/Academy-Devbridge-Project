@@ -25,6 +25,19 @@ export const ListItemCard = (props) => {
   const productTitle = title ?? name;
   const productBookedUntil = bookedUntil && bookedUntil.replace(/-/g, "/");
 
+  const productTitleLengthOverflow = () => {
+    if (window.innerWidth > 1380) {
+      return productTitle.length > 50;
+    } else if (window.innerWidth > 1180) {
+      return productTitle.length > 32;
+    } else if (window.innerWidth > 1080) {
+      return productTitle.length > 25;
+    } else if (window.innerWidth > 1024) {
+      return productTitle.length > 32;
+    }
+    return productTitle.length > 25;
+  };
+
   const [viewMore, setViewMore] = useState(false);
 
   return (
@@ -83,7 +96,7 @@ export const ListItemCard = (props) => {
             <HeartButton />
           </div>
           <div className="list-item-card__buttons">
-            {productTitle.length > 50 && (
+            {productTitleLengthOverflow() && (
               <Link
                 styleName="list-item-card__link"
                 handleClick={() => {

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import propTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import SVGIcon from "../../../../SVGIcon/SVGIcon";
 import NavItem from "./NavItem/NavItem";
 
 import "./mainNavigation.scss";
 
-const MainNavigation = (props) => {
+const MainNavigation = ({ outsideExpandHandler }) => {
   const [navigationState, expandNavigationState] = useState({
     navItems: [
       {
@@ -77,6 +78,11 @@ const MainNavigation = (props) => {
     }
   };
 
+  const onExpandClick = () => {
+    expandEventHandler();
+    outsideExpandHandler();
+  };
+
   return (
     <div
       className={`navigation__wrapper
@@ -92,7 +98,7 @@ const MainNavigation = (props) => {
         <div>
           <button
             className="navigation__chevron--background"
-            onClick={expandEventHandler}
+            onClick={onExpandClick}
           >
             <SVGIcon
               name="chevron-right"
@@ -143,3 +149,7 @@ const MainNavigation = (props) => {
 };
 
 export default MainNavigation;
+
+MainNavigation.propTypes = {
+  outsideExpandHandler: propTypes.func,
+};

@@ -3,7 +3,7 @@ import "./restaurants-carousel.scss";
 import PropTypes from "prop-types";
 import { RestaurantBigCard } from "../RestaurantCards/RestaurantBigCard/RestaurantBigCard";
 import { Ratings } from "../Rating/maxRatings";
-import SVGIcon from "../SVGIcon/SVGIcon";
+import SliderNavButtons from "components/SliderNavButtons/SliderNavButtons";
 
 const Carousel = (props) => {
   const { restaurantList } = props;
@@ -56,24 +56,11 @@ const Carousel = (props) => {
   return (
     <div className="restaurants-carousel">
       <div className="restaurants-carousel__buttons">
-        <button
-          onClick={() => toLeft()}
-          className="restaurants-carousel__button restaurants-carousel__button--left"
-        >
-          <SVGIcon
-            name="buttonArrow"
-            className="restaurants-carousel__button-arrow"
-          />
-        </button>
-        <button
-          onClick={() => toRight()}
-          className="restaurants-carousel__button restaurants-carousel__button--right"
-        >
-          <SVGIcon
-            name="buttonArrow"
-            className="restaurants-carousel__button-arrow"
-          />
-        </button>
+        <SliderNavButtons
+          buttonIcon="buttonArrow"
+          leftClicked={() => toLeft()}
+          rightClicked={() => toRight()}
+        />
       </div>
       <div className="restaurants-carousel__slider">
         {restaurantList.map((restaurant) => (

@@ -14,22 +14,31 @@ const ReviewsList = (props) => {
     }
   };
 
+  const reviewsLengthCheck = () => {
+    if (props.reviews.length > 0) return true;
+    else return false;
+  };
+
   useEffect(() => {
     reviewPosition();
   });
 
   return (
     <div className="reviews-list">
-      {props.reviews.map((review) => {
-        return (
-          <SingleReview
-            key={review.id}
-            username={review.userName}
-            comment={review.comment}
-            rating={review.rating}
-          />
-        );
-      })}
+      {reviewsLengthCheck() ? (
+        props.reviews.map((review) => {
+          return (
+            <SingleReview
+              key={review.id}
+              username={review.userName}
+              comment={review.comment}
+              rating={review.rating}
+            />
+          );
+        })
+      ) : (
+        <span className="reviews-list__no-reviews">No reviews yet!</span>
+      )}
     </div>
   );
 };

@@ -150,6 +150,7 @@ const Carousel = (props) => {
           </div>
           <div className={`carousel__nav ${props.navStyles}`}>
             <SliderNavButtons
+              buttonIcon="buttonArrow"
               leftClicked={() => toLeft()}
               rightClicked={() => toRight()}
             />

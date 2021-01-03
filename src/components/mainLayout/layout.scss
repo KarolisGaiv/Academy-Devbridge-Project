@@ -21,11 +21,11 @@ body {
         'n f';
     grid-template-columns: 0.3fr 11.7fr;
     grid-template-rows: 1fr 10.25fr 0.75fr;
-
     height: 100%;
 
     .header__wrapper {
         grid-area: h;
+        height: 100px;
     }
 
     .content__wrapper {
@@ -36,18 +36,8 @@ body {
     }
 
     .footer__wrapper {
-        grid-area: f;
-    }
-
-    .navbar__wrapper {
-        background: $color-purple-dark;
-        grid-area: n;
-        z-index: $z-index-timeline;
-    }
-
-    .header__wrapper,
-    .footer__wrapper {
         box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+        grid-area: f;
         z-index: $z-index-base;
     }
 

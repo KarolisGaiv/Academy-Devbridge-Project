@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes, { string } from "prop-types";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import { Button } from "../../Button/Button";
@@ -13,6 +13,16 @@ export const RestaurantBigCard = (props) => {
     checkinNumber: props.checkins,
     clicked: false,
   });
+
+  const pElement = useRef(null);
+
+  useEffect(() => {
+    const offsetHeight = pElement.current.offsetHeight;
+    const scrollHeight = pElement.current.scrollHeight;
+    const offsetWidth = pElement.current.offsetWidth;
+    const scrollWidth = pElement.current.scrollWidth;
+    return offsetHeight, scrollHeight, offsetWidth, scrollWidth;
+  }, [pElement]);
 
   const toggledClass = expanded
     ? "restaurant-card__description restaurant-card__description--expanded"
@@ -31,6 +41,14 @@ export const RestaurantBigCard = (props) => {
       });
     }
   };
+
+  //   var element = document.querySelector('.pcontent');
+  // if( (element.offsetHeight < element.scrollHeight) || (element.offsetWidth < element.scrollWidth)){
+  //    // your element have overflow
+  //   document.querySelector('#read-more').style.visibility = "visible";
+  // }
+  // else{
+  //   //your element don't have overflow
 
   return (
     <div className="restaurant-big-card">
@@ -51,11 +69,15 @@ export const RestaurantBigCard = (props) => {
               .split("/")}
           />
           <RestWebAddress icon="MapPin" text={props.address} />
-          <p className={toggledClass}>{props.description}</p>
+          <p className={toggledClass} ref={pElement}>
+            {props.description}
+          </p>
           <div className="restaurant-card__button-field">
-            <Link handleClick={() => setExpanded(!expanded)}>
-              {expanded ? "Read less" : "Read more"}
-            </Link>
+            {pElement.offsetHeight === pElement.scrollHeight && (
+              <Link handleClick={() => setExpanded(!expanded)}>
+                {expanded ? "Read less" : "Read more"}
+              </Link>
+            )}
             <Button
               className="button button--enabled"
               typeName="button"

@@ -16,6 +16,7 @@
 
     &__content-wrapper {
         left: 50%;
+        max-width: 550px;
         position: fixed;
         text-align: end;
         top: 50%;
@@ -26,7 +27,7 @@
     &__content {
         background-color: $color-mercury;
         border-radius: 8px;
-        height: calc(100vh - 200px);
+        max-height: calc(100vh - 200px);
         overflow-y: scroll;
         padding: 30px;
         text-align: start;
@@ -68,5 +69,11 @@
 
     &__heading {
         @include h3-heading;
+    }
+
+    @media (max-width: $breakpoint-tablet-landscape) {
+        &__content-wrapper {
+            min-width: 80%;
+        }
     }
 }

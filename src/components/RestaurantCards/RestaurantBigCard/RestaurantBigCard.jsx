@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useLayoutEffect, useState, useEffect, useRef } from "react";
 import PropTypes, { string } from "prop-types";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import { Button } from "../../Button/Button";
@@ -6,27 +6,32 @@ import { RestWebAddress } from "../../RestaurantInfo/RestWebAddress/RestWebAddre
 import { Link } from "../../Link/Link";
 import "./restaurant-big-card.scss";
 
+// const useWindowSize = () => {
+//   const [size, setSize] = useState([0, 0]);
+//   useLayoutEffect(() => {
+//     const updateSize = () => {
+//       setSize([window.innerWidth, window.innerHeight]);
+//     };
+//     window.addEventListener("resize", updateSize);
+//     updateSize();
+//     return () => window.removeEventListener("resize", updateSize);
+//   }, []);
+//   return size;
+// };
+
 export const RestaurantBigCard = (props) => {
+  //Toggles between classes 'expanded' and 'collapsed':
   const [expanded, setExpanded] = useState(false);
-
-  const [checkinNumberState, setCheckinNumberState] = useState({
-    checkinNumber: props.checkins,
-    clicked: false,
-  });
-
-  const pElement = useRef(null);
-
-  useEffect(() => {
-    const offsetHeight = pElement.current.offsetHeight;
-    const scrollHeight = pElement.current.scrollHeight;
-    const offsetWidth = pElement.current.offsetWidth;
-    const scrollWidth = pElement.current.scrollWidth;
-    return offsetHeight, scrollHeight, offsetWidth, scrollWidth;
-  }, [pElement]);
 
   const toggledClass = expanded
     ? "restaurant-card__description restaurant-card__description--expanded"
     : "restaurant-card__description restaurant-card__description--collapsed";
+
+  //Changes checkins' number after button is clicked:
+  const [checkinNumberState, setCheckinNumberState] = useState({
+    checkinNumber: props.checkins,
+    clicked: false,
+  });
 
   const increaseCheckinNumber = () => {
     if (checkinNumberState.clicked) {
@@ -42,13 +47,75 @@ export const RestaurantBigCard = (props) => {
     }
   };
 
-  //   var element = document.querySelector('.pcontent');
-  // if( (element.offsetHeight < element.scrollHeight) || (element.offsetWidth < element.scrollWidth)){
-  //    // your element have overflow
-  //   document.querySelector('#read-more').style.visibility = "visible";
-  // }
-  // else{
-  //   //your element don't have overflow
+  //Adds READ MORE / READ LESS only if there is an overflow:
+  const [overflowActive, setOverflowActive] = useState(false);
+
+  const isEllipsisActive = (element) => {
+    return (
+      element.offsetHeight < element.scrollHeight ||
+      element.offsetWidth < element.scrollWidth
+    );
+  };
+
+  useEffect(() => {
+    setOverflowActive(isEllipsisActive(paragraph.current));
+  }, []);
+
+  //Reacts to window resize event to add or remove READ MORE / READ LESS:
+  // const [screenSize, setScreenSize] = useState(window.innerWidth);
+  // const [screenSize, setScreenSize] = useState(window.innerWidth);
+
+  // useEffect(() => {
+  //   const updateSize = () => {
+  //     setScreenSize(window.innerWidth);
+  //   };
+  //   window.addEventListener("resize", updateSize);
+  //   updateSize();
+  //   return () => window.removeEventListener("resize", updateSize);
+  // }, []);
+
+  // const useWindowSize = () => {
+  //   const [size, setSize] = useState([0, 0]);
+  //   useLayoutEffect(() => {
+  //     const updateSize = () => {
+  //       setSize([window.innerWidth, window.innerHeight]);
+  //     };
+  //     window.addEventListener("resize", updateSize);
+  //     updateSize();
+  //     return () => window.removeEventListener("resize", updateSize);
+  //   }, []);
+  //   return size;
+  // };
+
+  // const useWindowDimension = () => {
+  //   const [dimension, setDimension] = useState([
+  //     window.innerWidth,
+  //     window.innerHeight,
+  //   ]);
+  //   useEffect(() => {
+  //     const debouncedResizeHandler = debounce(() => {
+  //       setDimension([window.innerWidth, window.innerHeight]);
+  //     }, 100);
+  //     window.addEventListener("resize", debouncedResizeHandler);
+  //     return () => window.removeEventListener("resize", debouncedResizeHandler);
+  //   }, []);
+  //   return dimension;
+  // };
+
+  // useWindowDimension();
+
+  // const debounce = (fn, ms) => {
+  //   let timer;
+  //   return (_) => {
+  //     clearTimeout(timer);
+  //     timer = setTimeout((_) => {
+  //       timer = null;
+  //       fn.apply(this, arguments);
+  //     }, ms);
+  //   };
+  // };
+
+  const paragraph = useRef(null);
 
   return (
     <div className="restaurant-big-card">
@@ -69,11 +136,11 @@ export const RestaurantBigCard = (props) => {
               .split("/")}
           />
           <RestWebAddress icon="MapPin" text={props.address} />
-          <p className={toggledClass} ref={pElement}>
+          <p className={toggledClass} ref={paragraph}>
             {props.description}
           </p>
           <div className="restaurant-card__button-field">
-            {pElement.offsetHeight === pElement.scrollHeight && (
+            {overflowActive && (
               <Link handleClick={() => setExpanded(!expanded)}>
                 {expanded ? "Read less" : "Read more"}
               </Link>

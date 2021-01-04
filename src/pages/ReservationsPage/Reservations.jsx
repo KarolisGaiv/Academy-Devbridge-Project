@@ -5,7 +5,7 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "./reservations.scss";
 import SearchSection from "components/SearchSection/SearchSection";
 import { TagFilter } from "components/SideFilters/TagFilter";
-import SearchFunction from "components/Search/SearchFunction";
+import SearchFunction from "../../components/SearchSection/Search/SearchFunction";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -36,6 +36,20 @@ const Reservations = () => {
       ? ["name", "deviceType", "os", "brand"]
       : null;
 
+  const searchSectionTagButtons = [
+    { buttonText: "All", icon: "none", isSelected: false },
+    {
+      buttonText: "Favorites",
+      icon: "heartBtnBold",
+      isSelected: false,
+    },
+    {
+      buttonText: "Available",
+      icon: "available",
+      isSelected: false,
+    },
+  ];
+
   //object for filter collecstion
   const [filterList, setFilterList] = useState({});
 
@@ -43,9 +57,53 @@ const Reservations = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState("");
 
+  //Search section tag buttons
+  const [SearchSectionTags, setSearchSectionTags] = useState(
+    searchSectionTagButtons
+  );
+
+  let results;
+
+  //handle search section tags toggle
+  const handleTagButtonClick = (i) => {
+    let tagsList = [...SearchSectionTags];
+    tagsList[i] = { ...tagsList[i], isSelected: !tagsList[i].isSelected };
+    allTagClick(tagsList);
+    tagClicks(tagsList);
+  };
+  //If Clicked on All tag, unselect other near tags
+  const allTagClick = (list) => {
+    if (list[list.findIndex((obj) => obj.buttonText === "All")].isSelected) {
+      list.forEach((tag) => (tag.isSelected = false));
+    }
+    setSearchSectionTags(list);
+  };
+
+  //filter by Favorites and Available
+  const tagClicks = (list) => {
+    let searchResultsAll = productList;
+    list.forEach((tag) => {
+      if (tag.buttonText === "Available" && tag.isSelected) {
+        searchResultsAll = searchResultsAll.filter(
+          (obj) =>
+            obj.bookedUntil === null ||
+            obj.bookedUntil === "null" ||
+            new Date(obj.bookedUntil) < new Date()
+        );
+      }
+      if (tag.buttonText === "Favorites" && tag.isSelected) {
+        searchResultsAll = searchResultsAll.filter(
+          (obj) => obj.favourite === true
+        );
+      }
+    });
+
+    handleSearch(searchTerm, searchResultsAll, keysToSearch);
+  };
+
   //on Search button click
-  const handleSearch = (dataToSearchIn, arrOfKeys) => {
-    const results = SearchFunction(searchTerm, dataToSearchIn, arrOfKeys);
+  const handleSearch = (searchTerm, dataToSearchIn, arrOfKeys) => {
+    results = SearchFunction(searchTerm, dataToSearchIn, arrOfKeys);
     setSearchResults(results);
   };
 
@@ -90,7 +148,7 @@ const Reservations = () => {
   //search bar cancel icon handler
   const handleCancelClick = () => {
     setSearchTerm("");
-    setSearchResults(productList);
+    handleSearch(searchTerm, productList, keysToSearch);
   };
 
   useEffect(() => {
@@ -106,7 +164,11 @@ const Reservations = () => {
         inputValue={searchTerm}
         handleChange={handleChange}
         handleCancelClick={handleCancelClick}
-        handleSearch={() => handleSearch(productList, keysToSearch)}
+        handleSearch={() =>
+          handleSearch(searchTerm, searchResults, keysToSearch)
+        }
+        tagButtons={SearchSectionTags}
+        handleTagButtonClick={handleTagButtonClick}
       />
       <section className="reservations__section">
         <aside className="reservations__side-filters">

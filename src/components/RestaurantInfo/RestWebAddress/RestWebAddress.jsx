@@ -25,5 +25,5 @@ RestWebAddress.propTypes = {
   icon: PropTypes.string,
   href: PropTypes.string,
   className: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
 };

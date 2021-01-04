@@ -1,23 +1,10 @@
-import React, { useLayoutEffect, useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes, { string } from "prop-types";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import { Button } from "../../Button/Button";
 import { RestWebAddress } from "../../RestaurantInfo/RestWebAddress/RestWebAddress";
 import { Link } from "../../Link/Link";
 import "./restaurant-big-card.scss";
-
-// const useWindowSize = () => {
-//   const [size, setSize] = useState([0, 0]);
-//   useLayoutEffect(() => {
-//     const updateSize = () => {
-//       setSize([window.innerWidth, window.innerHeight]);
-//     };
-//     window.addEventListener("resize", updateSize);
-//     updateSize();
-//     return () => window.removeEventListener("resize", updateSize);
-//   }, []);
-//   return size;
-// };
 
 export const RestaurantBigCard = (props) => {
   //Toggles between classes 'expanded' and 'collapsed':
@@ -47,7 +34,7 @@ export const RestaurantBigCard = (props) => {
     }
   };
 
-  //Adds READ MORE / READ LESS only if there is an overflow:
+  //Adds READ MORE / READ LESS only if there is an overflow and reacts to window resize event:
   const [overflowActive, setOverflowActive] = useState(false);
 
   const isEllipsisActive = (element) => {
@@ -58,62 +45,18 @@ export const RestaurantBigCard = (props) => {
   };
 
   useEffect(() => {
-    setOverflowActive(isEllipsisActive(paragraph.current));
+    let timeoutId = null;
+    const updateSize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(
+        () => setOverflowActive(isEllipsisActive(paragraph.current)),
+        100
+      );
+    };
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
   }, []);
-
-  //Reacts to window resize event to add or remove READ MORE / READ LESS:
-  // const [screenSize, setScreenSize] = useState(window.innerWidth);
-  // const [screenSize, setScreenSize] = useState(window.innerWidth);
-
-  // useEffect(() => {
-  //   const updateSize = () => {
-  //     setScreenSize(window.innerWidth);
-  //   };
-  //   window.addEventListener("resize", updateSize);
-  //   updateSize();
-  //   return () => window.removeEventListener("resize", updateSize);
-  // }, []);
-
-  // const useWindowSize = () => {
-  //   const [size, setSize] = useState([0, 0]);
-  //   useLayoutEffect(() => {
-  //     const updateSize = () => {
-  //       setSize([window.innerWidth, window.innerHeight]);
-  //     };
-  //     window.addEventListener("resize", updateSize);
-  //     updateSize();
-  //     return () => window.removeEventListener("resize", updateSize);
-  //   }, []);
-  //   return size;
-  // };
-
-  // const useWindowDimension = () => {
-  //   const [dimension, setDimension] = useState([
-  //     window.innerWidth,
-  //     window.innerHeight,
-  //   ]);
-  //   useEffect(() => {
-  //     const debouncedResizeHandler = debounce(() => {
-  //       setDimension([window.innerWidth, window.innerHeight]);
-  //     }, 100);
-  //     window.addEventListener("resize", debouncedResizeHandler);
-  //     return () => window.removeEventListener("resize", debouncedResizeHandler);
-  //   }, []);
-  //   return dimension;
-  // };
-
-  // useWindowDimension();
-
-  // const debounce = (fn, ms) => {
-  //   let timer;
-  //   return (_) => {
-  //     clearTimeout(timer);
-  //     timer = setTimeout((_) => {
-  //       timer = null;
-  //       fn.apply(this, arguments);
-  //     }, ms);
-  //   };
-  // };
 
   const paragraph = useRef(null);
 

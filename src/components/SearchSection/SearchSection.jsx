@@ -4,6 +4,7 @@ import "./search-section.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import TagButton from "./TagButton/TagButton";
 import SearchBar from "./SearchBar/SearchBar";
+import DatePicker from "./DatePicker/DatePicker";
 import { Button } from "components/Button/Button";
 import SVGIcon from "components/SVGIcon/SVGIcon";
 
@@ -23,6 +24,7 @@ const SearchSection = (props) => {
             handleCancelClick={props.handleCancelClick}
             handleChange={props.handleChange}
           />
+          <DatePicker />
           <Button
             className="button button--enabled search-section__search-button"
             type="button"

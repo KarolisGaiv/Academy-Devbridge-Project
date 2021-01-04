@@ -55,7 +55,17 @@ const MasonryGrid = (props) => {
   //set gaps between cards as margin
   for (let i = 0; i < props.children.length; i++) {
     const columnIndex = i % columnsNo;
-    if (i > 2 && props.children[i].type.displayName === "BirthdayCard") {
+    if (
+      (i > 2 &&
+        props.children[i].type.displayName === "BirthdayCard" &&
+        windowWidth > 1200) ||
+      (i > 1 &&
+        props.children[i].type.displayName === "BirthdayCard" &&
+        windowWidth > 1024) ||
+      (i > 0 &&
+        props.children[i].type.displayName === "BirthdayCard" &&
+        windowWidth <= 768)
+    ) {
       columnWrapper[`column${columnIndex}`].push(
         <div
           style={{

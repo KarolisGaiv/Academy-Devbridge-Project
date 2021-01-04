@@ -130,10 +130,12 @@ export const RestaurantBigCard = (props) => {
       >
         <div className="restaurant-card__bottom">
           <RestWebAddress
+            className="restaurant-contact__text--link"
             icon="Globe"
             text={props.web
               .replace(/^(?:https?:\/\/)?(?:www\.)?/i, "")
               .split("/")}
+            href={props.web}
           />
           <RestWebAddress icon="MapPin" text={props.address} />
           <p className={toggledClass} ref={paragraph}>

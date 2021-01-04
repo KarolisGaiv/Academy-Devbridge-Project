@@ -23,6 +23,7 @@ const SearchSection = (props) => {
             inputValue={props.inputValue}
             handleCancelClick={props.handleCancelClick}
             handleChange={props.handleChange}
+            handleClick={props.handleSearch}
           />
           <DatePicker />
           <Button

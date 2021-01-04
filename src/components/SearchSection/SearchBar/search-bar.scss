@@ -5,16 +5,22 @@
 }
 
 .search-bar {
+    align-items: center;
     background: $color-white;
     border: 1px solid $color-ghost;
     border-radius: 5px;
     display: flex;
     flex-grow: 1;
-    padding: 13px 16px;
+    padding: 0 16px;
     position: relative;
 
     &:focus-within {
         border-color: $color-fiord;
+    }
+
+    &:hover {
+        border-color: $color-fiord;
+        color: $color-fiord;
     }
 
     &__button {
@@ -23,6 +29,7 @@
         border: 0;
         cursor: pointer;
         display: flex;
+        height: 20px;
         padding: 0;
 
         &--hidden {
@@ -35,6 +42,7 @@
         font-family: $main-font;
         font-size: $size-14;
         font-weight: $weight-regular;
+        line-height: 3.1;
         margin-left: 10px;
         padding: 0;
         width: 100%;

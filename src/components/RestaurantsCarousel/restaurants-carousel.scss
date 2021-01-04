@@ -2,6 +2,7 @@
 
 .restaurants-carousel {
     position: relative;
+    width: 100%;
 
     &__buttons {
         position: absolute;
@@ -44,24 +45,17 @@
     }
 
     &__slider {
-        display: inline-flex;
-        overflow: hidden;
-        width: 100%;
-    }
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 40px;
 
-    &__slide {
-        flex-shrink: 0;
-        padding-right: 40px;
-        transition: 400ms;
-        width: 395px;
-
-        @media (max-width: $breakpoint-tablet-landscape) {
-            width: 612px;
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        @media (max-width: $breakpoint-tablet) {
-            padding: 0;
-            width: 100%;
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 0;
         }
     }
 }

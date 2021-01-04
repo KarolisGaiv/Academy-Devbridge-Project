@@ -12,7 +12,7 @@ export const RestWebAddress = ({ icon, href, className, text }) => {
       <a
         href={href}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className={`restaurant-contact__text ${className}`}
       >
         {text}

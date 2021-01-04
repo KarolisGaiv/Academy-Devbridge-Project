@@ -1,4 +1,3 @@
-import { checkPropTypes } from "prop-types";
 import React from "react";
 import PropTypes from "prop-types";
 import "./pagination-button.scss";
@@ -9,7 +8,6 @@ export const PaginationButton = (props) => {
       type="button"
       onClick={props.handleClick}
       className={`pagination__button ${props.className}`}
-      key={props.key}
       id={props.id}
     >
       {props.children}
@@ -20,7 +18,10 @@ export const PaginationButton = (props) => {
 PaginationButton.propTypes = {
   handleClick: PropTypes.func,
   className: PropTypes.string,
-  children: PropTypes.object,
-  key: PropTypes.number,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object,
+  ]),
   id: PropTypes.number,
 };

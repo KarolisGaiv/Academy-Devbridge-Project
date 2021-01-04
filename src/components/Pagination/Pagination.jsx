@@ -169,6 +169,8 @@ export class Pagination extends React.Component {
             {number}
           </PaginationButton>
         );
+      } else {
+        return null;
       }
     });
 

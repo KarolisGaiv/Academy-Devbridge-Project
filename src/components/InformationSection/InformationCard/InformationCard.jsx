@@ -22,6 +22,7 @@ const InformationCard = ({
           className={`information-card__description ${className}`}
           href={href}
           target="_blank"
+          rel="noopener noreferrer"
         >
           {description}
         </a>

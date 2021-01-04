@@ -24,6 +24,23 @@ export class Pagination extends React.Component {
     this.btnNextClick = this.btnNextClick.bind(this);
     this.btnPrevClick = this.btnPrevClick.bind(this);
     this.setPrevAndNextBtnClass = this.setPrevAndNextBtnClass.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.componentDidUpdate = this.componentDidUpdate.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.list && this.props.list.length)
+      this.setState({
+        currentPage: 1,
+      });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.list !== prevProps.list)
+      this.setState({
+        currentPage: 1,
+        lowerPageBound: 0,
+      });
   }
 
   handleClick(e) {

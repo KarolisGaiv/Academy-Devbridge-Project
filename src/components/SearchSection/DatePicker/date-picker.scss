@@ -8,13 +8,7 @@ $_color-bold: #050504;
     flex-direction: column;
     font-family: $main-font;
     font-size: $size-14;
-
-    &__header {
-        color: $color-grey-chateau;
-        font-weight: $weight-bold;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-    }
+    grid-row-start: 2;
 }
 
 .react-date-picker {

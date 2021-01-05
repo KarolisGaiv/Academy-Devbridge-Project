@@ -39,7 +39,7 @@ const Carousel = (props) => {
     return width;
   };
 
-  useCurrentWidth();
+  const width = useCurrentWidth();
 
   const toRight = () => {
     if (finish < restaurantList.length) {
@@ -57,13 +57,15 @@ const Carousel = (props) => {
 
   return (
     <div className="restaurants-carousel">
-      <div className="restaurants-carousel__buttons">
-        <SliderNavButtons
-          buttonIcon="buttonArrow"
-          leftClicked={() => toLeft()}
-          rightClicked={() => toRight()}
-        />
-      </div>
+      {restaurantList.length > 3 && (
+        <div className="restaurants-carousel__buttons">
+          <SliderNavButtons
+            buttonIcon="buttonArrow"
+            leftClicked={() => toLeft()}
+            rightClicked={() => toRight()}
+          />
+        </div>
+      )}
       <div className="restaurants-carousel__slider">
         {restaurantList.slice(start, finish).map((restaurant) => (
           <div key={restaurant.id} className="restaurants-carousel__slide">

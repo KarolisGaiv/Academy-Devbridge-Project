@@ -69,7 +69,7 @@ const Carousel = (props) => {
   };
 
   if (redirectLink !== null) {
-    return <Redirect to={"/eat-out//" + redirectLink} />;
+    return <Redirect to={"eat-out//" + redirectLink} />;
   }
   return (
     <CardContainer styleName="card-container--shadow">

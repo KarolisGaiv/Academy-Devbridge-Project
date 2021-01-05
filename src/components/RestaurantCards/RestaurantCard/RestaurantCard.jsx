@@ -30,7 +30,7 @@ const RestaurantCard = (props) => {
           <Link
             title={`${props.title} - Restaurant page`}
             className="restaurant-card__link"
-            to={`/eat-out//${props.title}`}
+            to={`/dashboard/eat-out//${props.title}`}
           >
             <RestTitle title={props.title} />
           </Link>

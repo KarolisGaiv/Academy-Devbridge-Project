@@ -10,7 +10,7 @@ const Breadcrumbs = () => {
 
   const GetBreadcrumbs = (path) => {
     //create an array that contains main value
-    let breadcrumbsItems = ["Dashboard"];
+    let breadcrumbsItems = [];
     //Split pathname to an array
     let pathNameItems = path.replace(/%20/g, " ").split("/");
     //populate an array with pathNameItems array items
@@ -23,7 +23,7 @@ const Breadcrumbs = () => {
   //return path to use for navigating
   const CreatePath = (path, index) => {
     let pathNameItems = path.split("/");
-    pathNameItems.splice(index + 1);
+    pathNameItems.splice(index + 2);
     const pathNameJoined = pathNameItems.join("/");
 
     return pathNameJoined;

@@ -1,8 +1,9 @@
 import React from "react";
-import { RegistrationForm } from "components/Form/RegistrationForm/RegistrationForm.jsx";
 import { Route, Switch } from "react-router-dom";
 import { FormWrapper } from "../components/Form/FormWrapper/FormWrapper.jsx";
 import { LoginForm } from "../components/Form/LoginForm/LoginForm";
+import Layout from "../components/mainLayout/Layout.jsx";
+import { Register } from "./Register.jsx";
 
 export function Login() {
   return (
@@ -16,15 +17,8 @@ export function Login() {
           </FormWrapper>
         )}
       />
-      <Route
-        exact
-        path="/register"
-        render={() => (
-          <FormWrapper>
-            <RegistrationForm />
-          </FormWrapper>
-        )}
-      />
+      <Route exact path="/register" render={() => <Register />} />
+      <Layout />
     </Switch>
   );
 }

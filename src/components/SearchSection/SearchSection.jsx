@@ -19,20 +19,23 @@ const SearchSection = (props) => {
     <CardContainer styleName="card-container--shadow">
       <div className="search-section">
         <h2 className="search-section__title">Search</h2>
-        <div className="search-section__tag-wrapper">
-          {tags.map((tag, index) => {
-            return (
-              <TagButton
-                key={index}
-                buttonText={tag.buttonText}
-                icon={tag.icon}
-                isSelected={tag.isSelected}
-                selectClick={() => props.handleTagButtonClick(index)}
-              />
-            );
-          })}
-        </div>
-        <div className="search-section__search-bar-section">
+        <div className="search-section__search-filter-section">
+          <div className="search-section__tag-wrapper">
+            {tags.map((tag, index) => {
+              return (
+                <TagButton
+                  key={index}
+                  buttonText={tag.buttonText}
+                  icon={tag.icon}
+                  isSelected={tag.isSelected}
+                  selectClick={() => props.handleTagButtonClick(index)}
+                />
+              );
+            })}
+          </div>
+          <span className="search-section__datepicker-label">
+            reservation date
+          </span>
           <SearchBar
             inputValue={props.inputValue}
             handleCancelClick={props.handleCancelClick}

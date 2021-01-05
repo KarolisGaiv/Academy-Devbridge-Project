@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import React, { useEffect, useState, useMemo } from "react";
 import { ListSection } from "components/ListSection/ListSection";
 import { SideFilters } from "components/SideFilters/SideFilters";
@@ -26,13 +27,17 @@ const useFetch = (url) => {
 };
 
 const Reservations = () => {
-  const page = "book"; // fully responsive filter and list just need to change "device" to "book"
-  const { data, loading } = useFetch(`http://localhost:3008/${page}s`);
+  const { itemPlural } = useParams();
+  let itemSingular;
+  if (itemPlural === undefined) itemSingular = "book";
+  else itemSingular = itemPlural.substring(0, itemPlural.length - 1); // remove s letter
+
+  const { data, loading } = useFetch(`http://localhost:3008/${itemSingular}s`);
 
   const keysToSearch =
-    page === "book"
+    itemSingular === "book"
       ? ["title", "author", "genre"]
-      : page === "device"
+      : itemSingular === "device"
       ? ["name", "deviceType", "os", "brand"]
       : null;
 
@@ -80,7 +85,7 @@ const Reservations = () => {
     });
 
   const productList = useMemo(() => {
-    return TagFilter(data[`${page}List`], filterList);
+    return TagFilter(data[`${itemSingular}List`], filterList);
   }, [data, filterList]);
 
   //search bar input value handler

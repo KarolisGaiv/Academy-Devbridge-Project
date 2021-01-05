@@ -13,6 +13,11 @@ const Content = () => {
       <Switch>
         <Route exact path="/" render={() => <Dashboard />} />
         <Route exact path="/reservations" render={() => <Reservations />} />
+        <Route
+          exact
+          path="/reservations/:itemPlural"
+          render={() => <Reservations />}
+        />
         <Route exact path="/eat-out" render={() => <EatOut />} />
         <Route
           exact

@@ -8,7 +8,6 @@ const Calendar = () => {
 
   return (
     <div className="wrapper">
-      <span className="wrapper__header">reservation date</span>
       <DatePicker
         onChange={onChange}
         value={value}

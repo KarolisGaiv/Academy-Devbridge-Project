@@ -14,21 +14,29 @@ $_size-large: 32px;
 
     &__tag-wrapper {
         display: flex;
-        margin: 25px 0;
+        padding-bottom: 16px;
+        padding-top: 24px;
     }
 
-    &__search-bar-section {
-        align-items: center;
+    &__datepicker-label {
+        align-self: end;
+        color: $color-grey-chateau;
+        font-weight: $weight-bold;
+        text-transform: uppercase;
+    }
+
+    &__search-filter-section {
         column-gap: $column-gap-small;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+        row-gap: 8px;
     }
 
     &__search-button {
         align-items: center;
         display: flex;
         font-size: $size-16;
+        grid-row-start: 2;
     }
 
     &__search-button-icon {

@@ -39,8 +39,6 @@ const Carousel = (props) => {
     return width;
   };
 
-  const width = useCurrentWidth();
-
   const toRight = () => {
     if (finish < restaurantList.length) {
       setStart(start + length);

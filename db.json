@@ -39,7 +39,16 @@
           "id": "193ywpe740"
         }
       ],
-      "meetingRooms": []
+      "meetingRooms": [
+        {
+          "name": "UMA GO9",
+          "id": "wh9nprytjy"
+        },
+        {
+          "name": "Work'inn",
+          "id": "pjdgqljhk4"
+        }
+      ]
     },
     "notifications": [
       {
@@ -93,7 +102,7 @@
           }
         ],
         "categories": ["Burger", "Salads", "Grill"],
-        "openingDate": "September 17, 2019"
+        "slogan": "Delicious burgers all the time"
       },
       {
         "name": "Jurgis ir Drakonas",
@@ -149,7 +158,7 @@
           }
         ],
         "categories": ["Salads", "Pizza", "Pancakes", "Soups"],
-        "openingDate": "October 2, 2017"
+        "slogan": "Chief exclusive masterpieces"
       },
       {
         "name": "Mamma Pizza",
@@ -193,7 +202,7 @@
           }
         ],
         "categories": ["Pizza"],
-        "openingDate": "January 17, 2020"
+        "slogan": "Find the pizza for all ocations"
       },
       {
         "name": "MOMO Grill Kaunas",
@@ -261,7 +270,7 @@
           }
         ],
         "categories": ["Grill", "Sweets", "Brunch"],
-        "openingDate": "June 1, 2020"
+        "slogan": "From meat to sweets"
       },
       {
         "name": "Restoranas Siesta",
@@ -299,7 +308,7 @@
           }
         ],
         "categories": ["Salads", "Grill", "Soup"],
-        "openingDate": "November 30, 2019"
+        "slogan": "Chief exclusive masterpieces"
       },
       {
         "name": "Restoranas DIA",
@@ -361,7 +370,7 @@
           }
         ],
         "categories": ["Salads", "Grill", "Brunch", "Soups"],
-        "openingDate": "September 10, 2015"
+        "slogan": "Over 12 types of salad"
       },
       {
         "name": "Agave",
@@ -393,7 +402,7 @@
           }
         ],
         "categories": ["Salads", "Grill", "Pancakes"],
-        "openingDate": "May 20, 2013"
+        "slogan": "Quiet and bright atmosphere"
       },
       {
         "name": "Moksha",
@@ -437,7 +446,7 @@
           }
         ],
         "categories": ["Salads", "Ramen"],
-        "openingDate": "September 1, 2020"
+        "slogan": "We serve the best quality noodles"
       },
       {
         "name": "Avilys",
@@ -468,7 +477,8 @@
             "rating": 5.0
           }
         ],
-        "categories": ["Burger", "Sandwich"]
+        "categories": ["Burger", "Sandwich"],
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Katpedele",
@@ -518,7 +528,7 @@
           }
         ],
         "categories": ["Kebab", "Sweets"],
-        "openingDate": "May 1, 2019"
+        "slogan": "Chief exclusive masterpieces"
       },
       {
         "name": "Sushi Masters",
@@ -543,7 +553,8 @@
             "rating": 4.0
           }
         ],
-        "categories": ["Sushi", "Soups"]
+        "categories": ["Sushi", "Soups"],
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Talutti - Fresh and Tasty",
@@ -581,7 +592,7 @@
           }
         ],
         "categories": ["Burger", "Brunch", "Pancakes"],
-        "openingDate": "August 1, 2015"
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "ieti",
@@ -631,7 +642,7 @@
           }
         ],
         "categories": ["Sweets"],
-        "openingDate": "July 19, 2020"
+        "slogan": "Chief exclusive masterpieces"
       },
       {
         "name": "Pas Stanley",
@@ -663,7 +674,7 @@
           }
         ],
         "categories": ["Kebab", "Ramen", "Burger"],
-        "openingDate": "December 5, 2019"
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Lithuanian Pub Entry",
@@ -689,7 +700,7 @@
           }
         ],
         "categories": ["Salads", "Sandwich", "Kebab"],
-        "openingDate": "August 17, 2014"
+        "slogan": "Chief exclusive masterpieces"
       },
       {
         "name": "Casa Della Pasta, pizzeria - restaurant",
@@ -708,7 +719,7 @@
         "checkIns": 13,
         "reviews": [],
         "categories": ["Salads", "Sandwich", "Kebab"],
-        "openingDate": "April 27, 2019"
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Vista Puode",
@@ -752,7 +763,7 @@
           }
         ],
         "categories": ["Burger", "Grill", "Sweets"],
-        "openingDate": "September 1, 2010"
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Hop Doc Gastropub",
@@ -784,7 +795,7 @@
           }
         ],
         "categories": ["Salads", "Sandwich", "Kebab"],
-        "openingDate": "February 10, 2019"
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "Al Cantuccio",
@@ -828,7 +839,7 @@
           }
         ],
         "categories": ["Sweets", "Pancakes", "Ramen"],
-        "openingDate": "August 10, 2018"
+        "slogan": "Exclusive variety of dishes"
       },
       {
         "name": "ManGi",
@@ -860,7 +871,7 @@
           }
         ],
         "categories": ["Grill", "Kebab", "Burger", "Sushi"],
-        "openingDate": "July 20, 2020"
+        "slogan": "Exclusive variety of dishes"
       }
     ],
     "categories": [
@@ -890,6 +901,50 @@
         "bookedUntil": "2021-02-13",
         "quantity": 3,
         "image": "https://images-na.ssl-images-amazon.com/images/I/618ZI2Xyw%2BL._AC_SL1500_.jpg"
+      },
+      {
+        "name": "Samsung Galaxy S20",
+        "id": "193ywpe741",
+        "deviceType": "Mobile",
+        "os": "Android",
+        "brand": "Samsung",
+        "favourite": true,
+        "bookedUntil": "2020-12-24",
+        "quantity": 4,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/71Zh6vtYQBL._AC_SX679_.jpg"
+      },
+      {
+        "name": "Dell Inspiron 15",
+        "id": "193ywpe742",
+        "deviceType": "Laptop",
+        "os": "Windows",
+        "brand": "Dell",
+        "favourite": false,
+        "bookedUntil": "2021-01-02",
+        "quantity": 2,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81LPb4VdYML._AC_SX466_.jpg"
+      },
+      {
+        "name": "Razer Death Adder Chroma",
+        "id": "193ywpe740",
+        "deviceType": "Accessories",
+        "os": null,
+        "brand": "Razer",
+        "favourite": false,
+        "bookedUntil": "2021-01-13",
+        "quantity": 3,
+        "image": "https://www.maxgaming.com/img/bilder/artiklar/15912.jpg?m=1588925493&w=720"
+      },
+      {
+        "name": "iPad Pro",
+        "id": "193ywpe743",
+        "deviceType": "Tablet",
+        "os": "iOS",
+        "brand": "Apple",
+        "favourite": true,
+        "bookedUntil": "2021-01-17",
+        "quantity": 3,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SX342_.jpg"
       }
     ],
     "filterCategories": {
@@ -2672,6 +2727,7 @@
       "userName": "Uncle Roger",
       "userImage": "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
       "birthdayDate": "1987-10-31",
+      "postDate": "2020-10-31T00:00:00.000Z",
       "wishes": 15,
       "comments": [
         {
@@ -2693,7 +2749,7 @@
       "userImage": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
       "postLocation": "LDN",
       "postDate": "2020-11-05T10:27:00.000Z",
-      "postImage": "https://images.unsplash.com/photo-1573339886518-264aa6f194b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+      "postImage": "https://images.unsplash.com/photo-1606916928892-3e15e20c5c0c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=621&q=80",
       "likes": 15,
       "comments": [
         {
@@ -2720,7 +2776,7 @@
       "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2062&q=80",
       "postLocation": "VLN",
       "postDate": "2020-11-08T10:27:00.000Z",
-      "postVideo": "https://images.unsplash.com/photo-1573339886518-264aa6f194b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+      "postVideo": "https://images.unsplash.com/photo-1607104611513-5a8957e8128d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
       "likes": 27,
       "comments": [
         {
@@ -2783,6 +2839,7 @@
       "userName": "Jason Monroe",
       "userImage": "https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80",
       "birthdayDate": "1984-11-15",
+      "postDate": "2020-11-15T00:00:00.000Z",
       "wishes": 22,
       "comments": [
         {
@@ -2836,7 +2893,7 @@
       "userImage": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
       "postLocation": "LDN",
       "postDate": "2020-11-05T10:27:00.000Z",
-      "postImage": "https://images.unsplash.com/photo-1573339886518-264aa6f194b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+      "postImage": "https://images.unsplash.com/photo-1607166303098-19ed940446bd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
       "likes": 15,
       "comments": [
         {
@@ -2862,24 +2919,50 @@
       "userName": "Wade Owen Watts",
       "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2062&q=80",
       "postLocation": "VLN",
-      "postDate": "2020-11-08T10:27:00.000Z",
+      "postDate": "2020-10-31T10:27:00.000Z",
       "postVideo": "https://images.unsplash.com/photo-1573339886518-264aa6f194b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
       "likes": 27,
       "comments": [
         {
           "userName": "Uncle Roger",
           "comment": "Cool!",
-          "date": "2020-11-08T14:48:00.000Z"
+          "date": "2020-10-31T14:48:00.000Z"
         },
         {
           "userName": "Luke Skywalker",
           "comment": "Hope you'll have a good time!",
-          "date": "2020-11-09T15:48:00.000Z"
+          "date": "2020-10-31T15:48:00.000Z"
         },
         {
           "userName": "Wade Owen Watts",
           "comment": "Looks like a lot of fun",
-          "date": "2020-11-09T18:48:00.000Z"
+          "date": "2020-10-31T18:48:00.000Z"
+        }
+      ]
+    },
+    {
+      "type": "birthday",
+      "id": "a402ha92er",
+      "userName": "Sara Lars",
+      "userImage": "https://images.unsplash.com/photo-1607158802355-e850798e3b72?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+      "birthdayDate": "1984-12-15",
+      "postDate": "2020-12-15T00:00:00.000Z",
+      "wishes": 22,
+      "comments": [
+        {
+          "userName": "Jason Monroe",
+          "comment": "Congrads! And Best wishes",
+          "date": "2020-12-16T14:48:00.000Z"
+        },
+        {
+          "userName": "Sasha Baron",
+          "comment": "Have a good one!",
+          "date": "2020-12-18T14:48:00.000Z"
+        },
+        {
+          "userName": "Luke Skywalker",
+          "comment": "Hope you'll have a good time!",
+          "date": "2020-12-17T15:48:00.000Z"
         }
       ]
     }

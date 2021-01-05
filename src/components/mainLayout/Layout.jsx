@@ -11,9 +11,7 @@ const Layout = () => {
       <header className="header__wrapper">
         <Header />
       </header>
-      <aside className="navbar__wrapper">
-        <Navbar />
-      </aside>
+      <Navbar />
       <main className="content__wrapper">
         <Content />
       </main>

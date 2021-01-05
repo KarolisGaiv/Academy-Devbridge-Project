@@ -58,6 +58,7 @@ import { ReactComponent as AvailableProduct } from "../../assets/availableProduc
 import { ReactComponent as NotAvailableProduct } from "../../assets/notAvailableProduct.svg";
 import { ReactComponent as Search } from "../../assets/searchIcon.svg";
 import { ReactComponent as Cancel } from "../../assets/cancel.svg";
+import { ReactComponent as Calendar } from "../../assets/calendar.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -182,6 +183,8 @@ const SVGIcon = (props) => {
       return <Search className={props.className} />;
     case "cancel":
       return <Cancel />;
+    case "calendar":
+      return <Calendar />;
     default:
       return "error";
   }

@@ -14,7 +14,7 @@ const MainNavigation = ({ outsideExpandHandler }) => {
         iconName: "home",
         itemStatus: "inactive",
         exactURL: true,
-        pageURL: "",
+        pageURL: "dashboard",
         itemText: "",
       },
       {

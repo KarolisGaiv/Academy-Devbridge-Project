@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "components/mainLayout/Layout";
+import { Login } from "pages/Login";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 
 const App = () => {
@@ -12,11 +13,19 @@ const App = () => {
 
     return null;
   }
+
+  let currentPath = window.location.pathname;
   return (
     <div className="app">
       <Router>
         <ScrollToTop />
-        <Layout />
+        {currentPath === "/" ? (
+          <Login />
+        ) : currentPath === "/register" ? (
+          <Login />
+        ) : (
+          <Layout />
+        )}
       </Router>
     </div>
   );

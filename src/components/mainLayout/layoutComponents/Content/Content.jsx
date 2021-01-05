@@ -11,7 +11,7 @@ const Content = () => {
   return (
     <content className="content">
       <Switch>
-        <Route exact path="/" render={() => <Dashboard />} />
+        <Route exact path="/dashboard" render={() => <Dashboard />} />
         <Route exact path="/reservations" render={() => <Reservations />} />
         <Route
           exact

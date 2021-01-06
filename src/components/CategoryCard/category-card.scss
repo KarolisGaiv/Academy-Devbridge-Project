@@ -14,7 +14,6 @@
     &__info {
         display: flex;
         flex-direction: column;
-        overflow: hidden;
         padding: 25px 0 26px 16px;
     }
 
@@ -24,6 +23,7 @@
         font-size: $size-24;
         font-weight: 900;
         line-height: 32px;
+        max-width: 110px;
     }
 
     &__details {

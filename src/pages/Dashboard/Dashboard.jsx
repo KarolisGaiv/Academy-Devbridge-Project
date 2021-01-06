@@ -3,7 +3,7 @@ import "./dashboard.scss";
 import WeatherWidget from "components/WeatherWidget/WeatherWidget";
 import GreetingWidget from "../../components/GreetingWidget/GreetingWidget";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
-import database from "../../../src/db.json";
+import database from "../../db.json";
 import BestRestaurantWrapper from "../../components/RestaurantCards/BestRestaurantWrapper/BestRestaurantWrapper";
 import NewsFeed from "../../components/NewsFeedCard/NewsFeed";
 

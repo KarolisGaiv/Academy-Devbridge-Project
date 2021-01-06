@@ -1,77 +1,54 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import RestaurantsCarousel from "../RestaurantsCarousel/RestaurantsCarousel";
 
-class RestaurantCarouselSection extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      restaurantList: [],
-    };
-  }
+const useFetch = (url) => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  componentDidMount() {
-    fetch("http://localhost:3008/restaurants")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            restaurantList: result.restaurantList,
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
-        }
+  useEffect(() => {
+    async function fetchMyAPI() {
+      const response = await fetch(url);
+      const data = await response.json();
+      const restaurantList = data.restaurantList;
+      setData(restaurantList);
+      setLoading(false);
+    }
+
+    fetchMyAPI();
+  }, [url]);
+
+  return { data, loading };
+};
+
+const RestaurantCarouselSection = (props) => {
+  const { data, loading } = useFetch("http://localhost:3008/restaurants");
+
+  const restaurantFilterDate = new Date();
+
+  let restaurants = data;
+
+  switch (props.filter) {
+    case "new":
+      restaurantFilterDate.setDate(restaurantFilterDate.getDate() - 365);
+      restaurants = data.filter(
+        (restaurant) =>
+          Date.parse(restaurant.openingDate) > restaurantFilterDate
       );
+      break;
+    default:
+      restaurants = data;
   }
 
-  render() {
-    const { error, isLoaded, restaurantList } = this.state;
-
-    let restaurants = restaurantList;
-
-    const restaurantFilterDate = new Date();
-
-    switch (this.props.filter) {
-      case "new":
-        restaurantFilterDate.setDate(restaurantFilterDate.getDate() - 365);
-        restaurants = restaurantList.filter(
-          (restaurant) =>
-            Date.parse(restaurant.openingDate) > restaurantFilterDate
-        );
-        break;
-      case "similar":
-        restaurants = restaurantList
-          .filter((rest) => rest !== this.props.mainRestaurant)
-          .filter((rest) =>
-            rest.categories.some((item) =>
-              this.props.mainRestaurant.categories.includes(item)
-            )
-          );
-        break;
-      default:
-        restaurants = restaurantList;
-    }
-
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Is loading...</div>;
-    } else {
-      return <RestaurantsCarousel restaurantList={restaurants} />;
-    }
-  }
-}
+  return loading ? (
+    <div>...loading</div>
+  ) : (
+    <RestaurantsCarousel restaurantList={restaurants} />
+  );
+};
 
 export default RestaurantCarouselSection;
 
 RestaurantCarouselSection.propTypes = {
   filter: PropTypes.string,
-  mainRestaurant: PropTypes.object,
 };

@@ -25,7 +25,9 @@ export const SideFilterCard = (props) => {
     <CardContainer styleName="card-container--shadow">
       <div className="side-filter-card">
         <div className="side-filter-card__header">
-          <div className="side-filter-card__title"> {categoryTitle} </div>
+          <div className="side-filter-card__title">
+            {categoryTitle.split(/(?=[A-Z])/).join(" ")}
+          </div>
           <XButton handleClick={clearHandler}> Clear all </XButton>
         </div>
         <Divider />

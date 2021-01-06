@@ -30,7 +30,11 @@ const Reservations = () => {
   const { itemPlural } = useParams();
   let itemSingular;
   if (itemPlural === undefined) itemSingular = "book";
-  else itemSingular = itemPlural.substring(0, itemPlural.length - 1); // remove s letter
+  else
+    itemSingular = itemPlural
+      .substring(0, itemPlural.length - 1)
+      .split(" ")
+      .join("");
 
   const { data, loading } = useFetch(`http://localhost:3008/${itemSingular}s`);
 
@@ -39,6 +43,8 @@ const Reservations = () => {
       ? ["title", "author", "genre"]
       : itemSingular === "device"
       ? ["name", "deviceType", "os", "brand"]
+      : itemSingular === "meetingRoom"
+      ? ["name", "city", "district", "address"]
       : null;
 
   //object for filter collecstion

@@ -144,6 +144,7 @@ export class Pagination extends React.Component {
           key={index}
           image={currentCards[key].image}
           author={currentCards[key].author}
+          address={currentCards[key].address}
           brand={currentCards[key].brand}
           title={currentCards[key].title}
           name={currentCards[key].name}

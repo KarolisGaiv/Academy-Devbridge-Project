@@ -39,7 +39,16 @@
           "id": "193ywpe740"
         }
       ],
-      "meetingRooms": []
+      "meetingRooms": [
+        {
+          "name": "UMA GO9",
+          "id": "wh9nprytjy"
+        },
+        {
+          "name": "Work'inn",
+          "id": "pjdgqljhk4"
+        }
+      ]
     },
     "notifications": [
       {

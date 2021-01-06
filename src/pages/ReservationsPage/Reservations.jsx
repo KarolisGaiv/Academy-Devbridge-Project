@@ -6,7 +6,10 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "./reservations.scss";
 import SearchSection from "components/SearchSection/SearchSection";
 import { TagFilter } from "components/SideFilters/TagFilter";
-import SearchFunction from "../../components/SearchSection/Search/SearchFunction";
+import {
+  SearchBarSearch,
+  TagsSearch,
+} from "../../components/SearchSection/Search/SearchFunction";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -42,7 +45,7 @@ const Reservations = () => {
       : null;
 
   const searchSectionTagButtons = [
-    { buttonText: "All", icon: "none", isSelected: false },
+    { buttonText: "All", icon: "none", isSelected: true },
     {
       buttonText: "Favorites",
       icon: "heartBtnBold",
@@ -68,47 +71,9 @@ const Reservations = () => {
   );
 
   let results;
-
-  //handle search section tags toggle
-  const handleTagButtonClick = (i) => {
-    let tagsList = [...SearchSectionTags];
-    tagsList[i] = { ...tagsList[i], isSelected: !tagsList[i].isSelected };
-    allTagClick(tagsList);
-    tagClicks(tagsList);
-  };
-  //If Clicked on All tag, unselect other near tags
-  const allTagClick = (list) => {
-    if (list[list.findIndex((obj) => obj.buttonText === "All")].isSelected) {
-      list.forEach((tag) => (tag.isSelected = false));
-    }
-    setSearchSectionTags(list);
-  };
-
-  //filter by Favorites and Available
-  const tagClicks = (list) => {
-    let searchResultsAll = productList;
-    list.forEach((tag) => {
-      if (tag.buttonText === "Available" && tag.isSelected) {
-        searchResultsAll = searchResultsAll.filter(
-          (obj) =>
-            obj.bookedUntil === null ||
-            obj.bookedUntil === "null" ||
-            new Date(obj.bookedUntil) < new Date()
-        );
-      }
-      if (tag.buttonText === "Favorites" && tag.isSelected) {
-        searchResultsAll = searchResultsAll.filter(
-          (obj) => obj.favourite === true
-        );
-      }
-    });
-
-    handleSearch(searchTerm, searchResultsAll, keysToSearch);
-  };
-
   //on Search button click
   const handleSearch = (searchTerm, dataToSearchIn, arrOfKeys) => {
-    results = SearchFunction(searchTerm, dataToSearchIn, arrOfKeys);
+    results = SearchBarSearch(searchTerm, dataToSearchIn, arrOfKeys);
     setSearchResults(results);
   };
 
@@ -144,7 +109,7 @@ const Reservations = () => {
 
   const productList = useMemo(() => {
     return TagFilter(data[`${itemSingular}List`], filterList);
-  }, [data, filterList]);
+  }, [data, filterList, itemSingular]);
 
   //search bar input value handler
   const handleChange = (e) => {
@@ -173,7 +138,17 @@ const Reservations = () => {
           handleSearch(searchTerm, searchResults, keysToSearch)
         }
         tagButtons={SearchSectionTags}
-        handleTagButtonClick={handleTagButtonClick}
+        handleTagButtonClick={(i) =>
+          TagsSearch(
+            i,
+            SearchSectionTags,
+            setSearchSectionTags,
+            productList,
+            handleSearch,
+            searchTerm,
+            keysToSearch
+          )
+        }
       />
       <section className="reservations__section">
         <aside className="reservations__side-filters">

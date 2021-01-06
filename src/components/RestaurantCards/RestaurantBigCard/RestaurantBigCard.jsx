@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes, { string } from "prop-types";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import { Button } from "../../Button/Button";
@@ -7,16 +7,18 @@ import { Link } from "../../Link/Link";
 import "./restaurant-big-card.scss";
 
 export const RestaurantBigCard = (props) => {
+  //Toggles between classes 'expanded' and 'collapsed':
   const [expanded, setExpanded] = useState(false);
-
-  const [checkinNumberState, setCheckinNumberState] = useState({
-    checkinNumber: props.checkins,
-    clicked: false,
-  });
 
   const toggledClass = expanded
     ? "restaurant-card__description restaurant-card__description--expanded"
     : "restaurant-card__description restaurant-card__description--collapsed";
+
+  //Changes checkins' number after button is clicked:
+  const [checkinNumberState, setCheckinNumberState] = useState({
+    checkinNumber: props.checkins,
+    clicked: false,
+  });
 
   const increaseCheckinNumber = () => {
     if (checkinNumberState.clicked) {
@@ -31,6 +33,32 @@ export const RestaurantBigCard = (props) => {
       });
     }
   };
+
+  //Adds READ MORE / READ LESS only if there is an overflow and reacts to window resize event:
+  const [overflowActive, setOverflowActive] = useState(false);
+
+  const isEllipsisActive = (element) => {
+    return (
+      element.offsetHeight < element.scrollHeight ||
+      element.offsetWidth < element.scrollWidth
+    );
+  };
+
+  useEffect(() => {
+    let timeoutId = null;
+    const updateSize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(
+        () => setOverflowActive(isEllipsisActive(paragraph.current)),
+        100
+      );
+    };
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+  const paragraph = useRef(null);
 
   return (
     <div className="restaurant-big-card">
@@ -53,11 +81,15 @@ export const RestaurantBigCard = (props) => {
             href={props.web}
           />
           <RestWebAddress icon="MapPin" text={props.address} />
-          <p className={toggledClass}>{props.description}</p>
+          <p className={toggledClass} ref={paragraph}>
+            {props.description}
+          </p>
           <div className="restaurant-card__button-field">
-            <Link handleClick={() => setExpanded(!expanded)}>
-              {expanded ? "Read less" : "Read more"}
-            </Link>
+            {overflowActive && (
+              <Link handleClick={() => setExpanded(!expanded)}>
+                {expanded ? "Read less" : "Read more"}
+              </Link>
+            )}
             <Button
               className="button button--enabled"
               typeName="button"

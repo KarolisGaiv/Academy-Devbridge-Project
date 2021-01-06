@@ -34,7 +34,7 @@ const Dashboard = () => {
             directTo="dashboard/reservations"
           />
           <CategoryCard
-            category="meeting rooms"
+            category="meeting Rooms"
             icon="Door"
             totalNumber={reservationsData.meetingRooms.length}
             keyword={"reserved"}

@@ -13,6 +13,7 @@ export const ListItemCard = (props) => {
   const {
     image,
     author,
+    address,
     brand,
     title,
     name,
@@ -21,7 +22,7 @@ export const ListItemCard = (props) => {
     quantity,
   } = props;
 
-  const productSubtitle = author ?? brand;
+  const productSubtitle = author ?? brand ?? address;
   const productTitle = title ?? name;
   const productBookedUntil = bookedUntil && bookedUntil.replace(/-/g, "/");
 
@@ -111,6 +112,7 @@ export const ListItemCard = (props) => {
 ListItemCard.propTypes = {
   image: PropTypes.string,
   author: PropTypes.string,
+  address: PropTypes.string,
   brand: PropTypes.string,
   title: PropTypes.string,
   name: PropTypes.string,

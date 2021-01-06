@@ -20,14 +20,17 @@ export const ResCard = ({
   return (
     <div className="card-wrapper">
       <Link
-        title={`${category.charAt(0).toUpperCase() + category.slice(1)} Page`}
+        title={`${
+          category.charAt(0).toUpperCase() + category.substr(1).toLowerCase()
+        } Page`}
         to={`${directTo}/${category}`}
         className="card-wrapper__link"
         aria-label={`${category}, ${totalNumber} ${keyword}`}
       >
         <div className="card-wrapper__info">
           <span className="card-wrapper__name">
-            {category.charAt(0).toUpperCase() + category.slice(1)}
+            {category.charAt(0).toUpperCase() +
+              category.substr(1).toLowerCase()}
           </span>
           <span className="card-wrapper__details">
             {`${totalNumber} ${keyword}`}

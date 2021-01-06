@@ -19,13 +19,15 @@
 
 .rating {
     $_this: &;
-    display: flex;
-    justify-content: flex-end;
 
     &__input {
         display: none;
-        //visibility: visible !important;
-        //opacity: 0 !important;
+    }
+
+    button {
+        background-color: $transparent;
+        border: 0;
+        padding: 0;
     }
 
     &__star {
@@ -38,34 +40,39 @@
 
     &__collapse {
         @include ratingbox($color-yellow, $color-pickled-bluewood, 65px);
-
-        &:hover {
-            overflow: visible;
-            width: 145px;
-
-            #{$_this}__expand #{$_this}__star {
-                margin: 4px 0 0;
-                padding: 3px;
-            }
-
-            #{$_this}__expand {
-                margin-left: 1px;
-            }
+        #{$_this}__star-box {
+            margin-top: 152px;
         }
     }
 
-    .on-tab {
+    &__expand {
         @include ratingbox($color-yellow, $color-pickled-bluewood, 65px);
         overflow: visible;
         width: 145px;
 
-        #{$_this}__expand #{$_this}__star {
+        #{$_this}__star-box #{$_this}__star {
             margin: 4px 0 0;
             padding: 3px;
         }
 
-        #{$_this}__expand {
+        #{$_this}__star-box {
             margin-left: 1px;
         }
     }
+}
+
+.second-rating-height {
+    margin-top: 77px;
+}
+
+.third-rating-height {
+    margin-top: 152px;
+}
+
+.fourth-rating-height {
+    margin-top: 228px;
+}
+
+.fifth-rating-height {
+    margin-top: 304px;
 }

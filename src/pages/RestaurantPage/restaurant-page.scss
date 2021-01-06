@@ -40,4 +40,14 @@
     &__reviews {
         grid-area: reviews;
     }
+
+    @media (max-width: $breakpoint-tablet-landscape) {
+        &__about-restaurant {
+            grid-template-areas:
+                'information'
+                'location'
+                'reviews';
+            grid-template-columns: 1fr;
+        }
+    }
 }

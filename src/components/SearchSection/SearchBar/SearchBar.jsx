@@ -6,7 +6,11 @@ import SVGIcon from "components/SVGIcon/SVGIcon";
 const SearchBar = (props) => {
   return (
     <div className="search-bar">
-      <button className="search-bar__button" type="submit">
+      <button
+        className="search-bar__button"
+        type="submit"
+        onClick={props.handleClick}
+      >
         <SVGIcon name="search" />
       </button>
       <input
@@ -36,4 +40,5 @@ SearchBar.propTypes = {
   inputValue: propTypes.string,
   handleChange: propTypes.func,
   handleCancelClick: propTypes.func,
+  handleClick: propTypes.func,
 };

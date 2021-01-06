@@ -20,21 +20,21 @@ const Dashboard = () => {
         <h2 className="dashboard__heading">Reservations</h2>
         <div className="dashboard__reservations-cards">
           <CategoryCard
-            category="Devices"
+            category="devices"
             icon="Phone"
             totalNumber={reservationsData.devices.length}
             keyword={"reserved"}
             directTo="reservations"
           />
           <CategoryCard
-            category="Books"
+            category="books"
             icon="Book"
             totalNumber={reservationsData.books.length}
             keyword={"reserved"}
             directTo="reservations"
           />
           <CategoryCard
-            category="Meeting rooms"
+            category="meeting Rooms"
             icon="Door"
             totalNumber={reservationsData.meetingRooms.length}
             keyword={"reserved"}

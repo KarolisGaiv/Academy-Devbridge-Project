@@ -8,6 +8,7 @@
         border: 1px solid $color-grey-3;
         border-radius: 5px;
         cursor: pointer;
+        font-family: $main-font;
         height: 32px;
         margin-right: 16px;
         width: 32px;
@@ -24,7 +25,7 @@
 
         &--active {
             background-color: $color-electric-violet;
-            border: none;
+            border: 0;
             color: $color-white;
             font-size: $size-14;
             font-weight: $weight-black;

@@ -6,27 +6,33 @@ import Reservations from "../../../../pages/ReservationsPage/Reservations";
 import EatOut from "../../../../pages/EatOut/EatOut";
 import CategoryRestaurants from "../../../../pages/CategoryRestaurants/CategoryRestaurants";
 import RestaurantPage from "../../../../pages/RestaurantPage/RestaurantPage";
+import Layout from "../../../../components/mainLayout/Layout";
 
 const Content = () => {
   return (
     <content className="content">
       <Switch>
-        <Route exact path="/" render={() => <Dashboard />} />
-        <Route exact path="/reservations" render={() => <Reservations />} />
+        <Route exact path="/dashboard" render={() => <Dashboard />} />
+        <Route exact path="/" render={() => <Layout />} />
         <Route
           exact
-          path="/reservations/:itemPlural"
+          path="/dashboard/reservations"
           render={() => <Reservations />}
         />
-        <Route exact path="/eat-out" render={() => <EatOut />} />
         <Route
           exact
-          path="/eat-out/:category"
+          path="/dashboard/reservations/:itemPlural"
+          render={() => <Reservations />}
+        />
+        <Route exact path="/dashboard/eat-out" render={() => <EatOut />} />
+        <Route
+          exact
+          path="/dashboard/eat-out/:category"
           render={() => <CategoryRestaurants />}
         />
         <Route
           exact
-          path="/eat-out//:restaurant"
+          path="/dashboard/eat-out//:restaurant"
           render={() => <RestaurantPage />}
         />
       </Switch>

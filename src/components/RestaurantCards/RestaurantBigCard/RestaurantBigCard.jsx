@@ -50,7 +50,7 @@ export const RestaurantBigCard = (props) => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(
         () => setOverflowActive(isEllipsisActive(paragraph.current)),
-        100
+        []
       );
     };
     window.addEventListener("resize", updateSize);

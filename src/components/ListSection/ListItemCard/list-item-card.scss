@@ -63,6 +63,26 @@
             display: flex;
             justify-content: flex-start;
         }
+
+        @media (max-width: 1380px) {
+            width: 400px;
+        }
+        @media (max-width: 1180px) {
+            width: 300px;
+        }
+        @media (max-width: 1080px) {
+            width: 250px;
+
+            #{$this}__title {
+                font-size: $size-20;
+            }
+        }
+        @media (max-width: 1024px) {
+            width: 400px;
+        }
+        @media (max-width: 864px) {
+            width: 250px;
+        }
     }
 
     &__interaction {
@@ -73,9 +93,15 @@
     }
 
     &__buttons {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
         #{$this}__link {
+            flex-shrink: 1;
             font-size: $size-12;
             font-weight: $weight-medium;
+            line-height: initial;
         }
 
         #{$this}__button {

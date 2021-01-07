@@ -119,7 +119,7 @@ const Reservations = () => {
         handleCancelClick={handleCancelClick}
         handleSearch={() => handleSearch(productList, keysToSearch)}
       />
-      <section className="reservations__section">
+      <section className="reservations__section reservations__section--column">
         <aside className="reservations__side-filters">
           <SideFilters
             filterCategories={data.filterCategories}
@@ -129,7 +129,7 @@ const Reservations = () => {
             deleteItemFromFilterList={deleteItemFromFilterList}
           />
         </aside>
-        <section className="reservations__list ">
+        <section className="reservations__list">
           <ListSection
             productList={searchResults}
             filterList={filterList}

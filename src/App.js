@@ -12,6 +12,7 @@ const App = () => {
 
     return null;
   }
+
   return (
     <div className="app">
       <Router>

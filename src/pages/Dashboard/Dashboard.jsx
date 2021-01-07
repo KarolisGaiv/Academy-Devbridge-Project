@@ -24,21 +24,21 @@ const Dashboard = () => {
             icon="Phone"
             totalNumber={reservationsData.devices.length}
             keyword={"reserved"}
-            directTo="reservations"
+            directTo="dashboard/reservations"
           />
           <CategoryCard
             category="books"
             icon="Book"
             totalNumber={reservationsData.books.length}
             keyword={"reserved"}
-            directTo="reservations"
+            directTo="dashboard/reservations"
           />
           <CategoryCard
             category="meeting Rooms"
             icon="Door"
             totalNumber={reservationsData.meetingRooms.length}
             keyword={"reserved"}
-            directTo="reservations"
+            directTo="dashboard/reservations"
           />
         </div>
         <BestRestaurantWrapper />

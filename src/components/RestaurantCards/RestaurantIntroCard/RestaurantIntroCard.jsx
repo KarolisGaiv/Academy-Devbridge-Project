@@ -21,7 +21,7 @@ export class RestaurantIntroCard extends React.Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to="/eat-out" />;
+      return <Redirect to="/dashboard/eat-out" />;
     }
     return (
       <CardContainer>

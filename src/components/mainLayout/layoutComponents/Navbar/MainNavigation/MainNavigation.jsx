@@ -14,7 +14,7 @@ const MainNavigation = ({ outsideExpandHandler }) => {
         iconName: "home",
         itemStatus: "inactive",
         exactURL: true,
-        pageURL: "",
+        pageURL: "dashboard",
         itemText: "",
       },
       {
@@ -22,7 +22,7 @@ const MainNavigation = ({ outsideExpandHandler }) => {
         iconName: "bookmark",
         itemStatus: "inactive",
         exactURL: false,
-        pageURL: "reservations",
+        pageURL: "dashboard/reservations",
         itemText: "",
       },
       {
@@ -30,7 +30,7 @@ const MainNavigation = ({ outsideExpandHandler }) => {
         iconName: "compass",
         itemStatus: "inactive",
         exactURL: false,
-        pageURL: "eat-out",
+        pageURL: "dashboard/eat-out",
         itemText: "",
       },
     ],
@@ -89,7 +89,7 @@ const MainNavigation = ({ outsideExpandHandler }) => {
       ${expanded ? "navigation__wrapper--long" : "navigation__wrapper--short"}`}
     >
       <nav className="navigation">
-        <NavLink to="/" exact>
+        <NavLink to="/dashboard" exact>
           <SVGIcon
             name={expanded ? `fullLogo` : `logo`}
             className="navigation__logo"

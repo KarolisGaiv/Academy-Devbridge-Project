@@ -64,6 +64,7 @@ const Reservations = () => {
   //search bar related states
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState("");
+  const [searchValue, setSearchValue] = useState("All");
 
   //Search section tag buttons
   const [SearchSectionTags, setSearchSectionTags] = useState(
@@ -75,6 +76,10 @@ const Reservations = () => {
   const handleSearch = (searchTerm, dataToSearchIn, arrOfKeys) => {
     results = SearchBarSearch(searchTerm, dataToSearchIn, arrOfKeys);
     setSearchResults(results);
+
+    searchTerm.trim() === ""
+      ? setSearchValue("All")
+      : setSearchValue(searchTerm.trim());
   };
 
   //add new filter if it's not already exists
@@ -119,6 +124,7 @@ const Reservations = () => {
   const handleCancelClick = () => {
     setSearchTerm("");
     handleSearch(searchTerm, productList, keysToSearch);
+    console.log(searchTerm);
   };
 
   useEffect(() => {
@@ -165,6 +171,7 @@ const Reservations = () => {
             productList={searchResults}
             filterList={filterList}
             deleteItemFromFilterList={deleteItemFromFilterList}
+            searchValue={searchValue}
           />
         </section>
       </section>

@@ -9,6 +9,10 @@ $_color-bold: #050504;
     font-family: $main-font;
     font-size: $size-14;
     grid-row-start: 2;
+
+    @media (max-width: $breakpoint-tablet) {
+        order: 4;
+    }
 }
 
 .react-date-picker {

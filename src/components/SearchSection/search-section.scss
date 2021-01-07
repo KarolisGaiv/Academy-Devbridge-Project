@@ -23,6 +23,11 @@ $_size-large: 32px;
         color: $color-grey-chateau;
         font-weight: $weight-bold;
         text-transform: uppercase;
+
+        @media (max-width: $breakpoint-tablet) {
+            margin-top: 16px;
+            order: 3;
+        }
     }
 
     &__search-filter-section {
@@ -30,6 +35,11 @@ $_size-large: 32px;
         display: grid;
         grid-template-columns: 4fr 2fr;
         row-gap: 8px;
+
+        @media (max-width: $breakpoint-tablet) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__search-button {
@@ -37,6 +47,12 @@ $_size-large: 32px;
         display: flex;
         font-size: $size-16;
         grid-row-start: 2;
+
+        @media (max-width: $breakpoint-tablet) {
+            margin-top: 8px;
+            order: 5;
+            width: 130px;
+        }
     }
 
     &__search-button-icon {

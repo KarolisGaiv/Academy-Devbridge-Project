@@ -59,7 +59,9 @@ class UserProfile extends Component {
                 <li className="drop-menu__item">
                   <div className="drop-menu__item-body">
                     <SVGIcon name="logout" />
-                    <span className="drop-menu__text">Log out</span>
+                    <span className="drop-menu__text">
+                      <a href="/">Log out</a>
+                    </span>
                   </div>
                 </li>
               </ul>

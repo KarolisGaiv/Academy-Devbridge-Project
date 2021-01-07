@@ -76,7 +76,11 @@ const Reservations = () => {
   const handleSearch = (searchTerm, dataToSearchIn, arrOfKeys) => {
     results = SearchBarSearch(searchTerm, dataToSearchIn, arrOfKeys);
     setSearchResults(results);
+  };
 
+  const handleSearchClick = (searchTerm, arrOfKeys) => {
+    results = SearchBarSearch(searchTerm, productList, arrOfKeys);
+    setSearchResults(results);
     searchTerm.trim() === ""
       ? setSearchValue("All")
       : setSearchValue(searchTerm.trim());
@@ -123,8 +127,8 @@ const Reservations = () => {
   //search bar cancel icon handler
   const handleCancelClick = () => {
     setSearchTerm("");
-    handleSearch(searchTerm, productList, keysToSearch);
     console.log(searchTerm);
+    handleSearchClick(searchTerm, productList, keysToSearch);
   };
 
   useEffect(() => {
@@ -140,9 +144,7 @@ const Reservations = () => {
         inputValue={searchTerm}
         handleChange={handleChange}
         handleCancelClick={handleCancelClick}
-        handleSearch={() =>
-          handleSearch(searchTerm, searchResults, keysToSearch)
-        }
+        handleSearch={() => handleSearchClick(searchTerm, keysToSearch)}
         tagButtons={SearchSectionTags}
         handleTagButtonClick={(i) =>
           TagsSearch(

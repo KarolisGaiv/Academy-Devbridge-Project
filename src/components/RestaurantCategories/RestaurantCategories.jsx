@@ -29,6 +29,7 @@ const RestaurantCategories = () => {
           key={item}
           iconsOutside={true}
           directTo="eat-out"
+          cardSmall={true}
         />
       ))}
     </div>

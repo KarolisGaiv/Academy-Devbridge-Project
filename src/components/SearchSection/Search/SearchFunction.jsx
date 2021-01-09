@@ -8,15 +8,7 @@ const SearchBarSearch = (searchTerm, data, keys) => {
 };
 
 //handle search section tags toggle
-const TagsSearch = (
-  i,
-  SearchTags,
-  setSearchTags,
-  productList,
-  handleFunction,
-  searchTerm,
-  keysToSearch
-) => {
+const TagsSearch = (i, SearchTags) => {
   let tagsList = [...SearchTags];
   tagsList.forEach((tag) => {
     if (tag.buttonText !== "All" && tag === tagsList[i]) {
@@ -37,18 +29,11 @@ const TagsSearch = (
         .map((tag) => (tag.isSelected = true));
     }
   });
-  setSearchTags(tagsList);
-  FilterByTags(tagsList, productList, handleFunction, searchTerm, keysToSearch);
+  return tagsList;
 };
 
 //filter by Favorites and Available, by All
-const FilterByTags = (
-  list,
-  productList,
-  handleFunction,
-  searchTerm,
-  keysToSearch
-) => {
+const FilterByTags = (list, productList) => {
   let searchResultsAll = productList;
   list.forEach((tag) => {
     if (tag.buttonText === "Available" && tag.isSelected) {
@@ -65,7 +50,7 @@ const FilterByTags = (
       );
     }
   });
-  handleFunction(searchTerm, searchResultsAll, keysToSearch);
+  return searchResultsAll;
 };
 
-export { SearchBarSearch, TagsSearch };
+export { SearchBarSearch, TagsSearch, FilterByTags };

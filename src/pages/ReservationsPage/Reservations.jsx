@@ -9,6 +9,7 @@ import { TagFilter } from "components/SideFilters/TagFilter";
 import {
   SearchBarSearch,
   TagsSearch,
+  FilterByTags,
 } from "../../components/SearchSection/Search/SearchFunction";
 
 const useFetch = (url) => {
@@ -71,19 +72,49 @@ const Reservations = () => {
     searchSectionTagButtons
   );
 
-  let results;
-  //on Search button click
-  const handleSearch = (searchTerm, dataToSearchIn, arrOfKeys) => {
-    results = SearchBarSearch(searchTerm, dataToSearchIn, arrOfKeys);
-    setSearchResults(results);
-  };
-
-  const handleSearchClick = (searchTerm, arrOfKeys) => {
-    results = SearchBarSearch(searchTerm, productList, arrOfKeys);
-    setSearchResults(results);
+  //handle "Results For" label
+  const handleResultsFor = (searchTerm) => {
     searchTerm.trim() === ""
       ? setSearchValue("All")
       : setSearchValue(searchTerm.trim());
+  };
+
+  let results;
+  let tagsList;
+  let resultsByTags;
+
+  //handle Search Tags clicking
+  const handleTagSearch = (
+    searchTags,
+    searchTerm,
+    dataToSearchIn,
+    arrOfKeys,
+    i
+  ) => {
+    tagsList = TagsSearch(i, searchTags);
+    setSearchSectionTags(tagsList);
+    resultsByTags = FilterByTags(tagsList, dataToSearchIn);
+    results = SearchBarSearch(searchTerm, resultsByTags, arrOfKeys);
+    setSearchResults(results);
+    handleResultsFor(searchTerm);
+  };
+
+  //handle Search Bar Results
+  const handleBarSearch = (tagsList, searchTerm, dataToSearchIn, arrOfKeys) => {
+    resultsByTags = FilterByTags(tagsList, dataToSearchIn);
+    results = SearchBarSearch(searchTerm, resultsByTags, arrOfKeys);
+    setSearchResults(results);
+    handleResultsFor(searchTerm);
+  };
+
+  //search bar input value handler
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+  //search bar cancel icon handler
+  const handleCancelClick = () => {
+    setSearchTerm("");
+    handleBarSearch(SearchSectionTags, "", productList, keysToSearch);
   };
 
   //add new filter if it's not already exists
@@ -120,17 +151,6 @@ const Reservations = () => {
     return TagFilter(data[`${itemSingular}List`], filterList);
   }, [data, filterList, itemSingular]);
 
-  //search bar input value handler
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-  //search bar cancel icon handler
-  const handleCancelClick = () => {
-    setSearchTerm("");
-    console.log(searchTerm);
-    handleSearchClick(searchTerm, productList, keysToSearch);
-  };
-
   useEffect(() => {
     setSearchResults(productList);
   }, [productList]);
@@ -144,17 +164,22 @@ const Reservations = () => {
         inputValue={searchTerm}
         handleChange={handleChange}
         handleCancelClick={handleCancelClick}
-        handleSearch={() => handleSearchClick(searchTerm, keysToSearch)}
+        handleSearch={() =>
+          handleBarSearch(
+            SearchSectionTags,
+            searchTerm,
+            productList,
+            keysToSearch
+          )
+        }
         tagButtons={SearchSectionTags}
         handleTagButtonClick={(i) =>
-          TagsSearch(
-            i,
+          handleTagSearch(
             SearchSectionTags,
-            setSearchSectionTags,
-            productList,
-            handleSearch,
             searchTerm,
-            keysToSearch
+            productList,
+            keysToSearch,
+            i
           )
         }
       />

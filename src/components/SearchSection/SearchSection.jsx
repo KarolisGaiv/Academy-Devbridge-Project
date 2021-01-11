@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import propTypes from "prop-types";
 import "./search-section.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
@@ -9,15 +9,29 @@ import { Button } from "components/Button/Button";
 import SVGIcon from "components/SVGIcon/SVGIcon";
 
 const SearchSection = (props) => {
+  const [tags, setTags] = useState(props.tagButtons);
+
+  useEffect(() => {
+    setTags(props.tagButtons);
+  }, [props.tagButtons]);
+
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="search-section">
         <h2 className="search-section__title">Search</h2>
         <div className="search-section__search-filter-section">
           <div className="search-section__tag-wrapper">
-            <TagButton buttonText="All" icon="none" />
-            <TagButton buttonText="Favorites" icon="heartBtnBold" />
-            <TagButton buttonText="Available" icon="available" />
+            {tags.map((tag, index) => {
+              return (
+                <TagButton
+                  key={index}
+                  buttonText={tag.buttonText}
+                  icon={tag.icon}
+                  isSelected={tag.isSelected}
+                  selectClick={() => props.handleTagButtonClick(index)}
+                />
+              );
+            })}
           </div>
           <span className="search-section__datepicker-label">
             reservation date
@@ -53,4 +67,12 @@ SearchSection.propTypes = {
   handleSearch: propTypes.func,
   handleCancelClick: propTypes.func,
   handleChange: propTypes.func,
+  tagButtons: propTypes.arrayOf(
+    propTypes.shape({
+      buttonText: propTypes.string,
+      icon: propTypes.string,
+      isSelected: propTypes.bool,
+    })
+  ),
+  handleTagButtonClick: propTypes.func,
 };

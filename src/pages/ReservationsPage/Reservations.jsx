@@ -6,7 +6,11 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "./reservations.scss";
 import SearchSection from "components/SearchSection/SearchSection";
 import { TagFilter } from "components/SideFilters/TagFilter";
-import SearchFunction from "components/Search/SearchFunction";
+import {
+  SearchBarSearch,
+  TagsSearch,
+  FilterByTags,
+} from "../../components/SearchSection/Search/SearchFunction";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -47,17 +51,76 @@ const Reservations = () => {
       ? ["name", "city", "district", "address"]
       : null;
 
+  const searchSectionTagButtons = [
+    { buttonText: "All", icon: "none", isSelected: true },
+    {
+      buttonText: "Favorites",
+      icon: "heartBtnBold",
+      isSelected: false,
+    },
+    {
+      buttonText: "Available",
+      icon: "available",
+      isSelected: false,
+    },
+  ];
+
   //object for filter collecstion
   const [filterList, setFilterList] = useState({});
 
   //search bar related states
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState("");
+  const [searchValue, setSearchValue] = useState("All");
 
-  //on Search button click
-  const handleSearch = (dataToSearchIn, arrOfKeys) => {
-    const results = SearchFunction(searchTerm, dataToSearchIn, arrOfKeys);
+  //Search section tag buttons
+  const [SearchSectionTags, setSearchSectionTags] = useState(
+    searchSectionTagButtons
+  );
+
+  //handle "Results For" label
+  const handleResultsFor = (searchTerm) => {
+    searchTerm.trim() === ""
+      ? setSearchValue("All")
+      : setSearchValue(searchTerm.trim());
+  };
+
+  let results;
+  let tagsList;
+  let resultsByTags;
+
+  //handle Search Tags clicking
+  const handleTagSearch = (
+    searchTags,
+    searchTerm,
+    dataToSearchIn,
+    arrOfKeys,
+    i
+  ) => {
+    tagsList = TagsSearch(i, searchTags);
+    setSearchSectionTags(tagsList);
+    resultsByTags = FilterByTags(tagsList, dataToSearchIn);
+    results = SearchBarSearch(searchTerm, resultsByTags, arrOfKeys);
     setSearchResults(results);
+    handleResultsFor(searchTerm);
+  };
+
+  //handle Search Bar Results
+  const handleBarSearch = (tagsList, searchTerm, dataToSearchIn, arrOfKeys) => {
+    resultsByTags = FilterByTags(tagsList, dataToSearchIn);
+    results = SearchBarSearch(searchTerm, resultsByTags, arrOfKeys);
+    setSearchResults(results);
+    handleResultsFor(searchTerm);
+  };
+
+  //search bar input value handler
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+  //search bar cancel icon handler
+  const handleCancelClick = () => {
+    setSearchTerm("");
+    handleBarSearch(SearchSectionTags, "", productList, keysToSearch);
   };
 
   //add new filter if it's not already exists
@@ -92,17 +155,7 @@ const Reservations = () => {
 
   const productList = useMemo(() => {
     return TagFilter(data[`${itemSingular}List`], filterList);
-  }, [data, filterList]);
-
-  //search bar input value handler
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-  //search bar cancel icon handler
-  const handleCancelClick = () => {
-    setSearchTerm("");
-    setSearchResults(productList);
-  };
+  }, [data, filterList, itemSingular]);
 
   useEffect(() => {
     setSearchResults(productList);
@@ -117,7 +170,24 @@ const Reservations = () => {
         inputValue={searchTerm}
         handleChange={handleChange}
         handleCancelClick={handleCancelClick}
-        handleSearch={() => handleSearch(productList, keysToSearch)}
+        handleSearch={() =>
+          handleBarSearch(
+            SearchSectionTags,
+            searchTerm,
+            productList,
+            keysToSearch
+          )
+        }
+        tagButtons={SearchSectionTags}
+        handleTagButtonClick={(i) =>
+          handleTagSearch(
+            SearchSectionTags,
+            searchTerm,
+            productList,
+            keysToSearch,
+            i
+          )
+        }
       />
       <section className="reservations__section reservations__section--column">
         <aside className="reservations__side-filters">
@@ -134,6 +204,7 @@ const Reservations = () => {
             productList={searchResults}
             filterList={filterList}
             deleteItemFromFilterList={deleteItemFromFilterList}
+            searchValue={searchValue}
           />
         </section>
       </section>

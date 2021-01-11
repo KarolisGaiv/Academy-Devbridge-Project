@@ -14,8 +14,8 @@ export const ListSection = (props) => {
   return (
     <div className="list-section">
       <div className="list-section__results">
-        <div className="list-section__result-text">{`${productList.length} results for:`}</div>
-        <div className="list-section__search-results">{` All`}</div>
+        <div className="list-section__result-text">{`${productList.length} results for: `}</div>
+        <div className="list-section__search-results">{props.searchValue}</div>
         <div className="list-section__filter-results">
           {filterValues.map((value, index) => {
             return (
@@ -47,4 +47,5 @@ ListSection.propTypes = {
   productList: PropTypes.array,
   filterList: PropTypes.object,
   deleteItemFromFilterList: PropTypes.func,
+  searchValue: PropTypes.string,
 };

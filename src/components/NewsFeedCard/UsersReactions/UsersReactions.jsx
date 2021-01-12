@@ -54,11 +54,7 @@ const UsersReactions = (props) => {
   return (
     <div className="user-reactions">
       <div className="user-reactions__reaction">
-        <button
-          className="user-reactions__button"
-          type="submit"
-          onClick={onReactionClick}
-        >
+        <button className="user-reactions__button" onClick={onReactionClick}>
           <SVGIcon
             name={reactionIconSelect(props.data)}
             className="user-reactions__reaction-icon svg-icon"
@@ -69,7 +65,10 @@ const UsersReactions = (props) => {
         </p>
       </div>
       <div className="user-reactions__comment">
-        <button className="user-reactions__button disabled" type="submit">
+        <button
+          className="user-reactions__button"
+          onClick={props.commentIconHandle}
+        >
           <SVGIcon
             name="commentBtn"
             className="user-reactions__comment-icon svg-icon"
@@ -86,4 +85,5 @@ export default UsersReactions;
 UsersReactions.propTypes = {
   data: PropTypes.object,
   commentCount: PropTypes.number,
+  commentIconHandle: PropTypes.func,
 };

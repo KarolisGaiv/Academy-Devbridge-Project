@@ -58,5 +58,5 @@ ResCard.propTypes = {
   keyword: PropTypes.string,
   iconsOutside: PropTypes.bool,
   directTo: PropTypes.string,
-  cardSmall: PropTypes.string,
+  cardSmall: PropTypes.bool,
 };

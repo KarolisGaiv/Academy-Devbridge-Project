@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Greeting from "../UserGreeting/UserGreeting";
 import Clock from "../Clock/Clock";
 import "./greeting-widget.scss";
-import database from "../../db.json";
+
+const useFetch = (url) => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchMyAPI() {
+      const response = await fetch(url);
+      const data = await response.json();
+      setData(data);
+    }
+
+    fetchMyAPI();
+  }, [url]);
+
+  return { data };
+};
 
 export const Widget = () => {
-  const user = database.userData;
+  const { data } = useFetch("http://localhost:3008/userData");
 
   return (
     <div className="widget-block">
       <Clock />
-      <Greeting name={user.userName} />
+      <Greeting name={data.userName} />
     </div>
   );
 };

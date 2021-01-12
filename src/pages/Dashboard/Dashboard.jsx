@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./dashboard.scss";
 import WeatherWidget from "components/WeatherWidget/WeatherWidget";
 import GreetingWidget from "../../components/GreetingWidget/GreetingWidget";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
-import database from "../../db.json";
 import BestRestaurantWrapper from "../../components/RestaurantCards/BestRestaurantWrapper/BestRestaurantWrapper";
 import NewsFeed from "../../components/NewsFeedCard/NewsFeed";
 
-const Dashboard = () => {
-  const reservationsData = database.userData.reservations;
+const useFetch = (url) => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  return (
+  useEffect(() => {
+    async function fetchMyAPI() {
+      const response = await fetch(url);
+      const data = await response.json();
+      const reservationsData = data.reservations;
+      setData(reservationsData);
+      setLoading(false);
+    }
+
+    fetchMyAPI();
+  }, [url]);
+
+  return { data, loading };
+};
+
+const Dashboard = () => {
+  const { data, loading } = useFetch("http://localhost:3008/userData");
+
+  return loading ? (
+    <div>...loading</div>
+  ) : (
     <div className="dashboard">
       <section className="dashboard__header">
         <GreetingWidget />
@@ -22,21 +42,21 @@ const Dashboard = () => {
           <CategoryCard
             category="devices"
             icon="Phone"
-            totalNumber={reservationsData.devices.length}
+            totalNumber={data.devices.length}
             keyword={"reserved"}
             directTo="dashboard/reservations"
           />
           <CategoryCard
             category="books"
             icon="Book"
-            totalNumber={reservationsData.books.length}
+            totalNumber={data.books.length}
             keyword={"reserved"}
             directTo="dashboard/reservations"
           />
           <CategoryCard
             category="meeting Rooms"
             icon="Door"
-            totalNumber={reservationsData.meetingRooms.length}
+            totalNumber={data.meetingRooms.length}
             keyword={"reserved"}
             directTo="dashboard/reservations"
           />

@@ -102,7 +102,8 @@
           }
         ],
         "categories": ["Burger", "Salads", "Grill"],
-        "slogan": "Delicious burgers all the time"
+        "slogan": "Delicious burgers all the time",
+        "openingDate": "September 17, 2019"
       },
       {
         "name": "Jurgis ir Drakonas",
@@ -158,7 +159,8 @@
           }
         ],
         "categories": ["Salads", "Pizza", "Pancakes", "Soups"],
-        "slogan": "Chief exclusive masterpieces"
+        "slogan": "Chief exclusive masterpieces",
+        "openingDate": "October 2, 2017"
       },
       {
         "name": "Mamma Pizza",
@@ -202,7 +204,8 @@
           }
         ],
         "categories": ["Pizza"],
-        "slogan": "Find the pizza for all ocations"
+        "slogan": "Find the pizza for all ocations",
+        "openingDate": "January 17, 2020"
       },
       {
         "name": "MOMO Grill Kaunas",
@@ -270,7 +273,8 @@
           }
         ],
         "categories": ["Grill", "Sweets", "Brunch"],
-        "slogan": "From meat to sweets"
+        "slogan": "From meat to sweets",
+        "openingDate": "June 1, 2020"
       },
       {
         "name": "Restoranas Siesta",
@@ -308,7 +312,8 @@
           }
         ],
         "categories": ["Salads", "Grill", "Soup"],
-        "slogan": "Chief exclusive masterpieces"
+        "slogan": "Chief exclusive masterpieces",
+        "openingDate": "November 30, 2019"
       },
       {
         "name": "Restoranas DIA",
@@ -370,7 +375,8 @@
           }
         ],
         "categories": ["Salads", "Grill", "Brunch", "Soups"],
-        "slogan": "Over 12 types of salad"
+        "slogan": "Over 12 types of salad",
+        "openingDate": "September 10, 2015"
       },
       {
         "name": "Agave",
@@ -402,7 +408,8 @@
           }
         ],
         "categories": ["Salads", "Grill", "Pancakes"],
-        "slogan": "Quiet and bright atmosphere"
+        "slogan": "Quiet and bright atmosphere",
+        "openingDate": "May 20, 2013"
       },
       {
         "name": "Moksha",
@@ -446,7 +453,8 @@
           }
         ],
         "categories": ["Salads", "Ramen"],
-        "slogan": "We serve the best quality noodles"
+        "slogan": "We serve the best quality noodles",
+        "openingDate": "September 1, 2020"
       },
       {
         "name": "Avilys",
@@ -478,7 +486,8 @@
           }
         ],
         "categories": ["Burger", "Sandwich"],
-        "slogan": "Exclusive variety of dishes"
+        "slogan": "Exclusive variety of dishes",
+        "openingDate": "May 1, 2019"
       },
       {
         "name": "Katpedele",
@@ -528,7 +537,8 @@
           }
         ],
         "categories": ["Kebab", "Sweets"],
-        "slogan": "Chief exclusive masterpieces"
+        "slogan": "Chief exclusive masterpieces",
+        "openingDate": "August 1, 2015"
       },
       {
         "name": "Sushi Masters",
@@ -554,7 +564,8 @@
           }
         ],
         "categories": ["Sushi", "Soups"],
-        "slogan": "Exclusive variety of dishes"
+        "slogan": "Exclusive variety of dishes",
+        "openingDate": "July 19, 2020"
       },
       {
         "name": "Talutti - Fresh and Tasty",
@@ -592,7 +603,8 @@
           }
         ],
         "categories": ["Burger", "Brunch", "Pancakes"],
-        "slogan": "Exclusive variety of dishes"
+        "slogan": "Exclusive variety of dishes",
+        "openingDate": "December 5, 2019"
       },
       {
         "name": "ieti",
@@ -642,7 +654,8 @@
           }
         ],
         "categories": ["Sweets"],
-        "slogan": "Chief exclusive masterpieces"
+        "slogan": "Chief exclusive masterpieces",
+        "openingDate": "August 17, 2014"
       },
       {
         "name": "Pas Stanley",
@@ -674,7 +687,8 @@
           }
         ],
         "categories": ["Kebab", "Ramen", "Burger"],
-        "slogan": "Exclusive variety of dishes"
+        "slogan": "Exclusive variety of dishes",
+        "openingDate": "April 27, 2019"
       },
       {
         "name": "Lithuanian Pub Entry",
@@ -700,7 +714,8 @@
           }
         ],
         "categories": ["Salads", "Sandwich", "Kebab"],
-        "slogan": "Chief exclusive masterpieces"
+        "slogan": "Chief exclusive masterpieces",
+        "openingDate": "September 1, 2010"
       },
       {
         "name": "Casa Della Pasta, pizzeria - restaurant",
@@ -719,7 +734,8 @@
         "checkIns": 13,
         "reviews": [],
         "categories": ["Salads", "Sandwich", "Kebab"],
-        "slogan": "Exclusive variety of dishes"
+        "slogan": "Exclusive variety of dishes",
+        "openingDate": "February 10, 2019"
       },
       {
         "name": "Vista Puode",
@@ -763,7 +779,8 @@
           }
         ],
         "categories": ["Burger", "Grill", "Sweets"],
-        "slogan": "Exclusive variety of dishes"
+        "slogan": "Exclusive variety of dishes",
+        "openingDate": "August 10, 2018"
       },
       {
         "name": "Hop Doc Gastropub",
@@ -795,7 +812,8 @@
           }
         ],
         "categories": ["Salads", "Sandwich", "Kebab"],
-        "slogan": "Exclusive variety of dishes"
+        "slogan": "Exclusive variety of dishes",
+        "openingDate": "July 20, 2020"
       },
       {
         "name": "Al Cantuccio",
@@ -839,7 +857,8 @@
           }
         ],
         "categories": ["Sweets", "Pancakes", "Ramen"],
-        "slogan": "Exclusive variety of dishes"
+        "slogan": "Exclusive variety of dishes",
+        "openingDate": "July 30, 2015"
       },
       {
         "name": "ManGi",
@@ -871,7 +890,8 @@
           }
         ],
         "categories": ["Grill", "Kebab", "Burger", "Sushi"],
-        "slogan": "Exclusive variety of dishes"
+        "slogan": "Exclusive variety of dishes",
+        "openingDate": "June 15, 2018"
       }
     ],
     "categories": [
@@ -2647,19 +2667,18 @@
       "city": ["Vilnius", "Kaunas", "Klaipėda"],
       "district": [
         "Antakalnis",
-        "Valakampiai",
-        "Antakalnis",
-        "Senamiestis",
-        "Naujamiestis",
-        "Šnipiškės",
-        "Žvėrynas",
-        "Vilkpėdė",
-        "Petrašiūnai",
-        "Gričiupis",
         "Centras",
         "Eiguliai",
+        "Gričiupis",
+        "Naujamiestis",
+        "Pelenynas",
+        "Petrašiūnai",
+        "Senamiestis",
         "Šauliai",
-        "Pelenynas"
+        "Šnipiškės",
+        "Valakampiai",
+        "Vilkpėdė",
+        "Žvėrynas"
       ]
     }
   },
@@ -2744,7 +2763,7 @@
       ]
     },
     {
-      "type": "post",
+      "type": "photo",
       "id": "10972har27",
       "userName": "Dwayne Johnson",
       "userImage": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
@@ -2798,7 +2817,7 @@
       ]
     },
     {
-      "type": "post",
+      "type": "photo",
       "id": "109700har27",
       "userName": "Jude Law",
       "userImage": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80",
@@ -2888,7 +2907,7 @@
       ]
     },
     {
-      "type": "post",
+      "type": "photo",
       "id": "10972har37",
       "userName": "Dwayne Johnson",
       "userImage": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
@@ -2964,6 +2983,55 @@
           "userName": "Luke Skywalker",
           "comment": "Hope you'll have a good time!",
           "date": "2020-12-17T15:48:00.000Z"
+        }
+      ]
+    },
+    {
+      "type": "post",
+      "id": "1973ayt3a2",
+      "userName": "Wade Owen Watts",
+      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2062&q=80",
+      "postLocation": "VLN",
+      "postDate": "2020-10-31T10:27:00.000Z",
+      "postText": "Hey guys, our team is organising a hike next weekend. Anyone would like to join us?",
+      "likes": 13,
+      "comments": [
+        {
+          "userName": "Uncle Roger",
+          "comment": "Definitely!",
+          "date": "2020-10-31T14:48:00.000Z"
+        },
+        {
+          "userName": "Luke Skywalker",
+          "comment": "Darn it! Wish I could go :( ",
+          "date": "2020-10-31T15:48:00.000Z"
+        },
+        {
+          "userName": "Wade Owen Watts",
+          "comment": "For sure. What should I take?",
+          "date": "2020-10-31T18:48:00.000Z"
+        }
+      ]
+    },
+    {
+      "type": "post",
+      "id": "1973ayta2o",
+      "userName": "Uncle Roger",
+      "userImage": "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+      "postLocation": "LDN",
+      "postDate": "2020-11-30T10:27:00.000Z",
+      "postText": "My friends are coming into town from Spain. I am looking for some places bars/clubs that would play jazzy groove. Anybode have any ideas?",
+      "likes": 3,
+      "comments": [
+        {
+          "userName": "Wade Owen Watts",
+          "comment": "I don't. But if you find one, let me know about it!",
+          "date": "2020-11-30T14:48:00.000Z"
+        },
+        {
+          "userName": "Luke Skywalker",
+          "comment": "Hey, try Night Sky club on Thursdays",
+          "date": "2020-10-30T15:48:00.000Z"
         }
       ]
     }

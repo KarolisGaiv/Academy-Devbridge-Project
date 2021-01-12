@@ -5,7 +5,9 @@ import "../stories-content.scss";
 const PostContent = (props) => {
   return (
     <div className="post__content">
-      <img className="post__image" src={props.data.postImage} alt="post feed" />
+      <div className="post__text-wrapper">
+        <div className="post__text">{props.data.postText}</div>
+      </div>
     </div>
   );
 };

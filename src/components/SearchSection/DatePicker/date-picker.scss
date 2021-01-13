@@ -34,6 +34,16 @@ $_color-bold: #050504;
     &__inputGroup {
         line-height: 3.2;
         padding-left: 16px;
+
+        &__input:invalid {
+            background: none;
+        }
+
+        &__month,
+        &__day {
+            outline: none;
+            pointer-events: none;
+        }
     }
 
     &__calendar-button {

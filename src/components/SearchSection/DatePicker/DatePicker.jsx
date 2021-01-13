@@ -16,9 +16,9 @@ const Calendar = () => {
         nextLabel={<SVGIcon name="buttonArrow" />}
         locale="en-GB"
         format="y MM dd"
-        yearPlaceholder="Choose"
-        monthPlaceholder="a"
-        dayPlaceholder="date"
+        yearPlaceholder="Choose a date"
+        monthPlaceholder=""
+        dayPlaceholder=""
         clearIcon={value ? <SVGIcon name="cancel" /> : null}
       />
     </div>

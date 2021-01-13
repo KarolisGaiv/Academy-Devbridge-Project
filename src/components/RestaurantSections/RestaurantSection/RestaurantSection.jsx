@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 import { RestaurantBigCard } from "../../RestaurantCards/RestaurantBigCard/RestaurantBigCard";
 import { Ratings } from "../../Rating/maxRatings";
 import "./restaurant-section.scss";
+import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
+import { LoadingError } from "components/LoadingError/LoadingError";
 
 class RestaurantSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null,
+      error: false,
       isLoaded: false,
       restaurantList: [],
     };
@@ -66,9 +68,9 @@ class RestaurantSection extends React.Component {
     }
 
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <LoadingError message="Error. Can't connect to the server." />;
     } else if (!isLoaded) {
-      return <div>Is loading...</div>;
+      return <ProgressIndicator progressMessage="Loading..." />;
     } else {
       return (
         <div className="restaurant-section">

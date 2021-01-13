@@ -163,7 +163,7 @@ const Reservations = () => {
   }, [productList]);
 
   return loading ? (
-    <ProgressIndicator progressMessage="Loading..." />
+    <ProgressIndicator message="Loading..." />
   ) : (
     <div className="reservations">
       <Breadcrumbs />

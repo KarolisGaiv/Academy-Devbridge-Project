@@ -29,7 +29,7 @@ const MasonryGrid = (props) => {
     } else if (windowWidth > 768) {
       setcolumnsNo(2);
       setgap(20);
-    } else if (windowWidth < 768) {
+    } else if (windowWidth <= 768) {
       setcolumnsNo(1);
       setgap(40);
     }
@@ -61,7 +61,7 @@ const MasonryGrid = (props) => {
         windowWidth > 1200) ||
       (i > 1 &&
         props.children[i].type.displayName === "BirthdayCard" &&
-        windowWidth > 1024) ||
+        windowWidth > 768) ||
       (i > 0 &&
         props.children[i].type.displayName === "BirthdayCard" &&
         windowWidth <= 768)

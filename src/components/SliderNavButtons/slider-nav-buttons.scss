@@ -39,4 +39,17 @@
             }
         }
     }
+
+    &--disabled:hover,
+    &--disabled:focus,
+    &--disabled:active {
+        background: $color-white;
+
+        svg {
+            path {
+                fill: $color-fiord;
+                stroke: $color-white;
+            }
+        }
+    }
 }

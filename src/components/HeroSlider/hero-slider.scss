@@ -62,7 +62,7 @@ $_transparent: transparent;
         align-items: center;
         display: flex;
         height: 20px;
-        overflow: hidden;
+        //overflow: hidden;
     }
 
     &__pagination {
@@ -94,5 +94,53 @@ $_transparent: transparent;
 @media only screen and (max-width: 1024px) {
     .hero {
         grid-template-columns: 60% 40%;
+    }
+}
+
+@media only screen and (max-width: 716px) {
+    .hero {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media only screen and (max-width: 577px) {
+    .hero {
+        &__content {
+            grid-template-columns: 1fr;
+            grid-template-rows: 25px;
+        }
+
+        &__nav {
+            grid-row: 2 / 3;
+            justify-self: start;
+            padding: 6px 0;
+        }
+
+        &__pagination-container {
+            justify-self: start;
+        }
+
+        &__label {
+            margin: 12px 0;
+        }
+
+        &__info {
+            grid-row: 3 / 4;
+        }
+
+        &__desc-wrap {
+            height: 95px;
+            margin: 0 0 16px;
+        }
+    }
+}
+
+@media only screen and (max-width: 543px) {
+    .hero__desc-wrap {
+        margin: 0 0 10px;
+    }
+
+    .button--slider {
+        height: 47px;
     }
 }

@@ -14,8 +14,7 @@ const useFetch = (url) => {
     async function fetchMyAPI() {
       const response = await fetch(url);
       const data = await response.json();
-      const reservationsData = data.reservations;
-      setData(reservationsData);
+      setData(data);
       setLoading(false);
     }
 
@@ -33,7 +32,7 @@ const Dashboard = () => {
   ) : (
     <div className="dashboard">
       <section className="dashboard__header">
-        <GreetingWidget />
+        <GreetingWidget userData={data} />
         <WeatherWidget />
       </section>
       <section className="dashboard__reservations">
@@ -42,21 +41,21 @@ const Dashboard = () => {
           <CategoryCard
             category="devices"
             icon="Phone"
-            totalNumber={data.devices.length}
+            totalNumber={data.reservations.devices.length}
             keyword={"reserved"}
             directTo="dashboard/reservations"
           />
           <CategoryCard
             category="books"
             icon="Book"
-            totalNumber={data.books.length}
+            totalNumber={data.reservations.books.length}
             keyword={"reserved"}
             directTo="dashboard/reservations"
           />
           <CategoryCard
             category="meeting Rooms"
             icon="Door"
-            totalNumber={data.meetingRooms.length}
+            totalNumber={data.reservations.meetingRooms.length}
             keyword={"reserved"}
             directTo="dashboard/reservations"
           />

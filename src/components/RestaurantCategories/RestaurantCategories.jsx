@@ -1,34 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import propTypes from "prop-types";
 import CategoryCard from "../CategoryCard/CategoryCard";
 import "./restaurant-categories.scss";
 
-const useFetch = (url) => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchMyAPI() {
-      const response = await fetch(url);
-      const data = await response.json();
-      setData(data);
-      setLoading(false);
-    }
-
-    fetchMyAPI();
-  }, [url]);
-
-  return { data, loading };
-};
-
-const RestaurantCategories = () => {
-  const { data, loading } = useFetch("http://localhost:3008/restaurants");
-
-  if (loading) {
-    return <div>...loading</div>;
-  }
-
+const RestaurantCategories = (props) => {
   // loop through all restaurants and push their categories into one array
-  const existingCategories = data.restaurantList
+  const existingCategories = props.restaurantData.restaurantList
     .map((i) => i.categories)
     .flat();
 
@@ -41,7 +18,7 @@ const RestaurantCategories = () => {
 
   return (
     <div className="restaurant-categories">
-      {data.categories.sort().map((item) => (
+      {props.restaurantData.categories.sort().map((item) => (
         <CategoryCard
           category={item}
           keyword={
@@ -60,3 +37,7 @@ const RestaurantCategories = () => {
 };
 
 export default RestaurantCategories;
+
+RestaurantCategories.propTypes = {
+  restaurantData: propTypes.object,
+};

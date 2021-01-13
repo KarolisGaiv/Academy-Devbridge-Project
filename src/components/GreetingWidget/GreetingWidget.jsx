@@ -1,33 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import propTypes from "prop-types";
 import Greeting from "../UserGreeting/UserGreeting";
 import Clock from "../Clock/Clock";
 import "./greeting-widget.scss";
 
-const useFetch = (url) => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    async function fetchMyAPI() {
-      const response = await fetch(url);
-      const data = await response.json();
-      setData(data);
-    }
-
-    fetchMyAPI();
-  }, [url]);
-
-  return { data };
-};
-
-export const Widget = () => {
-  const { data } = useFetch("http://localhost:3008/userData");
-
+export const Widget = (props) => {
   return (
     <div className="widget-block">
       <Clock />
-      <Greeting name={data.userName} />
+      <Greeting name={props.userData.userName} />
     </div>
   );
 };
 
 export default Widget;
+
+Widget.propTypes = {
+  userData: propTypes.object,
+};

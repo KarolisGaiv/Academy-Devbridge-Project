@@ -16,10 +16,15 @@ const BirthdayCard = (props) => {
     commentsList.comments.length
   );
   const commentField = useRef("");
+  const commentInput = useRef();
 
   //update comment field value
   const handleChange = (e) => {
     commentField.current = e.target.value;
+  };
+
+  const commentIconHandle = () => {
+    commentInput.current.focus();
   };
 
   //update comments array when comment submitted
@@ -76,7 +81,11 @@ const BirthdayCard = (props) => {
       <CardContainer styleName="card-container--shadow">
         <BirthdayContent data={props.data} />
         <Divider />
-        <UsersReactions data={props.data} commentCount={commentsCount} />
+        <UsersReactions
+          data={props.data}
+          commentCount={commentsCount}
+          commentIconHandle={commentIconHandle}
+        />
         <Divider />
         <div className="comment-section">
           {commentsList.comments.map((data, index) => (
@@ -89,6 +98,7 @@ const BirthdayCard = (props) => {
         </div>
         <Divider />
         <AddComment
+          commentInput={commentInput}
           avatar={props.avatar}
           submit={submitHandler}
           isEmpty={isCommentEmpty}

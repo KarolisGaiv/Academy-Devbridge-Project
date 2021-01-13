@@ -7,13 +7,17 @@ const Calendar = () => {
   const [value, onChange] = useState();
 
   useEffect(() => {
-    document
-      .querySelector(".react-date-picker__inputGroup__month")
-      .setAttribute("tabindex", "-1");
-    document
-      .querySelector(".react-date-picker__inputGroup__day")
-      .setAttribute("tabindex", "-1");
-  }, []);
+    const setTabIndex = (queryName) => {
+      var el = document.querySelector(queryName);
+      if (el.value.length === 0) {
+        el.setAttribute("tabindex", "-1");
+      } else {
+        el.removeAttribute("tabindex");
+      }
+    };
+    setTabIndex(".react-date-picker__inputGroup__month");
+    setTabIndex(".react-date-picker__inputGroup__day");
+  });
 
   return (
     <div className="wrapper">

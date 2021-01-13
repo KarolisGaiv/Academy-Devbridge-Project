@@ -5,7 +5,6 @@ import "./date-picker.scss";
 
 const Calendar = () => {
   const [value, onChange] = useState();
-  const today = new Date();
 
   return (
     <div className="wrapper">
@@ -17,10 +16,10 @@ const Calendar = () => {
         nextLabel={<SVGIcon name="buttonArrow" />}
         locale="en-GB"
         format="y MM dd"
-        dayPlaceholder={today.getDate()}
-        monthPlaceholder={today.getMonth().toLocaleString() + 1}
-        yearPlaceholder={today.getFullYear()}
-        defaultActiveStartDate={today}
+        yearPlaceholder="Choose"
+        monthPlaceholder="a"
+        dayPlaceholder="date"
+        clearIcon={value ? <SVGIcon name="cancel" /> : null}
       />
     </div>
   );

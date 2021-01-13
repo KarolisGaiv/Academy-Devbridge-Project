@@ -26,20 +26,14 @@ $_color-bold: #050504;
         height: 45px;
         position: relative;
 
-        &:hover,
-        &focus {
+        &:hover {
             border-color: $color-fiord;
-            color: $color-fiord;
         }
     }
 
     &__inputGroup {
         line-height: 3.2;
         padding-left: 16px;
-    }
-
-    &__clear-button {
-        display: none;
     }
 
     &__calendar-button {

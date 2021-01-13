@@ -5,7 +5,7 @@ import { SideFilters } from "components/SideFilters/SideFilters";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "./reservations.scss";
 import SearchSection from "components/SearchSection/SearchSection";
-import { TagFilter } from "components/SideFilters/TagFilter";
+//import { TagFilter } from "components/SideFilters/TagFilter";
 import {
   SearchBarSearch,
   TagsSearch,
@@ -65,6 +65,10 @@ const Reservations = () => {
     },
   ];
 
+  let results;
+  let tagsList;
+  let resultsByTags;
+
   //object for filter collecstion
   const [filterList, setFilterList] = useState({});
 
@@ -84,10 +88,6 @@ const Reservations = () => {
       ? setSearchValue("All")
       : setSearchValue(searchTerm.trim());
   };
-
-  let results;
-  let tagsList;
-  let resultsByTags;
 
   //handle Search Tags clicking
   const handleTagSearch = (
@@ -152,10 +152,8 @@ const Reservations = () => {
     setFilterList((prevFilterList) => {
       return { ...prevFilterList, [key]: [] };
     });
-
-  const productList = useMemo(() => {
-    return TagFilter(data[`${itemSingular}List`], filterList);
-  }, [data, filterList, itemSingular]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const productList = useMemo(() => data[`${itemSingular}List`], [data]);
 
   useEffect(() => {
     setSearchResults(productList);

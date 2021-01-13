@@ -114,5 +114,22 @@
             padding: 10px 15px;
             text-transform: uppercase;
         }
+
+        #{$this}__button--enabled {
+            &:hover,
+            &:focus {
+                background-color: $color-hover-purple;
+            }
+
+            &:active {
+                background-color: $color-active-purple;
+            }
+        }
+
+        #{$this}__button--disabled {
+            background-color: $color-grey-2;
+            color: $color-grey-chateau;
+            cursor: default;
+        }
     }
 }

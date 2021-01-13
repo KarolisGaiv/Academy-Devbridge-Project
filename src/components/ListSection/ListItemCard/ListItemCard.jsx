@@ -18,6 +18,7 @@ export const ListItemCard = (props) => {
     title,
     name,
     bookedUntil,
+    favourite,
     rating,
     quantity,
   } = props;
@@ -36,11 +37,10 @@ export const ListItemCard = (props) => {
     } else if (window.innerWidth > 1024) {
       return productTitle.length > 32;
     }
-    return productTitle.length > 25;
+    return productTitle.length > 24;
   };
 
   const [viewMore, setViewMore] = useState(false);
-
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="list-item-card">
@@ -94,7 +94,7 @@ export const ListItemCard = (props) => {
         </div>
         <div className="list-item-card__interaction">
           <div className="list-item-card__heart">
-            <HeartButton />
+            <HeartButton isChecked={favourite} />
           </div>
           <div className="list-item-card__buttons">
             {productTitleLengthOverflow() && (
@@ -109,7 +109,14 @@ export const ListItemCard = (props) => {
             )}
 
             <Button
-              className="list-item-card__button button--enabled"
+              className={
+                !(productBookedUntil === "null" || productBookedUntil === null)
+                  ? "list-item-card__button list-item-card__button--disabled"
+                  : "list-item-card__button list-item-card__button--enabled"
+              }
+              isDisabled={
+                !(productBookedUntil === "null" || productBookedUntil === null)
+              }
               typeName="button"
               // handleClick={future function}
             >
@@ -132,4 +139,5 @@ ListItemCard.propTypes = {
   bookedUntil: PropTypes.string,
   rating: PropTypes.object,
   quantity: PropTypes.number,
+  favourite: PropTypes.bool,
 };

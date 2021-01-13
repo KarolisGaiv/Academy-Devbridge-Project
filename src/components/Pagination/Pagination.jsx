@@ -257,13 +257,15 @@ export class Pagination extends React.Component {
     return (
       <React.Fragment>
         <div className="cards">{renderCards}</div>
-        <div className="pagination-area">
-          {renderPrevBtn}
-          {pageDecrementBtn}
-          {renderPageNumbers}
-          {pageIncrementBtn}
-          {renderNextBtn}
-        </div>
+        {this.props.list.length > 6 && (
+          <div className="pagination-area">
+            {renderPrevBtn}
+            {pageDecrementBtn}
+            {renderPageNumbers}
+            {pageIncrementBtn}
+            {renderNextBtn}
+          </div>
+        )}
       </React.Fragment>
     );
   }

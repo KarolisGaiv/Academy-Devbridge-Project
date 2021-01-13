@@ -8,6 +8,7 @@ import { Ratings } from "components/Rating/maxRatings";
 import "./restaurant-page.scss";
 import { LocationSection } from "components/LocationSection/LocationSection";
 import ReviewsSection from "components/Reviews/ReviewsSection";
+import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -45,7 +46,7 @@ const RestaurantPage = () => {
     );
 
   return loading ? (
-    <div>...loading</div>
+    <ProgressIndicator progressMessage="Loading..." />
   ) : (
     <div className="restaurant">
       <Breadcrumbs />

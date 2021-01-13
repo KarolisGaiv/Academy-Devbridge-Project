@@ -15,6 +15,7 @@ const Calendar = () => {
         prevLabel={<SVGIcon name="buttonArrow" />}
         nextLabel={<SVGIcon name="buttonArrow" />}
         locale="en-GB"
+        format="y MM dd"
       />
     </div>
   );

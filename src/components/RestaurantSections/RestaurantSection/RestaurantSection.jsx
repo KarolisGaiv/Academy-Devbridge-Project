@@ -10,7 +10,7 @@ class RestaurantSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: false,
+      error: null,
       isLoaded: false,
       restaurantList: [],
     };

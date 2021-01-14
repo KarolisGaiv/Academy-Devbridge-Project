@@ -40,13 +40,13 @@
         }
     }
 
-    &--disabled:hover,
-    &--disabled:focus,
-    &--disabled:active {
-        background: $color-white;
+    &--disabled {
+        &:hover,
+        &:focus,
+        &:active {
+            background: $color-white;
 
-        svg {
-            path {
+            svg path {
                 fill: $color-fiord;
                 stroke: $color-white;
             }

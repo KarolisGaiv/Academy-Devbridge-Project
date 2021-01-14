@@ -62,7 +62,6 @@ $_transparent: transparent;
         align-items: center;
         display: flex;
         height: 20px;
-        //overflow: hidden;
     }
 
     &__pagination {
@@ -103,44 +102,14 @@ $_transparent: transparent;
     }
 }
 
-@media only screen and (max-width: 577px) {
+@media only screen and (max-width: 611px) {
     .hero {
-        &__content {
-            grid-template-columns: 1fr;
-            grid-template-rows: 25px;
-        }
-
-        &__nav {
-            grid-row: 2 / 3;
-            justify-self: start;
-            padding: 6px 0;
-        }
-
-        &__pagination-container {
-            justify-self: start;
-        }
-
-        &__label {
-            margin: 12px 0;
-        }
-
-        &__info {
-            grid-row: 3 / 4;
-        }
-
-        &__desc-wrap {
-            height: 95px;
-            margin: 0 0 16px;
-        }
+        grid-template-columns: 40% 60%;
     }
 }
 
-@media only screen and (max-width: 543px) {
+@media only screen and (max-width: 525px) {
     .hero__desc-wrap {
-        margin: 0 0 10px;
-    }
-
-    .button--slider {
-        height: 47px;
+        margin: 0 0 12px;
     }
 }

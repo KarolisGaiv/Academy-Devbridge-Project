@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 import { ReactComponent as ProgressBar } from "assets/progressBar.svg";
 import "./progress-indicator.scss";
 
-export const ProgressIndicator = ({ progressMessage }) => (
+export const ProgressIndicator = ({ message }) => (
   <div className="progress-block">
     <div className="progress-block__bar">
       <ProgressBar />
     </div>
-    <div className="progress-block__message">{progressMessage}</div>
+    <div className="progress-block__message">{message}</div>
   </div>
 );
 
 ProgressIndicator.propTypes = {
-  progressMessage: PropTypes.string,
+  message: PropTypes.string,
   className: PropTypes.string,
 };

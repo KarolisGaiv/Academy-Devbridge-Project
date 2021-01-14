@@ -42,7 +42,7 @@ const RestaurantCarouselSection = (props) => {
   }
 
   return loading ? (
-    <ProgressIndicator progressMessage="Loading..." />
+    <ProgressIndicator message="Loading..." />
   ) : (
     <RestaurantsCarousel restaurantList={restaurants} />
   );

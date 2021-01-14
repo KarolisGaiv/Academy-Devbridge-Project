@@ -10,13 +10,8 @@ export default {
 
 export const LoadingErrorStory = () => {
   return (
-    <>
-      <LoadingError
-        message={text(
-          "Error message",
-          "Error. Unable to connect to the server."
-        )}
-      ></LoadingError>
-    </>
+    <LoadingError
+      message={text("Error message", "Error. Unable to connect to the server.")}
+    ></LoadingError>
   );
 };

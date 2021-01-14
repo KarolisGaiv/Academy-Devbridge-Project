@@ -46,7 +46,7 @@ const RestaurantPage = () => {
     );
 
   return loading ? (
-    <ProgressIndicator progressMessage="Loading..." />
+    <ProgressIndicator message="Loading..." />
   ) : (
     <div className="restaurant">
       <Breadcrumbs />

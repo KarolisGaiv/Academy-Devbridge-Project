@@ -70,7 +70,7 @@ class RestaurantSection extends React.Component {
     if (error) {
       return <LoadingError message="Error. Can't connect to the server." />;
     } else if (!isLoaded) {
-      return <ProgressIndicator progressMessage="Loading..." />;
+      return <ProgressIndicator message="Loading..." />;
     } else {
       return (
         <div className="restaurant-section">

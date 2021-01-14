@@ -21,3 +21,34 @@ export const TagFilter = (productList, filterList) => {
     return filteredList;
   }
 };
+
+export const FilterAllItems = (filtersArray) => {
+  // filtersArray structure
+  // [
+  //    [ {}, {}, {}... ], // sideTagFilterResults
+  //    [ {}, {}, {}... ], // searchBarFilterResults
+  //    [ {}, {}, {}... ], // searchTagFilterResults
+  // ]
+
+  let resultList = [];
+  // [ {}, {}, {}... ] // resultList structure
+
+  if (filtersArray.length === 1) resultList = [...filtersArray[0]];
+  else {
+    resultList = filterAndCompareArrays(filtersArray[0], filtersArray[1]);
+  }
+
+  if (filtersArray.length > 2) {
+    for (let i = 2; i < filtersArray.length - 1; i++) {
+      resultList = filterAndCompareArrays(resultList, filtersArray[i]);
+    }
+  }
+
+  return resultList;
+};
+
+const filterAndCompareArrays = (arrayA, arrayB) => {
+  const comapredArray = [];
+
+  return comapredArray;
+};

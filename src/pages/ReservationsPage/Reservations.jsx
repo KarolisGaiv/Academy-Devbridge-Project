@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { ListSection } from "components/ListSection/ListSection";
 import { SideFilters } from "components/SideFilters/SideFilters";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "./reservations.scss";
 import SearchSection from "components/SearchSection/SearchSection";
-//import { TagFilter } from "components/SideFilters/TagFilter";
+import { TagFilter, FilterAllItems } from "components/SideFilters/TagFilter";
 import {
   SearchBarSearch,
   TagsSearch,
@@ -77,6 +77,22 @@ const Reservations = () => {
   const [searchResults, setSearchResults] = useState("");
   const [searchValue, setSearchValue] = useState("All");
 
+  //////////////////////////////////////////////////////////////////////
+  const sideTagFilterResults = TagFilter(
+    data[`${itemSingular}List`],
+    filterList
+  );
+  const searchBarFilterResults = [];
+  const searchTagFilterResults = [];
+
+  FilterAllItems([
+    sideTagFilterResults,
+    searchBarFilterResults,
+    searchTagFilterResults,
+  ]);
+
+  //////////////////////////////////////////////////////////////////////
+
   //Search section tag buttons
   const [SearchSectionTags, setSearchSectionTags] = useState(
     searchSectionTagButtons
@@ -101,6 +117,7 @@ const Reservations = () => {
     setSearchSectionTags(tagsList);
     resultsByTags = FilterByTags(tagsList, dataToSearchIn);
     results = SearchBarSearch(searchTerm, resultsByTags, arrOfKeys);
+    // return results;
     setSearchResults(results);
     handleResultsFor(searchTerm);
   };
@@ -109,6 +126,7 @@ const Reservations = () => {
   const handleBarSearch = (tagsList, searchTerm, dataToSearchIn, arrOfKeys) => {
     resultsByTags = FilterByTags(tagsList, dataToSearchIn);
     results = SearchBarSearch(searchTerm, resultsByTags, arrOfKeys);
+    // return results;
     setSearchResults(results);
     handleResultsFor(searchTerm);
   };
@@ -153,8 +171,9 @@ const Reservations = () => {
       return { ...prevFilterList, [key]: [] };
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const productList = useMemo(() => data[`${itemSingular}List`], [data]);
 
+  // const productList = useMemo(() => data[`${itemSingular}List`], [data]);
+  const productList = data[`${itemSingular}List`];
   useEffect(() => {
     setSearchResults(productList);
   }, [productList]);

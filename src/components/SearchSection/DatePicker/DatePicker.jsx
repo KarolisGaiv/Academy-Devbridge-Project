@@ -7,6 +7,7 @@ const Calendar = () => {
   const [value, onChange] = useState();
 
   useEffect(() => {
+    //function prevents tabbing through datepicker's month and day when no date is chosen
     const setTabIndex = (queryName) => {
       var el = document.querySelector(queryName);
       if (el.value.length === 0) {
@@ -15,8 +16,25 @@ const Calendar = () => {
         el.removeAttribute("tabindex");
       }
     };
+
+    //function hides date's divider "/" when no date is selected
+    const hideDivider = (queryName) => {
+      let elements = Array.from(document.querySelectorAll(queryName));
+      const chosenDay = document.querySelector(
+        ".react-date-picker__inputGroup__day"
+      );
+      elements.map((i) => {
+        if (chosenDay.value.length === 0) {
+          return (i.hidden = true);
+        } else {
+          return (i.hidden = false);
+        }
+      });
+    };
+
     setTabIndex(".react-date-picker__inputGroup__month");
     setTabIndex(".react-date-picker__inputGroup__day");
+    hideDivider(".react-date-picker__inputGroup__divider");
   });
 
   return (
@@ -28,7 +46,7 @@ const Calendar = () => {
         prevLabel={<SVGIcon name="buttonArrow" />}
         nextLabel={<SVGIcon name="buttonArrow" />}
         locale="en-GB"
-        format="y MM dd"
+        format="y/ MM / dd"
         yearPlaceholder="Choose a date"
         monthPlaceholder=""
         dayPlaceholder=""

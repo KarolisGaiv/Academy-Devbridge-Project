@@ -34,7 +34,7 @@ export const FilterAllItems = (filtersArray) => {
   // [ {}, {}, {}... ] // resultList structure
 
   if (filtersArray.length === 1) resultList = [...filtersArray[0]];
-  else {
+  else if (filtersArray.length > 1) {
     resultList = filterAndCompareArrays(filtersArray[0], filtersArray[1]);
   }
 

@@ -1,9 +1,15 @@
-.heart {
-    appearance: none;
-    content: url('../../assets/heartBtn.svg');
-    cursor: pointer;
+@import '../../styles/base/base';
 
-    &:checked {
-        content: url('../../assets/heartBtnColored.svg');
+.heart-button {
+    background: $transparent;
+    border: hidden;
+    cursor: pointer;
+    height: 24px;
+    //margin: 7px;
+    padding: 0;
+
+    &__icon {
+        display: inline-block;
+        vertical-align: middle;
     }
 }

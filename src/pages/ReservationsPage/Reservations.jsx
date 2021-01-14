@@ -11,6 +11,7 @@ import {
   TagsSearch,
   FilterByTags,
 } from "../../components/SearchSection/Search/SearchFunction";
+import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -162,7 +163,7 @@ const Reservations = () => {
   }, [productList]);
 
   return loading ? (
-    <div>...loading</div>
+    <ProgressIndicator message="Loading..." />
   ) : (
     <div className="reservations">
       <Breadcrumbs />

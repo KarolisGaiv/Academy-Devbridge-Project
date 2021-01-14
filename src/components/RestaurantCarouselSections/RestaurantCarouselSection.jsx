@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import RestaurantsCarousel from "../RestaurantsCarousel/RestaurantsCarousel";
+import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -41,7 +42,7 @@ const RestaurantCarouselSection = (props) => {
   }
 
   return loading ? (
-    <div>...loading</div>
+    <ProgressIndicator message="Loading..." />
   ) : (
     <RestaurantsCarousel restaurantList={restaurants} />
   );

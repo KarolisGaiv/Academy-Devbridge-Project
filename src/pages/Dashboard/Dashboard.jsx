@@ -5,6 +5,7 @@ import GreetingWidget from "../../components/GreetingWidget/GreetingWidget";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import BestRestaurantWrapper from "../../components/RestaurantCards/BestRestaurantWrapper/BestRestaurantWrapper";
 import NewsFeed from "../../components/NewsFeedCard/NewsFeed";
+import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -28,7 +29,7 @@ const Dashboard = () => {
   const { data, loading } = useFetch("http://localhost:3008/userData");
 
   return loading ? (
-    <div>...loading</div>
+    <ProgressIndicator message="Loading..." />
   ) : (
     <div className="dashboard">
       <section className="dashboard__header">

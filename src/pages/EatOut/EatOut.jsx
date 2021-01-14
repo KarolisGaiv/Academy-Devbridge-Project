@@ -5,6 +5,7 @@ import { NewRestaurantSection } from "components/RestaurantCarouselSections/NewR
 import RestaurantCategories from "components/RestaurantCategories/RestaurantCategories";
 import "./eat-out.scss";
 import { HeroSlider } from "components/HeroSlider/HeroSlider";
+import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -28,7 +29,7 @@ const EatOut = () => {
   const { data, loading } = useFetch("http://localhost:3008/restaurants");
 
   if (loading) {
-    return <div>...loading</div>;
+    return <ProgressIndicator message="Loading..." />;
   }
 
   return (

@@ -12,6 +12,9 @@ const Carousel = (props) => {
   const [finish, setFinish] = useState(null);
   const [length, setLength] = useState(null);
 
+  const [leftButtonActive, setLeftButtonActive] = useState(true);
+  const [rightButtonActive, setRightButtonActive] = useState(false);
+
   const useCurrentWidth = () => {
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -21,6 +24,8 @@ const Carousel = (props) => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => setWidth(window.innerWidth), 100);
         setStart(0);
+        setLeftButtonActive(true);
+        setRightButtonActive(false);
         if (window.innerWidth > 1024) {
           setFinish(3);
           setLength(3);
@@ -45,15 +50,29 @@ const Carousel = (props) => {
     if (finish < restaurantList.length) {
       setStart(start + length);
       setFinish(finish + length);
+    } else {
+      setRightButtonActive(true);
     }
+    setLeftButtonActive(false);
   };
 
   const toLeft = () => {
     if (start > 0 && finish > 0) {
       setStart(start - length);
       setFinish(finish - length);
+    } else {
+      setLeftButtonActive(true);
     }
+    setRightButtonActive(false);
   };
+
+  const rightButtonClass = rightButtonActive
+    ? "slider-button--disabled"
+    : "slider-button";
+
+  const leftButtonClass = leftButtonActive
+    ? "slider-button--disabled"
+    : "slider-button";
 
   return (
     <div className="restaurants-carousel">
@@ -62,6 +81,8 @@ const Carousel = (props) => {
           buttonIcon="buttonArrow"
           leftClicked={() => toLeft()}
           rightClicked={() => toRight()}
+          leftClassName={leftButtonClass}
+          rightClassName={rightButtonClass}
         />
       </div>
 

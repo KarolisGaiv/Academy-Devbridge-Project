@@ -24,5 +24,5 @@ Button.propTypes = {
   typeName: PropTypes.string,
   className: PropTypes.string,
   handleClick: PropTypes.func,
-  tabIndex: PropTypes.string,
+  tabIndex: PropTypes.number,
 };

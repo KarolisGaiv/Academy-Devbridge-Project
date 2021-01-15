@@ -26,7 +26,7 @@
         text-transform: uppercase;
     }
 
-    @media (max-width: $breakpoint-tablet) {
+    @media (max-width: 910px) {
         &__banner-flex {
             height: 120px;
         }

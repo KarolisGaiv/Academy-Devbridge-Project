@@ -4,6 +4,8 @@ import FormContainer from "../FormContainer/FormContainer";
 import InputField from "../../InputField/InputField";
 import { Validators } from "../../InputField/inputValidators";
 import "./login-form.scss";
+import { LoadingError } from "components/LoadingError/LoadingError";
+import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
 
 export class LoginForm extends React.Component {
   constructor(props) {
@@ -14,6 +16,7 @@ export class LoginForm extends React.Component {
       text: "",
       message: "",
       redirect: false,
+      error: null,
       isLoaded: false,
       userEmail: [],
       userPassword: [],
@@ -39,7 +42,6 @@ export class LoginForm extends React.Component {
       });
     } else {
       this.setState({
-        redirect: "error",
         submitFail: true,
       });
     }
@@ -66,47 +68,52 @@ export class LoginForm extends React.Component {
   }
 
   render() {
-    if (this.state.redirect === true) {
+    if (this.state.error) {
+      return <LoadingError message="Error. Can't connect to the server." />;
+    } else if (!this.state.isLoaded) {
+      return <ProgressIndicator message="Loading..." />;
+    } else if (this.state.redirect) {
       return <Redirect to="/dashboard" />;
+    } else {
+      return (
+        <FormContainer
+          legend="Login"
+          sublegend="Welcome back! Login, please"
+          buttonText="login"
+          smallText="Don&rsquo;t have an account?"
+          path="/register"
+          linkText="Sign up"
+          submit={this.submit}
+        >
+          <InputField
+            label="email"
+            value={this.state.email}
+            type="email"
+            placeholder="Valid email address"
+            validators={[
+              { check: Validators.email, message: "email is not valid" },
+            ]}
+            required={true}
+            onChange={this.handleChange("email")}
+            submitFail={this.state.submitFail}
+            submitFailMessage="email doesn't match with the password"
+          />
+          <InputField
+            label="password"
+            value={this.state.pass}
+            type="password"
+            placeholder="At least 8 characters"
+            validators={[
+              {
+                check: Validators.password,
+                message: "password is not valid",
+              },
+            ]}
+            required={true}
+            onChange={this.handleChange("pass")}
+          />
+        </FormContainer>
+      );
     }
-    return (
-      <FormContainer
-        legend="Login"
-        sublegend="Welcome back! Login, please"
-        buttonText="login"
-        smallText="Don&rsquo;t have an account?"
-        path="/register"
-        linkText="Sign up"
-        submit={this.submit}
-      >
-        <InputField
-          label="email"
-          value={this.state.email}
-          type="email"
-          placeholder="Valid email address"
-          validators={[
-            { check: Validators.email, message: "email is not valid" },
-          ]}
-          required={true}
-          onChange={this.handleChange("email")}
-          submitFail={this.state.submitFail}
-          submitFailMessage="email doesn't match with the password"
-        />
-        <InputField
-          label="password"
-          value={this.state.pass}
-          type="password"
-          placeholder="At least 8 characters"
-          validators={[
-            {
-              check: Validators.password,
-              message: "password is not valid",
-            },
-          ]}
-          required={true}
-          onChange={this.handleChange("pass")}
-        />
-      </FormContainer>
-    );
   }
 }

@@ -1,18 +1,20 @@
 import React from "react";
+import propTypes from "prop-types";
 import Greeting from "../UserGreeting/UserGreeting";
 import Clock from "../Clock/Clock";
 import "./greeting-widget.scss";
-import database from "../../db.json";
 
-export const Widget = () => {
-  const user = database.userData;
-
+export const Widget = (props) => {
   return (
     <div className="widget-block">
       <Clock />
-      <Greeting name={user.userName} />
+      <Greeting name={props.userData.userName} />
     </div>
   );
 };
 
 export default Widget;
+
+Widget.propTypes = {
+  userData: propTypes.object,
+};

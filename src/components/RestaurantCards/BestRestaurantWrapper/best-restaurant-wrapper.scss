@@ -23,8 +23,8 @@
     @media (max-width: $breakpoint-tablet-landscape) {
         column-gap: 0;
         grid-template-areas:
-            'restaurant'
-            'general';
+            'general'
+            'restaurant';
         grid-template-columns: 1fr;
         row-gap: 20px;
 

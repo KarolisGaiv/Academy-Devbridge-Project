@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { ListSection } from "components/ListSection/ListSection";
 import { SideFilters } from "components/SideFilters/SideFilters";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "./reservations.scss";
 import SearchSection from "components/SearchSection/SearchSection";
-//import { TagFilter } from "components/SideFilters/TagFilter";
+import { TagFilter } from "components/SideFilters/TagFilter";
 import {
   SearchBarSearch,
   TagsSearch,
@@ -65,19 +65,12 @@ const Reservations = () => {
     },
   ];
 
-  let results;
-  let tagsList;
-  let resultsByTags;
-
   //object for filter collecstion
   const [filterList, setFilterList] = useState({});
-
-  //search bar related states
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchBarResults, setSearchBarResults] = useState([]);
   const [searchValue, setSearchValue] = useState("All");
-
-  //Search section tag buttons
   const [SearchSectionTags, setSearchSectionTags] = useState(
     searchSectionTagButtons
   );
@@ -89,27 +82,11 @@ const Reservations = () => {
       : setSearchValue(searchTerm.trim());
   };
 
-  //handle Search Tags clicking
-  const handleTagSearch = (
-    searchTags,
-    searchTerm,
-    dataToSearchIn,
-    arrOfKeys,
-    i
-  ) => {
-    tagsList = TagsSearch(i, searchTags);
-    setSearchSectionTags(tagsList);
-    resultsByTags = FilterByTags(tagsList, dataToSearchIn);
-    results = SearchBarSearch(searchTerm, resultsByTags, arrOfKeys);
-    setSearchResults(results);
-    handleResultsFor(searchTerm);
-  };
-
   //handle Search Bar Results
-  const handleBarSearch = (tagsList, searchTerm, dataToSearchIn, arrOfKeys) => {
-    resultsByTags = FilterByTags(tagsList, dataToSearchIn);
-    results = SearchBarSearch(searchTerm, resultsByTags, arrOfKeys);
-    setSearchResults(results);
+  const handleBarSearch = () => {
+    setSearchBarResults(
+      SearchBarSearch(searchTerm, data[`${itemSingular}List`], keysToSearch)
+    );
     handleResultsFor(searchTerm);
   };
 
@@ -120,13 +97,12 @@ const Reservations = () => {
   //search bar cancel icon handler
   const handleCancelClick = () => {
     setSearchTerm("");
-    handleBarSearch(SearchSectionTags, "", productList, keysToSearch);
+    //handleBarSearch(SearchSectionTags, "", productList, keysToSearch);
   };
 
   //add new filter if it's not already exists
   const addItemToFilterList = (key, title) => {
     const isKey = Object.keys(filterList).some((item) => key === item);
-
     if (isKey) {
       setFilterList((prevFilterList) => {
         let filteredList = prevFilterList[key].filter((item) => item !== title);
@@ -152,12 +128,11 @@ const Reservations = () => {
     setFilterList((prevFilterList) => {
       return { ...prevFilterList, [key]: [] };
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const productList = useMemo(() => data[`${itemSingular}List`], [data]);
-
-  useEffect(() => {
-    setSearchResults(productList);
-  }, [productList]);
+  const productList = TagFilter(data[`${itemSingular}List`], filterList);
+  const searchTagsResultsList = FilterByTags(
+    SearchSectionTags,
+    data[`${itemSingular}List`]
+  );
 
   return loading ? (
     <div>...loading</div>
@@ -168,23 +143,10 @@ const Reservations = () => {
         inputValue={searchTerm}
         handleChange={handleChange}
         handleCancelClick={handleCancelClick}
-        handleSearch={() =>
-          handleBarSearch(
-            SearchSectionTags,
-            searchTerm,
-            productList,
-            keysToSearch
-          )
-        }
+        handleSearch={handleBarSearch}
         tagButtons={SearchSectionTags}
         handleTagButtonClick={(i) =>
-          handleTagSearch(
-            SearchSectionTags,
-            searchTerm,
-            productList,
-            keysToSearch,
-            i
-          )
+          setSearchSectionTags(TagsSearch(i, SearchSectionTags))
         }
       />
       <section className="reservations__section reservations__section--column">
@@ -199,7 +161,7 @@ const Reservations = () => {
         </aside>
         <section className="reservations__list">
           <ListSection
-            productList={searchResults}
+            productList={productList}
             filterList={filterList}
             deleteItemFromFilterList={deleteItemFromFilterList}
             searchValue={searchValue}

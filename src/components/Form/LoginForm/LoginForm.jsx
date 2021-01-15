@@ -14,6 +14,10 @@ export class LoginForm extends React.Component {
       text: "",
       message: "",
       redirect: false,
+      isLoaded: false,
+      userEmail: [],
+      userPassword: [],
+      submitFail: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.submit = this.submit.bind(this);
@@ -26,16 +30,43 @@ export class LoginForm extends React.Component {
   submit = () => {
     if (
       !Validators.email(this.state.email) &&
-      !Validators.password(this.state.pass)
+      !Validators.password(this.state.pass) &&
+      this.state.email === this.state.userEmail &&
+      this.state.pass === this.state.userPassword
     ) {
       this.setState({
         redirect: true,
       });
+    } else {
+      this.setState({
+        redirect: "error",
+        submitFail: true,
+      });
     }
   };
 
+  componentDidMount() {
+    fetch("http://localhost:3008/userData")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            userEmail: result.userEmail,
+            userPassword: result.userPassword,
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error,
+          });
+        }
+      );
+  }
+
   render() {
-    if (this.state.redirect) {
+    if (this.state.redirect === true) {
       return <Redirect to="/dashboard" />;
     }
     return (
@@ -58,6 +89,8 @@ export class LoginForm extends React.Component {
           ]}
           required={true}
           onChange={this.handleChange("email")}
+          submitFail={this.state.submitFail}
+          submitFailMessage="email doesn't match with the password"
         />
         <InputField
           label="password"

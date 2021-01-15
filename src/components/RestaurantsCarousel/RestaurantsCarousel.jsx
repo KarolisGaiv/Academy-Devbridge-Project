@@ -21,10 +21,10 @@ const Carousel = (props) => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => setWidth(window.innerWidth), 100);
         setStart(0);
-        if (window.innerWidth > 1024) {
+        if (window.innerWidth > 1240) {
           setFinish(3);
           setLength(3);
-        } else if (window.innerWidth > 769) {
+        } else if (window.innerWidth > 900) {
           setFinish(2);
           setLength(2);
         } else {

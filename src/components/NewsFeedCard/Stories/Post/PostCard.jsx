@@ -38,7 +38,7 @@ const PostCard = (props) => {
         {
           userName: props.userName,
           comment: commentField.current,
-          date: postDate,
+          date: JSON.stringify(postDate),
         },
       ],
     });

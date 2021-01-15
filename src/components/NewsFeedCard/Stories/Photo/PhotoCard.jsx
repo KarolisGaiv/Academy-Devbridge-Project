@@ -17,10 +17,15 @@ const PhotoCard = (props) => {
     commentsList.comments.length
   );
   const commentField = useRef("");
+  const commentInput = useRef();
 
   //update comment field value
   const handleChange = (e) => {
     commentField.current = e.target.value;
+  };
+
+  const commentIconHandle = () => {
+    commentInput.current.focus();
   };
 
   //update comments array when comment submitted
@@ -77,7 +82,11 @@ const PhotoCard = (props) => {
       <CardContainer styleName="card-container--shadow">
         <StoriesHeader data={props.data} />
         <PhotoContent data={props.data} />
-        <UserReactions data={props.data} commentCount={commentsCount} />
+        <UserReactions
+          data={props.data}
+          commentCount={commentsCount}
+          commentIconHandle={commentIconHandle}
+        />
         <Divider />
         <div className="comment-section">
           {commentsList.comments.map((data, index) => (

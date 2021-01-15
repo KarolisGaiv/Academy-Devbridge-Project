@@ -17,10 +17,15 @@ const VideoCard = (props) => {
     commentsList.comments.length
   );
   const commentField = useRef("");
+  const commentInput = useRef();
 
   //update comment field value
   const handleChange = (e) => {
     commentField.current = e.target.value;
+  };
+
+  const commentIconHandle = () => {
+    commentInput.current.focus();
   };
 
   //update comments array when comment submitted
@@ -77,7 +82,11 @@ const VideoCard = (props) => {
       <CardContainer styleName="card-container--shadow">
         <StoriesHeader data={props.data} />
         <VideoContent data={props.data} />
-        <UserReactions data={props.data} commentCount={commentsCount} />
+        <UserReactions
+          data={props.data}
+          commentCount={commentsCount}
+          commentIconHandle={commentIconHandle}
+        />
         <Divider />
         <div className="comment-section">
           {commentsList.comments.map((data, index) => (
@@ -90,6 +99,7 @@ const VideoCard = (props) => {
         </div>
         <Divider />
         <AddComment
+          commentInput={commentInput}
           avatar={props.avatar}
           submit={submitHandler}
           isEmpty={isCommentEmpty}

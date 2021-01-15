@@ -3,13 +3,25 @@ import PropTypes from "prop-types";
 import "./slider-nav-buttons.scss";
 import SVGIcon from "components/SVGIcon/SVGIcon";
 
-const SliderNavButtons = ({ buttonIcon, leftClicked, rightClicked }) => {
+const SliderNavButtons = ({
+  buttonIcon,
+  leftClicked,
+  rightClicked,
+  leftClassName,
+  rightClassName,
+}) => {
   return (
     <>
-      <button className="slider-button" onClick={() => leftClicked()}>
+      <button
+        className={`slider-button ${leftClassName}`}
+        onClick={() => leftClicked()}
+      >
         <SVGIcon name={buttonIcon} />
       </button>
-      <button className="slider-button" onClick={() => rightClicked()}>
+      <button
+        className={`slider-button ${rightClassName}`}
+        onClick={() => rightClicked()}
+      >
         <SVGIcon name={buttonIcon} />
       </button>
     </>
@@ -23,5 +35,6 @@ SliderNavButtons.propTypes = {
   leftClicked: PropTypes.func,
   rightClicked: PropTypes.func,
   typeName: PropTypes.string,
-  className: PropTypes.string,
+  leftClassName: PropTypes.string,
+  rightClassName: PropTypes.string,
 };

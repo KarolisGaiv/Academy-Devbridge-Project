@@ -61,7 +61,9 @@ export const ListItemCard = (props) => {
             >
               {productTitle}
             </div>
-            {productBookedUntil === "null" || productBookedUntil === null ? (
+            {productBookedUntil === "null" ||
+            productBookedUntil === null ||
+            new Date(productBookedUntil) < new Date() ? (
               <div className="list-item-card__availability">
                 <SVGIcon name="availableProduct" />
                 <div className="list-item-card__availability-text">

@@ -61,7 +61,8 @@ const MasonryGrid = (props) => {
         windowWidth > 1200) ||
       (i > 1 &&
         props.children[i].type.displayName === "BirthdayCard" &&
-        windowWidth > 768) ||
+        windowWidth > 768 &&
+        windowWidth <= 1200) ||
       (i > 0 &&
         props.children[i].type.displayName === "BirthdayCard" &&
         windowWidth <= 768)

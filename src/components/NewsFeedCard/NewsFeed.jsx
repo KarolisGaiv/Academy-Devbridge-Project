@@ -2,6 +2,7 @@ import React from "react";
 import BirthdayCard from "./Stories/Birthday/BirthdayCard";
 import MasonryGrid from "../MasonryGrid/MasonryGrid";
 import VideoCard from "./Stories/Video/VideoCard";
+import PhotoCard from "./Stories/Photo/PhotoCard";
 import PostCard from "./Stories/Post/PostCard";
 import fakeData from "../../db.json";
 
@@ -43,6 +44,15 @@ const NewsFeed = () => {
               />
             );
             // When created change this to an appropriate component
+          } else if (data.type === "photo") {
+            return (
+              <PhotoCard
+                key={index}
+                data={data}
+                avatar={userAvatar}
+                userName={userName}
+              />
+            );
           } else if (data.type === "post") {
             return (
               <PostCard

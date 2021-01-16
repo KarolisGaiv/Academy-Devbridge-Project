@@ -4,6 +4,8 @@ import FormContainer from "../FormContainer/FormContainer";
 import InputField from "../../InputField/InputField";
 import { Validators } from "../../InputField/inputValidators";
 import "../../Form/RegistrationForm/registration-form.scss";
+import Modal from "components/Modal/Modal";
+import { Button } from "components/Button/Button";
 
 export class RegistrationForm extends React.Component {
   constructor(props) {
@@ -15,6 +17,7 @@ export class RegistrationForm extends React.Component {
       text: "",
       message: "",
       redirect: false,
+      isOpen: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.submit = this.submit.bind(this);
@@ -22,6 +25,18 @@ export class RegistrationForm extends React.Component {
 
   handleChange = (key) => (value) => {
     this.setState({ [key]: value });
+  };
+
+  handleClose = () => {
+    this.setState({
+      isOpen: false,
+    });
+  };
+
+  handleRedirect = () => {
+    this.setState({
+      redirect: true,
+    });
   };
 
   submit = () => {
@@ -33,7 +48,7 @@ export class RegistrationForm extends React.Component {
       !Validators.passwordmatch(this.state.rpass)
     ) {
       this.setState({
-        redirect: true,
+        isOpen: true,
       });
     }
   };
@@ -43,77 +58,97 @@ export class RegistrationForm extends React.Component {
       return <Redirect to="/" />;
     }
     return (
-      <FormContainer
-        legend="Register"
-        sublegend="Let&rsquo;s get you on board"
-        buttonText="register"
-        smallText="Already have an account?"
-        path="/"
-        linkText="Sign in"
-        submit={this.submit}
-      >
-        <InputField
-          label="first name"
-          value={this.state.fname}
-          type="text"
-          placeholder="e.g. Mike, Mike-Wilhelm"
-          validators={[
-            { check: Validators.name, message: "this field is required" },
-          ]}
-          required={true}
-          onChange={this.handleChange("fname")}
-        />
-        <InputField
-          label="last name"
-          value={this.state.lname}
-          type="text"
-          placeholder="e.g. Caprio, DiCaprio"
-          validators={[
-            { check: Validators.name, message: "this field is required" },
-          ]}
-          required={true}
-          onChange={this.handleChange("lname")}
-        />
-        <InputField
-          label="email"
-          value={this.state.email}
-          type="email"
-          placeholder="Valid email address"
-          validators={[
-            { check: Validators.email, message: "email is not valid" },
-          ]}
-          required={true}
-          onChange={this.handleChange("email")}
-        />
-        <InputField
-          label="password"
-          value={this.state.pass}
-          type="password"
-          placeholder="At least 8 characters"
-          validators={[
-            {
-              check: Validators.password,
-              message: "password is not valid",
-            },
-          ]}
-          required={true}
-          onChange={this.handleChange("pass")}
-        />
-        <InputField
-          label="repeat password"
-          value={this.state.rpass}
-          type="password"
-          placeholder="At least 8 characters"
-          validators={[
-            {
-              check: Validators.passwordmatch,
-              message: "passwords do not match",
-            },
-          ]}
-          required={true}
-          onChange={this.handleChange("rpass")}
-        />
-      </FormContainer>
+      <>
+        <FormContainer
+          legend="Register"
+          sublegend="Let&rsquo;s get you on board"
+          buttonText="register"
+          smallText="Already have an account?"
+          path="/"
+          linkText="Sign in"
+          submit={this.submit}
+        >
+          <InputField
+            label="first name"
+            value={this.state.fname}
+            type="text"
+            placeholder="e.g. Mike, Mike-Wilhelm"
+            validators={[
+              { check: Validators.name, message: "this field is required" },
+            ]}
+            required={true}
+            onChange={this.handleChange("fname")}
+          />
+          <InputField
+            label="last name"
+            value={this.state.lname}
+            type="text"
+            placeholder="e.g. Caprio, DiCaprio"
+            validators={[
+              { check: Validators.name, message: "this field is required" },
+            ]}
+            required={true}
+            onChange={this.handleChange("lname")}
+          />
+          <InputField
+            label="email"
+            value={this.state.email}
+            type="email"
+            placeholder="Valid email address"
+            validators={[
+              { check: Validators.email, message: "email is not valid" },
+            ]}
+            required={true}
+            onChange={this.handleChange("email")}
+          />
+          <InputField
+            label="password"
+            value={this.state.pass}
+            type="password"
+            placeholder="At least 8 characters"
+            validators={[
+              {
+                check: Validators.password,
+                message: "password is not valid",
+              },
+            ]}
+            required={true}
+            onChange={this.handleChange("pass")}
+          />
+          <InputField
+            label="repeat password"
+            value={this.state.rpass}
+            type="password"
+            placeholder="At least 8 characters"
+            validators={[
+              {
+                check: Validators.passwordmatch,
+                message: "passwords do not match",
+              },
+            ]}
+            required={true}
+            onChange={this.handleChange("rpass")}
+          />
+        </FormContainer>
+        <Modal
+          open={this.state.isOpen}
+          heading={"Registration successful"}
+          onClose={this.handleClose}
+        >
+          <div className="modal__content">
+            You can now log in and start exploring!
+          </div>
+          <div className="modal__button">
+            <Button
+              className="button button--enabled"
+              type="button"
+              handleClick={this.handleRedirect}
+            >
+              Log in
+            </Button>
+          </div>
+        </Modal>
+      </>
     );
   }
 }

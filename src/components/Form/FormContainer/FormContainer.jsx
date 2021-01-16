@@ -51,6 +51,6 @@ FormContainer.propTypes = {
   smallText: PropTypes.string,
   path: PropTypes.string,
   linkText: PropTypes.string,
-  children: PropTypes.object,
+  children: PropTypes.array,
   submit: PropTypes.func,
 };

@@ -40,6 +40,7 @@ const ContentCard = (props) => {
     <div className="newsFeed__card post__card">
       <CardContainer styleName="card-container--shadow">
         <StoriesHeader data={props.data} />
+        {props.data.type === "post" ? <Divider /> : null}
         {typeOfContent()}
         <UserReactions
           type={props.type}

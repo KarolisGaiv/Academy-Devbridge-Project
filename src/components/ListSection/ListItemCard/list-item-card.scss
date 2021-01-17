@@ -104,15 +104,52 @@
             line-height: initial;
         }
 
-        #{$this}__button {
-            background-color: $color-purple-dark;
-            border: 0;
-            border-radius: 65px;
-            color: $color-white;
-            cursor: pointer;
-            font-size: $size-12;
-            padding: 10px 15px;
-            text-transform: uppercase;
+        #{$this}__button--disabled {
+            background-color: $color-grey-2;
+            color: $color-grey-chateau;
+            cursor: default;
         }
+    }
+
+    @media (max-width: 864px) {
+        flex-direction: column-reverse;
+        padding: 10px;
+
+        &__info {
+            align-items: center;
+        }
+
+        &__interaction {
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.list-item-card__button {
+    background-color: $color-purple-dark;
+    border: 0;
+    border-radius: 65px;
+    color: $color-white;
+    cursor: pointer;
+    font-size: $size-12;
+    padding: 10px 15px;
+    text-transform: uppercase;
+
+    &--enabled {
+        &:hover,
+        &:focus {
+            background-color: $color-hover-purple;
+        }
+
+        &:active {
+            background-color: $color-active-purple;
+        }
+    }
+
+    &--disabled {
+        background-color: $color-grey-2;
+        color: $color-grey-chateau;
+        cursor: default;
     }
 }

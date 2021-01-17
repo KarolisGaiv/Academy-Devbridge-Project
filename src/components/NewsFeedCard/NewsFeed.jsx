@@ -10,7 +10,7 @@ const NewsFeed = () => {
   const [stories, setStories] = useState(fakeData.stories);
   const [commentValue, setCommentValue] = useState([]);
   const inputRef = useRef(new Array(stories.length).fill(""));
-  const [isCommentEmpty, setCommentEmptyState] = useState(true);
+  const [isCommentEmpty, setCommentEmptyState] = useState(false);
 
   //to fake unique id
   const [id, setId] = useState(0);
@@ -26,7 +26,7 @@ const NewsFeed = () => {
         id: "aaaaa" + id,
         userName: userName,
         userImage: userAvatar,
-        postLocation: "VLN",
+        postLocation: "LDN",
         postDate: timeOfPost.toISOString(),
         postText: id,
         likes: 0,
@@ -76,7 +76,7 @@ const NewsFeed = () => {
       setCommentEmptyState(true);
     }
   };
-  const handleBlur = (i) => {
+  const handleBlur = (i) => () => {
     isEmptyCheck(i);
   };
 
@@ -129,7 +129,7 @@ const NewsFeed = () => {
                 submitHandler={submitHandler(index)}
                 commentField={inputRef.current[index]}
                 handleValueChange={onChange(index)}
-                handleBlur={() => handleBlur(index)}
+                handleBlur={handleBlur(index)}
                 isCommentEmpty={isCommentEmpty}
               />
             );

@@ -11,7 +11,6 @@ import Divider from "../../../Divider/Divider";
 import { CardContainer } from "../../../CardContainer/CardContainer";
 
 const ContentCard = (props) => {
-  //keep
   const commentInput = useRef();
   const commentIconHandle = () => {
     commentInput.current.focus();

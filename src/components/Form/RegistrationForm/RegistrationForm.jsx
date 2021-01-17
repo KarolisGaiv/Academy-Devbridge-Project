@@ -27,16 +27,8 @@ export class RegistrationForm extends React.Component {
     this.setState({ [key]: value });
   };
 
-  handleClose = () => {
-    this.setState({
-      isOpen: false,
-    });
-  };
-
-  handleRedirect = () => {
-    this.setState({
-      redirect: true,
-    });
+  handleClick = (key, value) => {
+    this.setState({ [key]: value });
   };
 
   submit = () => {
@@ -133,7 +125,7 @@ export class RegistrationForm extends React.Component {
         <Modal
           open={this.state.isOpen}
           heading={"Registration successful"}
-          onClose={this.handleClose}
+          onClose={() => this.handleClick("isOpen", this.isOpen)}
         >
           <div className="modal__content">
             You can now log in and start exploring!
@@ -142,7 +134,7 @@ export class RegistrationForm extends React.Component {
             <Button
               className="button button--enabled"
               type="button"
-              handleClick={this.handleRedirect}
+              handleClick={() => this.handleClick("redirect", true)}
             >
               Log in
             </Button>

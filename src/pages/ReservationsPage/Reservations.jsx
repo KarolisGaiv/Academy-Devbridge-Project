@@ -5,7 +5,7 @@ import { SideFilters } from "components/SideFilters/SideFilters";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "./reservations.scss";
 import SearchSection from "components/SearchSection/SearchSection";
-import { TagFilter } from "components/SideFilters/TagFilter";
+import { TagFilter, FilterAllItems } from "components/SideFilters/TagFilter";
 import {
   SearchBarSearch,
   TagsSearch,
@@ -68,12 +68,28 @@ const Reservations = () => {
   //object for filter collecstion
   const [filterList, setFilterList] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const [searchBarResults, setSearchBarResults] = useState([]);
-  const [searchValue, setSearchValue] = useState("All");
+  const [allResults, setAllResults] = useState([]);
+  const [searchBarResults, setSearchBarResults] = useState([""]);
   const [SearchSectionTags, setSearchSectionTags] = useState(
     searchSectionTagButtons
   );
+  const [searchValue, setSearchValue] = useState("All");
+
+  const sideTagFilterResults = TagFilter(allResults, filterList);
+  const searchBarFilterResults = searchBarResults;
+  const searchTagFilterResults = FilterByTags(SearchSectionTags, allResults);
+
+  FilterAllItems([
+    sideTagFilterResults,
+    searchBarFilterResults,
+    searchTagFilterResults,
+  ]);
+
+  const findSimilar = (...arrays) => {
+    return arrays.reduce((includ, current) =>
+      Array.from(new Set(includ.filter((a) => current.includes(a))))
+    );
+  };
 
   //handle "Results For" label
   const handleResultsFor = (searchTerm) => {
@@ -84,9 +100,7 @@ const Reservations = () => {
 
   //handle Search Bar Results
   const handleBarSearch = () => {
-    setSearchBarResults(
-      SearchBarSearch(searchTerm, data[`${itemSingular}List`], keysToSearch)
-    );
+    setSearchBarResults(SearchBarSearch(searchTerm, allResults, keysToSearch));
     handleResultsFor(searchTerm);
   };
 
@@ -94,10 +108,12 @@ const Reservations = () => {
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
+
   //search bar cancel icon handler
   const handleCancelClick = () => {
     setSearchTerm("");
-    //handleBarSearch(SearchSectionTags, "", productList, keysToSearch);
+    handleResultsFor("");
+    setSearchBarResults(SearchBarSearch("", allResults, keysToSearch));
   };
 
   //add new filter if it's not already exists
@@ -128,11 +144,12 @@ const Reservations = () => {
     setFilterList((prevFilterList) => {
       return { ...prevFilterList, [key]: [] };
     });
-  const productList = TagFilter(data[`${itemSingular}List`], filterList);
-  const searchTagsResultsList = FilterByTags(
-    SearchSectionTags,
-    data[`${itemSingular}List`]
-  );
+
+  useEffect(() => {
+    setAllResults(data[`${itemSingular}List`]);
+    setSearchBarResults(allResults);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, allResults]);
 
   return loading ? (
     <div>...loading</div>
@@ -161,7 +178,13 @@ const Reservations = () => {
         </aside>
         <section className="reservations__list">
           <ListSection
-            productList={productList}
+            productList={findSimilar(
+              sideTagFilterResults,
+              searchTagFilterResults,
+              searchBarFilterResults === undefined
+                ? [""]
+                : searchBarFilterResults
+            )}
             filterList={filterList}
             deleteItemFromFilterList={deleteItemFromFilterList}
             searchValue={searchValue}

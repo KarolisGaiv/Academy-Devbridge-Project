@@ -8,7 +8,7 @@
         width: 100%;
     }
 
-    &__content {
+    &__image-wrapper {
         height: 405px;
         overflow: hidden;
         position: relative;
@@ -35,5 +35,15 @@
         position: absolute;
         top: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    &__text-wrapper {
+        padding: 20px 15px;
+    }
+
+    &__text {
+        color: $color-midnight;
+        font-size: $size-16;
+        line-height: 1.5;
     }
 }

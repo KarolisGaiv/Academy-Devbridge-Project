@@ -14,6 +14,10 @@
         padding-top: 60px;
     }
 
+    @media (max-width: $breakpoint-tablet-landscape) {
+        column-gap: $column-gap-extra-small;
+    }
+
     @media (max-width: $breakpoint-tablet) {
         grid-template-columns: repeat(2, 1fr);
         row-gap: $column-gap-small;

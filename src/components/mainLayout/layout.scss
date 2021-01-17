@@ -46,3 +46,25 @@ body {
         grid-template-rows: 1fr 10.25fr 0.75fr;
     }
 }
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+
+    &-track {
+        background: $color-iron;
+    }
+
+    &-thumb {
+        background: $color-purple-dark;
+        border-radius: 5px;
+
+        &:hover {
+            background: $color-hover-purple;
+        }
+
+        &:active {
+            background: $color-active-purple;
+        }
+    }
+}

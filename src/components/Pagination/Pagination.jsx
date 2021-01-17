@@ -144,6 +144,7 @@ export class Pagination extends React.Component {
           key={index}
           image={currentCards[key].image}
           author={currentCards[key].author}
+          favourite={currentCards[key].favourite}
           address={currentCards[key].address}
           brand={currentCards[key].brand}
           title={currentCards[key].title}
@@ -257,13 +258,15 @@ export class Pagination extends React.Component {
     return (
       <React.Fragment>
         <div className="cards">{renderCards}</div>
-        <div className="pagination-area">
-          {renderPrevBtn}
-          {pageDecrementBtn}
-          {renderPageNumbers}
-          {pageIncrementBtn}
-          {renderNextBtn}
-        </div>
+        {this.props.list.length > 6 && (
+          <div className="pagination-area">
+            {renderPrevBtn}
+            {pageDecrementBtn}
+            {renderPageNumbers}
+            {pageIncrementBtn}
+            {renderNextBtn}
+          </div>
+        )}
       </React.Fragment>
     );
   }

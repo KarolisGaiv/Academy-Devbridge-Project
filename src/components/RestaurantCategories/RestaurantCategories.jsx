@@ -1,11 +1,11 @@
 import React from "react";
+import propTypes from "prop-types";
 import CategoryCard from "../CategoryCard/CategoryCard";
-import data from "../../db.json";
 import "./restaurant-categories.scss";
 
-const RestaurantCategories = () => {
+const RestaurantCategories = (props) => {
   // loop through all restaurants and push their categories into one array
-  const existingCategories = data.restaurants.restaurantList
+  const existingCategories = props.restaurantData.restaurantList
     .map((i) => i.categories)
     .flat();
 
@@ -18,7 +18,7 @@ const RestaurantCategories = () => {
 
   return (
     <div className="restaurant-categories">
-      {data.restaurants.categories.sort().map((item) => (
+      {props.restaurantData.categories.sort().map((item) => (
         <CategoryCard
           category={item}
           keyword={
@@ -37,3 +37,7 @@ const RestaurantCategories = () => {
 };
 
 export default RestaurantCategories;
+
+RestaurantCategories.propTypes = {
+  restaurantData: propTypes.object,
+};

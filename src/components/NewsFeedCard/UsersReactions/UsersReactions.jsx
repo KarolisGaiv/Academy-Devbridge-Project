@@ -9,7 +9,11 @@ const UsersReactions = (props) => {
   const reactionCountByType = (data) => {
     if (data.type === "birthday") {
       return data.wishes;
-    } else if (data.type === "post" || data.type === "video") {
+    } else if (
+      data.type === "post" ||
+      data.type === "video" ||
+      data.type === "photo"
+    ) {
       return data.likes;
     }
   };
@@ -24,13 +28,21 @@ const UsersReactions = (props) => {
     if (reactionCountState.reacted) {
       if (data.type === "birthday") {
         return "presentBtnColored";
-      } else if (data.type === "post" || data.type === "video") {
+      } else if (
+        data.type === "post" ||
+        data.type === "video" ||
+        data.type === "photo"
+      ) {
         return "heartBtnColored";
       }
     } else {
       if (data.type === "birthday") {
         return "presentBtn";
-      } else if (data.type === "post" || data.type === "video") {
+      } else if (
+        data.type === "post" ||
+        data.type === "video" ||
+        data.type === "photo"
+      ) {
         return "heartBtn";
       }
     }

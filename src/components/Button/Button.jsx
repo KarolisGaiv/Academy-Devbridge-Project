@@ -8,12 +8,14 @@ export const Button = ({
   typeName,
   handleClick,
   tabIndex,
+  isDisabled = false,
 }) => (
   <button
     className={className}
     type={typeName}
     onClick={handleClick}
     tabIndex={tabIndex}
+    disabled={isDisabled}
   >
     {children}
   </button>
@@ -25,4 +27,5 @@ Button.propTypes = {
   className: PropTypes.string,
   handleClick: PropTypes.func,
   tabIndex: PropTypes.string,
+  isDisabled: PropTypes.bool,
 };

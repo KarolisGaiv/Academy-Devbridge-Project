@@ -11,6 +11,7 @@ import {
   TagsSearch,
   FilterByTags,
 } from "../../components/SearchSection/Search/SearchFunction";
+import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -146,10 +147,16 @@ const Reservations = () => {
   }, [data, allResults]);
 
   return loading ? (
-    <div>...loading</div>
+    <ProgressIndicator message="Loading..." />
   ) : (
     <div className="reservations">
       <Breadcrumbs />
+      <header>
+        <h1 className="reservations__header">
+          {itemPlural ? itemPlural.substring(0, itemPlural.length - 1) : null}{" "}
+          reservations
+        </h1>
+      </header>
       <SearchSection
         inputValue={searchTerm}
         handleChange={handleChange}

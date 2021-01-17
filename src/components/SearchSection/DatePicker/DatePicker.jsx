@@ -21,11 +21,9 @@ const Calendar = ({ onDatePickerChange, datePickerValue }) => {
     //function hides date's divider "/" when no date is selected
     const hideDivider = (queryName) => {
       let elements = Array.from(document.querySelectorAll(queryName));
-      const chosenDay =
-        document.querySelector(".react-date-picker__inputGroup__day") ===
-        undefined
-          ? ""
-          : document.querySelector(".react-date-picker__inputGroup__day");
+      const chosenDay = document.querySelector(
+        ".react-date-picker__inputGroup__day"
+      );
       elements.map((i) => {
         if (chosenDay.value.length === 0) {
           return (i.hidden = true);

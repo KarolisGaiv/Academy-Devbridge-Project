@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./list-item-card.scss";
+import { Redirect } from "react-router-dom";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import SVGIcon from "components/SVGIcon/SVGIcon";
 import { Rating } from "components/Rating/Rating";
@@ -41,6 +42,9 @@ export const ListItemCard = (props) => {
   };
 
   const [viewMore, setViewMore] = useState(false);
+  const [redirect, setRedirect] = useState(false);
+
+  if (redirect) return <Redirect to="/progress" />;
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="list-item-card">
@@ -109,7 +113,6 @@ export const ListItemCard = (props) => {
                 {viewMore ? "view less" : "view more"}
               </Link>
             )}
-
             <Button
               className={
                 !(productBookedUntil === "null" || productBookedUntil === null)
@@ -120,7 +123,7 @@ export const ListItemCard = (props) => {
                 !(productBookedUntil === "null" || productBookedUntil === null)
               }
               typeName="button"
-              // handleClick={future function}
+              handleClick={() => setRedirect(!redirect)}
             >
               book
             </Button>

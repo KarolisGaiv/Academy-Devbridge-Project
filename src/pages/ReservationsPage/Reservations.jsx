@@ -85,7 +85,7 @@ const Reservations = () => {
     searchTagFilterResults,
   ]);
 
-  const findSimilar = (...arrays) => {
+  const findMatchingResults = (...arrays) => {
     return arrays.reduce((includ, current) =>
       Array.from(new Set(includ.filter((a) => current.includes(a))))
     );
@@ -178,7 +178,7 @@ const Reservations = () => {
         </aside>
         <section className="reservations__list">
           <ListSection
-            productList={findSimilar(
+            productList={findMatchingResults(
               sideTagFilterResults,
               searchTagFilterResults,
               searchBarFilterResults === undefined

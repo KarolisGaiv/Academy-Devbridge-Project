@@ -167,6 +167,12 @@ const Reservations = () => {
   ) : (
     <div className="reservations">
       <Breadcrumbs />
+      <header>
+        <h1 className="reservations__header">
+          {itemPlural ? itemPlural.substring(0, itemPlural.length - 1) : null}{" "}
+          reservations
+        </h1>
+      </header>
       <SearchSection
         inputValue={searchTerm}
         handleChange={handleChange}

@@ -1,16 +1,13 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
-import PhotoContent from "./PhotoContent";
-import VideoContent from "./VideoContent";
-import PostContent from "./PostContent";
-import StoriesHeader from "../../StoriesHeader/StoriesHeader";
-import UserReactions from "../../UsersReactions/UsersReactions";
-import Comments from "../../Comments/Comments";
-import AddComment from "../../Comments/AddComment";
-import Divider from "../../../Divider/Divider";
-import { CardContainer } from "../../../CardContainer/CardContainer";
+import Divider from "../../../../Divider/Divider";
+import { CardContainer } from "../../../../CardContainer/CardContainer";
+import BirthdayContent from "../BirthdayContent";
+import Comments from "../../../Comments/Comments";
+import AddComment from "../../../Comments/AddComment";
+import UsersReactions from "../../../UsersReactions/UsersReactions";
 
-const ContentCard = (props) => {
+const BirthdayCard = (props) => {
   const commentInput = useRef();
   const commentIconHandle = () => {
     commentInput.current.focus();
@@ -26,22 +23,15 @@ const ContentCard = (props) => {
     return 0;
   });
 
-  const typeOfContent = () => {
-    if (props.data.type === "video") {
-      return <VideoContent postVideo={props.data.postVideo} />;
-    } else if (props.data.type === "photo") {
-      return <PhotoContent postImage={props.data.postImage} />;
-    } else if (props.data.type === "post") {
-      return <PostContent postText={props.data.postText} />;
-    } else return null;
-  };
-
   return (
     <div className="newsFeed__card post__card">
       <CardContainer styleName="card-container--shadow">
-        <StoriesHeader data={props.data} />
-        {typeOfContent()}
-        <UserReactions
+        <BirthdayContent
+          userImage={props.data.userImage}
+          userName={props.data.userName}
+          birthdayDate={props.data.birthdayDate}
+        />
+        <UsersReactions
           type={props.type}
           likes={props.likes}
           reaction={props.reaction}
@@ -74,9 +64,11 @@ const ContentCard = (props) => {
   );
 };
 
-export default ContentCard;
+BirthdayCard.displayName = "BirthdayCard";
 
-ContentCard.propTypes = {
+export default BirthdayCard;
+
+BirthdayCard.propTypes = {
   data: PropTypes.object,
   userName: PropTypes.string,
   avatar: PropTypes.string,

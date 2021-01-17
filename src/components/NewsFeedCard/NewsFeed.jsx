@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import BirthdayCard from "./Stories/Birthday/BirthdayCard";
+import BirthdayCard from "./Stories/Content/Birthday/BirthdayCard";
 import MasonryGrid from "../MasonryGrid/MasonryGrid";
 import ContentCard from "./Stories/Content/ContentCard";
 import fakeData from "../../db.json";
@@ -39,10 +39,18 @@ const NewsFeed = () => {
     let storiesArr = [...stories];
     if (!storiesArr[i].reaction || !("reaction" in storiesArr[i])) {
       storiesArr[i].reaction = true;
-      storiesArr[i].likes += 1;
+      if (storiesArr[i].type === "birthday") {
+        storiesArr[i].wishes += 1;
+      } else {
+        storiesArr[i].likes += 1;
+      }
     } else {
       storiesArr[i].reaction = false;
-      storiesArr[i].likes -= 1;
+      if (storiesArr[i].type === "birthday") {
+        storiesArr[i].wishes += 1;
+      } else {
+        storiesArr[i].likes += 1;
+      }
     }
     setStories(storiesArr);
   };
@@ -109,6 +117,17 @@ const NewsFeed = () => {
                 data={story}
                 avatar={userAvatar}
                 userName={userName}
+                type={story.type}
+                likes={story.wishes}
+                reaction={story.reaction}
+                onReactionClick={() => onReactionClick(index)}
+                commentsCount={story.comments.length}
+                commentsList={story.comments}
+                submitHandler={submitHandler(index)}
+                commentField={inputRef.current[index]}
+                handleValueChange={onChange(index)}
+                handleBlur={handleBlur(index)}
+                isCommentEmpty={isCommentEmpty}
               />
             );
           } else {
@@ -118,13 +137,11 @@ const NewsFeed = () => {
                 data={story}
                 avatar={userAvatar}
                 userName={userName}
-                ////////
                 type={story.type}
                 likes={story.likes}
                 reaction={story.reaction}
                 onReactionClick={() => onReactionClick(index)}
                 commentsCount={story.comments.length}
-                /////////
                 commentsList={story.comments}
                 submitHandler={submitHandler(index)}
                 commentField={inputRef.current[index]}

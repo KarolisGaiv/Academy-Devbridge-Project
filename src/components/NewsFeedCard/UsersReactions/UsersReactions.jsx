@@ -7,7 +7,6 @@ import "./users-reactions.scss";
 const UsersReactions = (props) => {
   const {
     type,
-    wishes,
     likes,
     reaction,
     onReactionClick,
@@ -16,13 +15,6 @@ const UsersReactions = (props) => {
   } = props;
 
   //Determine which reaction data to take
-  const reactionCountByType = () => {
-    if (type === "birthday") {
-      return wishes;
-    } else if (type === "post" || type === "video" || type === "photo") {
-      return likes;
-    }
-  };
 
   //Determine wether the post was reacted to and select icon
   const reactionIconSelect = () => {
@@ -50,9 +42,7 @@ const UsersReactions = (props) => {
             className="user-reactions__reaction-icon svg-icon"
           />
         </button>
-        <p className="user-reactions__reaction-count">
-          {reactionCountByType()}
-        </p>
+        <p className="user-reactions__reaction-count">{likes}</p>
       </div>
       <div className="user-reactions__comment">
         <button className="user-reactions__button" onClick={commentIconHandle}>

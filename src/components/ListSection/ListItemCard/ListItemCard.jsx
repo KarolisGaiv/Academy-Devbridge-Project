@@ -110,26 +110,6 @@ export const ListItemCard = (props) => {
                 {viewMore ? "view less" : "view more"}
               </Link>
             )}
-            {/* {!(productBookedUntil === "null" || productBookedUntil === null) ? (
-              <Button
-                className={
-                  "list-item-card__button list-item-card__button--disabled"
-                }
-                isDisabled={true}
-                typeName="button"
-              >
-                book
-              </Button>
-            ) : (
-              <a
-                className={
-                  "list-item-card__button list-item-card__button--enabled"
-                }
-                href="http://localhost:3000/progress"
-              >
-                book
-              </a> 
-            )} */}
             <Button
               className={
                 !(productBookedUntil === "null" || productBookedUntil === null)

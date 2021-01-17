@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./list-item-card.scss";
-import { Redirect } from "react-router-dom";
 import { CardContainer } from "components/CardContainer/CardContainer";
 import SVGIcon from "components/SVGIcon/SVGIcon";
 import { Rating } from "components/Rating/Rating";
@@ -42,9 +41,6 @@ export const ListItemCard = (props) => {
   };
 
   const [viewMore, setViewMore] = useState(false);
-  const [redirect, setRedirect] = useState(false);
-
-  if (redirect) return <Redirect to="/progress" />;
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="list-item-card">
@@ -113,20 +109,26 @@ export const ListItemCard = (props) => {
                 {viewMore ? "view less" : "view more"}
               </Link>
             )}
-            <Button
-              className={
-                !(productBookedUntil === "null" || productBookedUntil === null)
-                  ? "list-item-card__button list-item-card__button--disabled"
-                  : "list-item-card__button list-item-card__button--enabled"
-              }
-              isDisabled={
-                !(productBookedUntil === "null" || productBookedUntil === null)
-              }
-              typeName="button"
-              handleClick={() => setRedirect(!redirect)}
-            >
-              book
-            </Button>
+            {!(productBookedUntil === "null" || productBookedUntil === null) ? (
+              <Button
+                className={
+                  "list-item-card__button list-item-card__button--disabled"
+                }
+                isDisabled={true}
+                typeName="button"
+              >
+                book
+              </Button>
+            ) : (
+              <a
+                className={
+                  "list-item-card__button list-item-card__button--enabled"
+                }
+                href="http://localhost:3000/progress"
+              >
+                book
+              </a>
+            )}
           </div>
         </div>
       </div>

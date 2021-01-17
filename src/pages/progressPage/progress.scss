@@ -52,4 +52,10 @@ $_size-80: 80px;
         font-weight: $weight-medium;
         margin: 0 0 20px;
     }
+
+    &__information-button {
+        align-items: center;
+        display: flex;
+        text-decoration: none;
+    }
 }

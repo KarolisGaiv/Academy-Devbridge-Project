@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./progress.scss";
-import { Redirect } from "react-router-dom";
-import { Button } from "components/Button/Button";
 import { CardContainer } from "components/CardContainer/CardContainer";
 
 const Progress = () => {
-  const [redirect, setRedirect] = useState(false);
-
-  if (redirect) {
-    return <Redirect to="/dashboard" />;
-  }
   return (
     <section className="progress">
       <CardContainer styleName="card-container--shadow progress__image-card">
@@ -26,12 +19,13 @@ const Progress = () => {
           <div className="progress__information-text">
             the page you are looking for is currently under development
           </div>
-          <Button
-            className="button button--enabled"
-            handleClick={() => setRedirect(!redirect)}
+          <a
+            href="http://localhost:3000/dashboard"
+            alt="Go to Home Page"
+            className="progress__information-button button button--enabled"
           >
             Go to Home
-          </Button>
+          </a>
         </div>
       </CardContainer>
     </section>

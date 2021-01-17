@@ -67,6 +67,7 @@ const ContentCard = (props) => {
           commentText={props.commentField}
           onBlur={props.handleBlur}
           handleValueChange={props.handleValueChange}
+          commentInput={commentInput}
         />
       </CardContainer>
     </div>

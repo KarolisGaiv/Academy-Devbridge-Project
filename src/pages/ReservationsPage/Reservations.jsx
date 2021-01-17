@@ -5,7 +5,7 @@ import { SideFilters } from "components/SideFilters/SideFilters";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "./reservations.scss";
 import SearchSection from "components/SearchSection/SearchSection";
-import { TagFilter, FilterAllItems } from "components/SideFilters/TagFilter";
+import { TagFilter } from "components/SideFilters/TagFilter";
 import {
   SearchBarSearch,
   TagsSearch,
@@ -78,12 +78,6 @@ const Reservations = () => {
   const sideTagFilterResults = TagFilter(allResults, filterList);
   const searchBarFilterResults = searchBarResults;
   const searchTagFilterResults = FilterByTags(SearchSectionTags, allResults);
-
-  FilterAllItems([
-    sideTagFilterResults,
-    searchBarFilterResults,
-    searchTagFilterResults,
-  ]);
 
   const findMatchingResults = (...arrays) => {
     return arrays.reduce((includ, current) =>

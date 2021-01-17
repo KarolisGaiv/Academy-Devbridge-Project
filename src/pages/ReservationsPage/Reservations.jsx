@@ -10,6 +10,7 @@ import {
   SearchBarSearch,
   TagsSearch,
   FilterByTags,
+  DatePickerSearch,
 } from "../../components/SearchSection/Search/SearchFunction";
 import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
 
@@ -70,14 +71,15 @@ const Reservations = () => {
   const [filterList, setFilterList] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
   const [allResults, setAllResults] = useState([]);
-  const [searchBarResults, setSearchBarResults] = useState([""]);
+  const [searchBarResults, setSearchBarResults] = useState([]);
   const [SearchSectionTags, setSearchSectionTags] = useState(
     searchSectionTagButtons
   );
   const [searchValue, setSearchValue] = useState("All");
+  const [datePickerValue, setDatePickervalue] = useState();
+  const [datePickerResults, setDatePickerResults] = useState([]);
 
   const sideTagFilterResults = TagFilter(allResults, filterList);
-  const searchBarFilterResults = searchBarResults;
   const searchTagFilterResults = FilterByTags(SearchSectionTags, allResults);
 
   const findMatchingResults = (...arrays) => {
@@ -96,6 +98,7 @@ const Reservations = () => {
   //handle Search Bar Results
   const handleBarSearch = () => {
     setSearchBarResults(SearchBarSearch(searchTerm, allResults, keysToSearch));
+    setDatePickerResults(DatePickerSearch(datePickerValue, allResults));
     handleResultsFor(searchTerm);
   };
 
@@ -143,6 +146,7 @@ const Reservations = () => {
   useEffect(() => {
     setAllResults(data[`${itemSingular}List`]);
     setSearchBarResults(allResults);
+    setDatePickerResults(allResults);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, allResults]);
 
@@ -166,6 +170,8 @@ const Reservations = () => {
         handleTagButtonClick={(i) =>
           setSearchSectionTags(TagsSearch(i, SearchSectionTags))
         }
+        onDatePickerChange={setDatePickervalue}
+        datePickerValue={datePickerValue}
       />
       <section className="reservations__section reservations__section--column">
         <aside className="reservations__side-filters">
@@ -182,9 +188,10 @@ const Reservations = () => {
             productList={findMatchingResults(
               sideTagFilterResults,
               searchTagFilterResults,
-              searchBarFilterResults === undefined
-                ? [""]
-                : searchBarFilterResults
+              datePickerResults === undefined || datePickerValue == null
+                ? allResults
+                : datePickerResults,
+              searchBarResults === undefined ? allResults : searchBarResults
             )}
             filterList={filterList}
             deleteItemFromFilterList={deleteItemFromFilterList}

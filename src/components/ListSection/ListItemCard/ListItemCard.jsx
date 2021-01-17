@@ -21,6 +21,7 @@ export const ListItemCard = (props) => {
     favourite,
     rating,
     quantity,
+    openModal,
   } = props;
 
   const productSubtitle = author ?? brand ?? address;
@@ -109,7 +110,7 @@ export const ListItemCard = (props) => {
                 {viewMore ? "view less" : "view more"}
               </Link>
             )}
-            {!(productBookedUntil === "null" || productBookedUntil === null) ? (
+            {/* {!(productBookedUntil === "null" || productBookedUntil === null) ? (
               <Button
                 className={
                   "list-item-card__button list-item-card__button--disabled"
@@ -127,8 +128,22 @@ export const ListItemCard = (props) => {
                 href="http://localhost:3000/progress"
               >
                 book
-              </a>
-            )}
+              </a> 
+            )} */}
+            <Button
+              className={
+                !(productBookedUntil === "null" || productBookedUntil === null)
+                  ? "list-item-card__button list-item-card__button--disabled"
+                  : "list-item-card__button list-item-card__button--enabled"
+              }
+              isDisabled={
+                !(productBookedUntil === "null" || productBookedUntil === null)
+              }
+              typeName="button"
+              handleClick={() => openModal()}
+            >
+              book
+            </Button>
           </div>
         </div>
       </div>
@@ -147,4 +162,5 @@ ListItemCard.propTypes = {
   rating: PropTypes.object,
   quantity: PropTypes.number,
   favourite: PropTypes.bool,
+  openModal: PropTypes.func,
 };

@@ -162,7 +162,7 @@ const Carousel = (props) => {
                 style={{ transform: `translateY(${y}%)` }}
                 className="hero__info-wrap"
               >
-                <LabelRed text={slide.slogan} />
+                <LabelRed labelStyle="hero__label" text={slide.slogan} />
                 <RestTitle title={slide.name} titleStyle="hero__title" />
                 <DescriptionGrey
                   descStyle="hero__desc"

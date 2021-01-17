@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import PostContent from "./PostContent";
+import PhotoContent from "./PhotoContent";
 import StoriesHeader from "../../StoriesHeader/StoriesHeader";
 import UserReactions from "../../UsersReactions/UsersReactions";
 import Comments from "../../Comments/Comments";
@@ -8,7 +8,7 @@ import AddComment from "../../Comments/AddComment";
 import Divider from "../../../Divider/Divider";
 import { CardContainer } from "../../../CardContainer/CardContainer";
 
-const PostCard = (props) => {
+const PhotoCard = (props) => {
   const [commentsList, setComments] = useState({
     comments: props.data.comments,
   });
@@ -81,9 +81,7 @@ const PostCard = (props) => {
     <div className="newsFeed__card post__card">
       <CardContainer styleName="card-container--shadow">
         <StoriesHeader data={props.data} />
-        <Divider />
-        <PostContent data={props.data} />
-        <Divider />
+        <PhotoContent data={props.data} />
         <UserReactions
           data={props.data}
           commentCount={commentsCount}
@@ -101,7 +99,6 @@ const PostCard = (props) => {
         </div>
         <Divider />
         <AddComment
-          commentInput={commentInput}
           avatar={props.avatar}
           submit={submitHandler}
           isEmpty={isCommentEmpty}
@@ -114,9 +111,9 @@ const PostCard = (props) => {
   );
 };
 
-export default PostCard;
+export default PhotoCard;
 
-PostCard.propTypes = {
+PhotoCard.propTypes = {
   data: PropTypes.object,
   userName: PropTypes.string,
   avatar: PropTypes.string,

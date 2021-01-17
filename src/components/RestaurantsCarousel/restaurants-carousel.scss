@@ -46,14 +46,18 @@
 
     &__slider {
         display: grid;
-        gap: 40px;
+        gap: $column-gap-small;
         grid-template-columns: repeat(3, minmax(0, 1fr));
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1240px) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: $breakpoint-tablet-landscape) {
+            gap: $column-gap-extra-small;
+        }
+
+        @media (max-width: 900px) {
             gap: 0;
             grid-template-columns: repeat(1, minmax(0, 1fr));
         }

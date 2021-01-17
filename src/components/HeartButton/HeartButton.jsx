@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import SVGIcon from "components/SVGIcon/SVGIcon";
 import "./heart-button.scss";
 
 export const HeartButton = ({ isChecked = false }) => {
-  const [checked, setChecked] = useState(isChecked);
+  const [reactionCountState, setReactionCountState] = useState(isChecked);
   useEffect(() => {
-    setChecked(isChecked);
+    setReactionCountState(isChecked);
   }, [isChecked]);
+
+  const onReactionClick = () => {
+    setReactionCountState(!reactionCountState);
+  };
+
   return (
-    <input
-      className="heart"
-      type="checkbox"
-      checked={checked}
-      onChange={() => {}}
-      onClick={() => setChecked(!checked)}
-    />
+    <button className="heart-button" onClick={onReactionClick}>
+      <SVGIcon
+        name={reactionCountState ? "heartBtnColored" : "heartBtn"}
+        className="heart-button__icon"
+      />
+    </button>
   );
 };
 

@@ -20,6 +20,7 @@ const AddComment = (props) => {
           onBlur={props.onBlur}
           onChange={props.onChange}
           disabled={false}
+          innerRef={props.commentInput}
         ></ContentEditable>
         <input
           className="comment-add__submitButton"
@@ -42,4 +43,5 @@ AddComment.propTypes = {
   commentText: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
+  commentInput: PropTypes.any,
 };

@@ -2,7 +2,7 @@
 
 .best-restaurants {
     background-color: $color-porcelain;
-    column-gap: 40px;
+    column-gap: $column-gap-small;
     display: grid;
     grid-template-areas: 'general restaurant restaurant';
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -14,7 +14,7 @@
     }
 
     .restaurant-card__wrapper {
-        column-gap: 40px;
+        column-gap: $column-gap-small;
         display: grid;
         grid-area: restaurant;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -23,13 +23,13 @@
     @media (max-width: $breakpoint-tablet-landscape) {
         column-gap: 0;
         grid-template-areas:
-            'restaurant'
-            'general';
+            'general'
+            'restaurant';
         grid-template-columns: 1fr;
         row-gap: 20px;
 
         .restaurant-card__wrapper {
-            column-gap: 20px;
+            column-gap: $column-gap-extra-small;
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }

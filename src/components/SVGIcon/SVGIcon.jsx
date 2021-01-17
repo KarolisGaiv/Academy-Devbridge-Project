@@ -59,6 +59,7 @@ import { ReactComponent as NotAvailableProduct } from "../../assets/notAvailable
 import { ReactComponent as Search } from "../../assets/searchIcon.svg";
 import { ReactComponent as Cancel } from "../../assets/cancel.svg";
 import { ReactComponent as Calendar } from "../../assets/calendar.svg";
+import { ReactComponent as ProgressBar } from "../../assets/progressBar.svg";
 import propTypes from "prop-types";
 
 const SVGIcon = (props) => {
@@ -185,6 +186,8 @@ const SVGIcon = (props) => {
       return <Cancel />;
     case "calendar":
       return <Calendar />;
+    case "progressBar":
+      return <ProgressBar />;
     default:
       return "error";
   }

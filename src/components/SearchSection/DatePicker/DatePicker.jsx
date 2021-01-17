@@ -9,10 +9,12 @@ const Calendar = ({ onDatePickerChange, datePickerValue }) => {
     //function prevents tabbing through datepicker's month and day when no date is chosen
     const setTabIndex = (queryName) => {
       var el = document.querySelector(queryName);
-      if (el.value.length === 0 || el.value === undefined) {
+      if (el.value.length === 0) {
         el.setAttribute("tabindex", "-1");
+        el.style.pointerEvents = "none";
       } else {
         el.removeAttribute("tabindex");
+        el.style.pointerEvents = "";
       }
     };
 

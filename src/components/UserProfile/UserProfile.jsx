@@ -51,18 +51,16 @@ class UserProfile extends Component {
               <div className="drop-menu__arrow-up"></div>
               <ul className="drop-menu__wrapper">
                 <li className="drop-menu__item">
-                  <div className="drop-menu__item-body">
+                  <a href="/progress" className="drop-menu__item-link">
                     <SVGIcon name="settings" />
                     <span className="drop-menu__text">Settings</span>
-                  </div>
+                  </a>
                 </li>
                 <li className="drop-menu__item">
-                  <div className="drop-menu__item-body">
+                  <a href="/" className="drop-menu__item-link">
                     <SVGIcon name="logout" />
-                    <span className="drop-menu__text">
-                      <a href="/">Log out</a>
-                    </span>
-                  </div>
+                    <span className="drop-menu__text">Log out</span>
+                  </a>
                 </li>
               </ul>
             </nav>

@@ -13,6 +13,7 @@ export const ResCard = ({
   iconsOutside,
   directTo,
   cardSmall,
+  component,
 }) => {
   const iconStyle = classNames("card-wrapper__icon", {
     "card-wrapper__icon--outside": iconsOutside === true,
@@ -22,8 +23,12 @@ export const ResCard = ({
     "card-wrapper__name--small": cardSmall === true,
   });
 
+  const cardStyle = classNames("card-wrapper", {
+    "card-wrapper--selected": component === category,
+  });
+
   return (
-    <div className="card-wrapper">
+    <div className={cardStyle}>
       <Link
         title={`${
           category.charAt(0).toUpperCase() + category.substr(1).toLowerCase()
@@ -38,7 +43,7 @@ export const ResCard = ({
               category.substr(1).toLowerCase()}
           </span>
           <span className="card-wrapper__details">
-            {`${totalNumber} ${keyword}`}
+            {keyword && totalNumber ? `${totalNumber} ${keyword}` : null}
           </span>
         </div>
         <div className={iconStyle}>
@@ -59,4 +64,5 @@ ResCard.propTypes = {
   iconsOutside: PropTypes.bool,
   directTo: PropTypes.string,
   cardSmall: PropTypes.bool,
+  component: PropTypes.string,
 };

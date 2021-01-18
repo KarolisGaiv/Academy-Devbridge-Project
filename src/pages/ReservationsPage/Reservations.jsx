@@ -12,6 +12,7 @@ import {
   FilterByTags,
 } from "../../components/SearchSection/Search/SearchFunction";
 import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
+import CategoryCard from "components/CategoryCard/CategoryCard";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -157,6 +158,26 @@ const Reservations = () => {
           reservations
         </h1>
       </header>
+      <section className="reservations__category-cards">
+        <CategoryCard
+          category="devices"
+          icon="Phone"
+          directTo="../../dashboard/reservations"
+          component={itemPlural}
+        />
+        <CategoryCard
+          category="books"
+          icon="Book"
+          directTo="../../dashboard/reservations"
+          component={itemPlural}
+        />
+        <CategoryCard
+          category="meeting Rooms"
+          icon="Door"
+          directTo="../../dashboard/reservations"
+          component={itemPlural}
+        />
+      </section>
       <SearchSection
         inputValue={searchTerm}
         handleChange={handleChange}

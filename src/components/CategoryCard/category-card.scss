@@ -2,6 +2,8 @@
 @import '../../styles/mixins/mixins';
 
 .card-wrapper {
+    $this: &;
+
     background: $color-alabaster;
     border-radius: 8px;
     box-shadow: 0 8px 23px $transperent-black-25;
@@ -10,6 +12,18 @@
     height: 96px;
     justify-content: center;
     line-height: 1.2;
+
+    &:hover {
+        background: $color-ghost;
+    }
+
+    &--selected {
+        background: $color-fiord;
+
+        #{$this}__name {
+            color: $color-white;
+        }
+    }
 
     &__info {
         display: flex;

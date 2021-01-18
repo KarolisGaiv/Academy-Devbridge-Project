@@ -112,12 +112,20 @@ export const ListItemCard = (props) => {
             )}
             <Button
               className={
-                !(productBookedUntil === "null" || productBookedUntil === null)
+                !(
+                  productBookedUntil === "null" ||
+                  productBookedUntil === null ||
+                  new Date(productBookedUntil) < new Date()
+                )
                   ? "list-item-card__button list-item-card__button--disabled"
                   : "list-item-card__button list-item-card__button--enabled"
               }
               isDisabled={
-                !(productBookedUntil === "null" || productBookedUntil === null)
+                !(
+                  productBookedUntil === "null" ||
+                  productBookedUntil === null ||
+                  new Date(productBookedUntil) < new Date()
+                )
               }
               typeName="button"
               handleClick={() => openModal()}

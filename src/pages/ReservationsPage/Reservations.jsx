@@ -295,6 +295,7 @@ const Reservations = ({ setNotification }) => {
                 handleClick={() => {
                   setIsModalOpen(!isModalOpen);
                   setNotification();
+                  setIsCheckboxChecked(!isCheckboxChecked);
                 }}
                 isDisabled={!isCheckboxChecked}
               >

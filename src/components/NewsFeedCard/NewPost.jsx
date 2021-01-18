@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ContentEditable from "react-contenteditable";
 import propTypes from "prop-types";
 import "./new-post.scss";
 
@@ -15,19 +16,26 @@ const NewPost = () => {
       <div className="new-post__post-options">
         {postTypes.map((type, index) => {
           return (
-            <div
+            <button
               key={index}
-              className={`radio-button__wrapper ${
-                type.selected ? `radio-button__wrapper--selected` : null
+              onClick={() => {}}
+              className={`new-post__button new-post__button${
+                type.selected ? `--selected` : null
               }`}
             >
-              <button onClick={() => {}} className={`radio-button `}>
-                {type.name}
-              </button>
-            </div>
+              {type.name}
+            </button>
           );
         })}
       </div>
+      <ContentEditable
+        className="new-post__textField"
+        html={""}
+        onBlur={() => {}}
+        onChange={() => {}}
+        disabled={false}
+        innerRef={"a"}
+      ></ContentEditable>
     </div>
   );
 };

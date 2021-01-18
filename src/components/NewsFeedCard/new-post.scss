@@ -6,18 +6,16 @@
         display: flex;
         flex-direction: row;
     }
-}
 
-.radio-button {
-    height: 100%;
-    width: 100%;
-    border: none;
-
-    &__wrapper {
+    &__button {
+        background-color: $color-white;
+        border: 1px solid $color-geyser;
+        color: $color-mirage;
         flex: 1 0 33%;
-        position: relative;
-        height: 40px;
+        height: 30px;
+        max-width: 100px;
         overflow: hidden;
+        position: relative;
 
         &:first-child {
             border-radius: 8px 0 0 8px;
@@ -32,11 +30,24 @@
         }
 
         &:not(:last-child) {
-            margin-right: 2px;
+            border-right: hidden;
         }
 
         &--selected {
-            background-color: $color-electric-violet;
+            background-color: $color-mirage;
+            border: 1px solid $color-mirage;
+            color: $color-white;
+        }
+    }
+
+    &__textField {
+        background-color: $color-white;
+        border: 1px solid $color-ghost;
+        border-radius: 5px;
+        height: 50px;
+
+        &:focus {
+            border: 1px solid $color-fiord;
         }
     }
 }

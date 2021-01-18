@@ -3,6 +3,7 @@ import BirthdayCard from "./Stories/Content/Birthday/BirthdayCard";
 import MasonryGrid from "../MasonryGrid/MasonryGrid";
 import ContentCard from "./Stories/Content/ContentCard";
 import fakeData from "../../db.json";
+import NewPost from "./NewPost";
 
 const NewsFeed = () => {
   const userAvatar = fakeData.userData.userImage;
@@ -108,6 +109,7 @@ const NewsFeed = () => {
   return (
     <section className="newsFeed">
       <button onClick={addPost}>Click</button>
+      <NewPost />
       <MasonryGrid>
         {stories.map((story, index) => {
           if (story.type === "birthday") {

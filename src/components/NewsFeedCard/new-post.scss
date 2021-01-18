@@ -1,0 +1,42 @@
+@import '../../styles/base/base';
+@import '../../styles/mixins/mixins';
+
+.new-post {
+    &__post-options {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.radio-button {
+    height: 100%;
+    width: 100%;
+    border: none;
+
+    &__wrapper {
+        flex: 1 0 33%;
+        position: relative;
+        height: 40px;
+        overflow: hidden;
+
+        &:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+
+        &:nth-child(2) {
+            border-radius: 0;
+        }
+
+        &:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+
+        &:not(:last-child) {
+            margin-right: 2px;
+        }
+
+        &--selected {
+            background-color: $color-electric-violet;
+        }
+    }
+}

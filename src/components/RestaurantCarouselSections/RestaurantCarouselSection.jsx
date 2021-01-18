@@ -46,8 +46,6 @@ const RestaurantCarouselSection = (props) => {
     return deg * (Math.PI / 180);
   };
 
-  let coords = [];
-
   const dynamicSort = (property) => {
     let sortOrder = 1;
     if (property[0] === "-") {
@@ -61,24 +59,24 @@ const RestaurantCarouselSection = (props) => {
     };
   };
 
-  // const getRestaurantListWithDistance = () => {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(function (position) {
-  //       coords.push(position.coords.latitude);
-  //       coords.push(position.coords.longitude);
-  //       let restaurantListWithDistance = data.map((restaurant) => ({
-  //         ...restaurant,
-  //         distance: getDistanceFromLatLonInKm(
-  //           position.coords.latitude,
-  //           position.coords.longitude,
-  //           restaurant.latitude,
-  //           restaurant.longitude
-  //         ),
-  //       }));
-  //       console.log(restaurantListWithDistance.sort(dynamicSort("distance")));
-  //     });
-  //   }
-  // };
+  const userPositionPromise = () => {
+    return new Promise((resolve, reject) => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function (data) {
+            resolve(data);
+          },
+          function (error) {
+            reject(error);
+          }
+        );
+      } else {
+        reject({
+          error: "browser doesn't support geolocation",
+        });
+      }
+    });
+  };
 
   let restaurants = data;
 
@@ -91,23 +89,22 @@ const RestaurantCarouselSection = (props) => {
       );
       break;
     case "discover":
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-          coords.push(position.coords.latitude);
-          coords.push(position.coords.longitude);
+      userPositionPromise()
+        .then((location) => {
+          console.log(location);
           restaurants = data
             .map((restaurant) => ({
               ...restaurant,
               distance: getDistanceFromLatLonInKm(
-                position.coords.latitude,
-                position.coords.longitude,
+                location.coords.latitude,
+                location.coords.longitude,
                 restaurant.latitude,
                 restaurant.longitude
               ),
             }))
             .sort(dynamicSort("distance"));
-        });
-      }
+        })
+        .catch((error) => console.log(error));
       break;
     default:
       restaurants = data;

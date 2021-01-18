@@ -1,8 +1,9 @@
 import React from "react";
 import "./progress.scss";
 import { CardContainer } from "components/CardContainer/CardContainer";
+import PropTypes from "prop-types";
 
-const Progress = () => {
+const Progress = ({ header, information }) => {
   return (
     <section className="progress">
       <CardContainer styleName="card-container--shadow progress__image-card">
@@ -13,12 +14,8 @@ const Progress = () => {
           alt=""
         />
         <div className="progress__information">
-          <h2 className="progress__information-header">
-            Look like you&apos;re lost
-          </h2>
-          <div className="progress__information-text">
-            the page you are looking for is currently under development
-          </div>
+          <h2 className="progress__information-header">{header}</h2>
+          <div className="progress__information-text">{information}</div>
           <a
             href="http://localhost:3000/dashboard"
             alt="Go to Home Page"
@@ -33,3 +30,8 @@ const Progress = () => {
 };
 
 export default Progress;
+
+Progress.propTypes = {
+  header: PropTypes.string,
+  information: PropTypes.string,
+};

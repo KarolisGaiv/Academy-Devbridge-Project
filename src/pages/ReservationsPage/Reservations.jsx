@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { ListSection } from "components/ListSection/ListSection";
 import { SideFilters } from "components/SideFilters/SideFilters";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
@@ -16,6 +16,7 @@ import Modal from "../../components/Modal/Modal";
 import { Button } from "components/Button/Button";
 import Divider from "components/Divider/Divider";
 import SVGIcon from "components/SVGIcon/SVGIcon";
+import CategoryCard from "components/CategoryCard/CategoryCard";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -79,13 +80,22 @@ const Reservations = () => {
 
   //search bar related states
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState("");
-  const [searchValue, setSearchValue] = useState("All");
-
-  //Search section tag buttons
+  const [allResults, setAllResults] = useState([]);
+  const [searchBarResults, setSearchBarResults] = useState([""]);
   const [SearchSectionTags, setSearchSectionTags] = useState(
     searchSectionTagButtons
   );
+  const [searchValue, setSearchValue] = useState("All");
+
+  const sideTagFilterResults = TagFilter(allResults, filterList);
+  const searchBarFilterResults = searchBarResults;
+  const searchTagFilterResults = FilterByTags(SearchSectionTags, allResults);
+
+  const findMatchingResults = (...arrays) => {
+    return arrays.reduce((includ, current) =>
+      Array.from(new Set(includ.filter((a) => current.includes(a))))
+    );
+  };
 
   //handle "Results For" label
   const handleResultsFor = (searchTerm) => {
@@ -94,31 +104,9 @@ const Reservations = () => {
       : setSearchValue(searchTerm.trim());
   };
 
-  let results;
-  let tagsList;
-  let resultsByTags;
-
-  //handle Search Tags clicking
-  const handleTagSearch = (
-    searchTags,
-    searchTerm,
-    dataToSearchIn,
-    arrOfKeys,
-    i
-  ) => {
-    tagsList = TagsSearch(i, searchTags);
-    setSearchSectionTags(tagsList);
-    resultsByTags = FilterByTags(tagsList, dataToSearchIn);
-    results = SearchBarSearch(searchTerm, resultsByTags, arrOfKeys);
-    setSearchResults(results);
-    handleResultsFor(searchTerm);
-  };
-
   //handle Search Bar Results
-  const handleBarSearch = (tagsList, searchTerm, dataToSearchIn, arrOfKeys) => {
-    resultsByTags = FilterByTags(tagsList, dataToSearchIn);
-    results = SearchBarSearch(searchTerm, resultsByTags, arrOfKeys);
-    setSearchResults(results);
+  const handleBarSearch = () => {
+    setSearchBarResults(SearchBarSearch(searchTerm, allResults, keysToSearch));
     handleResultsFor(searchTerm);
   };
 
@@ -126,16 +114,17 @@ const Reservations = () => {
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
+
   //search bar cancel icon handler
   const handleCancelClick = () => {
     setSearchTerm("");
-    handleBarSearch(SearchSectionTags, "", productList, keysToSearch);
+    handleResultsFor("");
+    setSearchBarResults(SearchBarSearch("", allResults, keysToSearch));
   };
 
   //add new filter if it's not already exists
   const addItemToFilterList = (key, title) => {
     const isKey = Object.keys(filterList).some((item) => key === item);
-
     if (isKey) {
       setFilterList((prevFilterList) => {
         let filteredList = prevFilterList[key].filter((item) => item !== title);
@@ -162,13 +151,11 @@ const Reservations = () => {
       return { ...prevFilterList, [key]: [] };
     });
 
-  const productList = useMemo(() => {
-    return TagFilter(data[`${itemSingular}List`], filterList);
-  }, [data, filterList, itemSingular]);
-
   useEffect(() => {
-    setSearchResults(productList);
-  }, [productList]);
+    setAllResults(data[`${itemSingular}List`]);
+    setSearchBarResults(allResults);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, allResults]);
 
   return loading ? (
     <ProgressIndicator message="Loading..." />
@@ -181,27 +168,34 @@ const Reservations = () => {
           reservations
         </h1>
       </header>
+      <section className="reservations__category-cards">
+        <CategoryCard
+          category="devices"
+          icon="Phone"
+          directTo="../../dashboard/reservations"
+          component={itemPlural}
+        />
+        <CategoryCard
+          category="books"
+          icon="Book"
+          directTo="../../dashboard/reservations"
+          component={itemPlural}
+        />
+        <CategoryCard
+          category="meeting Rooms"
+          icon="Door"
+          directTo="../../dashboard/reservations"
+          component={itemPlural}
+        />
+      </section>
       <SearchSection
         inputValue={searchTerm}
         handleChange={handleChange}
         handleCancelClick={handleCancelClick}
-        handleSearch={() =>
-          handleBarSearch(
-            SearchSectionTags,
-            searchTerm,
-            productList,
-            keysToSearch
-          )
-        }
+        handleSearch={handleBarSearch}
         tagButtons={SearchSectionTags}
         handleTagButtonClick={(i) =>
-          handleTagSearch(
-            SearchSectionTags,
-            searchTerm,
-            productList,
-            keysToSearch,
-            i
-          )
+          setSearchSectionTags(TagsSearch(i, SearchSectionTags))
         }
       />
       <section className="reservations__section reservations__section--column">
@@ -216,7 +210,13 @@ const Reservations = () => {
         </aside>
         <section className="reservations__list">
           <ListSection
-            productList={searchResults}
+            productList={findMatchingResults(
+              sideTagFilterResults,
+              searchTagFilterResults,
+              searchBarFilterResults === undefined
+                ? [""]
+                : searchBarFilterResults
+            )}
             filterList={filterList}
             deleteItemFromFilterList={deleteItemFromFilterList}
             searchValue={searchValue}

@@ -13,13 +13,17 @@ const InputField = ({
   type,
   required,
   onChange,
+  submitFail,
+  submitFailMessage,
 }) => {
   const [error, setError] = useState(false);
 
   const handleChange = (event) => {
     const { value } = event.target;
-    setError(validateInput(validators, value));
     onChange(value);
+    if (submitFail === false || submitFail === undefined) {
+      setError(validateInput(validators, value));
+    }
   };
 
   return (
@@ -33,7 +37,7 @@ const InputField = ({
         type={type}
         value={value}
         className={
-          error
+          error || submitFail
             ? "input-wrap__field input-wrap__field--error"
             : "input-wrap__field"
         }
@@ -47,6 +51,12 @@ const InputField = ({
           <CrossIcon />
         </div>
       )}
+      {submitFail && (
+        <div className="input-error-cross">
+          <LabelRed text={submitFailMessage} />
+          <CrossIcon />
+        </div>
+      )}
     </div>
   );
 };
@@ -56,8 +66,10 @@ InputField.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
   validators: PropTypes.array,
+  submitFailMessage: PropTypes.string,
   type: PropTypes.string,
   required: PropTypes.bool,
+  submitFail: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };
 

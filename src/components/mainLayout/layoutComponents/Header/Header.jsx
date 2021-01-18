@@ -5,17 +5,15 @@ import UserProfile from "../../../UserProfile/UserProfile";
 import PropTypes from "prop-types";
 
 const Header = ({ notification }) => {
+  const name = notification ? "checkedNotificationBell" : "notificationBell";
+
   return (
     <header className="header">
       <div className="header__profile-widget">
         <UserProfile />
       </div>
       <div className="header__notification">
-        {notification ? (
-          <SVGIcon name="checkedNotificationBell" />
-        ) : (
-          <SVGIcon name="notificationBell" />
-        )}
+        <SVGIcon name={name} />
       </div>
     </header>
   );

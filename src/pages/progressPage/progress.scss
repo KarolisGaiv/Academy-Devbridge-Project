@@ -1,7 +1,7 @@
 @import '../../styles/base/base';
 @import '../../styles/mixins/mixins';
 
-$_size-80: 80px;
+$_header-size: 80px;
 
 .progress {
     @include flex-center;
@@ -11,7 +11,7 @@ $_size-80: 80px;
 
     &__header {
         color: $transperent-black-25;
-        font-size: $_size-80;
+        font-size: $_header-size;
         font-weight: $weight-medium;
         margin: 0;
         position: absolute;

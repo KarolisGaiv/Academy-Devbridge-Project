@@ -19,7 +19,11 @@ const Layout = () => {
         information="the page you are looking for is currently under development"
       />
     );
-  } else if (currentPath.includes("/dashboard")) {
+  } else if (
+    currentPath === "/dashboard" ||
+    currentPath.includes("/dashboard/reservations") ||
+    currentPath.includes("/dashboard/eat-out")
+  ) {
     return (
       <div className="layout__wrapper">
         <header className="header__wrapper">

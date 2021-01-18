@@ -291,7 +291,10 @@ const Reservations = () => {
                     ? "button button--enabled"
                     : "button button--disabled"
                 }
-                handleClick={() => setIsModalOpen(!isModalOpen)}
+                handleClick={() => {
+                  setIsModalOpen(!isModalOpen);
+                  setIsCheckboxChecked(!isCheckboxChecked);
+                }}
                 isDisabled={!isCheckboxChecked}
               >
                 Book

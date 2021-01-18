@@ -4,6 +4,7 @@ import Header from "./layoutComponents/Header/Header";
 import Navbar from "./layoutComponents/Navbar/Navbar";
 import Content from "./layoutComponents/Content/Content";
 import Footer from "./layoutComponents/Footer/Footer";
+import Progress from "../../pages/progressPage/Progress";
 import { Login } from "pages/Login";
 
 const Layout = () => {
@@ -11,6 +12,8 @@ const Layout = () => {
 
   if (currentPath === "/" || currentPath === "/register") {
     return <Login />;
+  } else if (currentPath === "/progress") {
+    return <Progress />;
   } else {
     return (
       <div className="layout__wrapper">

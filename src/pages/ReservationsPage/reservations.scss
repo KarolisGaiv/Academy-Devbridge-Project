@@ -49,3 +49,21 @@
         }
     }
 }
+
+.modal {
+    &__section-heading {
+        font-weight: $weight-medium;
+        margin-bottom: 0;
+    }
+
+    &__paragraph {
+        margin-top: 10px;
+        text-align: justify;
+    }
+
+    &__interaction {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+}

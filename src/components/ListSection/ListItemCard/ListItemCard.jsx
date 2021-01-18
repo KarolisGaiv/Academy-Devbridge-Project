@@ -21,6 +21,7 @@ export const ListItemCard = (props) => {
     favourite,
     rating,
     quantity,
+    openModal,
   } = props;
 
   const productSubtitle = author ?? brand ?? address;
@@ -109,7 +110,6 @@ export const ListItemCard = (props) => {
                 {viewMore ? "view less" : "view more"}
               </Link>
             )}
-
             <Button
               className={
                 !(productBookedUntil === "null" || productBookedUntil === null)
@@ -120,7 +120,7 @@ export const ListItemCard = (props) => {
                 !(productBookedUntil === "null" || productBookedUntil === null)
               }
               typeName="button"
-              // handleClick={future function}
+              handleClick={() => openModal()}
             >
               book
             </Button>
@@ -142,4 +142,5 @@ ListItemCard.propTypes = {
   rating: PropTypes.object,
   quantity: PropTypes.number,
   favourite: PropTypes.bool,
+  openModal: PropTypes.func,
 };

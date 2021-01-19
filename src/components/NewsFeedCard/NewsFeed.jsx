@@ -157,9 +157,9 @@ const NewsFeed = () => {
     } else {
       storiesArr[i].reaction = false;
       if (storiesArr[i].type === "birthday") {
-        storiesArr[i].wishes += 1;
+        storiesArr[i].wishes -= 1;
       } else {
-        storiesArr[i].likes += 1;
+        storiesArr[i].likes -= 1;
       }
     }
     setStories(storiesArr);

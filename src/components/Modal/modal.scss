@@ -22,6 +22,11 @@
         top: 50%;
         transform: translate(-50%, -50%);
         z-index: $z-index-modal;
+
+        &--story {
+            top: 20vh;
+            transform: translateX(-50%);
+        }
     }
 
     &__content {

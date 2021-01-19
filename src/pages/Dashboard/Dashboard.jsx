@@ -64,7 +64,6 @@ const Dashboard = () => {
         <BestRestaurantWrapper />
       </section>
       <section className="dashboard__newsFeed">
-        <h2 className="dashboard__heading">News and Stories</h2>
         <NewsFeed />
       </section>
     </div>

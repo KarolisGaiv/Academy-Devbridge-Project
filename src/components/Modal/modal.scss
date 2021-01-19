@@ -84,6 +84,12 @@
     @media (max-width: $breakpoint-tablet-landscape) {
         &__content-wrapper {
             min-width: 80%;
+
+            &--story {
+                min-width: auto;
+                top: 20vh;
+                transform: translateX(-50%);
+            }
         }
     }
 }

@@ -18,8 +18,10 @@ export const ListItemCard = (props) => {
     title,
     name,
     bookedUntil,
+    favourite,
     rating,
     quantity,
+    openModal,
   } = props;
 
   const productSubtitle = author ?? brand ?? address;
@@ -36,11 +38,10 @@ export const ListItemCard = (props) => {
     } else if (window.innerWidth > 1024) {
       return productTitle.length > 32;
     }
-    return productTitle.length > 25;
+    return productTitle.length > 24;
   };
 
   const [viewMore, setViewMore] = useState(false);
-
   return (
     <CardContainer styleName="card-container--shadow">
       <div className="list-item-card">
@@ -96,7 +97,7 @@ export const ListItemCard = (props) => {
         </div>
         <div className="list-item-card__interaction">
           <div className="list-item-card__heart">
-            <HeartButton />
+            <HeartButton isChecked={favourite} />
           </div>
           <div className="list-item-card__buttons">
             {productTitleLengthOverflow() && (
@@ -109,11 +110,25 @@ export const ListItemCard = (props) => {
                 {viewMore ? "view less" : "view more"}
               </Link>
             )}
-
             <Button
-              className="list-item-card__button button--enabled"
+              className={
+                !(
+                  productBookedUntil === "null" ||
+                  productBookedUntil === null ||
+                  new Date(productBookedUntil) < new Date()
+                )
+                  ? "list-item-card__button list-item-card__button--disabled"
+                  : "list-item-card__button list-item-card__button--enabled"
+              }
+              isDisabled={
+                !(
+                  productBookedUntil === "null" ||
+                  productBookedUntil === null ||
+                  new Date(productBookedUntil) < new Date()
+                )
+              }
               typeName="button"
-              // handleClick={future function}
+              handleClick={() => openModal()}
             >
               book
             </Button>
@@ -134,4 +149,6 @@ ListItemCard.propTypes = {
   bookedUntil: PropTypes.string,
   rating: PropTypes.object,
   quantity: PropTypes.number,
+  favourite: PropTypes.bool,
+  openModal: PropTypes.func,
 };

@@ -26,6 +26,8 @@
     "userImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
     "birthdayDate": "1990-05-18",
     "location": "Vilnius, Lithuania",
+    "userEmail": "aubrey.plaza@domain.com",
+    "userPassword": "aubrey123",
     "reservations": {
       "books": [
         {
@@ -2773,7 +2775,7 @@
       ]
     },
     {
-      "type": "post",
+      "type": "photo",
       "id": "10972har27",
       "userName": "Dwayne Johnson",
       "userImage": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
@@ -2827,7 +2829,7 @@
       ]
     },
     {
-      "type": "post",
+      "type": "photo",
       "id": "109700har27",
       "userName": "Jude Law",
       "userImage": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80",
@@ -2917,7 +2919,7 @@
       ]
     },
     {
-      "type": "post",
+      "type": "photo",
       "id": "10972har37",
       "userName": "Dwayne Johnson",
       "userImage": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
@@ -2993,6 +2995,55 @@
           "userName": "Luke Skywalker",
           "comment": "Hope you'll have a good time!",
           "date": "2020-12-17T15:48:00.000Z"
+        }
+      ]
+    },
+    {
+      "type": "post",
+      "id": "1973ayt3a2",
+      "userName": "Wade Owen Watts",
+      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2062&q=80",
+      "postLocation": "VLN",
+      "postDate": "2020-10-31T10:27:00.000Z",
+      "postText": "Hey guys, our team is organising a hike next weekend. Anyone would like to join us?",
+      "likes": 13,
+      "comments": [
+        {
+          "userName": "Uncle Roger",
+          "comment": "Definitely!",
+          "date": "2020-10-31T14:48:00.000Z"
+        },
+        {
+          "userName": "Luke Skywalker",
+          "comment": "Darn it! Wish I could go :( ",
+          "date": "2020-10-31T15:48:00.000Z"
+        },
+        {
+          "userName": "Wade Owen Watts",
+          "comment": "For sure. What should I take?",
+          "date": "2020-10-31T18:48:00.000Z"
+        }
+      ]
+    },
+    {
+      "type": "post",
+      "id": "1973ayta2o",
+      "userName": "Uncle Roger",
+      "userImage": "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+      "postLocation": "LDN",
+      "postDate": "2020-11-30T10:27:00.000Z",
+      "postText": "My friends are coming into town from Spain. I am looking for some places bars/clubs that would play jazzy groove. Anybode have any ideas?",
+      "likes": 3,
+      "comments": [
+        {
+          "userName": "Wade Owen Watts",
+          "comment": "I don't. But if you find one, let me know about it!",
+          "date": "2020-11-30T14:48:00.000Z"
+        },
+        {
+          "userName": "Luke Skywalker",
+          "comment": "Hey, try Night Sky club on Thursdays",
+          "date": "2020-10-30T15:48:00.000Z"
         }
       ]
     }

@@ -2,10 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../stories-content.scss";
 
-const PostContent = (props) => {
+const PostContent = ({ postText }) => {
   return (
     <div className="post__content">
-      <img className="post__image" src={props.data.postImage} alt="post feed" />
+      <div className="post__text-wrapper">
+        <div className="post__text">{postText}</div>
+      </div>
     </div>
   );
 };
@@ -13,5 +15,5 @@ const PostContent = (props) => {
 export default PostContent;
 
 PostContent.propTypes = {
-  data: PropTypes.object,
+  postText: PropTypes.string,
 };

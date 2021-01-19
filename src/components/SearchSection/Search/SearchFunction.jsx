@@ -1,10 +1,29 @@
+//handle search bar search
 const SearchBarSearch = (searchTerm, data, keys) => {
   const loweredSearchTerm = searchTerm.toLowerCase();
-  return data.filter(function (search) {
-    return keys.some((key) =>
-      String(search[key]).toLowerCase().includes(loweredSearchTerm)
+  if (data === undefined) {
+    return data;
+  } else {
+    return data.filter(function (search) {
+      return keys.some((key) =>
+        String(search[key]).toLowerCase().includes(loweredSearchTerm)
+      );
+    });
+  }
+};
+
+//handle date picker search
+const DatePickerSearch = (datePicked, data) => {
+  if (data === undefined || datePicked === undefined) {
+    return data;
+  } else {
+    return data.filter(
+      (obj) =>
+        obj.bookedUntil === null ||
+        obj.bookedUntil === "null" ||
+        new Date(obj.bookedUntil) < datePicked
     );
-  });
+  }
 };
 
 //handle search section tags toggle
@@ -53,4 +72,4 @@ const FilterByTags = (list, productList) => {
   return searchResultsAll;
 };
 
-export { SearchBarSearch, TagsSearch, FilterByTags };
+export { SearchBarSearch, TagsSearch, FilterByTags, DatePickerSearch };

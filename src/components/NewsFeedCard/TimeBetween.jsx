@@ -11,7 +11,7 @@ const TimeBetween = (date1, date2) => {
     return daysBetween + "d";
   } else if (hoursBetween > 1) {
     return hoursBetween + "h";
-  } else if (minutesBetween > 1) {
+  } else if (minutesBetween >= 0) {
     return minutesBetween + "min";
   }
 };

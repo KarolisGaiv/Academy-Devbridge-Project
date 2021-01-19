@@ -5,7 +5,12 @@ import { Pagination } from "../Pagination/Pagination";
 import { XButton } from "../XButtonForReservations/XButton";
 
 export const ListSection = (props) => {
-  const { productList, filterList, deleteItemFromFilterList } = props;
+  const {
+    productList,
+    filterList,
+    deleteItemFromFilterList,
+    openModal,
+  } = props;
   const filterValues = Array.prototype.concat.apply(
     [],
     Object.values(filterList)
@@ -38,7 +43,7 @@ export const ListSection = (props) => {
           })}
         </div>
       </div>
-      <Pagination list={productList} />
+      <Pagination list={productList} openModal={openModal} />
     </div>
   );
 };
@@ -48,4 +53,5 @@ ListSection.propTypes = {
   filterList: PropTypes.object,
   deleteItemFromFilterList: PropTypes.func,
   searchValue: PropTypes.string,
+  openModal: PropTypes.func,
 };

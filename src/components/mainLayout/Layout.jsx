@@ -13,7 +13,7 @@ const Layout = ({ path }) => {
 
   if (path === "/" || path === "/register") {
     return <Login />;
-  } else if (path === null || path === undefined) {
+  } else if (path === null || path === undefined || path === "/progress") {
     return (
       <Progress
         header="Look like you're lost"

@@ -7,15 +7,16 @@ import EatOut from "../../../../pages/EatOut/EatOut";
 import CategoryRestaurants from "../../../../pages/CategoryRestaurants/CategoryRestaurants";
 import RestaurantPage from "../../../../pages/RestaurantPage/RestaurantPage";
 import Layout from "../../../../components/mainLayout/Layout";
+import propTypes from "prop-types";
 
-const Content = () => {
+const Content = ({ path }) => {
   return (
     <content className="content">
       <Switch>
         <Route exact path="/dashboard" render={() => <Dashboard />} />
         <Route exact path="/" render={() => <Layout />} />
         <Route exact path="/dashboard/reservations">
-          {window.location.pathname !== "/dashboard/reservations" ? (
+          {path !== "/dashboard/reservations" ? (
             <Redirect to="/dashboard/reservations/devices" />
           ) : null}
         </Route>
@@ -41,3 +42,7 @@ const Content = () => {
 };
 
 export default Content;
+
+Content.propTypes = {
+  path: propTypes.string,
+};

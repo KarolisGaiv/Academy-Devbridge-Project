@@ -6,13 +6,12 @@ import Content from "./layoutComponents/Content/Content";
 import Footer from "./layoutComponents/Footer/Footer";
 import Progress from "../../pages/progressPage/Progress";
 import { Login } from "pages/Login";
+import propTypes from "prop-types";
 
-const Layout = () => {
-  let currentPath = window.location.pathname;
-
-  if (currentPath === "/" || currentPath === "/register") {
+const Layout = ({ path }) => {
+  if (path === "/" || path === "/register") {
     return <Login />;
-  } else if (currentPath === "/progress") {
+  } else if (path === null || path === undefined) {
     return (
       <Progress
         header="Look like you're lost"
@@ -20,9 +19,9 @@ const Layout = () => {
       />
     );
   } else if (
-    currentPath === "/dashboard" ||
-    currentPath.includes("/dashboard/reservations") ||
-    currentPath.includes("/dashboard/eat-out")
+    path === "/dashboard" ||
+    path.includes("/dashboard/reservations") ||
+    path.includes("/dashboard/eat-out")
   ) {
     return (
       <div className="layout__wrapper">
@@ -31,7 +30,7 @@ const Layout = () => {
         </header>
         <Navbar />
         <main className="content__wrapper">
-          <Content />
+          <Content path={path} />
         </main>
         <footer className="footer__wrapper">
           <Footer />
@@ -49,3 +48,7 @@ const Layout = () => {
 };
 
 export default Layout;
+
+Layout.propTypes = {
+  path: propTypes.string,
+};

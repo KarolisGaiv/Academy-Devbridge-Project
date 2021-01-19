@@ -38,24 +38,24 @@ export const RestaurantBigCard = (props) => {
   const [overflowActive, setOverflowActive] = useState(false);
 
   const isEllipsisActive = (element) => {
-    return (
-      element.offsetHeight < element.scrollHeight ||
-      element.offsetWidth < element.scrollWidth
-    );
+    if (element !== undefined && element !== null) {
+      return (
+        element.offsetHeight < element.scrollHeight ||
+        element.offsetWidth < element.scrollWidth
+      );
+    }
   };
 
   useEffect(() => {
-    let timeoutId = null;
-    const updateSize = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(
-        () => setOverflowActive(isEllipsisActive(paragraph.current)),
-        []
+    window.addEventListener(
+      "resize",
+      setOverflowActive(isEllipsisActive(paragraph.current))
+    );
+    return () =>
+      window.removeEventListener(
+        "resize",
+        setOverflowActive(isEllipsisActive(paragraph.current))
       );
-    };
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
   }, []);
 
   const paragraph = useRef(null);

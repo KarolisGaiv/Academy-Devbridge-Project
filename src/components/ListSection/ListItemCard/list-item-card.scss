@@ -134,6 +134,7 @@
     cursor: pointer;
     font-size: $size-12;
     padding: 10px 15px;
+    text-decoration: none;
     text-transform: uppercase;
 
     &--enabled {
@@ -151,5 +152,6 @@
         background-color: $color-grey-2;
         color: $color-grey-chateau;
         cursor: default;
+        font-family: $main-font;
     }
 }

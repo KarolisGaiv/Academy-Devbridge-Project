@@ -152,6 +152,7 @@ export class Pagination extends React.Component {
           bookedUntil={currentCards[key].bookedUntil}
           rating={currentCards[key].rating}
           quantity={currentCards[key].quantity}
+          openModal={this.props.openModal}
         />
       );
     });
@@ -274,4 +275,5 @@ export class Pagination extends React.Component {
 
 Pagination.propTypes = {
   list: PropTypes.array,
+  openModal: PropTypes.func,
 };

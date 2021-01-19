@@ -16,7 +16,7 @@
         display: flex;
 
         &--column {
-            @media (max-width: 1024px) {
+            @media (max-width: $breakpoint-tablet-landscape) {
                 flex-direction: column;
             }
         }
@@ -28,7 +28,7 @@
         margin: 0 40px 0 0;
         width: 285px;
 
-        @media (max-width: 1024px) {
+        @media (max-width: $breakpoint-tablet-landscape) {
             margin: 0 0 50px;
             width: 100%;
         }
@@ -36,5 +36,34 @@
 
     &__list {
         width: 100%;
+    }
+
+    &__category-cards {
+        column-gap: $column-gap-small;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 45px 0 60px;
+
+        @media (max-width: $breakpoint-tablet-landscape) {
+            margin: 60px 0 0;
+        }
+    }
+}
+
+.modal {
+    &__section-heading {
+        font-weight: $weight-medium;
+        margin-bottom: 0;
+    }
+
+    &__paragraph {
+        margin-top: 10px;
+        text-align: justify;
+    }
+
+    &__interaction {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
     }
 }

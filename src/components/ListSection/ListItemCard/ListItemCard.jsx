@@ -21,6 +21,7 @@ export const ListItemCard = (props) => {
     favourite,
     rating,
     quantity,
+    openModal,
   } = props;
 
   const productSubtitle = author ?? brand ?? address;
@@ -109,18 +110,25 @@ export const ListItemCard = (props) => {
                 {viewMore ? "view less" : "view more"}
               </Link>
             )}
-
             <Button
               className={
-                !(productBookedUntil === "null" || productBookedUntil === null)
+                !(
+                  productBookedUntil === "null" ||
+                  productBookedUntil === null ||
+                  new Date(productBookedUntil) < new Date()
+                )
                   ? "list-item-card__button list-item-card__button--disabled"
                   : "list-item-card__button list-item-card__button--enabled"
               }
               isDisabled={
-                !(productBookedUntil === "null" || productBookedUntil === null)
+                !(
+                  productBookedUntil === "null" ||
+                  productBookedUntil === null ||
+                  new Date(productBookedUntil) < new Date()
+                )
               }
               typeName="button"
-              // handleClick={future function}
+              handleClick={() => openModal()}
             >
               book
             </Button>
@@ -142,4 +150,5 @@ ListItemCard.propTypes = {
   rating: PropTypes.object,
   quantity: PropTypes.number,
   favourite: PropTypes.bool,
+  openModal: PropTypes.func,
 };

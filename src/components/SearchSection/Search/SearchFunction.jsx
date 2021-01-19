@@ -1,3 +1,4 @@
+//handle search bar search
 const SearchBarSearch = (searchTerm, data, keys) => {
   const loweredSearchTerm = searchTerm.toLowerCase();
   if (data === undefined) {
@@ -8,6 +9,20 @@ const SearchBarSearch = (searchTerm, data, keys) => {
         String(search[key]).toLowerCase().includes(loweredSearchTerm)
       );
     });
+  }
+};
+
+//handle date picker search
+const DatePickerSearch = (datePicked, data) => {
+  if (data === undefined || datePicked === undefined) {
+    return data;
+  } else {
+    return data.filter(
+      (obj) =>
+        obj.bookedUntil === null ||
+        obj.bookedUntil === "null" ||
+        new Date(obj.bookedUntil) < datePicked
+    );
   }
 };
 
@@ -57,4 +72,4 @@ const FilterByTags = (list, productList) => {
   return searchResultsAll;
 };
 
-export { SearchBarSearch, TagsSearch, FilterByTags };
+export { SearchBarSearch, TagsSearch, FilterByTags, DatePickerSearch };

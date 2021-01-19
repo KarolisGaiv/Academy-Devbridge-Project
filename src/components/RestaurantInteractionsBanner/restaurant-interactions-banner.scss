@@ -46,4 +46,14 @@
             padding: 10px 0 0;
         }
     }
+
+    &__modal-input {
+        margin-top: -15px;
+    }
+
+    &__modal-button {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 15px;
+    }
 }

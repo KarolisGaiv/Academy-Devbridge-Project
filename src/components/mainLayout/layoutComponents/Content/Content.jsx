@@ -1,6 +1,6 @@
 import React from "react";
 import "./content.scss";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Dashboard from "../../../../pages/Dashboard/Dashboard";
 import Reservations from "../../../../pages/ReservationsPage/Reservations";
 import EatOut from "../../../../pages/EatOut/EatOut";
@@ -14,11 +14,11 @@ const Content = () => {
       <Switch>
         <Route exact path="/dashboard" render={() => <Dashboard />} />
         <Route exact path="/" render={() => <Layout />} />
-        <Route
-          exact
-          path="/dashboard/reservations"
-          render={() => <Reservations />}
-        />
+        <Route exact path="/dashboard/reservations">
+          {window.location.pathname !== "/dashboard/reservations" ? (
+            <Redirect to="/dashboard/reservations/devices" />
+          ) : null}
+        </Route>
         <Route
           exact
           path="/dashboard/reservations/:itemPlural"

@@ -59,24 +59,23 @@ const RestaurantCarouselSection = (props) => {
     };
   };
 
-  const userPositionPromise = () => {
-    return new Promise((resolve, reject) => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          function (data) {
-            resolve(data);
-          },
-          function (error) {
-            reject(error);
-          }
-        );
-      } else {
-        reject({
-          error: "browser doesn't support geolocation",
-        });
-      }
-    });
-  };
+  const [userLatitude, setUserLatitude] = useState(0);
+  const [userLongitude, setUserLongitude] = useState(0);
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(
+        (position) => {
+          setUserLatitude(position.coords.latitude);
+          setUserLongitude(position.coords.longitude);
+        },
+        (err) => console.log(err),
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 10000 }
+      );
+    } else {
+      console.log("Browser doesn't support geolocation");
+    }
+  });
 
   let restaurants = data;
 
@@ -89,22 +88,18 @@ const RestaurantCarouselSection = (props) => {
       );
       break;
     case "discover":
-      userPositionPromise()
-        .then((location) => {
-          console.log(location);
-          restaurants = data
-            .map((restaurant) => ({
-              ...restaurant,
-              distance: getDistanceFromLatLonInKm(
-                location.coords.latitude,
-                location.coords.longitude,
-                restaurant.latitude,
-                restaurant.longitude
-              ),
-            }))
-            .sort(dynamicSort("distance"));
-        })
-        .catch((error) => console.log(error));
+      restaurants = data
+        .map((restaurant) => ({
+          ...restaurant,
+          distance: getDistanceFromLatLonInKm(
+            userLatitude,
+            userLongitude,
+            restaurant.latitude,
+            restaurant.longitude
+          ),
+        }))
+        .sort(dynamicSort("distance"));
+      console.log(restaurants);
       break;
     default:
       restaurants = data;

@@ -42,7 +42,10 @@ const SearchSection = (props) => {
             handleChange={props.handleChange}
             handleClick={props.handleSearch}
           />
-          <DatePicker />
+          <DatePicker
+            onDatePickerChange={props.onDatePickerChange}
+            datePickerValue={props.datePickerValue}
+          />
           <Button
             className="button button--enabled search-section__search-button"
             type="button"
@@ -75,4 +78,6 @@ SearchSection.propTypes = {
     })
   ),
   handleTagButtonClick: propTypes.func,
+  onDatePickerChange: propTypes.func,
+  datePickerValue: propTypes.any,
 };

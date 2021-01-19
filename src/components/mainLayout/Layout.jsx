@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./layout.scss";
 import Header from "./layoutComponents/Header/Header";
 import Navbar from "./layoutComponents/Navbar/Navbar";
@@ -9,6 +9,8 @@ import { Login } from "pages/Login";
 import propTypes from "prop-types";
 
 const Layout = ({ path }) => {
+  const [notification, setNotification] = useState(false);
+
   if (path === "/" || path === "/register") {
     return <Login />;
   } else if (path === null || path === undefined) {
@@ -26,11 +28,11 @@ const Layout = ({ path }) => {
     return (
       <div className="layout__wrapper">
         <header className="header__wrapper">
-          <Header />
+          <Header notification={notification} />
         </header>
         <Navbar />
         <main className="content__wrapper">
-          <Content path={path} />
+          <Content setNotification={() => setNotification(true)} path={path} />
         </main>
         <footer className="footer__wrapper">
           <Footer />

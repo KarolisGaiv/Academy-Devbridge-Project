@@ -4,19 +4,19 @@ import UserAvatar from "../../../UserAvatar/UserAvatar";
 import SVGIcon from "../../../SVGIcon/SVGIcon";
 import FormatDate from "../../FormatDate";
 
-import "./birthday-content.scss";
+import "../birthday-content.scss";
 
-const BirthdayContent = (props) => {
+const BirthdayContent = ({ userImage, userName, birthdayDate }) => {
   return (
     <div className="birthday">
       <div className="birthday__profile">
-        <UserAvatar size={96} imageSrc={props.data.userImage} />
+        <UserAvatar size={96} imageSrc={userImage} />
       </div>
       <div className="birthday__text">
-        <p className="birthday__user">{props.data.userName}</p>
+        <p className="birthday__user">{userName}</p>
         <p className="birthday__date">
           Celebrated a birthday on{" "}
-          <span className="date">{FormatDate(props.data.birthdayDate)}</span>
+          <span className="date">{FormatDate(birthdayDate)}</span>
         </p>
         <p className="birthday__wish">Send a wish!</p>
       </div>
@@ -48,5 +48,7 @@ const BirthdayContent = (props) => {
 export default BirthdayContent;
 
 BirthdayContent.propTypes = {
-  data: PropTypes.object,
+  userImage: PropTypes.string,
+  userName: PropTypes.string,
+  birthdayDate: PropTypes.string,
 };

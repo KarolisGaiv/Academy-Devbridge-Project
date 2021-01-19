@@ -10,6 +10,7 @@ import {
   SearchBarSearch,
   TagsSearch,
   FilterByTags,
+  DatePickerSearch,
 } from "../../components/SearchSection/Search/SearchFunction";
 import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
 import Modal from "../../components/Modal/Modal";
@@ -17,6 +18,7 @@ import { Button } from "components/Button/Button";
 import Divider from "components/Divider/Divider";
 import SVGIcon from "components/SVGIcon/SVGIcon";
 import CategoryCard from "components/CategoryCard/CategoryCard";
+import PropTypes from "prop-types";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -36,7 +38,7 @@ const useFetch = (url) => {
   return { data, loading };
 };
 
-const Reservations = () => {
+const Reservations = ({ setNotification }) => {
   const { itemPlural } = useParams();
   let itemSingular;
   if (itemPlural === undefined) itemSingular = "book";
@@ -81,14 +83,15 @@ const Reservations = () => {
   //search bar related states
   const [searchTerm, setSearchTerm] = useState("");
   const [allResults, setAllResults] = useState([]);
-  const [searchBarResults, setSearchBarResults] = useState([""]);
+  const [searchBarResults, setSearchBarResults] = useState([]);
   const [SearchSectionTags, setSearchSectionTags] = useState(
     searchSectionTagButtons
   );
   const [searchValue, setSearchValue] = useState("All");
+  const [datePickerValue, setDatePickervalue] = useState();
+  const [datePickerResults, setDatePickerResults] = useState([]);
 
   const sideTagFilterResults = TagFilter(allResults, filterList);
-  const searchBarFilterResults = searchBarResults;
   const searchTagFilterResults = FilterByTags(SearchSectionTags, allResults);
 
   const findMatchingResults = (...arrays) => {
@@ -107,6 +110,7 @@ const Reservations = () => {
   //handle Search Bar Results
   const handleBarSearch = () => {
     setSearchBarResults(SearchBarSearch(searchTerm, allResults, keysToSearch));
+    setDatePickerResults(DatePickerSearch(datePickerValue, allResults));
     handleResultsFor(searchTerm);
   };
 
@@ -154,6 +158,7 @@ const Reservations = () => {
   useEffect(() => {
     setAllResults(data[`${itemSingular}List`]);
     setSearchBarResults(allResults);
+    setDatePickerResults(allResults);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, allResults]);
 
@@ -197,6 +202,8 @@ const Reservations = () => {
         handleTagButtonClick={(i) =>
           setSearchSectionTags(TagsSearch(i, SearchSectionTags))
         }
+        onDatePickerChange={setDatePickervalue}
+        datePickerValue={datePickerValue}
       />
       <section className="reservations__section reservations__section--column">
         <aside className="reservations__side-filters">
@@ -213,9 +220,10 @@ const Reservations = () => {
             productList={findMatchingResults(
               sideTagFilterResults,
               searchTagFilterResults,
-              searchBarFilterResults === undefined
-                ? [""]
-                : searchBarFilterResults
+              datePickerResults === undefined || datePickerValue == null
+                ? allResults
+                : datePickerResults,
+              searchBarResults === undefined ? allResults : searchBarResults
             )}
             filterList={filterList}
             deleteItemFromFilterList={deleteItemFromFilterList}
@@ -293,6 +301,7 @@ const Reservations = () => {
                 }
                 handleClick={() => {
                   setIsModalOpen(!isModalOpen);
+                  setNotification();
                   setIsCheckboxChecked(!isCheckboxChecked);
                 }}
                 isDisabled={!isCheckboxChecked}
@@ -308,3 +317,7 @@ const Reservations = () => {
 };
 
 export default Reservations;
+
+Reservations.propTypes = {
+  setNotification: PropTypes.func,
+};

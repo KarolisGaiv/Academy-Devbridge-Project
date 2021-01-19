@@ -7,8 +7,9 @@ import EatOut from "../../../../pages/EatOut/EatOut";
 import CategoryRestaurants from "../../../../pages/CategoryRestaurants/CategoryRestaurants";
 import RestaurantPage from "../../../../pages/RestaurantPage/RestaurantPage";
 import Layout from "../../../../components/mainLayout/Layout";
+import PropTypes from "prop-types";
 
-const Content = () => {
+const Content = ({ setNotification }) => {
   return (
     <content className="content">
       <Switch>
@@ -17,7 +18,7 @@ const Content = () => {
         <Route
           exact
           path="/dashboard/reservations"
-          render={() => <Reservations />}
+          render={() => <Reservations setNotification={setNotification} />}
         />
         <Route
           exact
@@ -41,3 +42,7 @@ const Content = () => {
 };
 
 export default Content;
+
+Content.propTypes = {
+  setNotification: PropTypes.func,
+};

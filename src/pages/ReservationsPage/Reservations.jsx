@@ -17,6 +17,7 @@ import { Button } from "components/Button/Button";
 import Divider from "components/Divider/Divider";
 import SVGIcon from "components/SVGIcon/SVGIcon";
 import CategoryCard from "components/CategoryCard/CategoryCard";
+import PropTypes from "prop-types";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -36,7 +37,7 @@ const useFetch = (url) => {
   return { data, loading };
 };
 
-const Reservations = () => {
+const Reservations = ({ setNotification }) => {
   const { itemPlural } = useParams();
   let itemSingular;
   if (itemPlural === undefined) itemSingular = "book";
@@ -293,6 +294,7 @@ const Reservations = () => {
                 }
                 handleClick={() => {
                   setIsModalOpen(!isModalOpen);
+                  setNotification();
                   setIsCheckboxChecked(!isCheckboxChecked);
                 }}
                 isDisabled={!isCheckboxChecked}
@@ -308,3 +310,7 @@ const Reservations = () => {
 };
 
 export default Reservations;
+
+Reservations.propTypes = {
+  setNotification: PropTypes.func,
+};

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./layout.scss";
 import Header from "./layoutComponents/Header/Header";
 import Navbar from "./layoutComponents/Navbar/Navbar";
@@ -8,6 +8,7 @@ import Progress from "../../pages/progressPage/Progress";
 import { Login } from "pages/Login";
 
 const Layout = () => {
+  const [notification, setNotification] = useState(false);
   let currentPath = window.location.pathname;
 
   if (currentPath === "/" || currentPath === "/register") {
@@ -27,11 +28,11 @@ const Layout = () => {
     return (
       <div className="layout__wrapper">
         <header className="header__wrapper">
-          <Header />
+          <Header notification={notification} />
         </header>
         <Navbar />
         <main className="content__wrapper">
-          <Content />
+          <Content setNotification={() => setNotification(true)} />
         </main>
         <footer className="footer__wrapper">
           <Footer />

@@ -6,27 +6,36 @@ import UserAvatar from "../../UserAvatar/UserAvatar";
 import "./add-comment.scss";
 
 const AddComment = (props) => {
+  const {
+    avatar,
+    commentText,
+    onBlur,
+    handleValueChange,
+    commentInput,
+    isEmpty,
+    submit,
+  } = props;
   return (
     <div className="comment-add">
       <UserAvatar
         className="comment-add__userAvatar"
         size={24}
-        imageSrc={props.avatar}
+        imageSrc={avatar}
       />
       <form className="comment-add__form">
         <ContentEditable
           className="comment-add__textField"
-          html={props.commentText}
-          onBlur={props.onBlur}
-          onChange={props.onChange}
+          html={commentText}
+          onBlur={onBlur}
+          onChange={handleValueChange}
           disabled={false}
-          innerRef={props.commentInput}
+          innerRef={commentInput}
         ></ContentEditable>
         <input
           className="comment-add__submitButton"
           type="button"
           value="post"
-          onClick={!props.isEmpty ? props.submit : null}
+          onClick={!isEmpty ? submit : null}
         />
       </form>
     </div>
@@ -36,7 +45,6 @@ const AddComment = (props) => {
 export default AddComment;
 
 AddComment.propTypes = {
-  children: PropTypes.object,
   avatar: PropTypes.string,
   isEmpty: PropTypes.bool,
   submit: PropTypes.func,
@@ -44,4 +52,5 @@ AddComment.propTypes = {
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   commentInput: PropTypes.any,
+  handleValueChange: PropTypes.func,
 };

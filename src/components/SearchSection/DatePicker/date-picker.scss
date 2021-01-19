@@ -39,11 +39,6 @@ $_size-none: 0;
         &__input:invalid {
             background: none;
         }
-
-        &__month,
-        &__day {
-            pointer-events: none;
-        }
     }
 
     &__calendar-button {

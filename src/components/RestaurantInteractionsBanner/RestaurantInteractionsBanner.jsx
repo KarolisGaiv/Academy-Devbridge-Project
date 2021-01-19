@@ -20,7 +20,7 @@ export const RestaurantInteractionsBanner = (props) => {
   const [emailInputField, setEmailInputField] = useState("");
   const [commentInputField, setCommentInputField] = useState("");
 
-  const increaseCheckinNumber = () => {
+  const updateCheckinNumber = () => {
     if (checkinNumberState.clicked) {
       setCheckinNumberState({
         checkinNumber: props.checkins,
@@ -32,6 +32,12 @@ export const RestaurantInteractionsBanner = (props) => {
         clicked: true,
       });
     }
+  };
+  const [buttonClicked, setButtonClicked] = useState(false);
+
+  const handleClick = () => {
+    updateCheckinNumber();
+    setButtonClicked(!buttonClicked);
   };
 
   return (
@@ -52,9 +58,9 @@ export const RestaurantInteractionsBanner = (props) => {
             <Button
               className="button button--enabled"
               typeName="button"
-              handleClick={increaseCheckinNumber}
+              handleClick={handleClick}
             >
-              Check-in
+              {buttonClicked ? "check-out" : "check-in"}
             </Button>
           </div>
         </div>

@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 
 import "./comments.scss";
 
-const Comments = (props) => {
-  const cleanComment = sanitizeHtml(props.comment, {
+const Comments = ({ comment, username }) => {
+  const cleanComment = sanitizeHtml(comment, {
     allowedTags: ["b", "i", "em", "strong", "br", "div", "p"],
   });
   return (
     <div className="comment">
-      <span className="comment__user-name">{props.username}</span>
+      <span className="comment__user-name">{username}</span>
       <span
         className="comment__text"
         dangerouslySetInnerHTML={{ __html: cleanComment }}

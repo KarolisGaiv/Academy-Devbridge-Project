@@ -9,6 +9,7 @@ import "./restaurant-big-card.scss";
 export const RestaurantBigCard = (props) => {
   //Toggles between classes 'expanded' and 'collapsed':
   const [expanded, setExpanded] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   const toggledClass = expanded
     ? "restaurant-card__description restaurant-card__description--expanded"
@@ -20,7 +21,7 @@ export const RestaurantBigCard = (props) => {
     clicked: false,
   });
 
-  const increaseCheckinNumber = () => {
+  const updateCheckinNumber = () => {
     if (checkinNumberState.clicked) {
       setCheckinNumberState({
         checkinNumber: checkinNumberState.checkinNumber - 1,
@@ -34,28 +35,33 @@ export const RestaurantBigCard = (props) => {
     }
   };
 
+  const handleClick = () => {
+    updateCheckinNumber();
+    setButtonClicked(!buttonClicked);
+  };
+
   //Adds READ MORE / READ LESS only if there is an overflow and reacts to window resize event:
   const [overflowActive, setOverflowActive] = useState(false);
 
   const isEllipsisActive = (element) => {
-    return (
-      element.offsetHeight < element.scrollHeight ||
-      element.offsetWidth < element.scrollWidth
-    );
+    if (element !== undefined && element !== null) {
+      return (
+        element.offsetHeight < element.scrollHeight ||
+        element.offsetWidth < element.scrollWidth
+      );
+    }
   };
 
   useEffect(() => {
-    let timeoutId = null;
-    const updateSize = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(
-        () => setOverflowActive(isEllipsisActive(paragraph.current)),
-        []
+    window.addEventListener(
+      "resize",
+      setOverflowActive(isEllipsisActive(paragraph.current))
+    );
+    return () =>
+      window.removeEventListener(
+        "resize",
+        setOverflowActive(isEllipsisActive(paragraph.current))
       );
-    };
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
   }, []);
 
   const paragraph = useRef(null);
@@ -93,9 +99,9 @@ export const RestaurantBigCard = (props) => {
             <Button
               className="button button--enabled"
               typeName="button"
-              handleClick={increaseCheckinNumber}
+              handleClick={handleClick}
             >
-              check-in
+              {buttonClicked ? "check-out" : "check-in"}
             </Button>
           </div>
         </div>

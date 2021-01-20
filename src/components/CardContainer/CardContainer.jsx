@@ -10,5 +10,5 @@ export const CardContainer = (props) => {
 
 CardContainer.propTypes = {
   styleName: PropTypes.string,
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };

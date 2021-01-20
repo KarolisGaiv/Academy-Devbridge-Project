@@ -52,19 +52,17 @@ export const RestaurantBigCard = (props) => {
     }
   };
 
+  const paragraph = useRef(null);
+
   useEffect(() => {
-    window.addEventListener(
-      "resize",
-      setOverflowActive(isEllipsisActive(paragraph.current))
-    );
+    let par = paragraph.current;
+    window.addEventListener("resize", setOverflowActive(isEllipsisActive(par)));
     return () =>
       window.removeEventListener(
         "resize",
-        setOverflowActive(isEllipsisActive(paragraph.current))
+        setOverflowActive(isEllipsisActive(par))
       );
   }, []);
-
-  const paragraph = useRef(null);
 
   return (
     <div className="restaurant-big-card">

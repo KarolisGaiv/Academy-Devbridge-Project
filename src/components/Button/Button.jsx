@@ -26,6 +26,6 @@ Button.propTypes = {
   typeName: PropTypes.string,
   className: PropTypes.string,
   handleClick: PropTypes.func,
-  tabIndex: PropTypes.string,
+  tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   isDisabled: PropTypes.bool,
 };

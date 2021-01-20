@@ -75,6 +75,8 @@ export const RestaurantInteractionsBanner = (props) => {
         <div className="restaurant-interactions-banner__modal-input">
           <InputField
             label="email"
+            htmlFor="email"
+            id="email"
             value={emailInputField}
             type="email"
             placeholder="Your friend's email address"
@@ -88,6 +90,8 @@ export const RestaurantInteractionsBanner = (props) => {
         <div className="restaurant-interactions-banner__modal-input">
           <InputField
             label="comment"
+            htmlFor="comment"
+            id="comment"
             value={commentInputField}
             onChange={(value) => setCommentInputField(value)}
           />

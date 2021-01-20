@@ -87,6 +87,8 @@ export class LoginForm extends React.Component {
         >
           <InputField
             label="email"
+            htmlFor="email"
+            id="email"
             value={this.state.email}
             type="email"
             placeholder="Valid email address"
@@ -100,6 +102,8 @@ export class LoginForm extends React.Component {
           />
           <InputField
             label="password"
+            htmlFor="password"
+            id="password"
             value={this.state.pass}
             type="password"
             placeholder="At least 8 characters"

@@ -64,7 +64,7 @@ const Dashboard = () => {
         <BestRestaurantWrapper />
       </section>
       <section className="dashboard__newsFeed">
-        <NewsFeed />
+        <NewsFeed userAvatar={data.userImage} userName={data.userName} />
       </section>
     </div>
   );

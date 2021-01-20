@@ -3,21 +3,19 @@ import BirthdayCard from "./Stories/Content/Birthday/BirthdayCard";
 import MasonryGrid from "../MasonryGrid/MasonryGrid";
 import ContentCard from "./Stories/Content/ContentCard";
 import { Button } from "../Button/Button";
-import fakeData from "../../db.json";
 import NewPost from "./NewPost";
 import Modal from "../Modal/Modal";
+import propTypes from "prop-types";
 import "./news-feed.scss";
 
-const NewsFeed = () => {
+const NewsFeed = (props) => {
   const postTypes = [
     { name: "text", selected: true },
     { name: "photo", selected: false },
     { name: "video", selected: false },
   ];
 
-  const userAvatar = fakeData.userData.userImage;
-  const userName = fakeData.userData.userName;
-  const [stories, setStories] = useState(fakeData.stories);
+  const [stories, setStories] = useState([]);
   const commentRef = useRef(new Array(stories.length).fill(""));
   const [isCommentEmpty, setCommentEmptyState] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -98,8 +96,8 @@ const NewsFeed = () => {
           {
             type: "post",
             id: "aaaaa" + id,
-            userName: userName,
-            userImage: userAvatar,
+            userName: props.userName,
+            userImage: props.userAvatar,
             postLocation: "VLN",
             postDate: timeOfPost.toISOString(),
             postText: modalCommentRef.current,
@@ -113,8 +111,8 @@ const NewsFeed = () => {
           {
             type: "photo",
             id: "aaaaa" + id,
-            userName: userName,
-            userImage: userAvatar,
+            userName: props.userName,
+            userImage: props.userAvatar,
             postLocation: "VLN",
             postDate: timeOfPost.toISOString(),
             postImage: inputValue,
@@ -128,8 +126,8 @@ const NewsFeed = () => {
           {
             type: "video",
             id: "aaaaa" + id,
-            userName: userName,
-            userImage: userAvatar,
+            userName: props.userName,
+            userImage: props.userAvatar,
             postLocation: "VLN",
             postDate: timeOfPost.toISOString(),
             postVideo: inputValue,
@@ -175,7 +173,7 @@ const NewsFeed = () => {
     storiesArr[i].comments = [
       ...storiesArr[i].comments,
       {
-        userName: userName,
+        userName: props.userName,
         comment: commentRef.current[i],
         date: JSON.stringify(postDate),
       },
@@ -210,6 +208,11 @@ const NewsFeed = () => {
   });
 
   useEffect(() => {
+    fetch("http://localhost:3008/stories")
+      .then((res) => res.json())
+      .then((result) => {
+        setStories(result);
+      });
     if (commentRef.current.length !== stories.length) {
       commentRef.current.push(
         ...new Array(stories.length - commentRef.current.length).fill("")
@@ -250,8 +253,8 @@ const NewsFeed = () => {
                 <BirthdayCard
                   key={story.id}
                   data={story}
-                  avatar={userAvatar}
-                  userName={userName}
+                  avatar={props.userAvatar}
+                  userName={props.userName}
                   type={story.type}
                   likes={story.wishes}
                   reaction={story.reaction}
@@ -270,8 +273,8 @@ const NewsFeed = () => {
                 <ContentCard
                   key={story.id}
                   data={story}
-                  avatar={userAvatar}
-                  userName={userName}
+                  avatar={props.userAvatar}
+                  userName={props.userName}
                   type={story.type}
                   likes={story.likes}
                   reaction={story.reaction}
@@ -294,3 +297,8 @@ const NewsFeed = () => {
 };
 
 export default NewsFeed;
+
+NewsFeed.propTypes = {
+  userName: propTypes.string,
+  userAvatar: propTypes.string,
+};

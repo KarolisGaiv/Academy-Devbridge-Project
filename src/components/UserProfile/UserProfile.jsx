@@ -1,52 +1,46 @@
-import React, { Component } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./user-profile.scss";
 import UserAvatar from "../UserAvatar/UserAvatar";
 import SVGIcon from "../SVGIcon/SVGIcon";
-import fakeData from "../../db.json";
 
-class UserProfile extends Component {
-  constructor() {
-    super();
+const UserProfile = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const [data, setData] = useState({});
+  const widgetRef = useRef();
 
-    this.state = { showMenu: false };
-
-    this.showMenu = this.showMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
-  }
-
-  showMenu() {
-    if (!this.state.showMenu) {
-      document.addEventListener("click", this.closeMenu, false);
+  const showMenuFunc = () => {
+    if (!showMenu) {
+      document.addEventListener("click", closeMenu, false);
     } else {
-      document.removeEventListener("click", this.closeMenu, false);
+      document.removeEventListener("click", closeMenu, false);
     }
+    setShowMenu(!showMenu);
+  };
 
-    this.setState((prevState) => ({
-      showMenu: !prevState.showMenu,
-    }));
-  }
-
-  closeMenu(e) {
-    if (this.node.contains(e.target)) {
+  const closeMenu = (e) => {
+    if (widgetRef.current.contains(e.target)) {
       return;
     }
-    this.showMenu();
-  }
+    showMenuFunc();
+  };
 
-  render() {
-    return (
-      <div
-        className="widget-container"
-        ref={(node) => {
-          this.node = node;
-        }}
-      >
+  useEffect(() => {
+    fetch("http://localhost:3008/userData")
+      .then((res) => res.json())
+      .then((result) => {
+        setData(result);
+      });
+  }, []);
+
+  return (
+    data.userImage !== undefined && (
+      <div className="widget-container" ref={widgetRef}>
         <div className="profile">
-          <button onClick={this.showMenu} className="profile__btn">
-            <UserAvatar imageSrc={fakeData.userData.userImage} size={40} />
+          <button onClick={showMenuFunc} className="profile__btn">
+            <UserAvatar imageSrc={data.userImage} size={40} />
             <SVGIcon name="dropdown" className="profile__dropdown-arrow" />
           </button>
-          {this.state.showMenu && (
+          {showMenu && (
             <nav className="drop-menu">
               <div className="drop-menu__arrow-up"></div>
               <ul className="drop-menu__wrapper">
@@ -67,8 +61,8 @@ class UserProfile extends Component {
           )}
         </div>
       </div>
-    );
-  }
-}
+    )
+  );
+};
 
 export default UserProfile;

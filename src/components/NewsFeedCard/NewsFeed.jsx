@@ -18,7 +18,6 @@ const NewsFeed = () => {
   const userAvatar = fakeData.userData.userImage;
   const userName = fakeData.userData.userName;
   const [stories, setStories] = useState(fakeData.stories);
-  const [commentValue, setCommentValue] = useState([]);
   const commentRef = useRef(new Array(stories.length).fill(""));
   const [isCommentEmpty, setCommentEmptyState] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -171,9 +170,6 @@ const NewsFeed = () => {
   };
   //comment Submit handler
   const submitCommentHandler = (i) => () => {
-    setCommentValue((prev) => [
-      ...Object.assign(prev, { [i]: commentRef.current[i] }),
-    ]);
     const postDate = new Date();
     let storiesArr = [...stories];
     storiesArr[i].comments = [

@@ -14,7 +14,9 @@ const Modal = (props) => {
         role="button"
         tabIndex={-1}
       />
-      <div className="modal__content-wrapper">
+      <div
+        className={`modal__content-wrapper modal__content-wrapper--${props.modifierClassName}`}
+      >
         <button
           className="modal__close-button"
           type="button"
@@ -23,9 +25,11 @@ const Modal = (props) => {
           <SVGIcon name="X" className="modal__close-icon" />
         </button>
         <div className="modal__content">
-          <div className="modal__head">
-            <h3 className="modal__heading">{props.heading}</h3>
-          </div>
+          {props.heading ? (
+            <div className="modal__head">
+              <h3 className="modal__heading">{props.heading}</h3>
+            </div>
+          ) : null}
           {props.children}
         </div>
       </div>
@@ -40,4 +44,5 @@ Modal.propTypes = {
   open: propTypes.bool.isRequired,
   onClose: propTypes.func,
   heading: propTypes.string,
+  modifierClassName: propTypes.string,
 };

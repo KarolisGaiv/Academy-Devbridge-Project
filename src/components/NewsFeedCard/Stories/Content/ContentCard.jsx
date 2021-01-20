@@ -52,15 +52,17 @@ const ContentCard = (props) => {
         />
         <Divider />
         <div className="comment-section">
-          {props.commentsList.map((comment, index) => (
-            <Comments
-              key={index}
-              username={comment.userName}
-              comment={comment.comment}
-            />
-          ))}
+          {props.commentsList.length === 0
+            ? "Be the first one to comment!"
+            : props.commentsList.map((comment, index) => (
+                <Comments
+                  key={index}
+                  username={comment.userName}
+                  comment={comment.comment}
+                />
+              ))}
         </div>
-        {props.commentsList.length === 0 ? null : <Divider />}
+        <Divider />
         <AddComment
           avatar={props.avatar}
           submit={props.submitHandler}

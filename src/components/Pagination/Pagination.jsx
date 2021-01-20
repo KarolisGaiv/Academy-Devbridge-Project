@@ -141,7 +141,7 @@ export class Pagination extends React.Component {
     const renderCards = Object.keys(currentCards).map((key, index) => {
       return (
         <ListItemCard
-          key={index}
+          key={currentCards[key].id}
           image={currentCards[key].image}
           author={currentCards[key].author}
           favourite={currentCards[key].favourite}

@@ -32,4 +32,18 @@
     &--slider {
         background-color: $color-red;
     }
+
+    &--text {
+        background-color: $transparent;
+        color: $color-slate-grey;
+
+        &:hover,
+        &:focus {
+            color: $color-fiord;
+        }
+
+        &:active {
+            color: $color-midnight;
+        }
+    }
 }

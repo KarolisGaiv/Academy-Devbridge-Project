@@ -28,10 +28,10 @@ const Carousel = (props) => {
         setRightButtonActive(false);
         if (window.innerWidth > 1240) {
           setFinish(3);
-          setLength(3);
+          setLength(1);
         } else if (window.innerWidth > 900) {
           setFinish(2);
-          setLength(2);
+          setLength(1);
         } else {
           setFinish(1);
           setLength(1);

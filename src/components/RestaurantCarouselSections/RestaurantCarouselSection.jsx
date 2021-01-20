@@ -27,6 +27,7 @@ const RestaurantCarouselSection = (props) => {
 
   const restaurantFilterDate = new Date();
 
+  //Counts distance in km from user location to restaurant location:
   const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(lat2 - lat1); // deg2rad below
@@ -46,6 +47,7 @@ const RestaurantCarouselSection = (props) => {
     return deg * (Math.PI / 180);
   };
 
+  //Sorts restaurants according to distance:
   const dynamicSort = (property) => {
     let sortOrder = 1;
     if (property[0] === "-") {
@@ -59,25 +61,11 @@ const RestaurantCarouselSection = (props) => {
     };
   };
 
-  const [userLatitude, setUserLatitude] = useState(0);
-  const [userLongitude, setUserLongitude] = useState(0);
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(
-        (position) => {
-          setUserLatitude(position.coords.latitude);
-          setUserLongitude(position.coords.longitude);
-        },
-        (err) => console.log(err),
-        { enableHighAccuracy: true, timeout: 10000, maximumAge: 10000 }
-      );
-    } else {
-      console.log("Browser doesn't support geolocation");
-    }
-  });
-
   let restaurants = data;
+
+  //Devbridge Vilnius office coordinates:
+  let userLatitude = 54.70384746102311;
+  let userLongitude = 25.278146798394143;
 
   switch (props.filter) {
     case "new":
@@ -99,7 +87,6 @@ const RestaurantCarouselSection = (props) => {
           ),
         }))
         .sort(dynamicSort("distance"));
-      console.log(restaurants);
       break;
     default:
       restaurants = data;

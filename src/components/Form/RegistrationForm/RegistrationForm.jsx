@@ -62,6 +62,8 @@ export class RegistrationForm extends React.Component {
         >
           <InputField
             label="first name"
+            htmlFor="first name"
+            id="first name"
             value={this.state.fname}
             type="text"
             placeholder="e.g. Mike, Mike-Wilhelm"
@@ -73,6 +75,8 @@ export class RegistrationForm extends React.Component {
           />
           <InputField
             label="last name"
+            htmlFor="last name"
+            id="last name"
             value={this.state.lname}
             type="text"
             placeholder="e.g. Caprio, DiCaprio"
@@ -84,6 +88,8 @@ export class RegistrationForm extends React.Component {
           />
           <InputField
             label="email"
+            htmlFor="email"
+            id="email"
             value={this.state.email}
             type="email"
             placeholder="Valid email address"
@@ -95,6 +101,8 @@ export class RegistrationForm extends React.Component {
           />
           <InputField
             label="password"
+            htmlFor="password"
+            id="password"
             value={this.state.pass}
             type="password"
             placeholder="At least 8 characters"
@@ -109,6 +117,8 @@ export class RegistrationForm extends React.Component {
           />
           <InputField
             label="repeat password"
+            htmlFor="repeat password"
+            id="repeat password"
             value={this.state.rpass}
             type="password"
             placeholder="At least 8 characters"

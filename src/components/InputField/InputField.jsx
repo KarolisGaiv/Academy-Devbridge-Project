@@ -7,6 +7,8 @@ import "./input-field.scss";
 
 const InputField = ({
   value,
+  htmlFor,
+  id,
   label,
   placeholder,
   validators,
@@ -29,12 +31,13 @@ const InputField = ({
   return (
     <div className="input-wrap">
       {label && (
-        <label htmlFor="input-field" className="input-label">
+        <label htmlFor={htmlFor} className="input-label">
           {label}
         </label>
       )}
       <input
         type={type}
+        id={id}
         value={value}
         className={
           error || submitFail
@@ -63,6 +66,8 @@ const InputField = ({
 
 InputField.propTypes = {
   value: PropTypes.string,
+  htmlFor: PropTypes.string,
+  id: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,
   validators: PropTypes.array,

@@ -31,6 +31,15 @@
 
     &--slider {
         background-color: $color-red;
+
+        &:hover,
+        &:focus {
+            background-color: $color-red-darker;
+        }
+
+        &:active {
+            background-color: $color-red-darkest;
+        }
     }
 
     &--text {

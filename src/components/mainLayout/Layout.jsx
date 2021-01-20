@@ -7,19 +7,22 @@ import Footer from "./layoutComponents/Footer/Footer";
 import Progress from "../../pages/progressPage/Progress";
 import { Login } from "pages/Login";
 import propTypes from "prop-types";
+import { ProgressIndicator } from "components/ProgressIndicator/ProgressIndicator";
 
 const Layout = ({ path }) => {
   const [notification, setNotification] = useState(false);
 
   if (path === "/" || path === "/register") {
     return <Login />;
-  } else if (path === null || path === undefined || path === "/progress") {
+  } else if (path === null || path === "/progress") {
     return (
       <Progress
         header="Look like you're lost"
         information="the page you are looking for is currently under development"
       />
     );
+  } else if (path === undefined) {
+    return <ProgressIndicator message="Loading..." />;
   } else if (
     path === "/dashboard" ||
     path.includes("/dashboard/reservations") ||

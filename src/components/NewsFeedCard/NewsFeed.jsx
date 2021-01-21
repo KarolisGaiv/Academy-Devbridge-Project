@@ -213,6 +213,9 @@ const NewsFeed = (props) => {
       .then((result) => {
         setStories(result);
       });
+  }, []);
+
+  useEffect(() => {
     if (commentRef.current.length !== stories.length) {
       commentRef.current.push(
         ...new Array(stories.length - commentRef.current.length).fill("")

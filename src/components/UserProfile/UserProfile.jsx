@@ -1,46 +1,52 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { Component } from "react";
 import "./user-profile.scss";
 import UserAvatar from "../UserAvatar/UserAvatar";
 import SVGIcon from "../SVGIcon/SVGIcon";
+import fakeData from "../../db.json";
 
-const UserProfile = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [data, setData] = useState({});
-  const widgetRef = useRef();
+class UserProfile extends Component {
+  constructor() {
+    super();
 
-  const showMenuFunc = () => {
-    if (!showMenu) {
-      document.addEventListener("click", closeMenu, false);
+    this.state = { showMenu: false };
+
+    this.showMenu = this.showMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+  }
+
+  showMenu() {
+    if (!this.state.showMenu) {
+      document.addEventListener("click", this.closeMenu, false);
     } else {
-      document.removeEventListener("click", closeMenu, false);
+      document.removeEventListener("click", this.closeMenu, false);
     }
-    setShowMenu(!showMenu);
-  };
 
-  const closeMenu = (e) => {
-    if (widgetRef.current.contains(e.target)) {
+    this.setState((prevState) => ({
+      showMenu: !prevState.showMenu,
+    }));
+  }
+
+  closeMenu(e) {
+    if (this.node.contains(e.target)) {
       return;
     }
-    showMenuFunc();
-  };
+    this.showMenu();
+  }
 
-  useEffect(() => {
-    fetch("http://localhost:3008/userData")
-      .then((res) => res.json())
-      .then((result) => {
-        setData(result);
-      });
-  }, []);
-
-  return (
-    data.userImage !== undefined && (
-      <div className="widget-container" ref={widgetRef}>
+  render() {
+    return (
+      <div
+        className="widget-container"
+        ref={(node) => {
+          this.node = node;
+        }}
+      >
         <div className="profile">
-          <button onClick={showMenuFunc} className="profile__btn">
-            <UserAvatar imageSrc={data.userImage} size={40} />
+          <button onClick={this.showMenu} className="profile__btn">
+            <UserAvatar imageSrc={fakeData.userData.userImage} size={40} />
             <SVGIcon name="dropdown" className="profile__dropdown-arrow" />
           </button>
-          {showMenu && (
+          {this.state.showMenu && (
             <nav className="drop-menu">
               <div className="drop-menu__arrow-up"></div>
               <ul className="drop-menu__wrapper">
@@ -61,8 +67,8 @@ const UserProfile = () => {
           )}
         </div>
       </div>
-    )
-  );
-};
+    );
+  }
+}
 
 export default UserProfile;

@@ -31,4 +31,4 @@ Runs JSON server. Edit `db.json` to update data.
 
 ### `npm start`
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### **Open [http://localhost:3000/dashboard](http://localhost:3000/dashboard) to circumvent Sign Up screen and view project it in the browser.**
